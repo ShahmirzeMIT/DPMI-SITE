@@ -8,7 +8,8 @@ import Container from '@mui/material/Container';
 import NavbarMenuMob from './NavbarMenuMob';
 import NavbarMenuComp from './NavbarMenuComp';
 import Register from './Register';
-
+import Logo from '../../assets/images/DPM_institute__LOGO-Logo.jpg'
+import { Avatar } from 'antd';
 
 
 function AppNavbar() {
@@ -27,7 +28,7 @@ function AppNavbar() {
   return (
     <AppBar position="static" style={{  backgroundColor: "transparent",
       height: '60px',
-      boxShadow: "none",borderBottom: "1px solid #e0e0e0"}}>
+      boxShadow: "none"}}>
       <Container maxWidth="xl" sx={{
            position:'relative',
       }}>
@@ -48,7 +49,7 @@ function AppNavbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+           <Avatar src={Logo}  style={{height:'70px',width:'90px'}} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

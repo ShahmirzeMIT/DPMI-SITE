@@ -6,7 +6,7 @@ const contentStyle = {
     minHeight: 120,
     lineHeight: '120px',
     color: '#fff',
-    backgroundColor: '#0958d9',
+    backgroundColor: 'white',
   };
 export default function Main() {
   return (

@@ -96,7 +96,7 @@ export default function NavbarMenuComp({
                   // width: "100%", // Tam genişlik
                   left: 0, // Sol kənar sıfır
                   boxShadow: 3,
-                  height:'200px'
+                  height:'218px'
                 },
               }}
             >
@@ -128,7 +128,7 @@ export default function NavbarMenuComp({
                     
                       
                     ))}
-                    <Divider style={{height:'200px',border:'1px solid rgb(223, 217, 210)'}}  type="vertical"></Divider>
+                    <Divider style={{height:'210px',border:'1px solid rgb(223, 217, 210)'}}  type="vertical"></Divider>
                     <NavbarMenuCard/>
                </Box>
               
