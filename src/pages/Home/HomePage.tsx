@@ -6,8 +6,9 @@ import AboutTools from "./AboutTools";
 import Skills from "./Skills";
 import Course2 from "./Course2";
 import Slider from "./Slider";
-import Questions from "./Questions";
 import Courses3 from "./Courses3";
+import ContactQuestions from "./ContactQuestions";
+import Question from "./Question";
 
 
 export default function HomePage() {
@@ -20,9 +21,10 @@ export default function HomePage() {
       <AboutCourses/>
       <AboutTools/>
       <Skills/>
-     
       <Slider/>
-      <Questions/>
+      <ContactQuestions/>
+      <Question/>
+
     </Box>
   );
 }
