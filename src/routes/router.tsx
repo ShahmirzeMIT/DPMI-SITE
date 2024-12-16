@@ -4,6 +4,7 @@ import HomePage from "../pages/Home/HomePage";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ProductManager from "../pages/ProductManager/ProductManager";
+import Payment from "../pages/Payment/Payment";
 
 export const routes = [
     {
@@ -18,6 +19,7 @@ export const routes = [
                     { path: "/product/product-management-certification", element: <ProductManager /> },
                 ]
              },
+            {path:'/payment',element:<Payment/>},
             
             { path: "*", element: <NotFound /> },
         ]

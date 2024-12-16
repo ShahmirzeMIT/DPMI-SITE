@@ -1,0 +1,15 @@
+/* paymentStyle.css */
+.ant-table-tbody > tr > td {
+    height: 20px !important; /* Sətir hündürlüyü 70px */
+    line-height: 15px; /* Mətnin dikey ortalanması */
+    white-space: normal; /* Uzun mətnlərin sətirdən aşağı keçməsi */
+    word-wrap: break-word;
+    min-width: 230px !important;
+    width: auto !important;
+    
+  }
+  
+  .ant-table {
+    table-layout: auto !important; /* Genişliyi avtomatik uyğunlaşdır */
+  }
+  
