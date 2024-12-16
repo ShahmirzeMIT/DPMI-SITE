@@ -1,32 +1,24 @@
-import { Box, Button, Menu, MenuItem, Avatar, Link } from "@mui/material";
-import { Divider } from "antd";
+import { Box, Button, Menu } from "@mui/material";
+// import { Divider } from "antd";
 import React, { useState } from "react";
-import NavbarMenuCard from "./NavbarMenuCard";
+// import NavbarMenuCard from "./NavbarMenuCard";
+import TraningsMenu from "./TraningsMenu";
+import CertificationMenu from "./CertificationMenu";
+import ContactMenu from "./ContactMenu";
 
 const pages = [
   {
     name: "Trainings",
-    children: [
-      { title: "Online Trainings", image: "/trainings-icon.png" },
-      { title: "Online Trainings", image: "/trainings-icon.png" },
-      { title: "Online Trainings", image: "/trainings-icon.png" },
-      { title: "Workshops", image: "/workshops-icon.png" },
-    ],
+    children: [<TraningsMenu key="trainings-menu" />], // Wrap in array
   },
   {
     name: "Certifications",
-    children: [
-      { title: "Certifications A", image: "/cert-a.png" },
-      { title: "Certifications B", image: "/cert-b.png" },
-    ],
+    children: [<CertificationMenu key="certifications-menu" />], // Wrap in array
   },
   { name: "Why Us", children: [] },
   {
-    name: "Resources",
-    children: [
-      { title: "Blog", image: "/blog-icon.png" },
-      { title: "Case Studies", image: "/case-studies-icon.png" },
-    ],
+    name: "Contact",
+    children: [<ContactMenu key="contact-menu" />],
   },
 ];
 
@@ -78,10 +70,9 @@ export default function NavbarMenuComp({
                 "& .MuiMenu-paper": {
                   backgroundColor: "white",
                   color: "black",
-                  padding:'20px'
-                  // marginTop: "1rem",
-                  // width: "110%",
-              }}}
+                  padding: "20px",
+                },
+              }}
               onClose={handleMenuClose}
               anchorOrigin={{
                 vertical: "bottom",
@@ -93,45 +84,23 @@ export default function NavbarMenuComp({
               }}
               PaperProps={{
                 sx: {
-                  // width: "100%", // Tam genişlik
-                  left: 0, // Sol kənar sıfır
+                  left: 0,
                   boxShadow: 3,
-                  height:'218px'
+                  height: "auto",
                 },
               }}
             >
-                 <Box sx={{ display: "flex",}}>
-                    {page.children.map((child) => (
-                        <MenuItem
-                        key={child.title}
-                        onClick={handleMenuClose}
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 1,
-                          py: 1,
-                        }}
-                      >
-                        <Avatar
-                          src={child.image}
-                          alt={child.title}
-                          sx={{ width: 30, height: 30 }}
-                        />
-                        <Link
-                          href="#"
-                          underline="hover"
-                          sx={{ color: "inherit", fontSize: "14px", fontWeight: 500 }}
-                        >
-                          {child.title}
-                        </Link>
-                      </MenuItem>
-                    
-                      
-                    ))}
-                    <Divider style={{height:'210px',border:'1px solid rgb(223, 217, 210)'}}  type="vertical"></Divider>
-                    <NavbarMenuCard/>
-               </Box>
-              
+              <Box sx={{ display: "flex" }}>
+                {
+                  page.children.map((child: any) => (
+                   
+                    <>
+                     {child}
+                    </>
+                  ))
+                }
+               
+              </Box>
             </Menu>
           )}
         </React.Fragment>
