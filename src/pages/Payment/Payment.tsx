@@ -29,7 +29,7 @@ export default function Payment() {
               <span>{item.MentorName}</span>
             </div>
           ),
-          enroll:(<Button style={{background:'#68b631',height:'32px',color:'black',borderRadius:'none',width:'150px',margin:'0 auto',color:'white'}}>Pay</Button>)
+          enroll:(<Button style={{background:'#68b631',height:'32px',borderRadius:'none',width:'150px',margin:'0 auto',color:'white'}}>Pay</Button>)
         
         }));
         setTabelValues(updatedData);
