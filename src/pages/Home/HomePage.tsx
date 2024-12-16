@@ -7,17 +7,20 @@ import Skills from "./Skills";
 import Course2 from "./Course2";
 import Slider from "./Slider";
 import Questions from "./Questions";
+import Courses3 from "./Courses3";
 
 
 export default function HomePage() {
   return (
     <Box>
       <Courses1/>
+      <Course2/>
+      <Courses3/>
       <AboutCount/>
       <AboutCourses/>
       <AboutTools/>
       <Skills/>
-      <Course2/>
+     
       <Slider/>
       <Questions/>
     </Box>

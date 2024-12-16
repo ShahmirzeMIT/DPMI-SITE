@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
-import Image1 from '../../assets/images/image1.jpg'
-export default function Courses1() {
+import Image1 from '../../assets/images/image3.jpg'
+export default function Courses3() {
   return (
     <Box
       display="flex"
@@ -20,19 +20,18 @@ export default function Courses1() {
           bgcolor: "white",
         }}
       >
+      
         <Typography
           variant="h4"
-          sx={{ fontWeight: "bold", mb: 2, color: "#333" }}
-        >
-          USER STORY CARD
-        </Typography>
-        <Typography
-          variant="body1"
           sx={{ textAlign: "center", mb: 4, color: "#555" }}
         >
-          Digital Services, Master Data & Operations, Segmentations, Financial
-          Statements, Business Model, Revenue Stopper, Competitors, Advantages,
-          Value Propositions, Market Entry.
+             Learn The Language of Digital Product with a Simulation Card in 20 hours
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "center", mb: 4, color: "#555" }}
+        >
+            Get first steps in a Digital Product Development
         </Typography>
         <Button
           variant="contained"
@@ -40,10 +39,11 @@ export default function Courses1() {
             bgcolor: "#FFC107",
             color: "#fff",
             textTransform: "none",
+            padding: "7px 90px 7px 90px",
             "&:hover": { bgcolor: "#E0A800" },
           }}
         >
-          View
+         Try It
         </Button>
       </Box>
 
@@ -62,8 +62,8 @@ export default function Courses1() {
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
-            opacity: 0.7,
+            // objectFit: "cover",
+            // opacity: 0.7,
           }}
         />
       </Box>

@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
+import Image2 from '../../assets/images/image2.jpg'
 export default function Course2() {
   return (
     <Box
@@ -6,26 +7,20 @@ export default function Course2() {
     flexDirection={{ xs: "column", md: "row" }}
     sx={{ width: "100%", height: "60vh",borderTop:'1px solid #e0e0e0', }}
   >
-    {/* Sol tərəf */}
-
-
-    {/* Sağ tərəf */}
     <Box
       sx={{
         width: { xs: "100%", md: "50%" },
         position: "relative",
-        bgcolor: "#1E88E5", // Mavi rəng kölgəsi
+        bgcolor: "#1E88E5", 
       }}
     >
       <Box
         component="img"
-        src="/path-to-your-image.jpg" // Şəklin yolu
+        src={Image2}// Şəklin yolu
         alt="User Story Image"
         sx={{
           width: "100%",
           height: "100%",
-          objectFit: "cover",
-          opacity: 0.7,
         }}
       />
     </Box>
@@ -42,30 +37,30 @@ export default function Course2() {
         bgcolor: "white",
       }}
     >
-      <Typography
+      {/* <Typography
         variant="h4"
         sx={{ fontWeight: "bold", mb: 2, color: "#333" }}
       >
         USER STORY CARD
-      </Typography>
+      </Typography> */}
       <Typography
-        variant="body1"
+        variant="h4"
         sx={{ textAlign: "center", mb: 4, color: "#555" }}
+        
       >
-        Digital Services, Master Data & Operations, Segmentations, Financial
-        Statements, Business Model, Revenue Stopper, Competitors, Advantages,
-        Value Propositions, Market Entry.
+       Learn The Language of Digital Product and start to communicate 100% effectively with Agile Team from different backgrounds  
       </Typography>
       <Button
         variant="contained"
         sx={{
-          bgcolor: "#FFC107",
+          bgcolor: "rgb(87, 148, 240)",
           color: "#fff",
           textTransform: "none",
-          "&:hover": { bgcolor: "#E0A800" },
+          padding: "7px 50px 7px 50px",
+          "&:hover": { bgcolor: "rgb(87, 148, 240)" },
         }}
       >
-        View
+        View All
       </Button>
     </Box>
   </Box>
