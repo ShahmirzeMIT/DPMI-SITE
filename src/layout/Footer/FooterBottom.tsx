@@ -1,49 +1,65 @@
-
 import { Box, Typography } from "@mui/material";
-import { FaFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-// import { Facebook, LinkedIn, Twitter, Instagram } from "@mui/icons-material";
-import Logo from '../../assets/images/image.png'
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa6";
+import Logo from "../../assets/images/image.png";
+
 export default function FooterBottom() {
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#214E73", // Blue background
+        backgroundColor: "#0E1C36", // Dark blue background
         color: "white",
-        padding: "20px 10%",
+        padding: "30px 10%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
+        gap: "20px",
       }}
     >
-      {/* Top Section: Logo and Links */}
+      {/* Top Section */}
       <Box
         sx={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr 1fr" },
+          gap: "30px",
           justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-          flexWrap: "wrap",
-          marginBottom: "10px",
         }}
       >
-        {/* Logo */}
+        {/* Logo Section */}
         <Box>
           <img
-            src={Logo} // Replace with actual logo
-            alt="Pragmatic Logo"
-            style={{ height: "120px" }}
+            src={Logo}
+            alt="Valar Logo"
+            style={{ height: "80px", marginBottom: "10px" }}
           />
         </Box>
 
         {/* Navigation Links */}
-        <Box sx={{ display: "flex", gap: "20px" }}>
-          {["Privacy", "Copyright", "Contact Us", "Cookie Policy", "Pragmatic Merchandise", "Affiliate Program"].map(
+        <Box>
+          <Typography variant="h6" sx={{ fontSize: "16px", marginBottom: "10px" }}>
+            VALAR
+          </Typography>
+          {["The MBA", "The Executive MBA", "Student Experience", "Consumer Disclosure", "Valar Catalog"].map(
+            (item, index) => (
+              <Typography
+                key={index}
+                sx={{
+                  fontSize: "14px",
+                  cursor: "pointer",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                {item}
+              </Typography>
+            )
+          )}
+        </Box>
+
+        {/* Tuition Model Links */}
+        <Box>
+          <Typography variant="h6" sx={{ fontSize: "16px", marginBottom: "10px" }}>
+            TUITION MODEL
+          </Typography>
+          {["Tuition Fees", "Tuition Assistance", "Scholarship Opportunities"].map(
             (item, index) => (
               <Typography
                 key={index}
@@ -60,23 +76,50 @@ export default function FooterBottom() {
         </Box>
 
         {/* Social Media Icons */}
-        <Box sx={{ display: "flex", gap: "15px" }}>
-           <FaFacebook style={{ cursor: "pointer" ,fontSize:'25px'}} />
-          <FaLinkedin style={{ cursor: "pointer" ,fontSize:'25px'}} />
-          <FaTwitter style={{ cursor: "pointer" ,fontSize:'25px'}} />
-          <FaInstagram style={{ cursor: "pointer" ,fontSize:'25px'}} />
+        <Box>
+          <Typography variant="h6" sx={{ fontSize: "16px", marginBottom: "10px" }}>
+            RESOURCES
+          </Typography>
+          {["iOS App", "Android App", "FAQ", "Press", "Contact"].map((item, index) => (
+            <Typography
+              key={index}
+              sx={{
+                fontSize: "14px",
+                cursor: "pointer",
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              {item}
+            </Typography>
+          ))}
         </Box>
       </Box>
 
-      {/* Contact Info */}
-      <Typography sx={{ fontSize: "14px", marginBottom: "5px" }}>
-        registrar@pragmaticinstitute.com | (480) 515-1411
-      </Typography>
+      {/* Social Media Links */}
+      <Box sx={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+        <FaFacebook style={{ cursor: "pointer", fontSize: "25px" }} />
+        <FaLinkedin style={{ cursor: "pointer", fontSize: "25px" }} />
+        <FaTwitter style={{ cursor: "pointer", fontSize: "25px" }} />
+        <FaInstagram style={{ cursor: "pointer", fontSize: "25px" }} />
+      </Box>
 
-      {/* Copyright */}
-      <Typography sx={{ fontSize: "12px" }}>
-        © 2024 Pragmatic Institute. All rights reserved.
-      </Typography>
+      {/* Bottom Section */}
+      <Box
+        sx={{
+          textAlign: "center",
+          fontSize: "12px",
+          marginTop: "10px",
+          borderTop: "1px solid #3A4A60",
+          paddingTop: "10px",
+        }}
+      >
+        <Typography>
+          Valar Institute is a Division of Quantic School of Business and Technology. Accredited by DEAC.
+        </Typography>
+        <Typography>
+          Contact: info@valar.quantic.edu | (571) 483-8002
+        </Typography>
+      </Box>
     </Box>
   );
 }
