@@ -1,11 +1,11 @@
 import { Box, Button, Typography } from '@mui/material';
 import Image1 from '../../assets/images/image3.jpg';
 
-export default function Courses3() {
+export default function Courses1() {
   return (
     <Box
       display="flex"
-      flexDirection={{ xs: 'column', md: 'row' }} // Mobil üçün alt-üst, Desktop üçün yan-yana
+      flexDirection={{ xs: 'column', md: 'row' }}
       sx={{
         width: '100%',
         borderTop: '1px solid #e0e0e0',
@@ -15,35 +15,35 @@ export default function Courses3() {
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
-          height: { xs: '50vh', md: '100%' }, // Mobil üçün yarım hündürlük
+          height: { xs: '50vh', md: '60vh' }, // Eyni hündürlük
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'center', // Vertikal ortalama
+          alignItems: 'center', // Horizontal ortalama
+          textAlign: 'center',
           p: 4,
           bgcolor: 'white',
         }}
       >
         <Typography
           variant="h4"
-          sx={{ textAlign: 'center', mb: 4, color: '#555' }}
+          sx={{ textAlign: 'center', mb: 3, color: '#555',fontSize:'32px',fontWeight:'500'  }}
         >
           Learn The Language of Digital Product with a Simulation Card in 20 hours
         </Typography>
-        <Typography
-          variant="h5"
-          sx={{ textAlign: 'center', mb: 4, color: '#555' }}
+        <div
+          style={{fontSize:'22px', color: '#555' }}
         >
           Get first steps in a Digital Product Development
-        </Typography>
+        </div>
         <Button
           variant="contained"
           sx={{
             bgcolor: '#FFC107',
             color: '#fff',
             textTransform: 'none',
-            padding: '7px 90px',
             '&:hover': { bgcolor: '#E0A800' },
+              padding:'7px 70px'
           }}
         >
           Try It
@@ -54,19 +54,19 @@ export default function Courses3() {
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
-          height: { xs: '50vh', md: '100%' }, // Mobil üçün yarım hündürlük
+          height: { xs: '50vh', md: '60vh' }, // Eyni hündürlük
           position: 'relative',
-          bgcolor: '#1E88E5', // Mavi rəng kölgəsi
+        
         }}
       >
         <Box
           component="img"
-          src={Image1}
+          src={Image1} // Şəklin yolu
           alt="User Story Image"
           sx={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover', // Şəkil sahəyə uyğunlaşır
+            objectFit: 'cover',
           }}
         />
       </Box>

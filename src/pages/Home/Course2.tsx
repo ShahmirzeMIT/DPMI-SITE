@@ -15,7 +15,7 @@ export default function Course2() {
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
-          height: { xs: '50vh', md: '100%' }, // Mobil üçün yarım hündürlük
+          height: { xs: '50vh', md: '60vh' }, // Mobil üçün yarım hündürlük
           position: 'relative',
           bgcolor: '#1E88E5',
         }}
@@ -36,7 +36,7 @@ export default function Course2() {
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
-          height: { xs: '50vh', md: '100%' }, // Mobil üçün yarım hündürlük
+          height: { xs: '50vh', md: '60vh' }, // Mobil üçün yarım hündürlük
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
