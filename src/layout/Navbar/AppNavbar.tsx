@@ -26,8 +26,8 @@ function AppNavbar() {
  
 
   return (
-    <AppBar position="static" style={{  backgroundColor: "transparent",
-      height: '60px',
+    <AppBar position="fixed" style={{  backgroundColor: "white",
+      height: '70px',
       boxShadow: "none"}}>
       <Container maxWidth="xl" sx={{
            position:'relative',
@@ -61,7 +61,7 @@ function AppNavbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              Logo
+               <Avatar src={Logo}  style={{height:'70px',width:'90px'}} />
             </IconButton>
             <NavbarMenuMob anchorElNav={anchorElNav} handleCloseNavMenu={handleCloseNavMenu}/>
           </Box>
