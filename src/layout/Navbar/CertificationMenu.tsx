@@ -28,9 +28,9 @@ export default function CertificationMenu() {
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
-            gap: 2,
-            width: "32%",
-            height: 218,
+            gap: 1,
+            width: "429px",
+            height: 204,
             py: 2,
             borderRadius: 2,
          
