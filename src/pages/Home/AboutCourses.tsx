@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import ProductManagerCard from '../../componets/ProductManagerCard'
+import { Button } from 'antd'
 export default function AboutCourses() {
   return (
     <Box >
@@ -11,7 +12,10 @@ export default function AboutCourses() {
                     [1,2,3,4,5].map((item, index) => <ProductManagerCard data={{id:item}} key={index}/>)
                 }
             </Box>
-           
+           <Box>
+            <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginRight:'20px'}}>View Certificates  &gt;&gt;</Button>
+            <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none'}}>View Courses  &gt;&gt;</Button>
+           </Box>
         </Box>
     </Box>
   )
