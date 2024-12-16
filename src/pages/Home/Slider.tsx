@@ -1,19 +1,13 @@
-
 import { Box } from "@mui/material";
 import { Avatar, Typography } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-// Import required modules
-import { Pagination } from "swiper/modules";
-
-// Import custom CSS
-import "./styles.css"; // Add styles here
+import "./styles.css";
 
 export default function Slider() {
+  const slides = Array.from({ length: 20 }); // 20 slide
+
   return (
     <Box sx={{ padding: "60px 10px" }}>
       <h1
@@ -34,7 +28,7 @@ export default function Slider() {
           fontSize: "20px",
           fontWeight: 300,
           letterSpacing: "-0.28px",
-          marginBottom:'30px'
+          marginBottom: "30px",
         }}
       >
         Pragmatic Institute instructors have decades of real-world experience
@@ -43,20 +37,24 @@ export default function Slider() {
       </Typography>
 
       <Swiper
-        slidesPerView={"auto"} // Allows custom widths
-        spaceBetween={50} // Sets margin-right between slides
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
+      slidesPerView="auto" 
+        // slidesPerView={3} // Konkret rəqəm qoyulur
+        spaceBetween={60} // Aradakı boşluğu kiçildin
+        loop={true} // Sonsuz scroll aktivləşdirilir
+        loopAdditionalSlides={1} // Əlavə slayd yüklənir
         className="mySwiper"
       >
-        {Array.from({ length:20 }).map((_, index) => (
+        {slides.map((_, index) => (
           <SwiperSlide className="custom-slide" key={index}>
             <Avatar
-              size={80}
+              size={90}
               src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              alt={`Slide ${index + 1}`}
             />
+            <Typography>
+               {index}
+            </Typography>
+           
           </SwiperSlide>
         ))}
       </Swiper>
