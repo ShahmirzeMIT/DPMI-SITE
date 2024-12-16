@@ -5,6 +5,7 @@ import Logo from "../../assets/images/image.png"; // Replace with your logo path
 import { IoIosMail } from "react-icons/io";
 import { HiPhone } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
+import { Avatar } from "antd";
 export default function FooterBottom() {
   return (
     <Box
@@ -27,23 +28,24 @@ export default function FooterBottom() {
       >
         {/* Logo and Contact Info */}
         <Box>
-          <img
+          <Avatar
+          shape="square" 
             src={Logo}
             alt="DPMI Logo"
-            style={{ width: "120px",height: "90px", marginBottom: "10px" }}
+            style={{ width: "120px",height: "44px", marginBottom: "10px" }}
           />
           <Typography
-            sx={{ fontSize: "14px", display: "flex", alignItems: "center", gap: "5px" }}
+            sx={{ fontSize: "16px", display: "flex", alignItems: "center", gap: "5px" }}
           >
             <IoIosMail style={{color: "#333", fontSize: "20px"}}/>hello@dpmi.com
           </Typography>
           <Typography
-            sx={{ fontSize: "14px", display: "flex", alignItems: "center", gap: "5px" }}
+            sx={{ fontSize: "16px", display: "flex", alignItems: "center", gap: "5px" }}
           >
             <HiPhone style={{color: "#333", fontSize: "20px"}} />+91 91813 23 2309
           </Typography>
           <Typography
-            sx={{ fontSize: "14px", display: "flex", alignItems: "center", gap: "5px" }}
+            sx={{ fontSize: "16px", display: "flex", alignItems: "center", gap: "5px" }}
           >
             <IoLocationOutline style={{color: "#333", fontSize: "20px"}} /> Somewhere in the World
           </Typography>
@@ -53,7 +55,7 @@ export default function FooterBottom() {
         <Box>
           <Typography
             variant="h6"
-            sx={{ fontSize: "16px", marginBottom: "10px", fontWeight: "bold" }}
+            sx={{ fontSize: "18px", marginBottom: "10px", fontWeight: "bold" }}
           >
             Home
           </Typography>
@@ -62,7 +64,7 @@ export default function FooterBottom() {
               <Typography
                 key={index}
                 sx={{
-                  fontSize: "14px",
+                  fontSize: "16px",
                   cursor: "pointer",
                   color: "#555",
                   "&:hover": { textDecoration: "underline" },
@@ -78,7 +80,7 @@ export default function FooterBottom() {
         <Box>
           <Typography
             variant="h6"
-            sx={{ fontSize: "16px", marginBottom: "10px", fontWeight: "bold" }}
+            sx={{ fontSize: "18px", marginBottom: "10px", fontWeight: "bold" }}
           >
             About Us
           </Typography>
@@ -86,7 +88,7 @@ export default function FooterBottom() {
             <Typography
               key={index}
               sx={{
-                fontSize: "14px",
+                fontSize: "16px",
                 cursor: "pointer",
                 color: "#555",
                 "&:hover": { textDecoration: "underline" },
@@ -101,7 +103,7 @@ export default function FooterBottom() {
         <Box>
           <Typography
             variant="h6"
-            sx={{ fontSize: "16px", marginBottom: "10px", fontWeight: "bold" }}
+            sx={{ fontSize: "18px", marginBottom: "10px", fontWeight: "bold" }}
           >
             Social Profiles
           </Typography>

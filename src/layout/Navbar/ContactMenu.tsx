@@ -12,11 +12,11 @@ export default function ContactMenu() {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
       {resources.map((resource) => (
-        <MenuItem key={resource.title} sx={{ py: 1 }}>
+        <MenuItem key={resource.title} sx={{ py: 1,background:'white',"&:hover": { background: "#FF9500" } }}>
           <Link
             href={resource.link}
             underline="hover"
-            sx={{ color: "inherit", fontSize: "14px", fontWeight: 500 }}
+            sx={{ color: "black", fontSize: "14px", fontWeight: 500,'&:hover':{color:'white'} }}
           >
             {resource.title}
           </Link>

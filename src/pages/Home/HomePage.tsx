@@ -11,6 +11,7 @@ import { Box } from "@mui/material";
 // import Question from "./Question";
 import UnlockPotential from "./UnLockPotential";
 import Testimonials from "./Testimonials";
+import LogoSection from "./LogoSection";
 
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
     <Box>
       <UnlockPotential/>
       <Testimonials/>
+      {/* <LogoSection/> */}
       {/* <Courses1/>
       <Course2/>
       <Courses3/>

@@ -42,16 +42,16 @@ export default function TraningsMenu() {
   return (
     <Box sx={{ display: "flex", gap: 4,marginLeft:'20px' }}>
       {menuData.map((section) => (
-        <Box key={section.title} sx={{borderRight:'1px solid #E9EDF1',padding:'10px'}}>
+        <Box key={section.title} sx={{borderRight:'1px solid white',padding:'10px'}}>
           <Typography
             variant="h6"
-            sx={{ fontWeight: 700, mb: 2, color: "#000" }}
+            sx={{ fontWeight: 700, mb: 2, color:'white' }}
           >
             <span style={{background:section.bgClr,fontSize:" 17px",
           padding: "5px 10px",color:'white',marginRight:'20px'}}>{section.title.slice(0, 1)}</span>
             {section.title}
           </Typography>
-          <Divider></Divider>
+          <Divider style={{background:'white'}}></Divider>
           <Grid container spacing={1}>
             {section.options.map((option) => (
               <Grid item xs={12} key={option}>
@@ -62,7 +62,7 @@ export default function TraningsMenu() {
                     display: "block",
                     fontSize: "14px",
                     fontWeight: 500,
-                    color: "inherit",
+                    color:'white'
                   }}
                 >
                   {option}

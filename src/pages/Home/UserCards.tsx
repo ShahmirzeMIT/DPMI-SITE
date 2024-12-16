@@ -1,6 +1,21 @@
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 import { Avatar } from 'antd';
+import Image from '../../assets/images/image2.jpg'
 const testimonials = [
+    {
+      name: "Sarah L",
+      role: "Web Design Course",
+      content:
+        "The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!",
+      avatar: "https://via.placeholder.com/50/FF007F", // Replace with actual image
+    },
+    {
+      name: "Jason M",
+      role: "UI/UX Design Course",
+      content:
+        "The UI/UX design course exceeded my expectations. The instructor’s expertise and practical assignments helped me improve my design skills. I feel more confident in my career now. Thank you!",
+      avatar: "https://via.placeholder.com/50/CCCCFF", // Replace with actual image
+    },
     {
       name: "Sarah L",
       role: "Web Design Course",
@@ -32,6 +47,7 @@ export default function UserCards() {
           borderRadius: "12px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
           border: "1px solid #E0E0E0",
+          padding:'20px'
         }}
       >
         <CardContent>
@@ -57,8 +73,8 @@ export default function UserCards() {
           >
             {/* Avatar and Name */}
             <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Avatar src={testimonial.avatar} alt={testimonial.name} />
-              <Typography sx={{ fontWeight: "bold", color: "#333" }}>
+              <Avatar shape="square"  src={Image} alt={testimonial.name} style={{ width: "50px", height: "50px",borderRadius:'none' }} />
+              <Typography sx={{ fontWeight: "600", color: "#333333" ,fontSize:'16px'}}>
                 {testimonial.name}
               </Typography>
             </Box>
@@ -67,10 +83,13 @@ export default function UserCards() {
               variant="contained"
               disableElevation
               sx={{
+                width:'157px',
+                height:'49px',
                 backgroundColor: "#F3F4F6",
                 color: "#333",
                 textTransform: "none",
-                fontSize: "12px",
+                fontSize: "14px",
+                fontFamily:'Be Vietnam Pro',
                 borderRadius: "8px",
                 "&:hover": {
                   backgroundColor: "#EDEDED",

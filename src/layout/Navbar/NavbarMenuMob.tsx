@@ -19,10 +19,10 @@ export default function NavbarMenuMob({anchorElNav,handleCloseNavMenu}:{anchorEl
     }}
     open={Boolean(anchorElNav)}
     onClose={handleCloseNavMenu}
-    sx={{ display: { xs: 'block', md: 'none' } }}
+    sx={{ display: { xs: 'block', md: 'none' },}}
   >
     {pages.map((page) => (
-      <MenuItem key={page} onClick={handleCloseNavMenu}>
+      <MenuItem key={page} onClick={handleCloseNavMenu} sx={{'&:hover': { background: 'red'} }}>
         <Typography sx={{ textAlign: 'center' ,my: 2, color: 'black', display: 'block',    fontSize: "15px",fontWeight: 400 ,textTransform: "capitalize" }}>{page}</Typography>
       </MenuItem>
     ))}

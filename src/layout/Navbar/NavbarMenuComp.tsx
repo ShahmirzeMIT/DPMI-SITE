@@ -42,7 +42,7 @@ export default function NavbarMenuComp({
   };
 
   return (
-    <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+    <Box sx={{ display: "flex", gap: 2, alignItems: "center" ,}}>
       {pages.map((page) => (
         <React.Fragment key={page.name}>
           <Button
@@ -56,6 +56,7 @@ export default function NavbarMenuComp({
               fontSize: "15px",
               fontWeight: 400,
               textTransform: "capitalize",
+              '&:hover': { background: '#007AFF',color:'white' },
             }}
           >
             {page.name}
@@ -68,7 +69,7 @@ export default function NavbarMenuComp({
               open={openMenu === page.name}
               sx={{
                 "& .MuiMenu-paper": {
-                  backgroundColor: "white",
+                  backgroundColor: "#007AFF",
                   color: "black",
                   padding: "20px",
                 },
