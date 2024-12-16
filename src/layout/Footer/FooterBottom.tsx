@@ -7,6 +7,7 @@ import { HiPhone } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
 import { Avatar } from "antd";
 export default function FooterBottom() {
+ 
   return (
     <Box
       component="footer"

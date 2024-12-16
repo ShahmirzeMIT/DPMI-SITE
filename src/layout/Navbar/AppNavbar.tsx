@@ -82,7 +82,7 @@ function AppNavbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+          
           </Typography>
             <NavbarMenuComp handleCloseNavMenu={handleCloseNavMenu}/>
             <Box sx={{ flexGrow: 0 ,color:'red', position:'absolute',right:'0'}}>
