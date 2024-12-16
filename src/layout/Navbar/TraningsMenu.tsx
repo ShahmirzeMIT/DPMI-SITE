@@ -40,7 +40,7 @@ const menuData = [
 
 export default function TraningsMenu() {
   return (
-    <Box sx={{ display: "flex", gap: 4 }}>
+    <Box sx={{ display: "flex", gap: 4,marginLeft:'20px' }}>
       {menuData.map((section) => (
         <Box key={section.title} sx={{borderRight:'1px solid #E9EDF1',padding:'10px'}}>
           <Typography
