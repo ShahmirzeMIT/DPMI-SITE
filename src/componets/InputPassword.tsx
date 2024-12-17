@@ -5,7 +5,7 @@ export const inputTextStyle={
         width: '100%', display:'flex',alignItems:'center',margin:'5px auto'
     },
     input:{
-        height: '40px' ,width: '100%', display:'flex',alignItems:'center',margin:'0 auto'
+        height: '40px' ,width: '100%', display:'flex',alignItems:'center',margin:'10px auto'
     },
     message:{
         color: 'red', marginTop: '5px',width: '90%', display:'flex',alignItems:'center',margin:'0 auto' 

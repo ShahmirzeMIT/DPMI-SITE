@@ -1,18 +1,17 @@
 import { Box } from '@mui/material'
-
 import TabelPaymet from '../../componets/TabelPaymet'
 import { callApi } from '../../utils/callApi';
 import { useEffect, useState } from 'react';
-import { Avatar } from 'antd';
-import ButtonPayment from '../../componets/ButtonPayment';
+import { Avatar, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export default function Payment() {
     const [tabelValues, setTabelValues] = useState([]);
+    const navigate=useNavigate()
 
-    
-
-/*************  ✨ Codeium Command ⭐  *************/
-/******  b0e64b4d-5b4a-459b-a188-e33e0d10eaeb  *******/
+    const onClickNavigate = () => {
+        navigate('/payment');
+    }
       const getTableData = async() => {
         const res= await callApi('/lms/main/class/list')
         console.log(res);
@@ -32,7 +31,10 @@ export default function Payment() {
               <span>{item.MentorName}</span>
             </div>
           ),
-          enroll:(<ButtonPayment/>)
+          enroll:(   <Button  style={{  background: "#68b631",  height: "32px",  borderRadius: "4px",width: "150px", color: "white",  }}
+            onClick={onClickNavigate} >
+              Pay
+          </Button>)
         
         }));
         setTabelValues(updatedData);

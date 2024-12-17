@@ -3,23 +3,24 @@ import useSignState from "./useSignState";
 import InputText from "../../componets/InputText";
 import SelectSingleVertical from "../../componets/SelectSingle";
 import { Button, Col, Row, Typography } from "antd";
-import InputMobile from "../../componets/InputMobile";
+// import InputMobile from "../../componets/InputMobile";
 import PaymenCard from "../../componets/PaymenCard";
+import InputPassWord from "../../componets/InputPassword";
 const { Title, Text } = Typography;
 
 export default function PaymentCheckSign() {
   const {profileState}=useSignState()
   const submit=()=>{
-    // submit form
+ 
   }
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
     <Row gutter={[16, 16]}>
       <Col xs={24} sm={24} md={10} lg={8}>
         <Title level={4}>
-          Already a member?{" "}
+          Already don't have  a membership?{" "}
           <span style={{ color: "#1A73E8", cursor: "pointer" }}>
-            <b>Login here</b>
+            <b>Sign here</b>
           </span>
         </Title>
         <Text type="secondary">
@@ -28,16 +29,21 @@ export default function PaymentCheckSign() {
         </Text>
 
         <div style={{ marginTop: "20px" }}>
+            <Typography style={{color: "rgba(0, 0, 0, 0.88)",fontWeight: 600,fontSize: "20px",lineHeight: "1.4"}}>Personal Information</Typography>
             <InputText data={profileState.firstName}/>
             <InputText data={profileState.lastName}/>
+            <InputText data={profileState.Email}/>
+            <InputPassWord data={profileState.Password}/>
+            <Typography style={{color: "rgba(0, 0, 0, 0.88)",fontWeight: 600,fontSize: "20px",lineHeight: "1.4"}}>Billing Information</Typography>
+            {/* <InputPassWord data={profileState.ConfirmPassword}/> */}
             <InputText data={profileState.company}/>
-            <InputMobile data={profileState.mobile}/>
+            {/* <InputMobile data={profileState.mobile}/> */}
             <InputText data={profileState.addressLine1}/>
             <InputText data={profileState.addressLine2}/>
-            <InputText data={profileState.linkedin}/>
-            <InputText data={profileState.website}/>
+            {/* <InputText data={profileState.linkedin}/> */}
+            {/* <InputText data={profileState.website}/> */}
             <InputText data={profileState.zipCode}/> 
-            <SelectSingleVertical data={profileState.city}/>
+            <InputText data={profileState.city}/>
             <SelectSingleVertical data={profileState.country}/>
         
           <br />
@@ -56,10 +62,5 @@ export default function PaymentCheckSign() {
         </Col>
       </Row>
     </div>
-//     <Box sx={{  width:"90%",background:'#fff',  paddingTop: "20px",paddingBottom: "60px"}}>
-//     <Box sx={{width:'80%',margin:'0 auto'}}>
-//       
-//     </Box>
-// </Box>
   )
 }

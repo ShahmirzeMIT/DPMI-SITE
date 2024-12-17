@@ -46,15 +46,17 @@ export default function PayMentCheck() {
     <Box sx={{ width: '80%',margin:'0 auto' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Login Here " {...a11yProps(0)} />
-          <Tab label="Sign" {...a11yProps(1)} />
+           <Tab label="Sign" {...a11yProps(0)} />
+          <Tab label="Login Here " {...a11yProps(1)} />
+         
         </Tabs>
       </Box>
+     
       <CustomTabPanel value={value} index={0}>
-        <PayMentCheckLogin/>
+        <PaymentCheckSign/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <PaymentCheckSign/>
+        <PayMentCheckLogin/>
       </CustomTabPanel>
       
     </Box>
