@@ -1,9 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const callApi = async (url: string, _?: any) => {
+export const callApi = async (url: string, params?: any) => {
     try {
-        const response = await axios.post(`https://api.dpminstitute.org${url}`);
+        const response = await axios.post(`https://api.dpminstitute.org${url}`, params);
         toast.success('Success');
         return response.data;
     } catch (error: any) {

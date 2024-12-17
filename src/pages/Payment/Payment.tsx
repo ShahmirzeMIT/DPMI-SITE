@@ -3,13 +3,16 @@ import { Box } from '@mui/material'
 import TabelPaymet from '../../componets/TabelPaymet'
 import { callApi } from '../../utils/callApi';
 import { useEffect, useState } from 'react';
-import { Avatar, Button } from 'antd';
+import { Avatar } from 'antd';
+import ButtonPayment from '../../componets/ButtonPayment';
 
 export default function Payment() {
     const [tabelValues, setTabelValues] = useState([]);
 
     
 
+/*************  ✨ Codeium Command ⭐  *************/
+/******  b0e64b4d-5b4a-459b-a188-e33e0d10eaeb  *******/
       const getTableData = async() => {
         const res= await callApi('/lms/main/class/list')
         console.log(res);
@@ -29,7 +32,7 @@ export default function Payment() {
               <span>{item.MentorName}</span>
             </div>
           ),
-          enroll:(<Button style={{background:'#68b631',height:'32px',borderRadius:'none',width:'150px',margin:'0 auto',color:'white'}}>Pay</Button>)
+          enroll:(<ButtonPayment/>)
         
         }));
         setTabelValues(updatedData);

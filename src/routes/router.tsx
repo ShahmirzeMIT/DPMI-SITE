@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ProductManager from "../pages/ProductManager/ProductManager";
 import Payment from "../pages/Payment/Payment";
+import PaymentCheck from "../pages/PaymentCheck/PaymentCheck";
 
 export const routes = [
     {
@@ -20,6 +21,7 @@ export const routes = [
                 ]
              },
             {path:'/classes',element:<Payment/>},
+            {path:'/payment',element:<PaymentCheck/>},
             
             { path: "*", element: <NotFound /> },
         ]
