@@ -78,7 +78,8 @@ export default function usePaymentState() {
             value:"",
             placheolder:"",
             onChange:inputChange,
-            mandatory: true
+            mandatory: true,
+            message:"",
     },
      Password:{
         name: 'Password',
@@ -87,6 +88,7 @@ export default function usePaymentState() {
         required: true,
         onChange: inputChange,
         status: false,
+        message: '',
     }
   });
   return {paymentState, setPaymentState};

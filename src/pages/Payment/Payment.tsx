@@ -9,8 +9,9 @@ export default function Payment() {
     const [tabelValues, setTabelValues] = useState([]);
     const navigate=useNavigate()
 
-    const onClickNavigate = () => {
+    const onClickNavigate = (item: any) => {
         navigate('/payment');
+        localStorage.setItem('paymentData', JSON.stringify(item));
     }
       const getTableData = async() => {
         const res= await callApi('/lms/main/class/list')
@@ -32,7 +33,7 @@ export default function Payment() {
             </div>
           ),
           enroll:(   <Button  style={{  background: "#68b631",  height: "32px",  borderRadius: "4px",width: "150px", color: "white",  }}
-            onClick={onClickNavigate} >
+            onClick={() => onClickNavigate(item)} >
               Pay
           </Button>)
         

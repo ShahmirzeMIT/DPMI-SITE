@@ -7,7 +7,24 @@ const stripePromise = loadStripe(
   "pk_test_51NldrbB1rL2qIZ841q0gdzCwpKlrIIM7SUp3tdlTvw76AfMT741lI6hQlDl7F7adSPQ2IVlyyC9ZVFyIMIWwmrox00PWBIpouM"
 );
 
-export default function ButtonPayment() {
+
+export interface ButtonPaymentProps {
+ data:{ Email: string;
+  Password: string;
+  Price: string;
+  DiscountedPrice: string;
+  FirstName: string;
+  LastName:string;
+  Company:string;
+  AddressLine1:string;
+  Country:string;
+  City:string;
+  ZipCode:string;
+  Promocode?:string;
+  Currency?:string
+  disabled?:boolean}
+}
+export default function ButtonPayment({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
   const handlePayment = async () => {
@@ -76,17 +93,12 @@ export default function ButtonPayment() {
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
       <Button
-        style={{
-          background: "#68b631",
-          height: "32px",
-          borderRadius: "4px",
-          width: "150px",
-          color: "white",
-        }}
+         type="primary"
+         style={{ width: "100%", backgroundColor: "#3b82f6" }}
         onClick={handlePayment}
-        disabled={loading}
+        disabled={loading || data.disabled}
       >
-        {loading ? <Spin size="small" /> : "Pay"}
+        {loading ? <Spin size="small" /> : "Apply"}
       </Button>
     </div>
   );

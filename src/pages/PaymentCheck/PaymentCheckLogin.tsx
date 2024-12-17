@@ -1,15 +1,23 @@
-import {  Button, Card, Typography, Row, Col, Divider } from "antd";
+import {  Button, Typography, Row, Col } from "antd";
 import usePaymentState from "./usePaymentState";
 import InputText from "../../componets/InputText";
 import InputPassWord from "../../componets/InputPassword";
 import { callApi } from "../../utils/callApi";
+import PaymenCard from "../../componets/PaymenCard";
+import { useEffect, useState } from "react";
 
 const { Title, Text } = Typography;
 
 export default function PayMentCheckLogin() {
   const {paymentState, setPaymentState}=usePaymentState()
-
+  const [localData, setLocalData] = useState<{
+    Price: string;
+    CourseName: string;
+    CourseImgUrl: string;
+  } | null>(null);
+  
   const submit=async()=>{
+    if(paymentState.Email.message!='' || paymentState.Password.message!='') return
     await  callApi('/user/main/login',{
       "Email":paymentState.Email.value,
       "Password":paymentState.Password.value
@@ -20,6 +28,27 @@ export default function PayMentCheckLogin() {
     }))
 
   }
+
+  const getPaymentData=()=>{
+    const data=localStorage.getItem('paymentData')
+    if(data) {
+      return JSON.parse(data)
+
+    }
+
+    return null
+
+  }
+  useEffect(() => {
+    const local = getPaymentData();
+    if (local) {
+      setLocalData(local);
+    }
+    
+  }, [])
+
+  console.log(localData,'localData');
+  
   
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
@@ -54,74 +83,11 @@ export default function PayMentCheckLogin() {
         {/* Right Section */}
         <Col xs={24} sm={24} md={14} lg={16}>
           {/* Order Summary */}
-          <Card
-            title={<b>ORDER SUMMARY</b>}
-            bordered={false}
-            style={{ marginBottom: "20px" }}
-          >
-            <Row justify="space-between">
-              <Col>
-                <Text>Items:</Text>
-              </Col>
-              <Col>
-                <Text>136.99$</Text>
-              </Col>
-            </Row>
-            <Row justify="space-between">
-              <Col>
-                <Text>Tax:</Text>
-              </Col>
-              <Col>
-                <Text>Free</Text>
-              </Col>
-            </Row>
-            <Divider />
-            <Row justify="space-between">
-              <Col>
-                <Title level={5}>Due at check-out:</Title>
-              </Col>
-              <Col>
-                <Title level={5}>136.99$</Title>
-              </Col>
-            </Row>
-          </Card>
-          {/* Shopping Cart */}
-          <Card title={<b>SHOPPING CART</b>} bordered={false}>
-            <Row>
-              <Col xs={24} sm={8} md={6}>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100px",
-                    backgroundColor: "#6699ff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "24px",
-                  }}
-                >
-                  CP-LD®
-                </div>
-              </Col>
-              <Col xs={24} sm={16} md={18} style={{ paddingLeft: "10px" }}>
-                <Row justify="space-between">
-                  <Col>
-                    <Text>Language of Data</Text>
-                  </Col>
-                  <Col>
-                    <Text>136.99$</Text>
-                  </Col>
-                </Row>
-                <div style={{ marginTop: "10px" }}>
-                  <Text>Quantity: 1</Text>
-                  <br />
-                  <Text>Price: 136.99$</Text>
-                </div>
-              </Col>
-            </Row>
-          </Card>
+          <PaymenCard data={{
+            Price:localData?.Price || "",
+            CourseName:localData?.CourseName || "", 
+            CourseImgUrl:localData?.CourseImgUrl || ""
+          }}/>
         </Col>
       </Row>
     </div>
