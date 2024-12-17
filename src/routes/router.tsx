@@ -19,7 +19,7 @@ export const routes = [
                     { path: "/product/product-management-certification", element: <ProductManager /> },
                 ]
              },
-            {path:'/payment',element:<Payment/>},
+            {path:'/classes',element:<Payment/>},
             
             { path: "*", element: <NotFound /> },
         ]
