@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Button, Spin, message } from "antd";
+import { callApi } from "../utils/callApi";
 
 // Stripe açarınızı burada saxlayın
 const stripePromise = loadStripe(
@@ -12,26 +13,15 @@ export interface ButtonPaymentProps {
   
  data:{ 
   Email: string;
-  FkClassId?: string;
+  FkClassId: string;
   Password: string;
-  Price?: string;
-  DiscountPrice?: string;
-  FirstName?: string;
-  LastName?:string;
-  Company?:string;
-  AddressLine1?:string;
-  Country?:string;
-  City?:string;
-  ZipCode?:string;
-  Promocode?:string;
-  Currency?:string
   disabled?:boolean
 }
 }
-export default function ButtonPayment({data}:ButtonPaymentProps) {
+export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
-  console.log(data,'data');
+
 
   
   const handlePayment = async () => {
@@ -46,17 +36,24 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
     }
 
     try {
+      const res= await callApi('/user/main/login',{
+            "Email":data.Email,
+            "Password":data.Password
+          })
+
+          if(!res.token)  return
       const response = await fetch(
         "https://api.dpminstitute.org/billing/main/payment/init",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization:
+            `Bearer ${res.token}`,
           },
           body: JSON.stringify({
             ...data,
             createCheckoutSession: 1,
-            Currency: "AZN",
           }),
         }
       );

@@ -1,33 +1,23 @@
-import {  Button, Typography, Row, Col } from "antd";
+import {   Typography, Row, Col } from "antd";
 import usePaymentState from "./usePaymentState";
 import InputText from "../../componets/InputText";
 import InputPassWord from "../../componets/InputPassword";
-import { callApi } from "../../utils/callApi";
 import PaymenCard from "../../componets/PaymenCard";
 import { useEffect, useState } from "react";
+import ButtonPaymentForLogin from "../../componets/ButtonPaymentForLogin";
 
 const { Title, Text } = Typography;
 
 export default function PayMentCheckLogin() {
-  const {paymentState, setPaymentState}=usePaymentState()
+  const {paymentState}=usePaymentState()
   const [localData, setLocalData] = useState<{
     Price: string;
     CourseName: string;
     CourseImgUrl: string;
+    DiscountedPrice:string
+    Id:string;
   } | null>(null);
   
-  const submit=async()=>{
-    if(paymentState.Email.message!='' || paymentState.Password.message!='') return
-    await  callApi('/user/main/login',{
-      "Email":paymentState.Email.value,
-      "Password":paymentState.Password.value
-    })
-    setPaymentState((prev)=>({
-      Email: {...prev.Email, value:""},
-      Password: {...prev.Password, value:""},
-    }))
-
-  }
 
   const getPaymentData=()=>{
     const data=localStorage.getItem('paymentData')
@@ -70,13 +60,13 @@ export default function PayMentCheckLogin() {
               <br />
             <InputPassWord data={paymentState.Password}/>
             <br />
-            <Button
-              type="primary"
-              style={{ width: "100%", backgroundColor: "#3b82f6" }}
-              onClick={submit}
-            >
-              Apply
-            </Button>
+            
+            <ButtonPaymentForLogin data={{
+              Email:paymentState.Email.value,
+              FkClassId:localData?.Id || "",
+              Password:paymentState.Password.value,
+            }}/>
+            
           </div>
         </Col>
 
@@ -86,7 +76,8 @@ export default function PayMentCheckLogin() {
           <PaymenCard data={{
             Price:localData?.Price || "",
             CourseName:localData?.CourseName || "", 
-            CourseImgUrl:localData?.CourseImgUrl || ""
+            CourseImgUrl:localData?.CourseImgUrl || "",
+            DiscountedPrice:localData?.DiscountedPrice || ""
           }}/>
         </Col>
       </Row>

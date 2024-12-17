@@ -5,6 +5,7 @@ export interface PaymentCardProps{
     Price:string;
     CourseName:string;
     CourseImgUrl:string
+    DiscountedPrice:string
   }
 }
 export default function PaymenCard({data}:PaymentCardProps) {
@@ -17,10 +18,18 @@ export default function PaymenCard({data}:PaymentCardProps) {
   >
     <Row justify="space-between">
       <Col>
-        <Text>Items:</Text>
+        <Text>Price:</Text>
       </Col>
       <Col>
         <Text>{data.Price}$</Text>
+      </Col>
+    </Row>
+    <Row justify="space-between">
+      <Col>
+        <Text>DiscountedPrice:</Text>
+      </Col>
+      <Col>
+        <Text>{data.DiscountedPrice}$</Text>
       </Col>
     </Row>
     <Row justify="space-between">
@@ -37,7 +46,7 @@ export default function PaymenCard({data}:PaymentCardProps) {
         <Title level={5}>Due at check-out:</Title>
       </Col>
       <Col>
-        <Title level={5}>{data.Price}$</Title>
+        <Title level={5}>{data.DiscountedPrice}$</Title>
       </Col>
     </Row>
   </Card>
@@ -53,13 +62,13 @@ export default function PaymenCard({data}:PaymentCardProps) {
             <Text>{data.CourseName}</Text>
           </Col>
           <Col>
-            <Text>{data.Price}$</Text>
+            <Text>{data.DiscountedPrice}$</Text>
           </Col>
         </Row>
         <div style={{ marginTop: "10px" }}>
           <Text>Quantity: 1</Text>
           <br />
-          <Text>Price: {data.Price}$</Text>
+          <Text>Price: {data.DiscountedPrice}$</Text>
         </div>
       </Col>
     </Row>

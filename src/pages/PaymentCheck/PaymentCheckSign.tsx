@@ -16,6 +16,8 @@ export default function PaymentCheckSign() {
     Price: string;
     CourseName: string;
     CourseImgUrl: string;
+    Id:string;
+    DiscountedPrice:string
   } | null>(null);
   const getPaymentData=()=>{
     const data=localStorage.getItem('paymentData')
@@ -74,10 +76,11 @@ export default function PaymentCheckSign() {
         
           <br />
           <ButtonPayment data={{
+            FkClassId:localData?.Id || "",
             Email:profileState.Email.value,
             Password:profileState.Password.value,
             Price:localData?.Price || "",
-            DiscountedPrice:localData?.Price || "",
+            DiscountPrice:localData?.DiscountedPrice || "",
             FirstName:profileState.firstName.value,
             LastName:profileState.lastName.value,
             Company:profileState.company.value,
@@ -85,6 +88,7 @@ export default function PaymentCheckSign() {
             Country:profileState.country.value,
             City:profileState.city.value,
             ZipCode:profileState.zipCode.value,
+     
             // disabled:profileState.Email.message!='' || profileState.Password.message!='' ? true : false
           }}/>
         </div>
@@ -94,7 +98,8 @@ export default function PaymentCheckSign() {
           <PaymenCard data={{
             Price:localData?.Price || "",
             CourseName:localData?.CourseName || "", 
-            CourseImgUrl:localData?.CourseImgUrl || ""
+            CourseImgUrl:localData?.CourseImgUrl || "",
+            DiscountedPrice:localData?.DiscountedPrice || "",
           }}/>
         </Col>
       </Row>
