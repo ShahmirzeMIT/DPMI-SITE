@@ -15,13 +15,14 @@ export interface InputTextProps {
   }
   export const inputTextStyle={
     tyography:{
-        width: '100%', display:'flex',alignItems:'center',margin:'5px auto'
+        width: '100%', display:'flex',alignItems:'center',margin:'10px auto'
     },
     input:{
-        height: '40px' ,width: '100%', display:'flex',alignItems:'center',margin:'0 auto'
+        height: '40px' ,width: '100%', display:'flex',alignItems:'center',margin:'10px auto'
     },
     message:{
-        color: 'red', marginTop: '5px',width: '90%', display:'flex',alignItems:'center',margin:'0 auto' 
+        color: 'red', marginTop: '2px',width: '90%', 
+        textAlign:'start' as const,
     }
   }
 export default function InputText({ data }: InputTextProps) {

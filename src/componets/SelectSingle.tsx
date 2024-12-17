@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { Select, Typography } from 'antd'
+import { Select, } from 'antd'
 import { useEffect, useState } from 'react';
 export interface SelectSingleProps {
     data: {
@@ -54,19 +54,12 @@ export default function SelectSingleVertical({ data }: SelectSingleProps) {
       }
     };
   return (
-    <Box sx={{display:'flex', alignItems:'center',margin:'10px 0', padding: "15px 56px 0",}}>
-        <Typography style={{width:'40%',
-            color:" #010101",
-            display: "block",
-            fontSize: "16px",
-            fontWeight: 600,}}>
-                {/* {data.label} */}
-                {data.label}
-                 *</Typography>
+    <Box sx={{display:'flex', alignItems:'center',margin:'10px 0'}}>
+       
         <Select
             showSearch
-            style={{height:'48px',width:'55%',}}
-            placeholder="Search to Select"
+            style={{height:'40px',width:'100%',}}
+            placeholder={data.label}
             optionFilterProp="label"
             filterSort={(optionA, optionB) =>
                 (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
@@ -76,6 +69,7 @@ export default function SelectSingleVertical({ data }: SelectSingleProps) {
                 value: option.key,
                 label: option.value,
               }))}
+              
         />
     </Box>
   )
