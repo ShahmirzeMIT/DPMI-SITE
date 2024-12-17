@@ -59,7 +59,7 @@ export default function PaymenCard({data}:PaymentCardProps) {
         <div style={{ marginTop: "10px" }}>
           <Text>Quantity: 1</Text>
           <br />
-          <Text>Price: 136.99$</Text>
+          <Text>Price: {data.Price}$</Text>
         </div>
       </Col>
     </Row>

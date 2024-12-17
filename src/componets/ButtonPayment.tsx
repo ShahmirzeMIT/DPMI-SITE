@@ -27,6 +27,8 @@ export interface ButtonPaymentProps {
 export default function ButtonPayment({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
+  console.log(data,'data');
+  
   const handlePayment = async () => {
     setLoading(true); // Yüklənmə spinnerini göstər
     const stripe = await stripePromise;
@@ -49,19 +51,9 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
               "Bearer ced02711947c8775f39afdeb3c44903764a12d731975f16608fb6660d1bf6f9f17919be32b8b368a9c82d94b648b8adc6cc87208e533c58ec7acac795060c4bf",
           },
           body: JSON.stringify({
+            ...data,
             createCheckoutSession: 1,
             FkClassId: "2",
-            Email: "an.arrustamov0@gmail.com",
-            Password: "Namiq123$%^",
-            Price: "230",
-            DiscountPrice: "30",
-            FirstName: "Anar",
-            LastName: "Rustamov",
-            Company: "Center of AC",
-            AddressLine1: "Sumgait 3-th mkr, Building 12, apart 111",
-            Country: "Azerbaijan",
-            City: "Sumgait",
-            ZipCode: "AZ5003",
             Promocode: "Camish090",
             Currency: "AZN",
           }),

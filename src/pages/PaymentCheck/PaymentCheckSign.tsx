@@ -66,7 +66,6 @@ export default function PaymentCheckSign() {
             <InputText data={profileState.company}/>
             {/* <InputMobile data={profileState.mobile}/> */}
             <InputText data={profileState.addressLine1}/>
-            <InputText data={profileState.addressLine2}/>
             {/* <InputText data={profileState.linkedin}/> */}
             {/* <InputText data={profileState.website}/> */}
             <InputText data={profileState.zipCode}/> 
