@@ -10,9 +10,9 @@ export const callApi = async (url: string, params?: any) => {
             window.location.reload();
             localStorage.removeItem("token");
         }
-        console.log(error.response.data.error,'error.response.data.message');
         
         toast.error(error.response.data.error);
         toast(error);
+        return error.response.data;
     }
 };

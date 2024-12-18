@@ -1,20 +1,27 @@
 import { useLocation } from "react-router-dom";
 import { callApi } from "../../utils/callApi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Button, Result } from "antd";
 
 export default function PaymentProceedd() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const sessionId = queryParams.get("checkout_session_id");
+  const [checkStatus, setCheckStatus] = useState<'completed' | 'error' | ''>('');
 
   useEffect(() => {
     const paymentSuccess = async () => {
       try {
-        await callApi("/billing/main/payment/success", {
+        const res = await callApi("/billing/main/payment/success", {
           CheckoutSessionId: sessionId,
         });
-        console.log("Payment success!");
+        setCheckStatus("completed");
+        window.location.href = "http://localhost:5174/login"; 
+        if(res.error){
+          setCheckStatus("error");
+        }
       } catch (error) {
+    
         console.error("Payment verification failed:", error);
       }
     };
@@ -24,5 +31,35 @@ export default function PaymentProceedd() {
     }
   }, [sessionId]);
 
-  return <div>Okay</div>;
+  return (
+    <div style={{ height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {
+        checkStatus === "completed" ? (
+          <Result
+            status="success"
+            title="Successfully Purchased"
+            subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quibusdam?"
+            extra={[
+              <Button type="primary" key="console">
+                Go Home
+              </Button>,
+            ]}
+          />
+        ) : checkStatus === "error" ? (
+          <Result
+            status="error"
+            title="Submission Failed"
+            subTitle="Please check and modify the following information before resubmitting."
+            extra={[
+              <Button type="primary" key="console">
+                Go Home
+              </Button>,
+            ]}
+          />
+        ) : (
+          <></>
+        )
+      }
+    </div>
+  );
 }
