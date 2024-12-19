@@ -16,7 +16,7 @@ export default function PaymentProceedd() {
           CheckoutSessionId: sessionId,
         });
         setCheckStatus("completed");
-        window.location.href = "http://localhost:5174/login"; 
+        window.location.href = "https://dpmi.netlify.app/login"; 
         if(res.error){
           setCheckStatus("error");
         }
