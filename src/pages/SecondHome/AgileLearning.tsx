@@ -28,7 +28,7 @@ const AgileLearning = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         color: 'white',
-        minHeight: '100vh',
+        minHeight: '540px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

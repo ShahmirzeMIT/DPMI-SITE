@@ -9,9 +9,11 @@ import { Avatar } from "antd";
 import Logo from '../../assets/images/DPM_institute__LOGO-Logo.jpg'
 import AppNavbarMenuPart2 from "./AppNavbarOpenMenuPart2";
 import AppNavbarOpenMenuMob from "./AppNavbarOpenMenuMob";
+import { useNavigate } from "react-router-dom";
 
 const AppNavbarPart2 = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate=useNavigate()
 
   const handleMenuOpen = (event:any) => {
     setAnchorEl(event.currentTarget);
@@ -31,7 +33,7 @@ const AppNavbarPart2 = () => {
           component="div"
           sx={{ flexGrow: 1, display: { xs: "none", md: "none", lg: "block" }, fontWeight: "bold" }}
         >
-         <Avatar src={Logo} style={{width: "11rem",height: "auro"}}  shape="square"/>
+         <Avatar src={Logo} style={{width: "11rem",height: "auro",cursor:'pointer'}}  shape="square" onClick={()=>navigate('/')} />
         </Typography>
 
         {/* Menu for larger screens */}
@@ -50,7 +52,7 @@ const AppNavbarPart2 = () => {
         </Box>
      
       </Toolbar>
-      <Avatar src={Logo} style={{ width: "80px", height: "50px",position:'absolute',top:'0px',left:'0' }} shape="square" />
+      <Avatar src={Logo} style={{ width: "11rem", height: "50px",position:'absolute',top:'0px',left:'0',cursor:'pointer' }} shape="square" onClick={()=>navigate('/')} />
     </AppBar>
   );
 };
