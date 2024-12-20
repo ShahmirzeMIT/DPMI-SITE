@@ -5,6 +5,7 @@ import SecondCourse from './SecondCourse'
 import ThirdCourse from './ThirdCourse'
 import FourthCourse from './Fourth'
 import AboutCourses from '../Home/AboutCourses'
+import Testimonials from '../Home/Testimonials'
 
 export default function HomePagePart2() {
   return (
@@ -14,6 +15,7 @@ export default function HomePagePart2() {
         <ThirdCourse/>
         <FourthCourse/>
         <AboutCourses/>
+        <Testimonials/>
     </Box>
   )
 }
