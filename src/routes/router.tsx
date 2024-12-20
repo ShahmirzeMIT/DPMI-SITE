@@ -11,6 +11,8 @@ import Courses from "../pages/Courses/Courses";
 import DPMI from "../pages/DPM/DPMI";
 import AIPF from "../pages/AIPF/AIPF";
 import ACPF from "../pages/ACPF/ACPF";
+import AIPP from "../pages/AIPP/AIPP";
+import ACPP from "../pages/ACPP/ACPP";
 
 export const routes = [
     {
@@ -24,7 +26,9 @@ export const routes = [
             { path: "/sfp-course", element: <ProductManager />, },
             { path: "/dpm-course", element: <DPMI />, },
             { path: "/aipf-course", element: <AIPF />, },
+            { path: "/aipp-course", element: <AIPP />, },
             { path: "/acfp-course", element: <ACPF />, },
+            { path: "/acpp-course", element: <ACPP />, },
             {path:'/classes',element:<Payment/>},
             {path:'/payment',element:<PaymentCheck/>},
             {path:'/paymentprocedd',element:<PaymentProceedd/>},

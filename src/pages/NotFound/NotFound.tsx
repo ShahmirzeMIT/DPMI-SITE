@@ -9,7 +9,7 @@ export default function NotFound() {
   };
 
   return (
-    <div>
+    <div style={{marginTop:'120px'}}>
       <Result
         status="404"
         title="404"

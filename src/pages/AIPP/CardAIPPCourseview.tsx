@@ -1,8 +1,8 @@
 import { Box, Button, Typography, Grid, } from "@mui/material";
-import logoImg from "../../assets/images/ProductMaster5.webp";
+import logoImg from "../../assets/images/AIProductExpert4.webp";
 import { Avatar } from "antd";
 
-export default function CardACPFCertificationView() {
+export default function CardAIPPCertificationView() {
   return (
     <Box
       sx={{
@@ -36,7 +36,7 @@ export default function CardACPFCertificationView() {
                 color: "#0E1C36",
                 marginBottom: "10px",
               }}
-            > Agile Communication Practitioner Foundation
+            > AI Practitioner Proffesional 
             </Typography>
             <Typography
               variant="body1"
@@ -45,7 +45,7 @@ export default function CardACPFCertificationView() {
                 marginBottom: "20px",
               }}
             >
-              The Agile Communication Practitioner Foundation Certification is designed to equip professionals with the skills needed to effectively communicate in agile environments. This program covers key communication strategies, techniques, and tools for collaborating within cross-functional teams. Participants will learn how to facilitate agile ceremonies, manage stakeholder expectations, and adapt communication styles to different project needs. Ideal for project managers, Scrum Masters, and team leaders, this certification helps individuals build stronger communication skills that promote transparency, foster collaboration, and drive successful outcomes in fast-paced, agile projects and organizations
+              The AI Practitioner Professional Certification is designed for professionals who want to deepen their expertise in Artificial Intelligence (AI) and advance their careers in AI-driven roles. This program builds on foundational AI knowledge and dives deeper into advanced topics such as deep learning, neural networks, computer vision, and AI deployment. Participants will gain hands-on experience with real-world AI applications, learning to design, implement, and optimize AI solutions. Ideal for data scientists, engineers, and AI professionals, this certification equips you with the skills and confidence to lead AI projects and drive innovation in complex, data-driven environments
             </Typography>
 
             {/* Buttons */}

@@ -2,7 +2,7 @@ import { Box, Button, Typography, Grid, } from "@mui/material";
 import logoImg from "../../assets/images/ProductMaster5.webp";
 import { Avatar } from "antd";
 
-export default function CardACPFCertificationView() {
+export default function ACPPCertificationView() {
   return (
     <Box
       sx={{
@@ -36,7 +36,7 @@ export default function CardACPFCertificationView() {
                 color: "#0E1C36",
                 marginBottom: "10px",
               }}
-            > Agile Communication Practitioner Foundation
+            >Agile Communication Practitioner Proffesional
             </Typography>
             <Typography
               variant="body1"
@@ -45,7 +45,7 @@ export default function CardACPFCertificationView() {
                 marginBottom: "20px",
               }}
             >
-              The Agile Communication Practitioner Foundation Certification is designed to equip professionals with the skills needed to effectively communicate in agile environments. This program covers key communication strategies, techniques, and tools for collaborating within cross-functional teams. Participants will learn how to facilitate agile ceremonies, manage stakeholder expectations, and adapt communication styles to different project needs. Ideal for project managers, Scrum Masters, and team leaders, this certification helps individuals build stronger communication skills that promote transparency, foster collaboration, and drive successful outcomes in fast-paced, agile projects and organizations
+             The Agile Communication Practitioner Professional Certification is designed for experienced professionals seeking to enhance their communication expertise in agile environments. This advanced program focuses on mastering communication techniques for complex, high-stakes projects. Participants will learn how to lead cross-functional teams, manage stakeholder expectations, and drive alignment across diverse teams and departments. The course delves into advanced agile communication practices, conflict resolution, and strategies for fostering collaboration in fast-paced, evolving projects. Ideal for senior project managers, Scrum Masters, and agile coaches, this certification prepares professionals to effectively navigate and communicate in complex, agile-driven organizations
             </Typography>
 
             {/* Buttons */}
