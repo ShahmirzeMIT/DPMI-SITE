@@ -1,6 +1,27 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
+const useScreenWidth = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return screenWidth;
+};
 const Roadmap = () => {
+  const screenWidth = useScreenWidth();
+  console.log(screenWidth,'screenWidth');
+  
+
   const pathVariants = {
     hidden: { pathLength: 0 },
     visible: { pathLength: 1, transition: { duration: 2, ease: "easeInOut" } },
@@ -15,6 +36,7 @@ const Roadmap = () => {
     },
   });
 
+
   return (
     <div
       style={{
@@ -23,13 +45,13 @@ const Roadmap = () => {
         alignItems: "center",
         marginTop: "50px",
         position: "relative",
-        minHeight:'600px'
+        minHeight:'800px'
       }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 800 400"
-        style={{ width: "90%", height: "400px" }}
+        style={{ width: "90%", height: "350px" }}
       >
         {/* Road Path */}
         <motion.path
@@ -104,7 +126,7 @@ const Roadmap = () => {
         />
 
         {/* Labels using foreignObject */}
-        <foreignObject x="-175" y="250" width="200" height="200">
+        <foreignObject x={screenWidth<1032?"100":"-175"} y={screenWidth<1032?"280":"220"} width="200" height="240">
           <motion.div
             style={{
               color: "black",
@@ -125,7 +147,7 @@ const Roadmap = () => {
           </motion.div>
         </foreignObject>
 
-        <foreignObject x="230" y="190" width="200" height="200">
+        <foreignObject x={screenWidth<1032?"0":"230"} y={screenWidth<1032?"50":"190" }width="200" height="200">
           <motion.div
             style={{
               color: "black",
@@ -146,7 +168,7 @@ const Roadmap = () => {
           </motion.div>
         </foreignObject>
 
-        <foreignObject x="290" y="10" width="220" height="200">
+        <foreignObject x={screenWidth<1032?"500":"290"} y={screenWidth<1032?"180":"10"} width="220" height="200">
           <motion.div
             style={{
               color: "black",
@@ -167,7 +189,7 @@ const Roadmap = () => {
           </motion.div>
         </foreignObject>
 
-        <foreignObject x="740" y="80" width="220" height="120">
+        <foreignObject x={screenWidth<1032?"500":"740"} y={screenWidth<1032?"00":"80"} width="220" height="120">
           <motion.div
             style={{
               color: "black",
