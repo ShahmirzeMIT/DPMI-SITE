@@ -125,7 +125,7 @@ const Roadmap = () => {
           </motion.div>
         </foreignObject>
 
-        <foreignObject x="230" y="180" width="200" height="200">
+        <foreignObject x="230" y="190" width="200" height="200">
           <motion.div
             style={{
               color: "black",
