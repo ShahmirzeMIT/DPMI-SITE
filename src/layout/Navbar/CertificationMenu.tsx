@@ -1,6 +1,6 @@
 import { Box,  Link, Typography } from "@mui/material";
-import { ProductManagerCardData } from "../../defaultDatas/productManagerCardDefaultData";
 import { Avatar } from "antd";
+import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
 export default function CertificationMenu() {
   // State for tracking hover on individual cards
 
@@ -25,7 +25,7 @@ export default function CertificationMenu() {
           color: "rgb(105 105 105)"
         }}>Certification Resources</Typography>
         {
-          ProductManagerCardData.map((item:{title:string})=>{
+          ProductManagerCardDataNavbar.map((item:{title:string})=>{
             return(
                  <Typography sx={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem','&:hover':{textDecoration:'underline'}}}> <Link style={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem',color:'black',textDecoration:'none',
                   cursor: "pointer",
@@ -38,7 +38,7 @@ export default function CertificationMenu() {
       </Box>
       <Box sx={{marginTop:'5px',width:'600px',display:'flex',justifyContent:'center',flexWrap:'wrap'}}>
         {
-          ProductManagerCardData.map((item:{image:string})=>{
+          ProductManagerCardDataNavbar.map((item:{image:string})=>{
             return(
               <Box>
                 <Avatar src={item.image} style={{width: "10rem",height: "auto"}}  shape="square"/>

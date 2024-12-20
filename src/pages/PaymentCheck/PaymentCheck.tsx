@@ -43,7 +43,7 @@ export default function PayMentCheck() {
   };
 
   return (
-    <Box sx={{ width: '80%',margin:'80px auto' }}>
+    <Box sx={{ width: '80%',margin:'120px auto' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
            <Tab label="Sign" {...a11yProps(0)} />

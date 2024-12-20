@@ -32,7 +32,7 @@ export default function PaymentProceedd() {
   }, [sessionId]);
 
   return (
-    <div style={{ height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center',marginTop:'120px' }}>
       {
         checkStatus === "completed" ? (
           <Result

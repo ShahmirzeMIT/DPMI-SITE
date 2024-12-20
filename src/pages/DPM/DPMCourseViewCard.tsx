@@ -1,13 +1,14 @@
 import { Box, Button, Typography, Grid, } from "@mui/material";
-import logoImg from "../../assets/images/ProductManager1.webp";
+import logoImg from "../../assets/images/ProductMarketer2.webp";
 import { Avatar } from "antd";
 
-export default function ProductManagerCourseView() {
+export default function DPMCourseViewCard() {
   return (
     <Box
       sx={{
         backgroundColor: "#F9FAFC", 
         padding: "40px 10%",
+        marginTop:'120px'
       }}
     >
       <Grid
@@ -28,11 +29,6 @@ export default function ProductManagerCourseView() {
         {/* Right Section */}
         <Grid item xs={12} md={6}>
           <Box>
-            <img
-              src={logoImg}
-              alt="Certification Logo"
-              style={{ marginBottom: "10px", width: "120px" }}
-            />
             <Typography
               variant="h3"
               sx={{
@@ -40,8 +36,7 @@ export default function ProductManagerCourseView() {
                 color: "#0E1C36",
                 marginBottom: "10px",
               }}
-            >
-              Product Management Certification
+            > Digital Product Manager
             </Typography>
             <Typography
               variant="body1"
@@ -50,8 +45,7 @@ export default function ProductManagerCourseView() {
                 marginBottom: "20px",
               }}
             >
-              Build the skills you need to succeed as a product manager with a
-              Product Management Certification that’s recognized industry-wide.
+           The Digital Product Manager Certification is designed for professionals seeking to master the art of managing digital products in today’s fast-paced, tech-driven market. This program covers key areas such as product strategy, user experience (UX), agile methodologies, and data-driven decision-making. Participants will learn how to define product visions, prioritize features, create roadmaps, and lead cross-functional teams. Whether you're looking to build new digital products or optimize existing ones, this certification equips you with the skills and knowledge to deliver impactful product outcomes, making you a valuable asset in the digital landscape.
             </Typography>
 
             {/* Buttons */}
