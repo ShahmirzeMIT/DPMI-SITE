@@ -23,24 +23,24 @@ const AppNavbarPart2 = () => {
 
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333" }}>
-      <Toolbar>
+    <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333",boxShadow:'none',borderBottom:'none' }}>
+      <Toolbar sx={{boxShadow:'none'}}>
         {/* Logo */}
         <Typography
           variant="h6"
           component="div"
           sx={{ flexGrow: 1, display: { xs: "none", md: "none", lg: "block" }, fontWeight: "bold" }}
         >
-         <Avatar src={Logo} style={{width: "80px",height: "60px"}}  shape="square"/>
+         <Avatar src={Logo} style={{width: "11rem",height: "auro"}}  shape="square"/>
         </Typography>
 
         {/* Menu for larger screens */}
-        <Box sx={{ display: { xs: "none"  ,md: "none", lg: "flex" }, gap: 2 }}>
+        <Box sx={{ display: { xs: "none"  ,md: "flex", lg: "flex" }, gap: 2 }}>
          <AppNavbarMenuPart2/>
         </Box>
 
         {/* Hamburger menu for smaller screens */}
-        <Box sx={{ display: { xs: "block", md: "block" ,lg:'none'} }}>
+        <Box sx={{ display: { xs: "block", md: "none" ,lg:'none'} }}>
           <IconButton edge="start" color="inherit" onClick={handleMenuOpen}  sx={{position:'absolute',top:'0px',right:'0'}}>
           <CiMenuBurger />
           </IconButton>

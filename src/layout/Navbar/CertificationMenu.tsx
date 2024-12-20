@@ -1,11 +1,8 @@
-import { Box, MenuItem, Avatar, Link } from "@mui/material";
+import { Box,  Link, Typography } from "@mui/material";
 import { ProductManagerCardData } from "../../defaultDatas/productManagerCardDefaultData";
-import { Divider, Typography } from "antd";
-import { useState } from "react";
-
+import { Avatar } from "antd";
 export default function CertificationMenu() {
   // State for tracking hover on individual cards
-  const [hoverIndex, setHoverIndex] = useState<null| number>(null);
 
   return (
     <Box
@@ -17,76 +14,41 @@ export default function CertificationMenu() {
            marginLeft: "60px",
       }}
     >
-      {ProductManagerCardData.map((cert, index) => (
-        <MenuItem
-          component="a"
-          href="#"
-          onMouseEnter={() => setHoverIndex(index)} // Track the currently hovered card
-          onMouseLeave={() => setHoverIndex(null)} // Reset hover when mouse leaves
-          key={cert.id}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            gap: 1,
-            width: "429px",
-            height: 204,
-            py: 2,
-            borderRadius: 2,
-         
-            background: cert.bgColor || "#f5f5f5",
-            textWrap: "wrap",
-            transition: "transform 0.2s ease, box-shadow 0.2s ease",
-            "&:hover": {
-              background: "#FF9500",
-              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-              transform: "scale(1.02)",
-            },
-          }}
-        >
-          {/* Icon or Image on the Left */}
-          <Avatar
-            src={cert.image}
-            alt={cert.title}
-            sx={{
-              width: 90,
-              height: 90,
-              transition: "transform 0.2s ease",
-              transform: hoverIndex === index ? "scale(1.1)" : "scale(1)",
-            }}
-          />
-          <Divider
-            style={{
-              height: 150,
-              border: `1px solid ${hoverIndex === index ? "white" : "black"}`,
-            }}
-            type="vertical"
-          ></Divider>
-
-          <Box>
-            <Link
-              href="#"
-              sx={{
-                color: hoverIndex === index ? "white" : "black",
-                fontSize: "20px",
-                fontWeight: 400,
-                textDecoration: "none",
-                lineHeight: "30px"
-              }}
-            >
-              {cert.title}
-              <Typography
-                style={{
-                  color: hoverIndex === index ? "white" : "black",
-                  marginTop:'40px'
-                }}
-              >
-                {cert.text}
-              </Typography>
-            </Link>
-          </Box>
-        </MenuItem>
-      ))}
+      <Box sx={{marginTop:'25px'}}>
+        <Typography variant="h6" sx={{
+          fontSize: "21px",
+          fontStyle: "normal",
+          fontWeight:" 400",
+          lineHeight: "25px",
+          letterSpacing: "0em",
+          paddingBottom:'2rem',
+          color: "rgb(105 105 105)"
+        }}>Certification Resources</Typography>
+        {
+          ProductManagerCardData.map((item:{title:string})=>{
+            return(
+                 <Typography sx={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem','&:hover':{textDecoration:'underline'}}}> <Link style={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem',color:'black',textDecoration:'none',
+                  cursor: "pointer",
+                 }}>{item.title} </Link></Typography>
+               
+            )
+          })
+        }
+       
+      </Box>
+      <Box sx={{marginTop:'5px',width:'600px',display:'flex',justifyContent:'center',flexWrap:'wrap'}}>
+        {
+          ProductManagerCardData.map((item:{image:string})=>{
+            return(
+              <Box>
+                <Avatar src={item.image} style={{width: "10rem",height: "auto"}}  shape="square"/>
+               </Box> 
+            )
+          })
+        }
+          
+      </Box>
+      
     </Box>
   );
 }

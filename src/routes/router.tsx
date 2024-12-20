@@ -7,6 +7,7 @@ import Payment from "../pages/Payment/Payment";
 import PaymentCheck from "../pages/PaymentCheck/PaymentCheck";
 import PaymentProceedd from "../pages/PaymentProceedd/PaymentProceedd";
 import HomePagePart2 from "../pages/SecondHome/HomePagePart2";
+import Courses from "../pages/Courses/Courses";
 
 export const routes = [
     {
@@ -16,6 +17,7 @@ export const routes = [
         children: [
             { path: "/", element: <HomePagePart2 /> },
             { path: "/home", element: <HomePagePart2 /> },
+            { path: "/courses", element: <Courses /> },
             { path: "/product", element: <ProductManager />,
                 children: [
                     { path: "/product/product-management-certification", element: <ProductManager /> },
