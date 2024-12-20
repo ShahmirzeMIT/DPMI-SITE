@@ -25,6 +25,8 @@ const ProductManagerCard: React.FC<ProductManagerCardProps> = ({ data }: Product
     );
   }
 
+
+  
   return (
     <Box
       style={{
@@ -58,13 +60,13 @@ const ProductManagerCard: React.FC<ProductManagerCardProps> = ({ data }: Product
         }}
         bodyStyle={{ padding: "80px 20px" }}
       >
-        <Title level={3} style={{ color: "#fff" }}>
+        <Title level={3} style={{ color: "black" }}>
           {selectedData.title}
         </Title>
         <Link
           href="#"
           style={{
-            color: "#fff",
+            color: "black",
             fontSize: "16px",
             textDecoration: "underline",
           }}

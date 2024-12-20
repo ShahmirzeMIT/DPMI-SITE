@@ -9,7 +9,7 @@ export default function AboutCourses() {
 
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',width:'80%',margin:'0 auto'}}>
                 {
-                    [1,2,3,4,5].map((item, index) => <ProductManagerCard data={{id:item}} key={index}/>)
+                    [1,2,3,4,5,6].map((item, index) => <ProductManagerCard data={{id:item}} key={index}/>)
                 }
             </Box>
            <Box>

@@ -1,5 +1,6 @@
 import { Layout } from "antd";
-import HeaderBar from "./Header/HeaderBar";
+
+import HeaderPart2 from "./HeaderPart2/HeaderPart2";
 import Main from "./Main/Main";
 import FooterBottom from "./Footer/FooterBottom";
 
@@ -14,7 +15,8 @@ export default function Index() {
   return (
 
     <Layout style={layoutStyle}>
-      <HeaderBar/>
+      <HeaderPart2/>
+      {/* <HeaderBar/> */}
        <Main/>
       <FooterBottom/>
     </Layout>
