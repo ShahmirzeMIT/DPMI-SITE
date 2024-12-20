@@ -1,9 +1,9 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
-import { CiCircleCheck } from "react-icons/ci";
+import Logo from '../../assets/images/productDigital.jpg'
 
 const SecondCourse = () => {
   return (
-    <Box sx={{ padding: "40px", backgroundColor: "#f7f7f7",  height: { xs: "150vh", md: "80vh" },borderTop:'1px solid #e0e0e0' }}>
+    <Box sx={{ padding: "40px", backgroundColor: "white",  height: { xs: "150vh", md: "80vh" },borderTop:'1px solid #e0e0e0' }}>
       <Grid container spacing={4} alignItems="center">
         {/* Left Side */}
       
@@ -23,106 +23,58 @@ const SecondCourse = () => {
           >
             <img
               alt="User Testimonial"
-              src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg"
+              src={Logo}
               style={{
-                width: "60%",
+                width: "90%",
                 height: "500px",
                 objectFit: "cover",
                 borderRadius: "16px",
                 zIndex:1
               }}
             />
-            <Box
-              sx={{
-                position: "absolute",
-                bottom: "20px",
-                left: "20px",
-                backgroundColor: "rgba(74, 0, 224, 0.9)",
-                color: "white",
-                padding: "16px",
-                borderRadius: "8px",
-                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
-                maxWidth: "70%",
-                zIndex:2
-              }}
-            >
-              <Typography
-                variant="body1"
-                sx={{
-                  fontStyle: "italic",
-                  fontSize: "16px",
-                  lineHeight: "1.5",
-                }}
-              >
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  mt: 1,
-                  fontWeight: "bold",
-                  fontSize: "14px",
-                }}
-              >
-                Charlotte Hale
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: "13px",
-                }}
-              >
-                Delos Inc.
-              </Typography>
             
-          
-            </Box>
-            <Box
-            //   src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              
-            //   shape="square"
-              sx={{ position: "absolute", top: "30px", right: "50px",height:"550px",width:'300px',zIndex:0,background:'#f0f3fa' }}
-
-            ></Box>
+             
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "#4A00E0", mb: 2 }}
+            sx={{ fontWeight: "bold", color: "black", mb: 2 }}
           >
-            Better, Faster and
-            <br /> Cheaper Cloud.
+          Empowering You to Lead, Innovate, 
+            <br /> and Transform the Future of Digital Products.
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          The Digital Product Manager Certification is designed for professionals who aspire to lead and innovate in the ever-evolving world of digital products. This certification equips participants with the essential skills to manage the entire product lifecycle, from ideation and development to launch and optimization. Participants will gain hands-on experience in areas such as product strategy, user experience (UX) design, data-driven decision making, agile methodologies, and stakeholder management
           </Typography>
-          <Button
-            variant="contained"
-            sx={{ backgroundColor: "#6200EA", color: "white", mb: 3 }}
-          >
-            Get Started
-          </Button>
-          <Box>
-            <Typography
-              variant="body1"
-              sx={{ display: "flex", alignItems: "center", mb: 1, color: "black" }}
-            >
-              <CiCircleCheck style={{ color: "#6200EA", marginRight: "5px" }} /> Available in 7 Locations
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ display: "flex", alignItems: "center", mb: 1, color: "black" }}
-            >
-              <CiCircleCheck style={{ color: "#6200EA", marginRight: "5px" }} /> Premium Internet Backbone
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ display: "flex", alignItems: "center", color: "black" }}
-            >
-              <CiCircleCheck style={{ color: "#6200EA", marginRight: "5px" }} /> 99.99% Uptime SLA
-            </Typography>
+          <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
+            <Button
+                  variant="contained"
+                  sx={{
+                      background: "linear-gradient(90deg, #fb6b22, #2a74b3)", // Updated gradient
+                      color: "white",
+                      mb: 3,
+                      padding: "10px 20px",
+                      borderRadius: "25px",
+                      fontSize: "16px",
+                      fontWeight: "bold",
+                      textTransform: "none",
+                      transition: "all 0.3s ease-in-out",
+                      "&:hover": {
+                          background: "linear-gradient(90deg, #2a74b3, #fb6b22)", // Updated hover gradient
+                          transform: "scale(1.05)",
+                          boxShadow: "0 4px 15px rgba(251, 107, 34, 0.4)", // Matching hover box shadow
+                      },
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                  }}
+              >
+                  <span style={{ fontSize: "18px" }}>For More</span>
+              </Button>
           </Box>
+       
+          
         </Grid>
       </Grid>
     </Box>
