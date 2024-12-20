@@ -100,7 +100,8 @@ const FirstCourse = () => {
                 position: "absolute",
                 bottom: "-100px",
                 left: "20px",
-                backgroundColor: "black",
+                background:" linear-gradient(90deg, #6200EA, #9C27B0, #000000)",
+
                 color: "white",
                 padding: "16px",
                 borderRadius: "8px",
