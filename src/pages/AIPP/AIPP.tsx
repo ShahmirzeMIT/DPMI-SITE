@@ -5,7 +5,7 @@ import CardAIPPCertificationView from "./CardAIPPCourseview";
 
 export default function AIPP() {
   return (
-    <Box sx={{marginTop:'230px'}} >
+    <Box sx={{marginTop:'80px'}} >
       <CardAIPPCertificationView/>
       <CardDPMCaertificationView/>
     </Box>

@@ -12,7 +12,7 @@ import DetailofACPP from './DetailsofACPP'
 
 export default function ACPP() {
   return (
-    <Box sx={{marginTop:'230px'}}>
+    <Box sx={{marginTop:'80px'}}>
         <ACPPCertificationView/>
         <CardDPMCaertificationView/>
         <RoadmapACPP/>

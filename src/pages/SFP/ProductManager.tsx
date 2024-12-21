@@ -12,7 +12,7 @@ import DetailofCourse from "./DetailofCourse";
 
 export default function ProductManager() {
   return (
-    <Box sx={{marginTop:'230px'}}> 
+    <Box sx={{marginTop:'80px'}}> 
       <ProductManagerCourseView/>
       <CardCertificationView/>
       <Roadmap/>

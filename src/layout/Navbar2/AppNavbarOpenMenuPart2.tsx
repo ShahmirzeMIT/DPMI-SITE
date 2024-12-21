@@ -81,11 +81,12 @@ const AppNavbarMenuPart2 = () => {
                     lineHeight: "1.5rem",
                     display: "flex",
                     alignItems: "center",
-                    padding:'10px 5px',
+                    padding:'2px 5px',
+                    borderBottom: "2px solid white",
                     "&:hover": {
-                      backgroundColor: "#2a74b1",
-                      color: 'white',
-                      borderRadius:'3px',
+                      borderBottom: "2px solid #2a74b1",
+                      // textDecoration: "underline",
+                      // textDecorationColor: "#2a74b1",
                     },
                   }}
                   onClick={(event) => handleMenuOpen(event, page.name)}
@@ -139,6 +140,7 @@ const AppNavbarMenuPart2 = () => {
               textTransform: "capitalize",
               border: '1px solid #2a74b1',
               fontSize: "15px",
+              fontFamily:" Cabin, sans-serif !important",
               "&:hover": {
                 textDecoration: "none",
                 backgroundColor: "#2a74b1",
@@ -156,6 +158,7 @@ const AppNavbarMenuPart2 = () => {
               textTransform: "capitalize",
               fontSize: "15px",
               border: '1px solid #2a74b1',
+              fontFamily:" Cabin, sans-serif !important",
               "&:hover": {
                 backgroundColor: "white",
                 color: '#2a74b1'

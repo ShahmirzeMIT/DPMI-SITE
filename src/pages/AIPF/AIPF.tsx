@@ -11,7 +11,7 @@ import DetailofAIPF from "./DetailofAIPF";
 
 export default function AIPF() {
   return (
-    <Box sx={{marginTop:'230px'}}>
+    <Box sx={{marginTop:'80px'}}>
       <CardAIPFCertificationView/>
       <CardDPMCaertificationView/>
       <RoadmapAIPF/>
