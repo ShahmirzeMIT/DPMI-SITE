@@ -13,6 +13,7 @@ import AIPF from "../pages/AIPF/AIPF";
 import ACPF from "../pages/ACPF/ACPF";
 import AIPP from "../pages/AIPP/AIPP";
 import ACPP from "../pages/ACPP/ACPP";
+import LMS from "../pages/LMS/LMS";
 
 export const routes = [
     {
@@ -29,10 +30,10 @@ export const routes = [
             { path: "/aipp-course", element: <AIPP />, },
             { path: "/acfp-course", element: <ACPF />, },
             { path: "/acpp-course", element: <ACPP />, },
+            { path: "/lms", element: <LMS/>, },
             {path:'/classes',element:<Payment/>},
             {path:'/payment',element:<PaymentCheck/>},
             {path:'/paymentprocedd',element:<PaymentProceedd/>},
-            
             { path: "*", element: <NotFound /> },
         ]
     },
