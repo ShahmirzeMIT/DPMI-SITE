@@ -24,13 +24,11 @@ export const routes = [
         children: [
             { path: "/", element: <HomePagePart2 /> },
             { path: "/home", element: <HomePagePart2 /> },
+            { path: "/courses", element: <Courses />  },
             {
-                path: "/courses",
-                element: <Courses />,
-                children: [
-                  { path: ":courseId", element: <CourseDetails /> }, // Dinamik route
-                ],
-            },
+                path: "/courses/:courseId",
+                element: <CourseDetails />,
+              },
             { path: "/sfp-course", element: <ProductManager />, },
             { path: "/dpm-course", element: <DPMI />, },
             { path: "/aipf-course", element: <AIPF />, },

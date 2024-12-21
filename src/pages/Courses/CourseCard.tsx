@@ -29,9 +29,10 @@ export default function CourseCard({ data }: ProductCardProps) {
         boxShadow:
           "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
         borderRadius: "5px",
+        position: "relative",
       }}
     >
-      <Box>
+      <Box sx={{marginBottom:'30px'}}>
         <Avatar
           style={{
             width: "150px",
@@ -40,6 +41,7 @@ export default function CourseCard({ data }: ProductCardProps) {
             display: "block",
           }}
           src={data.image}
+          shape="square"
         />
       </Box>
       <Typography
@@ -55,12 +57,12 @@ export default function CourseCard({ data }: ProductCardProps) {
         {data.title}
       </Typography>
 
-      <Box sx={{ marginTop: "30px" }}>
-        <Typography sx={{ color: "#545454", fontSize: "16px", textAlign: "start" }}>
+      <Box sx={{ marginTop: "30px",marginBottom:'60px' }}>
+        <Typography sx={{ color: "#545454", fontSize: "16px", textAlign: "start",minHeight:'120px' }}>
           {data.description}
         </Typography>
       </Box>
-      <Box sx={{ marginTop: "30px" }}>
+      <Box sx={{ marginTop: "30px",position:'absolute',bottom:'30px' }}>
         <Button
           sx={{
             marginRight: "20px",
@@ -69,7 +71,7 @@ export default function CourseCard({ data }: ProductCardProps) {
             color: "white",
             "&:hover": { background: "white", color: "#fb1201", border: "1px solid #fb1201" },
           }}
-          onClick={handleNavigate} // Sign Up düyməsinə kliklədikdə yönləndirəcək
+         
         >
           Sign Up
         </Button>
