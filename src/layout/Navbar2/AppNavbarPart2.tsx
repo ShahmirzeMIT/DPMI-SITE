@@ -34,7 +34,7 @@ const AppNavbarPart2 = () => {
           onClick={()=>navigate('/')}
           sx={{ flexGrow: 1, display: { xs: "none", md: "none", lg: "block" }, fontWeight: "bold" }}
         >
-         <Avatar src={Logo} style={{width: "11rem",height: "auro",cursor:'pointer'}}  shape="square" onClick={()=>navigate('/')} />
+         {/* <Avatar src={Logo} style={{width: "11rem",height: "auro",cursor:'pointer'}}  shape="square" onClick={()=>navigate('/')} /> */}
         </Typography>
 
         {/* Menu for larger screens */}

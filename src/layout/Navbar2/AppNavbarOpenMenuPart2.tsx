@@ -81,24 +81,36 @@ const AppNavbarMenuPart2 = () => {
                     lineHeight: "1.5rem",
                     display: "flex",
                     alignItems: "center",
+                    padding:'10px 5px',
                     "&:hover": {
-                      textDecoration: "underline",
+                      backgroundColor: "#2a74b1",
+                      color: 'white',
+                      borderRadius:'3px',
                     },
                   }}
                   onClick={(event) => handleMenuOpen(event, page.name)}
                 >
                   {page.name}
-                  {openPage.includes(page.name) ? null : ( // Show icons only for non-direct links
+                  {openPage.includes(page.name) ? null : (
                     openMenu === page.name
                       ? <IoIosArrowUp style={{ marginTop: '2px' }} />
                       : <IoIosArrowDown style={{ marginTop: '2px' }} />
                   )}
                 </Box>
                 {openMenu === page.name && !openPage.includes(page.name) && (
-                  <Menu
+                    <Menu
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     onClose={handleMenuClose}
+                    sx={{
+                      "& .MuiMenu-paper": {
+                        display: 'flex',
+                        flexDirection: 'row', // Horizontal düzülüş
+                        justifyContent: 'center', // Elementləri horizontal mərkəzləşdir
+                        alignItems: 'center', // Şaquli mərkəzləşdir
+                        backgroundColor: "white",
+                      },
+                    }}
                     anchorOrigin={{
                       vertical: "bottom",
                       horizontal: "left",
@@ -110,6 +122,8 @@ const AppNavbarMenuPart2 = () => {
                   >
                     {page.children}
                   </Menu>
+           
+              
                 )}
               </Box>
             ))

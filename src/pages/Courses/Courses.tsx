@@ -6,7 +6,6 @@ import useCourseState from "./useCourseState";
 
 export default function Courses() {
   const{data}=useCourseState()
-  console.log(data,'data');
   
   return (
     <Box sx={{ margin: "250px 0" }}>
