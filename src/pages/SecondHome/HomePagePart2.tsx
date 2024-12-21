@@ -31,9 +31,11 @@ export default function HomePagePart2() {
     <Box > 
       <AILearn/>
       <AgileLearning />
-      <FirstCourse />
-      <SecondCourse />
       <ThirdCourse />
+      <SecondCourse />
+
+      <FirstCourse />
+     
       <FourthCourse />
       <AboutCourses />
       <Testimonials />

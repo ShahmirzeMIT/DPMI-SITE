@@ -41,11 +41,10 @@ const SecondCourse = () => {
             variant="h3"
             sx={{ fontWeight: "bold", color: "black", mb: 2 }}
           >
-          Empowering You to Lead, Innovate, 
-            <br /> and Transform the Future of Digital Products.
+            Digital Product Managment
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
-          The Digital Product Manager Certification is designed for professionals who aspire to lead and innovate in the ever-evolving world of digital products. This certification equips participants with the essential skills to manage the entire product lifecycle, from ideation and development to launch and optimization. Participants will gain hands-on experience in areas such as product strategy, user experience (UX) design, data-driven decision making, agile methodologies, and stakeholder management
+          Individuals who want to build a future career in Digital Product Management or acquire deeper and more sophisticated skills and knowledge can apply for this certification. A completely new, applicable approach with simulators and real-world project practice, along with interactive training, prepares you directly for real work and team environments. Topics covered include requirements analysis, design, backlog assessment, issue management, product management, budgeting, timing, and more.
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
             <Button
@@ -72,6 +71,11 @@ const SecondCourse = () => {
               >
                   <span style={{ fontSize: "18px" }}>For More</span>
               </Button>
+          </Box>
+          <Box sx={{marginTop:'20px'}}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px' }}>
+              View Certifications
+          </Button>
           </Box>
        
           

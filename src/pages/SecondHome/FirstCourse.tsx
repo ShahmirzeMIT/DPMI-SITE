@@ -10,38 +10,15 @@ const FirstCourse = () => {
             variant="h3"
             sx={{ fontWeight: "bold", color: "black", mb: 2 }}
           >
-           Build Strong Foundations, 
-             <br /> Ignite Startup Success!
+          Startup Journey
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
-             The Startup Foundation Practitioner Certification is designed for professionals who want to gain practical skills in building and scaling startups. It covers key areas like business model design, market validation, customer acquisition, and lean methodologies. This certification equips individuals with the tools and knowledge to lead startup projects, make data-driven decisions, and adapt quickly in dynamic environments, empowering them to thrive in the competitive startup ecosystem. Perfect for entrepreneurs, intrapreneurs, and those aspiring to work in fast-paced startup environments.
+          This certification is designed for individuals who are taking their first steps into the startup world or want to strengthen their existing knowledge and skills. It covers the stages of developing and launching a digital product based on market demand. The main topics include market analysis, segmentation, page design, database and API design, creating an MVP, calculating budget and time, and the product launch phase
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
-          <Button
-                variant="contained"
-                sx={{
-                    background: "linear-gradient(90deg, #fb6b22, #2a74b3)", // Updated gradient
-                    color: "white",
-                    mb: 3,
-                    padding: "10px 20px",
-                    borderRadius: "25px",
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    textTransform: "none",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                        background: "linear-gradient(90deg, #2a74b3, #fb6b22)", // Updated hover gradient
-                        transform: "scale(1.05)",
-                        boxShadow: "0 4px 15px rgba(251, 107, 34, 0.4)", // Matching hover box shadow
-                    },
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                }}
-            >
-                <span style={{ fontSize: "18px" }}>For More</span>
-            </Button>
-
+          <Box sx={{marginTop:'20px'}}>
+          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' }}>
+              View Certifications
+          </Button>
           </Box>
           
 
@@ -67,7 +44,7 @@ const FirstCourse = () => {
                 width: "90%",
                 height: "500px",
                 objectFit: "cover",
-                // borderRadius: "16px",
+                borderRadius: "16px",
                 zIndex:1
               }}
             />

@@ -45,33 +45,19 @@ const FourthCourse = () => {
             <br /> to Drive Collaboration and Success."
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
-             The Agile Communication Practitioner Certification is designed to equip professionals with the skills to effectively communicate in fast-paced, agile environments. In today’s rapidly changing workplaces, clear and efficient communication is crucial for teams to collaborate, innovate, and deliver results. This certification focuses on the principles of agile methodologies while emphasizing the importance of communication strategies that align with agile practices
+            	
+            If you are a Product Owner, Agile Coach, Business Owner, Product Manager, or Project Manager struggling with communication issues with the development team, this certification can help you a lot. It makes it possible to eliminate weekly and daily meetings with no business value completely. This certification is also designed for software developers, QA engineers, UI/UX designers, and other engineers who find it challenging to understand business requirements
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
-            <Button
-                  variant="contained"
-                  sx={{
-                      background: "linear-gradient(90deg, #fb6b22, #2a74b3)", // Updated gradient
-                      color: "white",
-                      mb: 3,
-                      padding: "10px 20px",
-                      borderRadius: "25px",
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                      textTransform: "none",
-                      transition: "all 0.3s ease-in-out",
-                      "&:hover": {
-                          background: "linear-gradient(90deg, #2a74b3, #fb6b22)", // Updated hover gradient
-                          transform: "scale(1.05)",
-                          boxShadow: "0 4px 15px rgba(251, 107, 34, 0.4)", // Matching hover box shadow
-                      },
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                  }}
-              >
-                  <span style={{ fontSize: "18px" }}>For More</span>
-              </Button>
+          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' }}>
+              View Fundamenmtal Level
+          </Button>
+
+          </Box>
+          <Box sx={{marginTop:'20px'}}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px' }}>
+              View Proffesional Level
+          </Button>
           </Box>
        
           

@@ -11,38 +11,21 @@ const ThirdCourse = () => {
             variant="h3"
             sx={{ fontWeight: "bold", color: "black", mb: 2 }}
           >
-         Master the Future of Technology with 
-             <br /> AI Expertise and Real-World Impact
+            AI Practitioner
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
-          The AI Practitioner Certification is designed for professionals looking to deepen their understanding and practical skills in Artificial Intelligence (AI) technologies. This certification offers a comprehensive curriculum that covers the fundamentals of AI, including machine learning, deep learning, natural language processing (NLP), computer vision, and data analytics. It provides hands-on experience with AI tools and techniques, enabling learners to build, deploy, and optimize AI models in real-world scenarios
+          Individuals who want to develop themselves in AI Transformation, the future of the business world, and add significant value to their companies can apply for this program. Companies that have started their AI Transformation journey can also direct their employees to this interactive certification training. It covers topics such as AI fundamentals, Generative AI, building AI systems, their impact on business, sales, niche segmentation, and more.
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
-          <Button
-                variant="contained"
-                sx={{
-                    background: "linear-gradient(90deg, #fb6b22, #2a74b3)", // Updated gradient
-                    color: "white",
-                    mb: 3,
-                    padding: "10px 20px",
-                    borderRadius: "25px",
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    textTransform: "none",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                        background: "linear-gradient(90deg, #2a74b3, #fb6b22)", // Updated hover gradient
-                        transform: "scale(1.05)",
-                        boxShadow: "0 4px 15px rgba(251, 107, 34, 0.4)", // Matching hover box shadow
-                    },
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                }}
-            >
-                <span style={{ fontSize: "18px" }}>For More</span>
-            </Button>
+          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' }}>
+              View Fundamenmtal Level
+          </Button>
 
+          </Box>
+          <Box sx={{marginTop:'20px'}}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px' }}>
+              View Proffesional Level
+          </Button>
           </Box>
           
 
@@ -68,7 +51,7 @@ const ThirdCourse = () => {
                 width: "90%",
                 height: "500px",
                 objectFit: "cover",
-                // borderRadius: "16px",
+                borderRadius: "16px",
                 zIndex:1
               }}
             />
