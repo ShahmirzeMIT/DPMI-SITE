@@ -14,6 +14,7 @@ import ACPF from "../pages/ACPF/ACPF";
 import AIPP from "../pages/AIPP/AIPP";
 import ACPP from "../pages/ACPP/ACPP";
 import LMS from "../pages/LMS/LMS";
+import CourseDetails from "../pages/CourseDetails/CourseDetails";
 
 export const routes = [
     {
@@ -23,7 +24,13 @@ export const routes = [
         children: [
             { path: "/", element: <HomePagePart2 /> },
             { path: "/home", element: <HomePagePart2 /> },
-            { path: "/courses", element: <Courses /> },
+            {
+                path: "/courses",
+                element: <Courses />,
+                children: [
+                  { path: ":courseId", element: <CourseDetails /> }, // Dinamik route
+                ],
+            },
             { path: "/sfp-course", element: <ProductManager />, },
             { path: "/dpm-course", element: <DPMI />, },
             { path: "/aipf-course", element: <AIPF />, },

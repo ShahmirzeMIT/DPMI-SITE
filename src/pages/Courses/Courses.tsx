@@ -8,7 +8,7 @@ export default function Courses() {
     <Box sx={{margin:'150px 0'}}>
       <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'20px',width:'90%',margin:'0 auto'}}>
          {
-          dataCourses.map((item, index) => <CourseCard key={index} data={item}/>)
+          dataCourses.map((item, index) => <CourseCard key={index} data={{...item,id:index.toString()}}/>)
          }
       </Box>
       
