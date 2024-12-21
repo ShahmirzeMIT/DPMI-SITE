@@ -6,8 +6,9 @@ import { IoIosMail } from "react-icons/io";
 import { HiPhone } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
 import { Avatar } from "antd";
+import { useNavigate } from "react-router-dom";
 export default function FooterBottom() {
- 
+ const navigate = useNavigate();
   return (
     <Box
       component="footer"
@@ -30,10 +31,11 @@ export default function FooterBottom() {
         {/* Logo and Contact Info */}
         <Box>
           <Avatar
+          onClick={()=>navigate('/')}
           shape="square" 
             src={Logo}
             alt="DPMI Logo"
-            style={{ width: "120px",height: "44px", marginBottom: "10px" }}
+            style={{ width: "120px",height: "44px", marginBottom: "10px",cursor:'pointer' }}
           />
           <Typography
             sx={{ fontSize: "16px", display: "flex", alignItems: "center", gap: "5px" }}

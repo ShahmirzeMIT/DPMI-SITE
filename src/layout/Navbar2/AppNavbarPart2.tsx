@@ -31,6 +31,7 @@ const AppNavbarPart2 = () => {
         <Typography
           variant="h6"
           component="div"
+          onClick={()=>navigate('/')}
           sx={{ flexGrow: 1, display: { xs: "none", md: "none", lg: "block" }, fontWeight: "bold" }}
         >
          <Avatar src={Logo} style={{width: "11rem",height: "auro",cursor:'pointer'}}  shape="square" onClick={()=>navigate('/')} />

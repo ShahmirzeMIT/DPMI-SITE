@@ -10,9 +10,11 @@ import NavbarMenuComp from './NavbarMenuComp';
 import Register from './Register';
 import Logo from '../../assets/images/DPM_institute__LOGO-Logo.jpg'
 import { Avatar } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 
 function AppNavbar() {
+  const navigate=useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -48,8 +50,9 @@ function AppNavbar() {
               color: 'black',
               textDecoration: 'none',
             }}
+            onClick={()=>navigate('/')} 
           >
-           <Avatar src={Logo}  style={{height:'70px',width:'90px'}} />
+           <Avatar src={Logo}  style={{height:'70px',width:'90px',cursor:'pointer'}} onClick={()=>navigate('/')} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

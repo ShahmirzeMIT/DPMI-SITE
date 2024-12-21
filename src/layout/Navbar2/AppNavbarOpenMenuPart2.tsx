@@ -62,8 +62,9 @@ const AppNavbarMenuPart2 = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Avatar
             src={Logo}
-            style={{ width: "120px", height: "auto" }}
+            style={{ width: "200px", height: "auto" }}
             shape="square"
+            onClick={()=>navigate('/')}
           />
         </Box>
 
