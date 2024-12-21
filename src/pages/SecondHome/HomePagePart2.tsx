@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import CourseCardHome from "./CourseCardHome";
 import Logo from '../../assets/images/onlineCourse.png'
 import { Avatar } from "antd";
+import AILearn from "./AILearn";
 export default function HomePagePart2() {
   const [data, setData] = useState([]);
 
@@ -27,7 +28,8 @@ export default function HomePagePart2() {
   }, []);
 
   return (
-    <Box>
+    <Box > 
+      <AILearn/>
       <AgileLearning />
       <FirstCourse />
       <SecondCourse />

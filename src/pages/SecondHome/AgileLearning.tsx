@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import Logo from "../../assets/images/aiBg3.jpg";
+
 import AgileCard from "../../componets/AgileCard";
 
 const data = [
@@ -24,11 +24,11 @@ const AgileLearning = () => {
         position: "relative", // Background üçün ::before istifadəsinə imkan yaratmaq
         padding: "40px",
         color: "white",
-        minHeight: "540px",
+        minHeight: "660px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        marginTop: "220px",
+        marginTop: "20px",
         overflow: "hidden", // Background çıxmasın deyə
       }}
     >
@@ -40,26 +40,13 @@ const AgileLearning = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${Logo})`,
+          background: "linear-gradient(to top, gray, white)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          filter: "blur(8px)",
+          // filter: "blur(8px)",
           opacity: 0.6,
           zIndex: 1, // Məzmundan arxada qalması üçün
-        }}
-      ></div>
-
-      {/* Boz overlay */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)", // Boz overlay (0.5 şəffaflıq)
-          zIndex: 2, // Şəkilin üstündə, məzmunun altında
         }}
       ></div>
 

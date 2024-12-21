@@ -5,7 +5,7 @@ import Menu from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
 import { Avatar } from "antd";
-import Logo from '../../assets/images/DPM_institute__LOGO-Logo.jpg';
+import Logo from '../../assets/images/logoSite.png';
 import CertificationMenu from "../Navbar/CertificationMenu";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ const pages = [
     name: "Courses",
     page: '/courses',
   },
-  { name: "Learning Management System (LMS)", 
+  { name: "E-Learning  (LMS)", 
     page: '/lms',
   },
   { name: "For Individuals", 
@@ -32,7 +32,7 @@ const pages = [
   },
 ];
 
-const openPage = ['Courses', 'Learning Management System (LMS)', 'For Individuals', 'For Companies'];
+const openPage = ['Courses', 'E-Learning  (LMS)', 'For Individuals', 'For Companies'];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
@@ -56,13 +56,13 @@ const AppNavbarMenuPart2 = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333", boxShadow: 'none' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333", boxShadow: 'none',padding:'10px 0 20px 0' }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left side: Logo */}
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center",paddingTop:'10px' }}>
           <Avatar
             src={Logo}
-            style={{ width: "200px", height: "auto" }}
+            style={{ width: "150px", height: "70px" }}
             shape="square"
             onClick={()=>navigate('/')}
           />

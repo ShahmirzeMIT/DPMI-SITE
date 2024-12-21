@@ -38,7 +38,7 @@ const AppNavbarPart2 = () => {
         </Typography>
 
         {/* Menu for larger screens */}
-        <Box sx={{ display: { xs: "none"  ,md: "flex", lg: "flex" }, gap: 2 }}>
+        <Box sx={{ display: { xs: "none"  ,md: "flex", lg: "flex" } }}>
          <AppNavbarMenuPart2/>
         </Box>
 
