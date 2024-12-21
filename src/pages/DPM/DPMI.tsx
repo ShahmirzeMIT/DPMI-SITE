@@ -11,7 +11,7 @@ import DetailofDpmCourse from "./DetailofDpmCourse";
 
 export default function DPMI() {
   return (
-    <Box> 
+    <Box sx={{marginTop:'230px'}}> 
       <DPMCourseViewCard/>
       <CardDPMCaertificationView/>
       <RoadmapDPM/>

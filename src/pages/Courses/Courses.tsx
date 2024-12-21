@@ -9,7 +9,7 @@ export default function Courses() {
   console.log(data,'data');
   
   return (
-    <Box sx={{ margin: "150px 0" }}>
+    <Box sx={{ margin: "250px 0" }}>
       <Box
         sx={{
           display: "flex",

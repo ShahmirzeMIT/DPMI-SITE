@@ -11,7 +11,7 @@ import DetailofACPF from './DetailofACPF'
 
 export default function ACPF() {
   return (
-    <div>
+    <Box sx={{marginTop:'230px'}}>
         <CardACPFCertificationView/>
         <CardDPMCaertificationView/>
         <RoadmapACPF/>
@@ -22,6 +22,6 @@ export default function ACPF() {
       <WhatACPF/>
       <WhatLearnACPF/>
       <DetailofACPF/>
-    </div>
+    </Box>
   )
 }

@@ -60,7 +60,7 @@ export default function Payment() {
       };
       
   return ( 
-    <Box sx={{marginTop:'140px'}}>
+    <Box sx={{marginTop:'280px'}}>
         <TabelPaymet data={tabelValues} columnConfig={columnConfig}/>
     </Box>
   )

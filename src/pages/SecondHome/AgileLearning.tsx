@@ -32,7 +32,7 @@ const AgileLearning = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        marginTop: '100px',
+        marginTop: '220px',
    
       }}
     >
