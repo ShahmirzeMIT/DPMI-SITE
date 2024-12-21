@@ -2,7 +2,7 @@ import { Box, Button, Typography, Grid } from "@mui/material";
 import Logo from '../../assets/images/starttup.jpg'
 const FirstCourse = () => {
   return (
-    <Box sx={{ padding: "40px", backgroundColor: "#f7f7f7",  height: { xs: "150vh", md: "80vh" }, }}>
+    <Box sx={{ padding: "40px", backgroundColor: "#f7f7f7",  height: { xs: "auto", md: "85vh" }, }}>
       <Grid container spacing={4} alignItems="center">
         {/* Left Side */}
         <Grid item xs={12} md={6}>
@@ -48,7 +48,7 @@ const FirstCourse = () => {
         </Grid>
 
         {/* Right Side */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} display={{ xs: "none", md: "block" }}>
         <Box
             sx={{
               position: "relative",

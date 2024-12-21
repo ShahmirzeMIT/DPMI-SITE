@@ -3,13 +3,13 @@ import Logo from '../../assets/images/agilecertificate.jpg'
 
 const FourthCourse = () => {
   return (
-    <Box sx={{ padding: "40px", backgroundColor: "white",  height: { xs: "150vh", md: "80vh" },borderTop:'1px solid #e0e0e0' }}>
+    <Box sx={{ padding: "40px", backgroundColor: "white",  height: { xs: "auto", md: "80vh" },borderTop:'1px solid #e0e0e0' }}>
       <Grid container spacing={4} alignItems="center">
         {/* Left Side */}
       
 
         {/* Right Side */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} display={{ xs: "none", md: "block" }}>
           <Box
             sx={{
               position: "relative",
