@@ -4,7 +4,7 @@ import SecondCourse from "./SecondCourse";
 import ThirdCourse from "./ThirdCourse";
 import FourthCourse from "./Fourth";
 import AboutCourses from "../Home/AboutCourses";
-import Testimonials from "../Home/Testimonials";
+// import Testimonials from "../Home/Testimonials";
 import AgileLearning from "./AgileLearning";
 import Slider from "../Home/Slider";
 import { callApi } from "../../utils/callApi";
@@ -35,7 +35,7 @@ export default function HomePagePart2() {
       <FirstCourse />
       <FourthCourse />
       <AboutCourses />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Box sx={{width:'80%',margin:'30px auto',}}><Typography variant='h3' sx={{color:'black',fontSize:'30px',textAlign:'center',textTransform:'uppercase'}}>
        Top  Courses</Typography></Box>
         <Typography sx={{color:'black',fontSize:'16px',margin:'20px auto',maxWidth:"650px"}}>Enhance your skills and knowledge with our AI-driven e-learning platform. Accelerate your journey into the competitive market with confidence and strength.</Typography>
