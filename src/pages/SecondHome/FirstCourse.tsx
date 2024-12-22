@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const FirstCourse = () => {
   const navigate=useNavigate()
   return (
-    <Box sx={{ padding: "40px", backgroundColor: "#f7f7f7",  height: { xs: "auto", md: "85vh" }, }}>
+    <Box sx={{ padding: "40px", backgroundColor: "#f7f7f7",  height: { xs: "auto" }, }}>
       <Grid container spacing={4} alignItems="center">
         {/* Left Side */}
         <Grid item xs={12} md={6}>

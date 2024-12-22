@@ -1,10 +1,10 @@
 
-import Image1 from "../assets/images/sfp.png";
-import Image2 from "../assets/images/dpm.png";
-import Image3 from "../assets/images/aifp.png";
-import Image4 from "../assets/images/aipp.png";
-import Image5 from "../assets/images/acfp.png";
-import Image6 from "../assets/images/acpp.png";
+import Image1 from "../assets/images/sfpNav.png";
+import Image2 from "../assets/images/dpmNav.png";
+import Image3 from "../assets/images/aifpNav.png";
+import Image4 from "../assets/images/aippNav.png";
+import Image5 from "../assets/images/acfpNav.png";
+import Image6 from "../assets/images/accpNav.png";
 
 export const ProductManagerCardDataNavbar=[
     
