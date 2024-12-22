@@ -1,8 +1,19 @@
 import { Box, Button, Typography, Grid, } from "@mui/material";
 import logoImg from "../../assets/images/sfp.jpeg";
 import { Avatar } from "antd";
-
-export default function ProductManagerCourseView() {
+import { useNavigate } from "react-router-dom";
+interface ProductCardProps {
+  data:{
+    title: string
+    text: string
+    links:string
+    enroll:string
+    image:string
+  }
+}
+export default function ProductManagerCourseView({data}:ProductCardProps) {
+  
+  const navigate=useNavigate()
   return (
     <Box
       sx={{
@@ -38,7 +49,7 @@ export default function ProductManagerCourseView() {
                 marginBottom: "10px",
                 fontSize:'36px'
               }}
-            > Startup Foundation Practitioner
+            > {data.title}
             </Typography>
             <Typography
               variant="body1"
@@ -48,7 +59,7 @@ export default function ProductManagerCourseView() {
                 fontSize:'18px'
               }}
             >
-            The Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth
+              {data.text}
             </Typography>
 
             {/* Buttons */}
@@ -64,6 +75,7 @@ export default function ProductManagerCourseView() {
                     color: "white",
                   },
                 }}
+                onClick={() => navigate(data.links)}
               >
                 View Courses
               </Button>
@@ -77,6 +89,7 @@ export default function ProductManagerCourseView() {
                     backgroundColor: "#d9531e",
                   },
                 }}
+                onClick={() => navigate(data.enroll)}
               >
                 Enroll Now
               </Button>

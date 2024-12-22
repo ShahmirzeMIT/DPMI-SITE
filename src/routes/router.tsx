@@ -18,6 +18,7 @@ import CourseDetails from "../pages/CourseDetails/CourseDetails";
 import Companies from "../pages/Companies/Companies";
 import CertificationList from "../pages/CertificationList/CertificationList";
 import OurServices from "../pages/OurServices/OurServices";
+import CertificationDetails from "../pages/CertificationDetails/CertificationDetails";
 
 export const routes = [
     {
@@ -41,7 +42,7 @@ export const routes = [
             {path:'/payment',element:<PaymentCheck/>},
             {path:'/paymentprocedd',element:<PaymentProceedd/>},
             {path:"/certificates",element:<CertificationList/>},
-            {path:'/certificates/:certificateId',element:<></>},
+            {path:'/certificates/:certificateId',element:<CertificationDetails/>},
             { path: "/ourservices", element: <OurServices /> },
             { path: "*", element: <NotFound /> },
         ]

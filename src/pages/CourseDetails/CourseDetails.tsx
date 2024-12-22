@@ -47,7 +47,6 @@ const CourseDetails = () => {
         <CourseDetailHeader data={{title:data.CourseName,img:data.IconUrl}} />
         <Box sx={{width:'90%',margin:'60px auto'}}>
            <ShortDesc data={{shortDesc:data.CourseShortDesc}}/>
-           
            <OutCome/>
            <CourseHours/>
            <Box>
