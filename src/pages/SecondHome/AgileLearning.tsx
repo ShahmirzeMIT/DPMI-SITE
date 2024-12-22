@@ -36,9 +36,15 @@ const AgileLearning = () => {
 
       {/* Məzmun */}
       <div style={{ position: "relative", zIndex: 3,display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',flexWrap:'wrap',gap:2 }}> {/* Məzmun tünd backgroundun üstündə qalır */}
+      <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center', gap: 2}}>
+          {data.map((item) => (
+              <AgileCard data={item} />
+          ))}
+        </Box>
+
         <Typography
           variant="h4"
-          style={{ marginBottom: "20px", color: "black",fontFamily:" Cabin, sans-serif !important",textAlign:'start',marginRight:'20px' }}
+          style={{ marginBottom: "20px", color: "black",fontFamily:" Cabin, sans-serif !important",textAlign:'end',marginLeft:'20px' }}
         >
           Our Certification are  Designed  to accelerate
           <br />
@@ -49,11 +55,7 @@ const AgileLearning = () => {
           practical pathways for <span style={{color:'#fb6b22',fontWeight:'bold'}}>AI Transformation</span>
         </Typography>
       
-        <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center', gap: 2}}>
-          {data.map((item) => (
-              <AgileCard data={item} />
-          ))}
-        </Box>
+       
       </div>
     </Box>
   );

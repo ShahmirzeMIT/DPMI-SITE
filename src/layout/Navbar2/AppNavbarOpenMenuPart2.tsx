@@ -155,8 +155,9 @@ const AppNavbarMenuPart2 = () => {
                 color: 'white'
               },
             }}
+            onClick={() => navigate("/classes")}
           >
-            Sign In
+            Register
           </Button>
           <Button
             variant="contained"

@@ -1,9 +1,10 @@
 
-import Image1 from "../assets/images/ProductManager1.webp";
-import Image2 from "../assets/images/ProductMarketer2.webp";
-import Image3 from "../assets/images/ProductOperations3.webp";
-import Image4 from "../assets/images/AIProductExpert4.webp";
-import Image5 from "../assets/images/ProductMaster5.webp";
+import Image1 from "../assets/images/sfp.png";
+import Image2 from "../assets/images/dpm.png";
+import Image3 from "../assets/images/aifp.png";
+import Image4 from "../assets/images/aipp.png";
+import Image5 from "../assets/images/acfp.png";
+import Image6 from "../assets/images/acpp.png";
 export const ProductManagerCardData=[
     
     {
@@ -44,7 +45,7 @@ export const ProductManagerCardData=[
     {
         id:6,
         title: "ACPP Agile Communication Practitioner Proffesional",
-        image: Image5,
+        image: Image6,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
