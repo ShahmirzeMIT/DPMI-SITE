@@ -33,9 +33,7 @@ export default function HomePagePart2() {
       <AgileLearning />
       <ThirdCourse />
       <SecondCourse />
-
       <FirstCourse />
-     
       <FourthCourse />
       <AboutCourses />
       <Testimonials />
