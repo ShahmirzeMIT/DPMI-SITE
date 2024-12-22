@@ -27,7 +27,7 @@ const coursesData = [
 const CoursesTable = () => {
   return (
     <Box sx={{margin:'60px auto'}}>
-      <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'80px'}}>
+      <Typography style={{color:'black',fontSize:'36px',fontWeight:'600',textAlign:'start',marginLeft:'80px'}}>
        <Avatar src={Logo} style={{width:'60px',height:'60px',marginRight:'20px'}} shape="square" />
        Details of the Courses</Typography>
        <TableContainer component={Paper} sx={{ marginTop: 4, maxWidth: 900, marginX: "auto" }}>

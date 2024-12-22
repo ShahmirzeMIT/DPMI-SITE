@@ -1,7 +1,9 @@
 import { Box,  Link, Typography } from "@mui/material";
 import { Avatar } from "antd";
 import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
+import { useNavigate } from "react-router-dom";
 export default function CertificationMenu() {
+  const navigate=useNavigate()
   // State for tracking hover on individual cards
 
   return (
@@ -25,7 +27,7 @@ export default function CertificationMenu() {
           paddingBottom:'2rem',
           color: "rgb(105 105 105)",
         
-        }}>Certification Resources</Typography>
+        }} onClick={() => navigate("/certificates") }>Certification Explore</Typography>
         {
           ProductManagerCardDataNavbar.map((item:{title:string,link:string})=>{
             return(

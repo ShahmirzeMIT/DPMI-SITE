@@ -25,7 +25,7 @@ const data=[{
 export default function WhatLearnSpf() {
   return (
     <Box sx={{width:'90%',margin:'90px auto'}}>
-    <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'10px'}}>
+    <Typography style={{color:'black',fontSize:'36px',fontWeight:'600',textAlign:'start',marginLeft:'10px',}}>
        <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'20px'}} shape="square" />
        What you will learn</Typography>
        <ul>

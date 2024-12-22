@@ -1,5 +1,5 @@
 import { Box, Button, Typography, Grid, } from "@mui/material";
-import logoImg from "../../assets/images/ProductManager1.webp";
+import logoImg from "../../assets/images/sfp.jpeg";
 import { Avatar } from "antd";
 
 export default function ProductManagerCourseView() {
@@ -23,6 +23,7 @@ export default function ProductManagerCourseView() {
             src={logoImg}
             alt="Certification Logo"
             style={{ width: "100%", height: "100%" }}
+            shape="square"
           />
         </Grid>
 
@@ -35,6 +36,7 @@ export default function ProductManagerCourseView() {
                 fontWeight: "bold",
                 color: "#0E1C36",
                 marginBottom: "10px",
+                fontSize:'36px'
               }}
             > Startup Foundation Practitioner
             </Typography>
@@ -43,6 +45,7 @@ export default function ProductManagerCourseView() {
               sx={{
                 color: "#555",
                 marginBottom: "20px",
+                fontSize:'18px'
               }}
             >
             The Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth

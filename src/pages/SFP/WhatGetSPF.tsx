@@ -44,14 +44,14 @@ const data = [
 ]
 export default function WhatGetSPF() {
   return (
-    <Box sx={{width:'90%',margin:'90px auto'}}>
-    <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'10px'}}>
+    <Box sx={{width:'95%',margin:'90px auto'}}>
+    <Typography style={{color:'black',fontSize:'36px',fontWeight:'600',textAlign:'start',marginLeft:'10px',}}>
        <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'20px'}} shape="square" />
        What you will get</Typography>
        {
-        data.map((item,_index)=>(
-            <Typography style={{color:'black',fontSize:'20px',fontWeight:'400',textAlign:'start',marginLeft:'70px',lineHeight:'40px'}}>
-                <span style={{marginRight:'10px',fontWeight:'600'}}>{item.boldTitle}</span>{item.title}</Typography>
+        data.map((item,index)=>(
+            <Typography style={{color:'black',fontSize:'18px',fontWeight:'400',textAlign:'start',marginLeft:'70px',lineHeight:'40px'}}>
+                <span style={{marginRight:'10px',fontWeight:'600',fontSize:'26px'}}>{index+1 +". "}{item.boldTitle}</span>{item.title}</Typography>
         ))
        }
       

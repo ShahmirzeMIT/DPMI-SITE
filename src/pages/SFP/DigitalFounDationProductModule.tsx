@@ -30,7 +30,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
           }
         }}
       >
-        <CardContent>
+        <CardContent sx={{padding:'0'}}>
           <Typography
             variant="h5"
             component="div"
@@ -40,6 +40,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
               padding: 2,
               borderRadius: "5px 5px 0 0",
               textAlign: "center",
+              fontSize:'36px'
             }}
           >
             {data.title}
@@ -49,11 +50,11 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Short Description */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1 }}
+              sx={{ fontWeight: "bold", marginBottom: 1,fontSize:'26px' }}
             >
               Short Description
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" sx={{fontSize:'18px'}}>
               {data.shortDesc}
             </Typography>
 
@@ -62,11 +63,11 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Module Hours */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1 }}
+              sx={{ fontWeight: "bold", marginBottom: 1 ,fontSize:'26px'}}
             >
               Module Hours
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" sx={{fontSize:'18px'}}>
               {data.mdHours}
             </Typography>
 
@@ -75,11 +76,11 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Courses */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1 }}
+              sx={{ fontWeight: "bold", marginBottom: 1 ,fontSize:'26px'}}
             >
               Courses
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" sx={{fontSize:'18px'}}>
               {data.courses}
             </Typography>
           </Box>

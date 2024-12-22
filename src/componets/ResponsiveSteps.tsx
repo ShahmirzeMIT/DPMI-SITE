@@ -34,7 +34,7 @@ const steps = [
 ];
 
 const ResponsiveSteps = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 900px)");
 
   return (
     <Box
@@ -78,7 +78,7 @@ const ResponsiveSteps = () => {
             transform: isMobile ? "translateX(0)" : "translateX(0)",
           }}
         >
-            <Box sx={{width:'100%',backgroundColor:'#1976d2',paddingBottom:'28px',paddingTop:'10px'}}> {step.icon}  </Box>
+        <Box sx={{width:'100%',backgroundColor:'#1976d2',paddingBottom:'28px',paddingTop:'10px'}}> {step.icon}  </Box>
           <Box
             sx={{
               width: "100%",
@@ -95,9 +95,8 @@ const ResponsiveSteps = () => {
             {step.title}
           </Box>
             {
-                index !== steps.length - 1 && <Box sx={{ position: "absolute", top: "10px", right: "10px",borderLeft:'3px dashed black',width:'20px',height:'220px',translate:'180% -59%'}}></Box>
+              !isMobile &&  index !== steps.length - 1 && <Box sx={{ position: "absolute", top: "10px", right: "10px",borderLeft:'3px dashed black',width:'20px',height:'340px',translate:'180% -38%'}}></Box>
             }
-            {/* <Box sx={{ position: "absolute", top: "10px", right: "10px",borderLeft:'2px dashed black',width:'20px',height:'190px',translate:'180% -70%'}}></Box> */}
           
           <Typography
             variant="h6"
