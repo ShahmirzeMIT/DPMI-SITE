@@ -7,7 +7,7 @@ import Image5 from "../assets/images/acpf.png";
 import Image6 from "../assets/images/acpp.png";
 export const certificationsListData=[
     {
-        id:"1002",
+        id:"1003",
         title:"Startup Foundation Practitioner",
         text:"The Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth",
         links:'/certificates',
@@ -131,7 +131,7 @@ export const certificationsListData=[
         ]
     },
     {
-        id:'1003',
+        id:'1006',
         title:"Digital Product Manager",
         text:"The Digital Product Manager Certification is designed for professionals seeking to master the art of managing digital products in today’s fast-paced, tech-driven market. This program covers key areas such as product strategy, user experience (UX), agile methodologies, and data-driven decision-making. Participants will learn how to define product visions, prioritize features, create roadmaps, and lead cross-functional teams. Whether you're looking to build new digital products or optimize existing ones, this certification equips you with the skills and knowledge to deliver impactful product outcomes, making you a valuable asset in the digital landscape.",
         links:'/certificates',
@@ -248,7 +248,7 @@ export const certificationsListData=[
 
     },
     {
-        id:'1004',
+        id:'5',
         title:'AI Practitioner Proffesional ',
         text:" The AI Practitioner Professional Certification is designed for professionals who want to deepen their expertise in Artificial Intelligence (AI) and advance their careers in AI-driven roles. This program builds on foundational AI knowledge and dives deeper into advanced topics such as deep learning, neural networks, computer vision, and AI deployment. Participants will gain hands-on experience with real-world AI applications, learning to design, implement, and optimize AI solutions. Ideal for data scientists, engineers, and AI professionals, this certification equips you with the skills and confidence to lead AI projects and drive innovation in complex, data-driven environments",
         links:'/certificates',
@@ -359,7 +359,7 @@ export const certificationsListData=[
             
     },
     {
-        id:'1005',
+        id:'1',
         title:'AI Practitioner Proffesional',
         text:" The AI Practitioner Professional Certification is designed for professionals who want to deepen their expertise in Artificial Intelligence (AI) and advance their careers in AI-driven roles. This program builds on foundational AI knowledge and dives deeper into advanced topics such as deep learning, neural networks, computer vision, and AI deployment. Participants will gain hands-on experience with real-world AI applications, learning to design, implement, and optimize AI solutions. Ideal for data scientists, engineers, and AI professionals, this certification equips you with the skills and confidence to lead AI projects and drive innovation in complex, data-driven environments",
         links:'/certificates',
@@ -469,7 +469,7 @@ export const certificationsListData=[
         ]
     },
     {
-        id:'1006',
+        id:'1004',
         title:"Agile Communication Practitioner Foundation",
         text:"The Agile Communication Practitioner Foundation Certification is designed to equip professionals with the skills needed to effectively communicate in agile environments. This program covers key communication strategies, techniques, and tools for collaborating within cross-functional teams. Participants will learn how to facilitate agile ceremonies, manage stakeholder expectations, and adapt communication styles to different project needs. Ideal for project managers, Scrum Masters, and team leaders, this certification helps individuals build stronger communication skills that promote transparency, foster collaboration, and drive successful outcomes in fast-paced, agile projects and organizations",
         links:'/certificates',
@@ -594,7 +594,7 @@ export const certificationsListData=[
 
     },
     {
-        id:"1007",
+        id:"1005",
         title:"Agile Communication Practitioner Proffesional",
         text:"The Agile Communication Practitioner Professional Certification is designed for experienced professionals seeking to enhance their communication expertise in agile environments. This advanced program focuses on mastering communication techniques for complex, high-stakes projects. Participants will learn how to lead cross-functional teams, manage stakeholder expectations, and drive alignment across diverse teams and departments. The course delves into advanced agile communication practices, conflict resolution, and strategies for fostering collaboration in fast-paced, evolving projects. Ideal for senior project managers, Scrum Masters, and agile coaches, this certification prepares professionals to effectively navigate and communicate in complex, agile-driven organizations",
         links:'/certificates',

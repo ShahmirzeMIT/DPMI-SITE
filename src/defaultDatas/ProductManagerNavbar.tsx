@@ -12,7 +12,7 @@ export const ProductManagerCardDataNavbar=[
         id:1,
         title: "SFP | Startup Foundation Practitioner",
         image: Image1,
-        link:'/sfp-course',
+        link:'/certificates/1003',
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:"#FFFFFF"
     },
@@ -20,14 +20,14 @@ export const ProductManagerCardDataNavbar=[
         id:2,    
         title: "DPM | Digital Product Manager",
         image: Image2,
-        link:'/dpm-course',
+        link:'/certificates/1006',
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
     {
         id:3,
         title: "AIPF | AI Practitioner Foundation",
-        link:'/aipf-course',
+        link:'/certificates/1004',
         image: Image3,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
@@ -35,7 +35,7 @@ export const ProductManagerCardDataNavbar=[
     {
         id:4,
         title: "AIPP | AI Practitioner Proffesional",
-        link:'/aipp-course',
+        link:'/certificates/1005',
         image: Image4,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
@@ -43,7 +43,7 @@ export const ProductManagerCardDataNavbar=[
     {
         id:5,
         title: "ACPF | Agile Communication Practitioner Foundation",
-        link:'/acfp-course',
+        link:'/certificates/5',
         image: Image5,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
@@ -51,7 +51,7 @@ export const ProductManagerCardDataNavbar=[
     {
         id:6,
         title: "ACPP | Agile Communication Practitioner Proffesional",
-        link:'/acpp-course',
+        link:'/certificates/1',
         image: Image6,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'

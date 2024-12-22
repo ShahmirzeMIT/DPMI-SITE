@@ -86,6 +86,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
             border: "1px solid #1976d2",
             "&:hover": { background: "#1976d2", color: "white" },
           }}
+          onClick={()=>navigate(`/certificates/${data.id}`)}
          // Read More düyməsinə kliklədikdə yönləndirəcək
         >
           Read More

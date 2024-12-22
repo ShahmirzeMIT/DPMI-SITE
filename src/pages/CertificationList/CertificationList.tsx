@@ -45,8 +45,8 @@ export default function CertificationList() {
     </Grid>
     <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-around',width:'100%',margin:'0 auto',gap:4,  marginBottom:'60px',marginTop:'140px' }}>
                 {
-                   ProductManagerCardData.map((item:{title:string,image:string,text:string}, index) => <CertificateCard data={{
-                      id:index.toString(),
+                   ProductManagerCardData.map((item:{id:number,title:string,image:string,text:string}, index) => <CertificateCard data={{
+                      id:item.id.toString(),
                       title:item.title,
                       image:item.image,
                       text:item.text

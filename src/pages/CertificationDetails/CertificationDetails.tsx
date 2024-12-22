@@ -9,7 +9,11 @@ import DigitalProductFoundationModule from '../SFP/DigitalFounDationProductModul
 import WhySpf from '../SFP/WhySpf';
 import WhatGetSPF from '../SFP/WhatGetSPF';
 import WhatLearnSpf from '../SFP/WhatLearnSpf';
-import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
+// import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
+import DetailCard from '../../componets/DetailCard';
+// import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
+import { Avatar, Typography } from 'antd';
+import  Logo from '../../assets/images/research.png'
 
 // Define a type for the certification data
 // interface Certification {
@@ -71,7 +75,20 @@ export default function CertificationDetails() {
             <WhySpf data={selectedData.whyUs}/>
             <WhatGetSPF  data={selectedData.whatyouGet}/>
             <WhatLearnSpf data={selectedData.whatLearn}/>
-            <DetailofDpmCourse />
+            {/* <DetailofDpmCourse /> */}
+            <Box>
+            <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'80px'}}>
+            <Avatar src={Logo} style={{width:'60px',height:'60px',marginRight:'20px'}} shape="square" />
+                Details of the Courses</Typography>
+                        </Box>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', width: '90%', margin:'20px auto'}}>
+                {
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_item, index) => (
+                        <DetailCard key={index} />
+                    ))
+                }
+            </Box>
+           
         </Box>
     );
 }
