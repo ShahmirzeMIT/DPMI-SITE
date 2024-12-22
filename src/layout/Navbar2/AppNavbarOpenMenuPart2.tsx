@@ -27,7 +27,7 @@ const pages = [
   },
   { name: "For Companies", 
     children: [], 
-    page: '/for-companies',
+    page: '/companies',
   },
 ];
 

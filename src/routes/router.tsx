@@ -15,6 +15,7 @@ import AIPP from "../pages/AIPP/AIPP";
 import ACPP from "../pages/ACPP/ACPP";
 import LMS from "../pages/LMS/LMS";
 import CourseDetails from "../pages/CourseDetails/CourseDetails";
+import Companies from "../pages/Companies/Companies";
 
 export const routes = [
     {
@@ -25,10 +26,7 @@ export const routes = [
             { path: "/", element: <HomePagePart2 /> },
             { path: "/home", element: <HomePagePart2 /> },
             { path: "/courses", element: <Courses />  },
-            {
-                path: "/courses/:courseId",
-                element: <CourseDetails />,
-              },
+            { path: "/courses/:courseId", element: <CourseDetails />, },
             { path: "/sfp-course", element: <ProductManager />, },
             { path: "/dpm-course", element: <DPMI />, },
             { path: "/aipf-course", element: <AIPF />, },
@@ -36,6 +34,7 @@ export const routes = [
             { path: "/acfp-course", element: <ACPF />, },
             { path: "/acpp-course", element: <ACPP />, },
             { path: "/lms", element: <LMS/>, },
+            {path:"/companies",element:<Companies/>, },
             {path:'/classes',element:<Payment/>},
             {path:'/payment',element:<PaymentCheck/>},
             {path:'/paymentprocedd',element:<PaymentProceedd/>},
