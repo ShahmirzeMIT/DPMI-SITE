@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-// import { Avatar } from "antd";
+import { Avatar } from "antd";
 // import { useNavigate } from "react-router-dom"; // Yönləndirmək üçün lazım olan hook
 
 interface ProductCardProps {
@@ -33,15 +33,15 @@ export default function CertificateCard({ data }: ProductCardProps) {
       
       }}
     >
-        <img
+        <Avatar
           style={{
-            width: "100%",
+            width: "150px",
             height: "150px",
-            // margin: "0 auto",
-            // display: "block",
+            margin: "0 auto",
+            display: "block",
           }}
           src={data.image}
-          // shape="square"
+          shape="square"
         />
       <Typography
         variant="h4"
