@@ -41,8 +41,7 @@ const FourthCourse = () => {
             variant="h3"
             sx={{ fontWeight: "bold", color: "black", mb: 2 ,fontFamily:" Cabin, sans-serif !important",}}
           >
-         "Unlock the Power of Agile Communication 
-            <br /> to Drive Collaboration and Success."
+              Agile Communication
           </Typography>
           <Typography variant="body1" sx={{ color: "#555", mb: 4,fontFamily:" Cabin, sans-serif !important", }}>
             	

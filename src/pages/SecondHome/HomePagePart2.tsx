@@ -10,8 +10,7 @@ import Slider from "../Home/Slider";
 import { callApi } from "../../utils/callApi";
 import { useEffect, useState } from "react";
 import CourseCardHome from "./CourseCardHome";
-import Logo from '../../assets/images/onlineCourse.png'
-import { Avatar } from "antd";
+import { Button } from "antd";
 import AILearn from "./AILearn";
 export default function HomePagePart2() {
   const [data, setData] = useState([]);
@@ -37,9 +36,9 @@ export default function HomePagePart2() {
       <FourthCourse />
       <AboutCourses />
       <Testimonials />
-      <Box sx={{width:'80%',margin:'30px auto'}}><Typography variant='h3' sx={{color:'black',fontSize:'30px',fontWeight:'bold',marginBottom:'10px',textAlign:'start',fontFamily:" Cabin, sans-serif !important",}}>
-        <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'5px'}} shape="square" />
-        Courses</Typography></Box>
+      <Box sx={{width:'80%',margin:'30px auto',}}><Typography variant='h3' sx={{color:'black',fontSize:'30px',textAlign:'center',fontFamily:" Cabin, sans-serif !important",textTransform:'uppercase'}}>
+       Top  Courses</Typography></Box>
+        <Typography sx={{color:'black',fontSize:'16px',fontFamily:" Cabin, sans-serif !important",margin:'20px auto',maxWidth:"650px"}}>Enhance your skills and knowledge with our AI-driven e-learning platform. Accelerate your journey into the competitive market with confidence and strength.</Typography>
       <Box
         sx={{
           display: "flex",
@@ -76,6 +75,8 @@ export default function HomePagePart2() {
               )
             )}
       </Box>
+      <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginTop:'80px'}}>View Courses  &gt;&gt;</Button>
+
       <Slider />
     </Box>
   );

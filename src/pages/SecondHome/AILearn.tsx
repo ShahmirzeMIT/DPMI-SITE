@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-// import Logo from '../../assets/images/grayBGHmeGrad.png'
+import Logo from '../../assets/images/agileCard.png'
 //    
 export default function AILearn() {
   return (
@@ -8,9 +8,9 @@ export default function AILearn() {
       // top: 0,
       // left: 0,
       width: "100%",
-      height: "500px",
-      // backgroundImage: `url(${Logo})`,
-      background: "linear-gradient(to bottom, #c8c8c8, white)",
+      // height: "500px",
+      backgroundImage: `url(${Logo})`,
+      // background: "linear-gradient(to bottom, #c8c8c8, white)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

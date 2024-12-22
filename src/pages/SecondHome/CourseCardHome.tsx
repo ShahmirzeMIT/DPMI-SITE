@@ -47,7 +47,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
       <Typography
         variant="h4"
         sx={{
-          color: "#fb1201",
+          color: "rgb(251, 107, 34)",
           textDecoration: "underline",
           fontSize: "20px",
           fontWeight: "600",
@@ -67,7 +67,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
           sx={{
             marginRight: "20px",
             padding: "5px 20px",
-            background: "#fb1201",
+            background: "rgb(251, 107, 34)",
             color: "white",
             fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "white", color: "#fb1201", border: "1px solid #fb1201" },
@@ -80,9 +80,9 @@ export default function CourseCardHome({ data }: ProductCardProps) {
           sx={{
             padding: "5px 20px",
             color: "#fb1201",
-            border: "1px solid #fb1201",
+            border: "1px solid rgb(251, 107, 34)",
             fontFamily:" Cabin, sans-serif !important",
-            "&:hover": { background: "#fb1201", color: "white" },
+            "&:hover": { background: "rgb(251, 107, 34)", color: "white" },
           }}
           onClick={handleNavigate}
         >

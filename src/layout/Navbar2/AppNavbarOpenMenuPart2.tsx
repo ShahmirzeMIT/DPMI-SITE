@@ -122,9 +122,7 @@ const AppNavbarMenuPart2 = () => {
                               cursor: "pointer",
                               textAlign: "center",
                               whiteSpace: "nowrap",
-                              "&:hover": {
-                                backgroundColor: "#f5f5f5", // Hover effekti
-                              },
+                             
                             }}
                             onClick={() => {
                               setOpenMenu(null); // Menü bağlanır

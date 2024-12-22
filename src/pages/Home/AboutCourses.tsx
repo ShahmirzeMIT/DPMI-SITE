@@ -14,7 +14,7 @@ export default function AboutCourses() {
             </Box>
            <Box>
             <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginRight:'20px'}}>View Certificates  &gt;&gt;</Button>
-            <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none'}}>View Courses  &gt;&gt;</Button>
+       
            </Box>
         </Box>
     </Box>

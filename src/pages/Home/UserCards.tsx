@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Typography } from '@mui/material'
+import { Box, Card, CardContent, Typography } from '@mui/material'
 import { Avatar } from 'antd';
 import Image from '../../assets/images/image2.jpg'
 const testimonials = [
@@ -79,25 +79,7 @@ export default function UserCards() {
               </Typography>
             </Box>
             {/* Button */}
-            <Button
-              variant="contained"
-              disableElevation
-              sx={{
-                width:'157px',
-                height:'49px',
-                backgroundColor: "#F3F4F6",
-                color: "#333",
-                textTransform: "none",
-                fontSize: "14px",
-                fontFamily:'Be Vietnam Pro',
-                borderRadius: "8px",
-                "&:hover": {
-                  backgroundColor: "#EDEDED",
-                },
-              }}
-            >
-              Read Full Story
-            </Button>
+           
           </Box>
         </CardContent>
       </Card>

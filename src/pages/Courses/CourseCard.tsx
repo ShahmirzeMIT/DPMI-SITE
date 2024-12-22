@@ -73,7 +73,7 @@ export default function CourseCard({ data }: ProductCardProps) {
           }}
          
         >
-          Sign Up
+         Register
         </Button>
         <Button
           sx={{
