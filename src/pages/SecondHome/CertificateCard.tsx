@@ -23,7 +23,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
   return (
     <Box
       sx={{
-        padding: "40px",
+        padding: "40px 0",
         maxWidth: "350px",
         width: "550px",
         boxShadow:
@@ -33,18 +33,16 @@ export default function CertificateCard({ data }: ProductCardProps) {
       
       }}
     >
-      <Box sx={{marginBottom:'30px'}}>
-        <Avatar
+        <img
           style={{
-            width: "150px",
+            width: "100%",
             height: "150px",
-            margin: "0 auto",
-            display: "block",
+            // margin: "0 auto",
+            // display: "block",
           }}
           src={data.image}
-          shape="square"
+          // shape="square"
         />
-      </Box>
       <Typography
         variant="h4"
         sx={{
@@ -59,11 +57,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
         {data.title}
       </Typography>
 
-      {/* <Box sx={{ marginTop: "30px",marginBottom:'60px' }}>
-        <Typography sx={{ color: "#545454", fontSize: "16px", textAlign: "start",minHeight:'120px' }}>
-          {data.description}
-        </Typography>
-      </Box> */}
+      
       <Box sx={{ marginTop: "30px",position:'absolute',bottom:'30px' }}>
         <Button
           sx={{

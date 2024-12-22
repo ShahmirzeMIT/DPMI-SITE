@@ -9,12 +9,14 @@ const data = [
     title: "For Individuals",
     description:"I want to be best in my career",
     button: "Explore Certifications",
+    links:"/certificates"
   },
   {
     id: 2,
     title: "For Companies",
     description: "We want fastest, measureable applicable AI Transformation",
     button: "Check our Services",
+     links:"/ourservices"
   },
 ];
 
@@ -23,13 +25,13 @@ const AgileLearning = () => {
     <Box
       sx={{
         position: "relative", // Background üçün ::before istifadəsinə imkan yaratmaq
-        padding: "40px",
+        padding: "120px 0",
         color: "white",
        
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        marginTop: "20px",
+        // marginTop: "20px",
         overflow: "hidden", // Background çıxmasın deyə
       }}
     >
@@ -44,9 +46,9 @@ const AgileLearning = () => {
 
         <Typography
           variant="h4"
-          style={{ marginBottom: "20px", color: "black",textAlign:'end',marginLeft:'20px' }}
+          style={{ marginBottom: "20px", color: "black",textAlign:'center',marginLeft:'60px',lineHeight:'56px', }}
         >
-          Our Certification are  Designed  to accelerate
+          Our Certifications are  designed  to accelerate
           <br />
           career growth for individuals and support
           <br />
