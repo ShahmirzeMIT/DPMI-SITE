@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Avatar } from "antd";
+// import { Avatar } from "antd";
 // import { useNavigate } from "react-router-dom"; // Yönləndirmək üçün lazım olan hook
 
 interface ProductCardProps {
@@ -23,7 +23,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
   return (
     <Box
       sx={{
-        padding: "40px 0",
+        padding: "40px",
         maxWidth: "350px",
         width: "550px",
         boxShadow:
