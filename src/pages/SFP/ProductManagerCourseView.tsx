@@ -1,5 +1,5 @@
 import { Box, Button, Typography, Grid, } from "@mui/material";
-import logoImg from "../../assets/images/sfp.jpeg";
+// import logoImg from "../../assets/images/sfp.jpeg";
 import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 interface ProductCardProps {
@@ -31,7 +31,7 @@ export default function ProductManagerCourseView({data}:ProductCardProps) {
         {/* Left Section */}
         <Grid item xs={12} md={6}>
           <Avatar
-            src={logoImg}
+            src={data.image}
             alt="Certification Logo"
             style={{ width: "100%", height: "100%" }}
             shape="square"

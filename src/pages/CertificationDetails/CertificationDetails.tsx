@@ -12,35 +12,35 @@ import WhatLearnSpf from '../SFP/WhatLearnSpf';
 import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
 
 // Define a type for the certification data
-interface Certification {
-    id: string;
-    title: string;
-    text: string;
-    links: string;
-    enroll: string;
-    image: string;
-    courseModules: {
-        title: string;
-        shortDesc: string;
-        mdHours: string;
-        courses: string;
-    }[];
-    whyUs:{
-        title: string;
-        desc: string
-    }[],
-    whatyouGet:{
-        boldTitle: string;
-        title: string
-    }[],
-    whatLearn:{
-        title: string
-    }[]
-}
+// interface Certification {
+//     id: string;
+//     title: string;
+//     text: string;
+//     links: string;
+//     enroll: string;
+//     image: string;
+//     courseModules: {
+//         title: string;
+//         shortDesc: string;
+//         mdHours: string;
+//         courses: string;
+//     }[];
+//     whyUs:{
+//         title: string;
+//         desc: string
+//     }[],
+//     whatyouGet:{
+//         boldTitle: string;
+//         title: string
+//     }[],
+//     whatLearn:{
+//         title: string
+//     }[]
+// }
 
 export default function CertificationDetails() {
     const { certificateId } = useParams<{ certificateId: string }>(); 
-    const selectedData: Certification | undefined = certificationsListData.find((item: Certification) => item.id === certificateId);
+    const selectedData = certificationsListData.find((item: any) => item.id === certificateId);
 
     // Check if selectedData is undefined
     if (!selectedData) {
