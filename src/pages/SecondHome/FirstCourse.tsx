@@ -8,15 +8,15 @@ const FirstCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2,fontFamily:" Cabin, sans-serif !important", }}
+            sx={{ fontWeight: "bold", color: "black", mb: 2 }}
           >
           Startup Journey
           </Typography>
-          <Typography variant="body1" sx={{ color: "#555", mb: 4,fontFamily:" Cabin, sans-serif !important", }}>
+          <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
           This certification is designed for individuals who are taking their first steps into the startup world or want to strengthen their existing knowledge and skills. It covers the stages of developing and launching a digital product based on market demand. The main topics include market analysis, segmentation, page design, database and API design, creating an MVP, calculating budget and time, and the product launch phase
           </Typography>
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
+          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' }}>
               View Certifications
           </Button>
           </Box>

@@ -46,7 +46,7 @@ const AgileCommunicationCulture = () => {
               fontWeight: "bold",
               color: "black",
               mb: 2,
-              fontFamily: "Cabin, sans-serif !important",
+             
             }}
           >
             Agile Communication Culture
@@ -56,7 +56,7 @@ const AgileCommunicationCulture = () => {
             sx={{
               color: "#555",
               mb: 4,
-              fontFamily: "Cabin, sans-serif !important",
+             
             }}
           >
             Establishing a culture of effective communication is vital for
@@ -73,7 +73,7 @@ const AgileCommunicationCulture = () => {
               fontWeight: "bold",
               color: "#fb6b22",
               mb: 4,
-              fontFamily: "Cabin, sans-serif !important",
+             
             }}
           >
             "Transform Communication Barriers Into Bridges for Growth and Innovation."
@@ -87,7 +87,7 @@ const AgileCommunicationCulture = () => {
                 backgroundColor: "#2a74b1",
                 color: "white",
                 padding: "10px 70px",
-                fontFamily: "Cabin, sans-serif !important",
+               
               }}
             >
               Learn More

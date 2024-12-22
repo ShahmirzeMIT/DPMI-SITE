@@ -20,7 +20,7 @@ export default function Testimonials() {
         <Box sx={{width:'100%',textAlign:'center'}}>
           <Typography
             variant="h4"
-            sx={{  marginBottom: "10px" ,color:'black',textAlign:'center', fontFamily: "Cabin, sans-serif !important",
+            sx={{  marginBottom: "10px" ,color:'black',textAlign:'center', 
               textTransform:'uppercase',}}
           >
             Our Testimonials

@@ -51,7 +51,7 @@ export default function Courses1() {
           >
             <span style={{
                   margin: "0px",
-                  fontFamily:' Cabin, sans-serif',
+               
                   fontWeight: "400",
                   fontSize: "1rem",
                   lineHeight: "1.5",

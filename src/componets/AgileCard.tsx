@@ -12,13 +12,13 @@ export default function AgileCard({data}:AgileCardProps) {
 
        <Card style={{ width: 400,height:200,backgroundColor: '#2a74b1', color: 'white',border:'none',    boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",borderRadius:'8px' }}>
             <CardContent>
-              <Typography variant="h6" gutterBottom sx={{fontFamily:" Cabin, sans-serif !important",}}>
+              <Typography variant="h6" gutterBottom sx={{}}>
                 {data.title}
               </Typography>
-              <Typography variant="body2" gutterBottom sx={{height:'60px',fontFamily:" Cabin, sans-serif !important",}}>
+              <Typography variant="body2" gutterBottom sx={{height:'60px',}}>
                 {data.description}
               </Typography>
-              <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',width:"80%" ,fontFamily:" Cabin, sans-serif !important",}}>
+              <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',width:"80%" ,}}>
                 {data.button}
               </Button>
             </CardContent>

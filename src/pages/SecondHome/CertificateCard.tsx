@@ -71,7 +71,6 @@ export default function CertificateCard({ data }: ProductCardProps) {
             padding: "5px 20px",
             background: "rgb(251, 107, 34)",
             color: "white",
-            fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "white", color: "#fb1201", border: "1px solid #fb1201" },
           }}
          
@@ -83,7 +82,6 @@ export default function CertificateCard({ data }: ProductCardProps) {
             padding: "5px 20px",
             color: "#fb1201",
             border: "1px solid rgb(251, 107, 34)",
-            fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "rgb(251, 107, 34)", color: "white" },
           }}
           onClick={handleNavigate} // Read More düyməsinə kliklədikdə yönləndirəcək

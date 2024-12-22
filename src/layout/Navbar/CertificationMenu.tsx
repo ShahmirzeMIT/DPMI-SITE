@@ -24,13 +24,13 @@ export default function CertificationMenu() {
           letterSpacing: "0em",
           paddingBottom:'2rem',
           color: "rgb(105 105 105)",
-          fontFamily:" Cabin, sans-serif !important",
+        
         }}>Certification Resources</Typography>
         {
           ProductManagerCardDataNavbar.map((item:{title:string,link:string})=>{
             return(
                  <Typography sx={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem','&:hover':{textDecoration:'underline'}}}> <Link href={item.link} style={{fontSize: "1rem", lineHeight: "1.5rem",paddingBottom:'1rem',color:'black',textDecoration:'none',
-                  fontFamily:" Cabin, sans-serif !important",
+                
                   cursor: "pointer",
                  }}>{item.title} </Link></Typography>
                

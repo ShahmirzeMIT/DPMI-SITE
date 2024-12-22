@@ -28,7 +28,7 @@ const UnlockPotential = () => {
 const styles = {
   container: {
     textAlign: 'center' as const,
-    fontFamily: 'Arial, sans-serif',
+   
     padding: '2rem',
     color: '#333',
     borderTop: '1px solid #FF9800',

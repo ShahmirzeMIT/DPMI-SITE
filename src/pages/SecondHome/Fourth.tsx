@@ -39,22 +39,22 @@ const FourthCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2 ,fontFamily:" Cabin, sans-serif !important",}}
+            sx={{ fontWeight: "bold", color: "black", mb: 2 ,}}
           >
               Agile Communication
           </Typography>
-          <Typography variant="body1" sx={{ color: "#555", mb: 4,fontFamily:" Cabin, sans-serif !important", }}>
+          <Typography variant="body1" sx={{ color: "#555", mb: 4, }}>
             	
             If you are a Product Owner, Agile Coach, Business Owner, Product Manager, or Project Manager struggling with communication issues with the development team, this certification can help you a lot. It makes it possible to eliminate weekly and daily meetings with no business value completely. This certification is also designed for software developers, QA engineers, UI/UX designers, and other engineers who find it challenging to understand business requirements
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
-          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
+          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px', }}>
               View Fundamenmtal Level
           </Button>
 
           </Box>
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }}>
               View Proffesional Level
           </Button>
           </Box>

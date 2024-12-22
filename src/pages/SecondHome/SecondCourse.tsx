@@ -39,16 +39,16 @@ const SecondCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2,fontFamily:" Cabin, sans-serif !important", }}
+            sx={{ fontWeight: "bold", color: "black", mb: 2, }}
           >
             Digital Product Managment
           </Typography>
-          <Typography variant="body1" sx={{ color: "#555", mb: 4,fontFamily:" Cabin, sans-serif !important", }}>
+          <Typography variant="body1" sx={{ color: "#555", mb: 4, }}>
           Individuals who want to build a future career in Digital Product Management or acquire deeper and more sophisticated skills and knowledge can apply for this certification. A completely new, applicable approach with simulators and real-world project practice, along with interactive training, prepares you directly for real work and team environments. Topics covered include requirements analysis, design, backlog assessment, issue management, product management, budgeting, timing, and more.
           </Typography>
        
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }}>
               View Certifications
           </Button>
           </Box>

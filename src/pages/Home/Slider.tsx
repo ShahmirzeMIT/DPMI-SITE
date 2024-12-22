@@ -18,7 +18,7 @@ export default function Slider() {
           width: "60%",
           margin: "0 auto",
           textAlign: "center",
-          fontFamily: "Cabin, sans-serif !important",
+        
           textTransform:'uppercase',
           marginBottom:'60px'
         }}

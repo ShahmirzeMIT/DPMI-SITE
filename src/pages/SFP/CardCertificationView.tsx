@@ -40,7 +40,7 @@ export default function CardCertificationView() {
     }}>
         {
             data.map((item, _index) => <Typography style={{   
-                fontFamily: "Roboto, Sans-serif",
+                // fontFamily: "Roboto, Sans-serif",
                 fontSize: "16px",
                 lineHeight: "20px",
                 fontWeight: 'bold',

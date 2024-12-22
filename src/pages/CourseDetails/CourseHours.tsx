@@ -38,14 +38,14 @@ export default function CourseHours() {
     }}>
         {
             data.map((item, _index) => <Typography style={{   
-                fontFamily: "Roboto, Sans-serif",
+               
                 fontSize: "23px",
                 lineHeight: "20px",
                 fontWeight: 'bold',
                 color: "#000",
                 
                 }}>
-            <div style={{ fontFamily: "Roboto, Sans-serif",
+            <div style={{
                 fontSize: "27px",
                 lineHeight: "20px",
                 fontWeight: 400,

@@ -19,7 +19,7 @@ const AgileTransformation = () => {
               fontWeight: "bold",
               color: "black",
               mb: 2,
-              fontFamily: "Cabin, sans-serif !important",
+            
             }}
           >
             Fostering Digital/Agile Transformation
@@ -29,7 +29,7 @@ const AgileTransformation = () => {
             sx={{
               color: "#555",
               mb: 4,
-              fontFamily: "Cabin, sans-serif !important",
+            
             }}
           >
             Achieving seamless collaboration between Agile Communication (AC)
@@ -47,7 +47,7 @@ const AgileTransformation = () => {
               fontWeight: "bold",
               color: "#fb6b22",
               mb: 4,
-              fontFamily: "Cabin, sans-serif !important",
+            
             }}
           >
             "Empowering Collaboration, Innovation, and Transformation Through Agile and AI Synergy."
@@ -59,7 +59,7 @@ const AgileTransformation = () => {
                 backgroundColor: "#fb6b22",
                 color: "white",
                 padding: "10px 70px",
-                fontFamily: "Cabin, sans-serif !important",
+              
               }}
             >
               Learn More

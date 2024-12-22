@@ -40,7 +40,7 @@ export default function CardDPMCaertificationView() {
     }}>
         {
             data.map((item, _index) => <Typography style={{   
-                fontFamily: "Roboto, Sans-serif",
+              
                 fontSize: "16px",
                 lineHeight: "20px",
                 fontWeight: 'bold',

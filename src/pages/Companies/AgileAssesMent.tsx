@@ -23,7 +23,7 @@ const AgileAssesMent = () => {
                 fontWeight: "bold",
                 color: "black",
                 mb: 2,
-                fontFamily: "Cabin, sans-serif !important",
+                
               }}
             >
               Startup Acceleration & Incubation Center
@@ -33,7 +33,7 @@ const AgileAssesMent = () => {
               sx={{
                 color: "#555",
                 mb: 4,
-                fontFamily: "Cabin, sans-serif !important",
+                
               }}
             >
               Accelerate your startup's growth with expert mentoring,
@@ -50,7 +50,7 @@ const AgileAssesMent = () => {
                 fontWeight: "bold",
                 color: "#fb6b22",
                 mb: 4,
-                fontFamily: "Cabin, sans-serif !important",
+                
               }}
             >
               "Fueling Dreams, Accelerating Success, Empowering Entrepreneurs."
@@ -62,7 +62,7 @@ const AgileAssesMent = () => {
                   backgroundColor: "#fb6b22",
                   color: "white",
                   padding: "10px 70px",
-                  fontFamily: "Cabin, sans-serif !important",
+                  
                 }}
               >
                 Learn More
