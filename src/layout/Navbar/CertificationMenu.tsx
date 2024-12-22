@@ -12,6 +12,7 @@ export default function CertificationMenu() {
         gap: 2,
         justifyContent: "space-between",
            marginLeft: "60px",
+           alignItems:'center'
       }}
     >
       <Box sx={{marginTop:'25px',textAlign:'start'}}>
@@ -38,7 +39,7 @@ export default function CertificationMenu() {
         }
        
       </Box>
-      <Box sx={{marginTop:'5px',width:'600px',display:'flex',justifyContent:'center',flexWrap:'wrap'}}>
+      <Box sx={{marginTop:'5px',width:'480px',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px'}}>
         {
           ProductManagerCardDataNavbar.map((item:{image:string})=>{
             return(

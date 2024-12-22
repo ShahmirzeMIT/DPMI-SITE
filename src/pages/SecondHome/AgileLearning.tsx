@@ -1,6 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 
 import AgileCard from "../../componets/AgileCard";
+import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
+import { Avatar } from "antd";
 
 const data = [
   {
