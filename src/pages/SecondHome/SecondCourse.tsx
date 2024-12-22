@@ -39,11 +39,11 @@ const SecondCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2 }}
+            sx={{ fontWeight: "bold", color: "black", mb: 2,fontFamily:" Cabin, sans-serif !important", }}
           >
             Digital Product Managment
           </Typography>
-          <Typography variant="body1" sx={{ color: "#555", mb: 4 }}>
+          <Typography variant="body1" sx={{ color: "#555", mb: 4,fontFamily:" Cabin, sans-serif !important", }}>
           Individuals who want to build a future career in Digital Product Management or acquire deeper and more sophisticated skills and knowledge can apply for this certification. A completely new, applicable approach with simulators and real-world project practice, along with interactive training, prepares you directly for real work and team environments. Topics covered include requirements analysis, design, backlog assessment, issue management, product management, budgeting, timing, and more.
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
@@ -67,13 +67,14 @@ const SecondCourse = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
+                      fontFamily:" Cabin, sans-serif !important",
                   }}
               >
-                  <span style={{ fontSize: "18px" }}>For More</span>
+                  <span style={{ fontSize: "18px",fontFamily:" Cabin, sans-serif !important", }}>For More</span>
               </Button>
           </Box>
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px' }}>
+          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
               View Certifications
           </Button>
           </Box>

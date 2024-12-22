@@ -58,7 +58,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
       </Typography>
 
       <Box sx={{ marginTop: "30px",marginBottom:'60px' }}>
-        <Typography sx={{ color: "#545454", fontSize: "16px", textAlign: "start",minHeight:'120px' }}>
+        <Typography sx={{ color: "#545454", fontSize: "16px", textAlign: "start",minHeight:'120px',fontFamily:" Cabin, sans-serif !important", }}>
           {data.description}
         </Typography>
       </Box>
@@ -69,6 +69,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
             padding: "5px 20px",
             background: "#fb1201",
             color: "white",
+            fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "white", color: "#fb1201", border: "1px solid #fb1201" },
           }}
          
@@ -80,6 +81,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
             padding: "5px 20px",
             color: "#fb1201",
             border: "1px solid #fb1201",
+            fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "#fb1201", color: "white" },
           }}
           onClick={handleNavigate}

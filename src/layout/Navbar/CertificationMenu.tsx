@@ -14,7 +14,7 @@ export default function CertificationMenu() {
            marginLeft: "60px",
       }}
     >
-      <Box sx={{marginTop:'25px'}}>
+      <Box sx={{marginTop:'25px',textAlign:'start'}}>
         <Typography variant="h6" sx={{
           fontSize: "21px",
           fontStyle: "normal",
@@ -43,7 +43,9 @@ export default function CertificationMenu() {
           ProductManagerCardDataNavbar.map((item:{image:string})=>{
             return(
               <Box>
-                <Avatar src={item.image} style={{width: "10rem",height: "auto"}}  shape="square"/>
+                <Avatar src={item.image} style={{width: "10rem",height: "auto",
+                  // boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",borderRadius:'50%'
+                  }}  />
                </Box> 
             )
           })

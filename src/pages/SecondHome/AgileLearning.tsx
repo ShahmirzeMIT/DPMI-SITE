@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import AgileCard from "../../componets/AgileCard";
 
@@ -19,12 +19,18 @@ const data = [
 
 const AgileLearning = () => {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         position: "relative", // Background üçün ::before istifadəsinə imkan yaratmaq
         padding: "40px",
         color: "white",
-        minHeight: "660px",
+        minHeight:{
+          xs:'1350px',
+          sm:'900px',
+          md:'600px',
+          lg:'600px',
+          xl:'600px'
+        },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -54,7 +60,7 @@ const AgileLearning = () => {
       <div style={{ position: "relative", zIndex: 3 }}> {/* Məzmun tünd backgroundun üstündə qalır */}
         <Typography
           variant="h4"
-          style={{ marginBottom: "20px", color: "black" }}
+          style={{ marginBottom: "20px", color: "black",fontFamily:" Cabin, sans-serif !important", }}
         >
           Our Certification are  Designed  to accelerate
           <br />
@@ -73,7 +79,7 @@ const AgileLearning = () => {
           ))}
         </Grid>
       </div>
-    </div>
+    </Box>
   );
 };
 

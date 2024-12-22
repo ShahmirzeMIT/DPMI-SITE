@@ -39,7 +39,7 @@ export default function HomePagePart2() {
       <FourthCourse />
       <AboutCourses />
       <Testimonials />
-      <Box sx={{width:'80%',margin:'30px auto'}}><Typography variant='h3' sx={{color:'black',fontSize:'30px',fontWeight:'bold',marginBottom:'10px',textAlign:'start'}}>
+      <Box sx={{width:'80%',margin:'30px auto'}}><Typography variant='h3' sx={{color:'black',fontSize:'30px',fontWeight:'bold',marginBottom:'10px',textAlign:'start',fontFamily:" Cabin, sans-serif !important",}}>
         <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'5px'}} shape="square" />
         Courses</Typography></Box>
       <Box

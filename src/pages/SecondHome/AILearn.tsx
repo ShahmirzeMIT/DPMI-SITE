@@ -21,7 +21,7 @@ export default function AILearn() {
     }}>
         <Typography
           variant="h4"
-          style={{ marginBottom: "60px", color: "black",fontSize:'2.4rem' }}
+          style={{ marginBottom: "60px", color: "black",fontSize:'2.4rem',fontFamily:" Cabin, sans-serif !important", }}
         >
           We've developed an <span style={{color:'#fb6b22',fontWeight:'bold'}}>AI-driven E-Learning </span>
           <br />
@@ -31,8 +31,8 @@ export default function AILearn() {
           <br />
           knowledge on the real-world projects.
         </Typography>
-        <Typography sx={{color:'black',fontSize:'16px',fontWeight:'400',textAlign:'center',marginLeft:'70px',lineHeight:'40px',marginBottom:'40px'}}>AI Simulator, AI Mentor, Live Mentorship, Comprehensive Guidelines, Video Tutorials, Gamified <br/> Learning, and Project Sharing.</Typography>
-        <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' }}>
+        <Typography sx={{color:'black',fontSize:'16px',fontWeight:'400',textAlign:'center',marginLeft:'70px',lineHeight:'40px',marginBottom:'40px',fontFamily:" Cabin, sans-serif !important",}}>AI Simulator, AI Mentor, Live Mentorship, Comprehensive Guidelines, Video Tutorials, Gamified <br/> Learning, and Project Sharing.</Typography>
+        <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px',fontFamily:" Cabin, sans-serif !important", }}>
         Discover E-Learning Platform
           </Button>
     </Box>

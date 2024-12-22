@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Menu from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
 import { Avatar } from "antd";
@@ -36,7 +35,7 @@ const openPage = ['Courses', 'E-Learning  (LMS)', 'For Individuals', 'For Compan
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [_anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, page: string) => {
@@ -50,10 +49,6 @@ const AppNavbarMenuPart2 = () => {
     }
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setOpenMenu(null);
-  };
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333", boxShadow: 'none',padding:'10px 0 20px 0' }}>
@@ -98,34 +93,49 @@ const AppNavbarMenuPart2 = () => {
                       : <IoIosArrowDown style={{ marginTop: '2px' }} />
                   )}
                 </Box>
-                {openMenu === page.name && !openPage.includes(page.name) && (
-                    <Menu
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleMenuClose}
-                    sx={{
-                      "& .MuiMenu-paper": {
-                        display: 'flex',
-                        flexDirection: 'row', // Horizontal düzülüş
-                        justifyContent: 'center', // Elementləri horizontal mərkəzləşdir
-                        alignItems: 'center', // Şaquli mərkəzləşdir
-                        backgroundColor: "white",
-                      },
-                    }}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "left",
-                    }}
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "left",
-                    }}
-                  >
-                    {page.children}
-                  </Menu>
-           
-              
-                )}
+                {openMenu === page.name && (
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "60px",
+                          left:"15vw",
+                          zIndex: 1000,
+                          display: "flex",
+                          flexDirection: "row", // Horizontal düzülüş
+                          justifyContent: "center", // Horizontal mərkəzləşdirmə
+                          alignItems: "center", // Şaquli Mərkəzlik
+                          backgroundColor: "white",
+                          border: "1px solid #ddd",
+                          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                          borderRadius: "4px",
+                          padding: "10px 0",
+                          borderTop:'2px solid #2a74b1',
+                        }}
+                        onMouseLeave={() => setOpenMenu(null)} // Mouse çıxanda bağlanır
+                      >
+                        {page.children?.map((child, index) => (
+                          <Box
+                            key={index}
+                            sx={{
+                              padding: "8px 16px",
+                              color: "#333",
+                              cursor: "pointer",
+                              textAlign: "center",
+                              whiteSpace: "nowrap",
+                              "&:hover": {
+                                backgroundColor: "#f5f5f5", // Hover effekti
+                              },
+                            }}
+                            onClick={() => {
+                              setOpenMenu(null); // Menü bağlanır
+                            }}
+                          >
+                            {child}
+                          </Box>
+                        ))}
+                      </Box>
+                    )}
+
               </Box>
             ))
           }
