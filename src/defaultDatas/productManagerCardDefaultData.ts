@@ -6,47 +6,50 @@ import Image4 from "../assets/images/aipp.png";
 import Image5 from "../assets/images/acpf.png";
 import Image6 from "../assets/images/acpp.png";
 export const ProductManagerCardData=[
-    
     {
-        id:1,
-        title: "SFP Startup Foundation Practitioner",
+        id:1004,
+        title: " AI Foundation Practitioner",
+        image: Image3,
+        text:"Build a strong foundation in AI concepts and their practical applications in business.",
+        bgColor:'#FFFFFF'
+    },
+       
+    {
+        id:1005,
+        title: "AI Professional Practitioner",
+        image: Image4,
+        text:"Advance your expertise in AI, focusing on real-world solutions and transformative impact.",
+        bgColor:'#FFFFFF'
+    },
+    {
+        id:1006,    
+        title: "Digital Product Manager",
+        image: Image2,
+        text:"Gain the skills to manage digital products, from concept to launch, with confidence and precision.",
+        bgColor:'#FFFFFF'
+    },
+
+    {
+        id:1003,
+        title: "Startup Foundation Practitioner",
         image: Image1,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        text:"Learn the essential tools and strategies to launch and manage a successful startup.",
         bgColor:"#FFFFFF"
     },
     {
-        id:2,    
-        title: "DPM Digital Product Manager",
-        image: Image2,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
-        bgColor:'#FFFFFF'
-    },
-    {
-        id:3,
-        title: "AIPF AI Practitioner Foundation",
-        image: Image3,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
-        bgColor:'#FFFFFF'
-    },
-    {
-        id:4,
-        title: "AIPF AI Practitioner Foundation",
-        image: Image4,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
-        bgColor:'#FFFFFF'
-    },
-    {
         id:5,
-        title: "ACPF Agile Communication Practitioner Foundation",
+        title: "Agile Communication  Foundation Practitioner ",
         image: Image5,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        text:"Master the fundamentals of Agile Communication to enhance collaboration and drive project success",
         bgColor:'#FFFFFF'
     },
-    {
-        id:6,
-        title: "ACPP Agile Communication Practitioner Proffesional",
+      {
+        id:1,
+        title: "Agile Communication Proffesional Practitioner ",
         image: Image6,
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        text:"Develop advanced Agile Communication skills to lead teams and manage projects effectively",
         bgColor:'#FFFFFF'
     },
+   
+  
 ]

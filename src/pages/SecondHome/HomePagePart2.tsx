@@ -12,7 +12,9 @@ import { useEffect, useState } from "react";
 import CourseCardHome from "./CourseCardHome";
 import { Button } from "antd";
 import AILearn from "./AILearn";
+import { useNavigate } from "react-router-dom";
 export default function HomePagePart2() {
+  const navigate=useNavigate()
   const [data, setData] = useState([]);
 
   // Fetch data from API
@@ -75,7 +77,7 @@ export default function HomePagePart2() {
               )
             )}
       </Box>
-      <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginTop:'80px'}}>View Courses  &gt;&gt;</Button>
+      <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginTop:'80px'}} onClick={() => navigate("/courses")}>View Courses  &gt;&gt;</Button>
 
       <Slider />
     </Box>

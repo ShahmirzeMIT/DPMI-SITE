@@ -9,11 +9,13 @@ import WhySpf from "./WhySpf";
 import WhatGetSPF from "./WhatGetSPF";
 import WhatLearnSpf from "./WhatLearnSpf";
 import DetailofCourse from "./DetailofCourse";
+import ResponsiveSteps from "../../componets/ResponsiveSteps";
 
 export default function ProductManager() {
   return (
     <Box sx={{marginTop:'80px'}}> 
       <ProductManagerCourseView/>
+      <ResponsiveSteps/>
       <CardCertificationView/>
       <Roadmap/>
       <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-between',width:'90%',margin:'40px auto',gap:'60px'}}>

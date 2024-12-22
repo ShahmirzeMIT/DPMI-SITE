@@ -11,10 +11,11 @@ export default function AboutCourses() {
 
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',width:'80%',margin:'0 auto',gap:4,  marginBottom:'60px',marginTop:'40px' }}>
                 {
-                   ProductManagerCardData.map((item:{title:string,image:string}, index) => <CertificateCard data={{
+                   ProductManagerCardData.map((item:{title:string,image:string,text:string}, index) => <CertificateCard data={{
                       id:index.toString(),
                       title:item.title,
-                      image:item.image
+                      image:item.image,
+                      text:item.text
                     }} key={index}/>)
                 }
             </Box>

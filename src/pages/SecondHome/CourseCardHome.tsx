@@ -72,9 +72,9 @@ export default function CourseCardHome({ data }: ProductCardProps) {
             fontFamily:" Cabin, sans-serif !important",
             "&:hover": { background: "white", color: "#fb1201", border: "1px solid #fb1201" },
           }}
-         
+         onClick={() => navigate("/classes")}
         >
-          Sign Up
+          Register
         </Button>
         <Button
           sx={{
