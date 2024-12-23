@@ -3,12 +3,14 @@ import CourseCard from "./CourseCard";
 
 
 import useCourseState from "./useCourseState";
+import CourseDetailsHeader from "../CourseDetails/CourseDetailsHeader";
 
 export default function Courses() {
   const{data}=useCourseState()
   
   return (
-    <Box sx={{ margin: "250px 0" }}>
+    <Box sx={{ margin: "250px auto" }}>
+     
       <Box
         sx={{
           display: "flex",
@@ -20,6 +22,7 @@ export default function Courses() {
           margin: "0 auto",
         }}
       >
+         <CourseDetailsHeader/>
         { data.length>0 && data?.map((item:{CourseId:string,CourseName:string,IconUrl:string,CourseShortDesc:string}, index) => (
           <CourseCard key={index} data={{
             id: item.CourseId,
