@@ -9,44 +9,28 @@ import DigitalProductFoundationModule from '../SFP/DigitalFounDationProductModul
 import WhySpf from '../SFP/WhySpf';
 import WhatGetSPF from '../SFP/WhatGetSPF';
 import WhatLearnSpf from '../SFP/WhatLearnSpf';
-// import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
 import DetailCard from '../../componets/DetailCard';
-// import DetailofDpmCourse from '../DPM/DetailofDpmCourse';
 import { Avatar, Typography } from 'antd';
-import  Logo from '../../assets/images/research.png'
+import Logo from '../../assets/images/detailIcon.png';
+import RoadmapACPF from '../ACFP/RoadMapACPF';
+import RoadmapACPP from '../ACPP/RoadMapACPP';
+import RoadmapDPM from '../DPM/RoadMapDPM';
+import RoadmapAIPP from '../AIPP/RoadMapAIPP';
+import RoadmapAIFP from '../AIPF/RoadMapAIPF';
 
-// Define a type for the certification data
-// interface Certification {
-//     id: string;
-//     title: string;
-//     text: string;
-//     links: string;
-//     enroll: string;
-//     image: string;
-//     courseModules: {
-//         title: string;
-//         shortDesc: string;
-//         mdHours: string;
-//         courses: string;
-//     }[];
-//     whyUs:{
-//         title: string;
-//         desc: string
-//     }[],
-//     whatyouGet:{
-//         boldTitle: string;
-//         title: string
-//     }[],
-//     whatLearn:{
-//         title: string
-//     }[]
-// }
+const data = [
+    { id: "1003", roadMap: <Roadmap /> },
+    { id: "1006", roadMap: <RoadmapACPF /> },
+    { id: "1004", roadMap: <RoadmapACPP /> },
+    { id: "1005", roadMap: <RoadmapDPM /> },
+    { id: '5', roadMap: <RoadmapAIPP /> },
+    { id: '1', roadMap: <RoadmapAIFP /> }
+];
 
 export default function CertificationDetails() {
     const { certificateId } = useParams<{ certificateId: string }>(); 
     const selectedData = certificationsListData.find((item: any) => item.id === certificateId);
 
-    // Check if selectedData is undefined
     if (!selectedData) {
         return (
             <Box sx={{ marginTop: '120px', color: 'gray' }}>
@@ -55,10 +39,13 @@ export default function CertificationDetails() {
         );
     }
 
+    // Find the corresponding roadmap based on the certificateId
+    const selectedRoadmap = data.find(item => item.id === certificateId);
+
     return (
         <Box sx={{ marginTop: '120px', color: 'gray' }}>
             <ProductManagerCourseView data={{
-                title: selectedData.title, // No need for default value since we checked for undefined
+                title: selectedData.title,
                 text: selectedData.text,
                 links: selectedData.links,
                 enroll: selectedData.enroll,
@@ -66,29 +53,29 @@ export default function CertificationDetails() {
             }} />
             <ResponsiveSteps />
             <CardCertificationView />
-            <Roadmap />
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '90%', margin: '40px auto', gap: '60px' }}>
+            {/* Render the selected roadmap if it exists */}
+            {selectedRoadmap && selectedRoadmap.roadMap}
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', width: '90%', margin: '40px auto', gap: '60px' }}>
                 {selectedData.courseModules.map((item, index) => (
                     <DigitalProductFoundationModule key={index} data={item} />
                 ))}
             </Box>
-            <WhySpf data={selectedData.whyUs}/>
-            <WhatGetSPF  data={selectedData.whatyouGet}/>
-            <WhatLearnSpf data={selectedData.whatLearn}/>
-            {/* <DetailofDpmCourse /> */}
+            <WhySpf data={selectedData.whyUs} />
+            <WhatGetSPF data={selectedData.whatyouGet} />
+            <WhatLearnSpf data={selectedData.whatLearn} />
             <Box>
-            <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'80px'}}>
-            <Avatar src={Logo} style={{width:'60px',height:'60px',marginRight:'20px'}} shape="square" />
-                Details of the Courses</Typography>
-                        </Box>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', width: '90%', margin:'20px auto'}}>
+                <Typography style={{ color: 'black', fontSize: '30px', fontWeight: '600', textAlign: 'start', marginLeft: '80px' }}>
+                    <Avatar src={Logo} style={{ width: '60px', height: '60px', marginRight: '20px' }} shape="square" />
+                    Details of the Courses
+                </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', width: '90%', margin: '20px auto' }}>
                 {
                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_item, index) => (
                         <DetailCard key={index} />
                     ))
                 }
             </Box>
-           
         </Box>
     );
 }

@@ -17,9 +17,9 @@ const useScreenWidth = () => {
 
   return screenWidth;
 };
+
 const RoadmapACPP = () => {
   const screenWidth = useScreenWidth();
-  
 
   const pathVariants = {
     hidden: { pathLength: 0 },
@@ -35,7 +35,6 @@ const RoadmapACPP = () => {
     },
   });
 
-
   return (
     <div
       style={{
@@ -44,7 +43,7 @@ const RoadmapACPP = () => {
         alignItems: "center",
         marginTop: "50px",
         position: "relative",
-        minHeight:'800px'
+        minHeight: "800px",
       }}
     >
       <svg
@@ -54,25 +53,12 @@ const RoadmapACPP = () => {
       >
         {/* Road Path */}
         <motion.path
-          d="M50 350 Q200 100 400 150 Q600 200 750 50"
+          d="M50 350 L750 50" // Straight line from bottom-left to top-right
           fill="none"
           stroke="#888"
           strokeWidth="20"
           strokeLinecap="round"
           strokeDasharray="0 100"
-          variants={pathVariants}
-          initial="hidden"
-          animate="visible"
-        />
-
-        {/* Dashed Divider */}
-        <motion.path
-          d="M50 350 Q200 100 400 150 Q600 200 750 50"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeDasharray="10 10"
           variants={pathVariants}
           initial="hidden"
           animate="visible"
@@ -90,20 +76,10 @@ const RoadmapACPP = () => {
           initial="hidden"
           animate="visible"
         />
+        
         <motion.circle
-          cx="220"
-          cy="160"
-          r="25"
-          fill="#007bff"
-          stroke="#fff"
-          strokeWidth="3"
-          variants={markerVariants(1)}
-          initial="hidden"
-          animate="visible"
-        />
-        <motion.circle
-          cx="500"
-          cy="150"
+          cx="410"
+          cy="200"
           r="25"
           fill="#007bff"
           stroke="#fff"
@@ -125,7 +101,12 @@ const RoadmapACPP = () => {
         />
 
         {/* Labels using foreignObject */}
-        <foreignObject x={screenWidth<1032?"100":"-145"} y={screenWidth<1032?"280":"220"} width="200" height="240">
+        <foreignObject
+          x={screenWidth < 1032 ? "0" : "-170"}
+          y={screenWidth < 1032 ? "230" : "260"}
+          width="200"
+          height="240"
+        >
           <motion.div
             style={{
               color: "black",
@@ -135,39 +116,30 @@ const RoadmapACPP = () => {
               padding: "5px",
               borderRadius: "8px",
               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
+              border: "1px solid black",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Digital Product Foundation</h1>
-            <p style={{fontSize:'12px'}}>Page FounDation, Master Data Analysis, Product Requirment Analysis</p>
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Digital Product Foundation
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Page Foundation, Master Data Analysis, Product Requirement
+              Analysis
+            </p>
           </motion.div>
         </foreignObject>
 
-        <foreignObject x={screenWidth<1032?"0":"230"} y={screenWidth<1032?"50":"190" }width="200" height="200">
-          <motion.div
-            style={{
-              color: "black",
-              fontSize: "14px",
-              textAlign: "center",
-              background: "white",
-              padding: "5px",
-              borderRadius: "8px",
-               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-             <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Digital Product Research</h1>
-             <p style={{fontSize:'12px'}}>Fundamental Sql, Fundamental Api, Digital Product Design</p>
-          </motion.div>
-        </foreignObject>
+    
 
-        <foreignObject x={screenWidth<1032?"400":"290"} y={screenWidth<1032?"180":"10"} width="220" height="200">
+        <foreignObject
+          x={screenWidth < 1032 ? "490" : "190"}
+          y={screenWidth < 1032 ? "180" : "100"}
+          width="220"
+          height="200"
+        >
           <motion.div
             style={{
               color: "black",
@@ -177,18 +149,27 @@ const RoadmapACPP = () => {
               padding: "5px",
               borderRadius: "8px",
               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
+              border: "1px solid black",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Digital Product Development</h1>
-            <p style={{fontSize:'12px'}}>Fundamental Sql, Fundamental Api, Digital Product Design</p>
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Digital Product Development
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Fundamental SQL, Fundamental API, Digital Product Design
+            </p>
           </motion.div>
         </foreignObject>
 
-        <foreignObject x={screenWidth<1032?"500":"720"} y={screenWidth<1032?"00":"80"} width="220" height="130">
+        <foreignObject
+          x={screenWidth < 1032 ? "500" : "510"}
+          y={screenWidth < 1032 ? "0" : "-00"}
+          width="220"
+          height="120"
+        >
           <motion.div
             style={{
               color: "black",
@@ -198,21 +179,19 @@ const RoadmapACPP = () => {
               padding: "5px",
               borderRadius: "8px",
               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
+              border: "1px solid black",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
           >
-           
-           <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Specialaized Modules</h1>
-            <p style={{fontSize:'12px'}}>Digital Services in Global Market,
-                Foundation of AI/GenAI, Nice Segmentation with AI/GenAI,
-                AI/GenAI-driven Digital Services
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Business Requirement Analysis
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Business Requirement Analysis, Financial Hypothesis Analysis
             </p>
           </motion.div>
-          
-          
         </foreignObject>
       </svg>
     </div>

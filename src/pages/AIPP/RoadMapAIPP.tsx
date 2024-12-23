@@ -18,7 +18,7 @@ const useScreenWidth = () => {
   return screenWidth;
 };
 
-const RoadmapDPM = () => {
+const RoadmapAIPP = () => {
   const screenWidth = useScreenWidth();
 
   const pathVariants = {
@@ -64,6 +64,19 @@ const RoadmapDPM = () => {
           animate="visible"
         />
 
+        {/* Dashed Divider */}
+        <motion.path
+          d="M50 350 L750 50" // Dashed line on the same straight path
+          fill="none"
+          stroke="#fff"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray="10 10"
+          variants={pathVariants}
+          initial="hidden"
+          animate="visible"
+        />
+
         {/* Markers on the path */}
         <motion.circle
           cx="50"
@@ -76,10 +89,20 @@ const RoadmapDPM = () => {
           initial="hidden"
           animate="visible"
         />
-        
         <motion.circle
-          cx="410"
-          cy="200"
+          cx="250"
+          cy="250"
+          r="25"
+          fill="#007bff"
+          stroke="#fff"
+          strokeWidth="3"
+          variants={markerVariants(1)}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.circle
+          cx="500"
+          cy="150"
           r="25"
           fill="#007bff"
           stroke="#fff"
@@ -102,8 +125,69 @@ const RoadmapDPM = () => {
 
         {/* Labels using foreignObject */}
         <foreignObject
-          x={screenWidth < 1032 ? "490" : "190"}
-          y={screenWidth < 1032 ? "180" : "100"}
+          x={screenWidth < 1032 ? "0" : "-170"}
+          y={screenWidth < 1032 ? "230" : "260"}
+          width="200"
+          height="240"
+        >
+          <motion.div
+            style={{
+              color: "black",
+              fontSize: "14px",
+              textAlign: "center",
+              background: "white",
+              padding: "5px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+              border: "1px solid black",
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Digital Product Foundation
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Page Foundation, Master Data Analysis, Product Requirement
+              Analysis
+            </p>
+          </motion.div>
+        </foreignObject>
+
+        <foreignObject
+          x={screenWidth < 1032 ? "250" : "50"}
+          y={screenWidth < 1032 ? "280" : "160"}
+          width="200"
+          height="200"
+        >
+          <motion.div
+            style={{
+              color: "black",
+              fontSize: "14px",
+              textAlign: "center",
+              background: "white",
+              padding: "5px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+              border: "1px solid black",
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Digital Product Research
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Fundamental SQL, Fundamental API, Digital Product Design
+            </p>
+          </motion.div>
+        </foreignObject>
+
+        <foreignObject
+          x={screenWidth < 1032 ? "490" : "260"}
+          y={screenWidth < 1032 ? "180" : "70"}
           width="220"
           height="200"
         >
@@ -133,7 +217,7 @@ const RoadmapDPM = () => {
 
         <foreignObject
           x={screenWidth < 1032 ? "500" : "510"}
-          y={screenWidth < 1032 ? "0" : "-00"}
+          y={screenWidth < 1032 ? "0" : "-0"}
           width="220"
           height="120"
         >
@@ -160,39 +244,9 @@ const RoadmapDPM = () => {
             </p>
           </motion.div>
         </foreignObject>
-
-        <foreignObject
-          x={screenWidth < 1032 ? "0" : "-170"}
-          y={screenWidth < 1032 ? "230" : "260"}
-          width="200"
-          height="240"
-        >
-          <motion.div
-            style={{
-              color: "black",
-              fontSize: "14px",
-              textAlign: "center",
-              background: "white",
-              padding: "5px",
-              borderRadius: "8px",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border: "1px solid black",
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
-              Specialized Module
-            </h1>
-            <p style={{ fontSize: "12px" }}>
-              Backlog Managment, Project Management, Soft Skill in Management
-            </p>
-          </motion.div>
-        </foreignObject>
       </svg>
     </div>
   );
 };
 
-export default RoadmapDPM;
+export default RoadmapAIPP;

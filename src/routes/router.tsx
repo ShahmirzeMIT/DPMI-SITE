@@ -10,7 +10,7 @@ import HomePagePart2 from "../pages/SecondHome/HomePagePart2";
 import Courses from "../pages/Courses/Courses";
 import DPMI from "../pages/DPM/DPMI";
 import AIPF from "../pages/AIPF/AIPF";
-import ACPF from "../pages/ACPF/ACPF";
+import ACPF from "../pages/ACFP/ACPF";
 import AIPP from "../pages/AIPP/AIPP";
 import ACPP from "../pages/ACPP/ACPP";
 import LMS from "../pages/LMS/LMS";

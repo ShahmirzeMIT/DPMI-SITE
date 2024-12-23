@@ -17,10 +17,9 @@ const useScreenWidth = () => {
 
   return screenWidth;
 };
-const RoadmapAIPF = () => {
+
+const RoadmapAIFP = () => {
   const screenWidth = useScreenWidth();
-  console.log(screenWidth,'screenWidth');
-  
 
   const pathVariants = {
     hidden: { pathLength: 0 },
@@ -36,7 +35,6 @@ const RoadmapAIPF = () => {
     },
   });
 
-
   return (
     <div
       style={{
@@ -45,7 +43,7 @@ const RoadmapAIPF = () => {
         alignItems: "center",
         marginTop: "50px",
         position: "relative",
-        minHeight:'800px'
+        minHeight: "800px",
       }}
     >
       <svg
@@ -55,25 +53,12 @@ const RoadmapAIPF = () => {
       >
         {/* Road Path */}
         <motion.path
-          d="M50 350 Q200 100 400 150 Q600 200 750 50"
+          d="M50 350 L750 50" // Straight line from bottom-left to top-right
           fill="none"
           stroke="#888"
           strokeWidth="20"
           strokeLinecap="round"
           strokeDasharray="0 100"
-          variants={pathVariants}
-          initial="hidden"
-          animate="visible"
-        />
-
-        {/* Dashed Divider */}
-        <motion.path
-          d="M50 350 Q200 100 400 150 Q600 200 750 50"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeDasharray="10 10"
           variants={pathVariants}
           initial="hidden"
           animate="visible"
@@ -91,17 +76,6 @@ const RoadmapAIPF = () => {
           initial="hidden"
           animate="visible"
         />
-        <motion.circle
-          cx="370"
-          cy="140"
-          r="25"
-          fill="#007bff"
-          stroke="#fff"
-          strokeWidth="3"
-          variants={markerVariants(1)}
-          initial="hidden"
-          animate="visible"
-        />
         
         <motion.circle
           cx="750"
@@ -116,7 +90,12 @@ const RoadmapAIPF = () => {
         />
 
         {/* Labels using foreignObject */}
-        <foreignObject x={"105"} y={"290"} width="200" height="240">
+        <foreignObject
+        x={screenWidth < 1032 ? "0" : "0"}
+        y={screenWidth < 1032 ? "230" : "230"}
+          width="220"
+          height="200"
+        >
           <motion.div
             style={{
               color: "black",
@@ -126,65 +105,53 @@ const RoadmapAIPF = () => {
               padding: "5px",
               borderRadius: "8px",
               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
+              border: "1px solid black",
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+          >
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Digital Product Development
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Fundamental SQL, Fundamental API, Digital Product Design
+            </p>
+          </motion.div>
+        </foreignObject>
+
+        <foreignObject
+                 x={screenWidth < 1032 ? "500" : "500"}
+                 y={screenWidth < 1032 ? "0" : "0"}
+          width="200"
+          height="240"
+        >
+          <motion.div
+            style={{
+              color: "black",
+              fontSize: "14px",
+              textAlign: "center",
+              background: "white",
+              padding: "5px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+              border: "1px solid black",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Digital Product Foundation</h1>
-            <p style={{fontSize:'12px'}}>Page FounDation, Master Data Analysis, Product Requirment Analysis</p>
+            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>
+              Specialized Module
+            </h1>
+            <p style={{ fontSize: "12px" }}>
+              Backlog Managment, Project Management, Soft Skill in Management
+            </p>
           </motion.div>
-        </foreignObject>
-
-        <foreignObject x={"170"} y={"20"}width="200" height="200">
-          <motion.div
-            style={{
-              color: "black",
-              fontSize: "14px",
-              textAlign: "center",
-              background: "white",
-              padding: "5px",
-              borderRadius: "8px",
-               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-             <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Digital Product Research</h1>
-             <p style={{fontSize:'12px'}}>Fundamental Sql, Fundamental Api, Digital Product Design</p>
-          </motion.div>
-        </foreignObject>
-
-       
-
-        <foreignObject x={"610"} y={"160"} width="220" height="120">
-          <motion.div
-            style={{
-              color: "black",
-              fontSize: "14px",
-              textAlign: "center",
-              background: "white",
-              padding: "5px",
-              borderRadius: "8px",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-              border:'1px solid black'
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2 }}
-          >
-            <h1 style={{ fontSize: "14px", fontWeight: "bold" }}>Specialaized Modules</h1>
-            <p style={{fontSize:'12px'}}>The Art and Skill of Sensing Respondin to Market Need</p>
-          </motion.div>
-          
-          
         </foreignObject>
       </svg>
     </div>
   );
 };
 
-export default RoadmapAIPF;
+export default RoadmapAIFP;

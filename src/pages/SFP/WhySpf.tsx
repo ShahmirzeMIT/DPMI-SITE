@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Avatar, Typography } from "antd";
-import Logo from '../../assets/images/why-us.png'
+import Logo from '../../assets/images/whyus.jpg'
 
 interface WhySpfProps {
     data: {
