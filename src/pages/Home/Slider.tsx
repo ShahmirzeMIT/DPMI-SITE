@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { Avatar } from "antd";
 import logo1 from '../../assets/images/partner1.png'
 import logo2 from '../../assets/images/partner2.png'
 import logo3 from '../../assets/images/partner3.png'
@@ -69,11 +68,11 @@ export default function PartnersGrid() {
 
             }}
           >
-            <Avatar
-              style={{width:"180px",height:"60px",objectFit:'none'}} 
+            <img
+              style={{width:"180px",height:"60px"}} 
               src={item.links}
               alt={`Logo of ${item.text}`}
-              shape="square"
+              // shape="square"
             />
           </Box>
         ))}
