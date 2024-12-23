@@ -27,7 +27,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
         maxWidth: "350px",
         width: "550px",
         boxShadow:
-          "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+          "0px 0px 10px gray",
         borderRadius: "5px",
         position: "relative",
       }}

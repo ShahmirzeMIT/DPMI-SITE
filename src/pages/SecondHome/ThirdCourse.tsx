@@ -26,7 +26,7 @@ const ThirdCourse = () => {
           </Box>
           <Box sx={{marginTop:'20px'}}>
           <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }} onClick={() => navigate('/certificates/1005')}>
-              View Profesional Level
+              View Professional Level
           </Button>
           </Box>
           

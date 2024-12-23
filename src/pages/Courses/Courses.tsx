@@ -15,7 +15,8 @@ export default function Courses() {
           flexWrap: "wrap",
           justifyContent: "center",
           gap: "20px",
-          width: "90%",
+          // width: "90%",
+          maxWidth: "1200px",
           margin: "0 auto",
         }}
       >
