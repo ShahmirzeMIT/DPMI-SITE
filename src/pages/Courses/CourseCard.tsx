@@ -25,8 +25,7 @@ export default function CourseCard({ data }: ProductCardProps) {
       sx={{
         padding: "40px",
         maxWidth: "350px",
-        boxShadow:
-          "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+        boxShadow:"0 0 10px gray",
         borderRadius: "15px",
         position: "relative",
       }}
