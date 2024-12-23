@@ -2,7 +2,7 @@ export const allForIndividuals=[
    { 
     id:'/certificates/1005',
     title:"Become an AI  Profesional Practitioner ",
-    text:"Advance your expertise in AI, focusing on real-world solutions and transformative impact.",
+    text:"Advance your expertise in AI, focusing  on real-world solutions and transformative impact.",
    },
    {
     id:'/certificates/1006',

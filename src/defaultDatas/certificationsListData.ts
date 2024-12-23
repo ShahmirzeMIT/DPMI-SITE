@@ -114,19 +114,24 @@ export const certificationsListData=[
         ],
         whatLearn:[
             {
-                title:"Digital Product Components & UX Design: Understand the key components of digital products and how UX design shapes user interactions and experiences.",
+                title:"Digital Product Components & UX Design",
+                desc:"Understand the key components of digital products and how UX design shapes user interactions and experiences."
             },
             {
-                title:"Component Organization and Layout: Learn how to effectively organize component length, order, and relations to create logical page structures.",
+                title:"Component Organization and Layout",
+                desc:"Learn how to effectively organize component length, order, and relations to create logical page structures."
             },
             {
-                title:"Form Design & Input Management: Discover how to design interactive forms using components like text areas, file pickers, and select boxes, ensuring smooth user input.",
+                title:"Form Design & Input Management",
+                desc:'Discover how to design interactive forms using components like text areas, file pickers, and select boxes, ensuring smooth user input.'
             },
             {
-                title:"Event Actions & Form Handling: Master event actions like form popups, redirects, and closing forms to improve user engagement and flow.",
+                title:"Event Actions & Form Handling",
+                desc:' Master event actions like form popups, redirects, and closing forms to improve user engagement and flow.'
             },
             {
-                title:"Styling with CSS: Gain hands-on experience in applying CSS styles to digital product pages and components, ensuring visual consistency and responsiveness.",
+                title:"Styling with CSS Gain hands-on experience in applying",
+                desc:"CSS styles to digital product pages and components, ensuring visual consistency and responsiveness."
             }
         ]
     },
@@ -230,19 +235,24 @@ export const certificationsListData=[
         ],
         whatLearn:[
             {
-                title:"How to Create and Manage a Project Backlog <br/>Master the use of UI Cards and Data Flow Cards to structure and organize all project tasks and features.",
+                title:"How to Create and Manage a Project Backlog Master ",
+                desc:"the use of UI Cards and Data Flow Cards to structure and organize all project tasks and features."
             },
             {
-                title:"How to Plan and Adjust Sprints Effectively <br/>Learn to prioritize tasks, manage scope changes, and align sprint goals with business objectives.",
+                title:"How to Plan and Adjust Sprints Effectively Learn ",
+                desc:"to prioritize tasks, manage scope changes, and align sprint goals with business objectives."
             },
             {
-                title:"How to Apply Estimation Techniques for Accurate Planning <br/>Explore methods like Parametric and Expert Judgment to calculate precise task completion times",
+                title:"How to Apply Estimation Techniques for Accurate Planning Explore ",
+                desc:"methods like Parametric and Expert Judgment to calculate precise task completion times"   
             },
             {
-                title:"How to Handle Change Requests During Sprints <br/> Discover strategies to manage change and new requests while maintaining project quality and timelines",
+                title:"How to Handle Change Requests During Sprints Discover ",
+                desc:"strategies to manage change and new requests while maintaining project quality and timelines"
             },
             {
-                title:"How to Foster Collaboration Through Agile Communication <br>Develop skills to enhance team alignment, resolve conflicts, and integrate user feedback for continuous improvement",
+                title:"How to Foster Collaboration Through Agile Communication Develop ",
+                desc:"skills to enhance team alignment, resolve conflicts, and integrate user feedback for continuous improvement"
             }
         ]
 
@@ -341,19 +351,24 @@ export const certificationsListData=[
         ],
         whatLearn:[
             {
-                title:"Digital Product Components & UX Design: Understand how digital products are structured and how UX design impacts user interaction.",
+                title:"Digital Product Components & UX Design Understand ",
+                desc:"how digital products are structured and how UX design impacts user interaction."
             },
             {
-                title:"Data Flow Management: Master the process of managing data flow between pages, tables, and components to ensure smooth functionality.",
+                title:"Data Flow Management Master ",
+                desc:"the process of managing data flow between pages, tables, and components to ensure smooth functionality."
             },
             {
-                title:"SQL & API Integration: Learn SQL for database management and how to integrate APIs to connect systems and databases.",
+                title:"SQL & API Integration: Learn SQL ",
+                desc:"for database management and how to integrate APIs to connect systems and databases."
             },
             {
-                title:"Database Design & Relationships: Gain skills in designing relational databases and managing data relationships with ERDs.",
+                title:"Database Design & Relationships Gain ",
+                desc:"skills in designing relational databases and managing data relationships with ERDs."
             },
             {
-                title:"Business Requirement Mapping: Learn how to capture and document actionable business and data-driven requirements to ensure successful product development",
+                title:"Business Requirement Mapping Learn ",
+                desc:"how to capture and document actionable business and data-driven requirements to ensure successful product development"
             }
         ]
             
@@ -452,19 +467,24 @@ export const certificationsListData=[
         ],
         whatLearn:[
             {
-                title:"Digital Product Components & UX Design: Understand how digital products are structured and how UX design impacts user interaction.",
+                title:"Digital Product Components & UX Design Understand ",
+                desc:"how digital products are structured and how UX design impacts user interaction."
             },
             {
-                title:"Data Flow Management: Master the process of managing data flow between pages, tables, and components to ensure smooth functionality.",
+                title:"Data Flow Management Master ",
+                desc:"the process of managing data flow between pages, tables, and components to ensure smooth functionality."
             },
             {
-                title:"SQL & API Integration: Learn SQL for database management and how to integrate APIs to connect systems and databases.",
+                title:"SQL & API Integration Learn SQL ",
+                desc:"for database management and how to integrate APIs to connect systems and databases."
             },
             {
-                title:"Database Design & Relationships: Gain skills in designing relational databases and managing data relationships with ERDs.",
+                title:"Database Design & Relationships Gain ",
+                desc:"skills in designing relational databases and managing data relationships with ERDs."
             },
             {
-                title:"Business Requirement Mapping: Learn how to capture and document actionable business and data-driven requirements to ensure successful product development",
+                title:"Business Requirement Mapping Learn ",
+                desc:"how to capture and document actionable business and data-driven requirements to ensure successful product development"
             }
         ]
     },
@@ -573,22 +593,28 @@ export const certificationsListData=[
         ],
         whatLearn:[
             {
-                title:"How to Segment Niche Markets Using AI/GenAIMaster AI tools to identify and target niche markets with precision for tailored business strategies.",
+                title:"How to Segment Niche Markets Using AI/GenAIMaster AI ",
+                desc:"tools to identify and target niche markets with precision for tailored business strategies."
             },
             {
-                title:"How to Design AI-Driven Digital Service Models Learn to create innovative digital services using AI, GenAI, and blockchain to drive global market growth",
+                title:"How to Design AI-Driven Digital Service Models Learn",
+                desc:"to create innovative digital services using AI, GenAI, and blockchain to drive global market growth"
             },
             {
-                title:"How to Leverage Big Data for Business Insights Explore methods to utilize AI and ML for extracting actionable insights and enhancing customer experiences",
+                title:"How to Leverage Big Data for Business Insights Explore ",
+                desc:"methods to utilize AI and ML for extracting actionable insights and enhancing customer experiences"
             },
             {
-                title:"How to Optimize Market Strategies with AI/GenAI Use AI to enhance sales efforts, personalize campaigns, and improve customer satisfaction.",
+                title:"How to Optimize Market Strategies with AI/GenAI Use AI ",
+                desc:"to enhance sales efforts, personalize campaigns, and improve customer satisfaction."
             },
             {
-                title:"How to Apply Predictive Analytics for Service Efficiency Utilize AI-powered analytics to anticipate trends, improve operations, and optimize service delivery",
+                title:"How to Apply Predictive Analytics for Service Efficiency Utilize AI",
+                desc:"-powered analytics to anticipate trends, improve operations, and optimize service delivery"
             },
             {
-                title:"How to Automate Processes with AI/GenAI Tools Master the implementation of AI-driven solutions to streamline business operations and improve efficiency.",
+                title:"How to Automate Processes with AI/GenAI Tools Master ",
+                desc:"the implementation of AI-driven solutions to streamline business operations and improve efficiency."
             }
         ],
 
