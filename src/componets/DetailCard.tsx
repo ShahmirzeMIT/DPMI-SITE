@@ -31,7 +31,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
         sx={{
           color: "rgb(251, 107, 34)",
           // textDecoration: "underline",
-          fontSize: "20px",
+          fontSize: "28px",
           fontWeight: "600",
           textAlign: "start",
         }}

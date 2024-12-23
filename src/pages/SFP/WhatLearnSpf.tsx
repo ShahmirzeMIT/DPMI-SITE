@@ -4,7 +4,7 @@ import Logo from '../../assets/images/whatLearn.png'
 import PointText from '../../componets/PointText'
 
 interface WhatLearnSpfProps {
-  data:{title:string}[]
+  data:{title:string;desc:string}[]
 }
 
 export default function WhatLearnSpf({data}:WhatLearnSpfProps) {
@@ -20,7 +20,7 @@ export default function WhatLearnSpf({data}:WhatLearnSpfProps) {
             // ,display:'flex',alignItems:'center'
            }}>
             <PointText/>
-            {item.title}</li>
+            <span style={{fontSize:'24px'}}>{item.title}</span> <div style={{marginLeft:'30px'}}>{item.desc}</div></li>
         ))
        }
       </ul>

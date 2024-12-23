@@ -7,6 +7,7 @@ interface CertificationsProgressProps{
     title: string;
     shortDesc?: string;
   }[];  
+  // title?: string;
 }
 export default function CertificationsProgress({ data }:CertificationsProgressProps) {
   return (
@@ -15,6 +16,7 @@ export default function CertificationsProgress({ data }:CertificationsProgressPr
         {data.map((item) => (
           <CourseStatus data={item} />
         ))}
+       
       </Box>
     </Box>
   );

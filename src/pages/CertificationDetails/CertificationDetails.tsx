@@ -19,6 +19,8 @@ import Logo from "../../assets/images/detailIcon.png";
 // import RoadmapAIFP from '../AIPF/RoadMapAIPF';
 import CertificationsProgress from "./CertificationsProgress";
 import { dataDetail } from "../../defaultDatas/detailCourses";
+// import CourseStatus from "../../componets/CourseStatus";
+import CourseCardStatic from "../../componets/CourseCardStatic";
 
 // const dataN = [
 //     { id: "1003", roadMap: <Roadmap /> },
@@ -45,6 +47,7 @@ export default function CertificationDetails() {
 
   // Find the corresponding roadmap based on the certificateId
   // const selectedRoadmap = dataN.find(item => item.id === certificateId);
+console.log(selectedData,'selectedData');
 
   return (
     <Box sx={{}}>
@@ -83,25 +86,37 @@ export default function CertificationDetails() {
             // </Box>
           ))}
           ;
+          <Box sx={{ width: "80%", margin: "0px auto" }}>
+              <CourseCardStatic data={{
+              id:"Success", 
+              title:"Certified"+` `+ `"`+selectedData.title+`"`,
+              shortDesc: "You have completed all courses",
+            }}/>
+          </Box>
+         
         </Box>
-
+        <Typography style={{color:'black',fontSize: "36px", fontWeight: 400,width:'100%',margin:'60px auto 0 auto',   background:'#F9FAFC',padding:'30px 0'}}>Details of Modules</Typography>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-around",
             width: "100%",
-            margin: "40px auto",
+            margin: "0px auto",
             flexWrap: "wrap",
             gap: "60px",
+            background:'#F9FAFC',
+            padding:'40px 10px'
           }}
         >
+         
           {selectedData.courseModules.map((item, index) => (
             <DigitalProductFoundationModule key={index} data={item} />
           ))}
         </Box>
-        <WhySpf data={selectedData.whyUs} />
+        <WhySpf data={selectedData.whyUs}  title={selectedData.title}/>
         <WhatGetSPF data={selectedData.whatyouGet} />
         <WhatLearnSpf data={selectedData.whatLearn} />
+      
         <Box id="courses">
           <Typography
             style={{

@@ -40,7 +40,7 @@ const colors = [
   }
 ];
 
-const CourseStatus = ({ data }: CourseStatus) => {
+const CourseCardStatic = ({ data }: CourseStatus) => {
   const matchedColor =
     colors.find((item) => item.id === data.id)?.color || "";
 
@@ -67,7 +67,7 @@ const CourseStatus = ({ data }: CourseStatus) => {
           variant="determinate"
           value={100}
           size={120}
-          sx={{ color: matchedColor }}
+          sx={{ color: "#1976d2", background:'#1976d2',borderRadius:'50%' }}
         />
         <Box
           sx={{
@@ -78,6 +78,7 @@ const CourseStatus = ({ data }: CourseStatus) => {
             position: "absolute",
             display: "flex",
             alignItems: "center",
+           
             justifyContent: "center",
             "&::after": {
               content: '""',
@@ -104,7 +105,7 @@ const CourseStatus = ({ data }: CourseStatus) => {
             variant="h6"
             component="div"
             color="text.primary"
-            sx={{ fontWeight: "800", fontSize: "48px", color: matchedColor }}
+            sx={{ fontWeight: "800", fontSize: "18px", color: 'white',textTransform:'uppercase' }}
           >
             {data.id}
           </Typography>
@@ -138,4 +139,4 @@ const CourseStatus = ({ data }: CourseStatus) => {
   );
 };
 
-export default CourseStatus;
+export default CourseCardStatic;

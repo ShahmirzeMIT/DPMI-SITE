@@ -595,7 +595,7 @@ export const certificationsListData=[
     },
     {
         id:"1002",
-        title:"Agile Communication Profesional Practitioner ",
+        title:"Agile Communication Professional Practitioner ",
         text:"Elevate your Agile Communication capabilities to lead high-performing teams and drive successful project execution. This program dives deeper into advanced concepts such as digital product design, SQL, and API fundamentals, alongside mastering business requirement and financial hypothesis analysis. Tailored for professionals managing Agile teams in dynamic, transformation-focused environments.",
         links:'/certificates',
         enroll:"/classes",
@@ -697,22 +697,28 @@ export const certificationsListData=[
             },],
         whatLearn:[
             {
-                title:"How to Segment Niche Markets Using AI/GenAIMaster AI tools to identify and target niche markets with precision for tailored business strategies.",
+                title:"How to Segment Niche Markets Using AI/GenAI",
+                desc:'Master AI tools to identify and target niche markets with precision for tailored business strategies.'
             },
             {
-                title:"How to Design AI-Driven Digital Service Models Learn to create innovative digital services using AI, GenAI, and blockchain to drive global market growth",
+                title:"How to Design AI-Driven Digital Service Models ",
+                desc:"Learn to create innovative digital services using AI, GenAI, and blockchain to drive global market growth"
             },
             {
-                title:"How to Leverage Big Data for Business Insights Explore methods to utilize AI and ML for extracting actionable insights and enhancing customer experiences",
+                title:"How to Leverage Big Data for Business Insights ",
+                desc:"Explore methods to utilize AI and ML for extracting actionable insights and enhancing customer experiences"
             },
             {
-                title:"How to Optimize Market Strategies with AI/GenAI Use AI to enhance sales efforts, personalize campaigns, and improve customer satisfaction.",
+                title:"How to Optimize Market Strategies with AI/GenAI ",
+                desc:"Use AI to enhance sales efforts, personalize campaigns, and improve customer satisfaction."
             },
             {
-                title:"How to Apply Predictive Analytics for Service Efficiency Utilize AI-powered analytics to anticipate trends, improve operations, and optimize service delivery",
+                title:"How to Apply Predictive Analytics for Service Efficiency ",
+                desc:'Utilize AI-powered analytics to anticipate trends, improve operations, and optimize service delivery'
             },
             {
-                title:"How to Automate Processes with AI/GenAI Tools Master the implementation of AI-driven solutions to streamline business operations and improve efficiency.",
+                title:"How to Automate Processes with AI/GenAI Tools",
+                desc:'Master the implementation of AI-driven solutions to streamline business operations and improve efficiency.'
             }
         ]
     }

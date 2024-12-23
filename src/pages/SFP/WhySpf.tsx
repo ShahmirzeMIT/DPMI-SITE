@@ -7,13 +7,14 @@ interface WhySpfProps {
     data: {
         title: string;
     }[];
+    title:string
 }
 
-export default function WhySpf({data}:WhySpfProps) {
+export default function WhySpf({data,title}:WhySpfProps) {
   return (
     <Box sx={{width:'95%',margin:'90px auto'}}>
         <Typography style={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start'}}>
-           <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'10px',fontSize:'36px'}} shape="square" /> Why Startup Foundation Practitioner™ </Typography>
+           <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'10px',fontSize:'36px'}} shape="square" /> Why {title} </Typography>
            {
             data.map((item,_index)=>(
                 <Typography style={{display:'flex',fontWeight:'400',textAlign:'start',marginLeft:'70px',lineHeight:'40px',fontSize:'18px',marginTop:'5px', alignItems:'center'}}>
