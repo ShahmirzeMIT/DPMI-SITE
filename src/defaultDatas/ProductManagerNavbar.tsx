@@ -7,26 +7,9 @@ import Image5 from "../assets/images/acfpNav.png";
 import Image6 from "../assets/images/accpNav.png";
 
 export const ProductManagerCardDataNavbar=[
-    
-    {
-        id:1,
-        title: "SFP | Startup Foundation Practitioner",
-        image: Image1,
-        link:'/certificates/1003',
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
-        bgColor:"#FFFFFF"
-    },
-    {
-        id:2,    
-        title: "DPM | Digital Product Manager",
-        image: Image2,
-        link:'/certificates/1006',
-        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
-        bgColor:'#FFFFFF'
-    },
     {
         id:3,
-        title: "AIPF | AI Practitioner Foundation",
+        title: "AIFP™️ | AI Foundation Practitioner ",
         link:'/certificates/1004',
         image: Image3,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
@@ -34,15 +17,32 @@ export const ProductManagerCardDataNavbar=[
     },
     {
         id:4,
-        title: "AIPP | AI Profesional Practitioner",
+        title: "AIPP™️ | AI Profesional Practitioner",
         link:'/certificates/1005',
         image: Image4,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
     {
+        id:2,    
+        title: "DPM™️ | Digital Product Manager",
+        image: Image2,
+        link:'/certificates/1006',
+        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        bgColor:'#FFFFFF'
+    },
+    {
+        id:1,
+        title: "SFP™️ | Startup  Foundation Practitioner",
+        image: Image1,
+        link:'/certificates/1003',
+        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        bgColor:"#FFFFFF"
+    },
+   
+    {
         id:5,
-        title: "ACPF | Agile Communication Practitioner Foundation",
+        title: "ACFP™️ | Agile Communication Foundation Practitioner",
         link:'/certificates/1001',
         image: Image5,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
@@ -50,7 +50,7 @@ export const ProductManagerCardDataNavbar=[
     },
     {
         id:6,
-        title: "ACPP | Agile Communication Practitioner Profesional",
+        title: "ACPP™️ | Agile Communication Profesional Practitioner ",
         link:'/certificates/1002',
         image: Image6,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",

@@ -13,11 +13,11 @@ export default function CertificationMenu() {
         flexWrap: "wrap",
         gap: 2,
         justifyContent: "space-between",
-           marginLeft: "60px",
+           marginLeft: "20px",
            alignItems:'center'
       }}
     >
-      <Box sx={{marginTop:'25px',textAlign:'start'}}>
+      <Box sx={{marginTop:'25px',textAlign:'start',marginRight:'40px'}}>
         <Typography variant="h6" sx={{
           fontSize: "21px",
           fontStyle: "normal",
@@ -26,7 +26,7 @@ export default function CertificationMenu() {
           letterSpacing: "0em",
           paddingBottom:'2rem',
           color: "rgb(105 105 105)",
-        
+      
         }} onClick={() => navigate("/certificates") }> Explore All Certifications</Typography>
         {
           ProductManagerCardDataNavbar.map((item:{title:string,link:string})=>{
@@ -41,7 +41,7 @@ export default function CertificationMenu() {
         }
        
       </Box>
-      <Box sx={{marginTop:'5px',width:'480px',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px'}}>
+      <Box sx={{marginTop:'5px',width:'480px',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px',background:'#f4f4f4'}}>
         {
           ProductManagerCardDataNavbar.map((item:{image:string})=>{
             return(

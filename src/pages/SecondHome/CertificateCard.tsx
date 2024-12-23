@@ -24,11 +24,11 @@ export default function CertificateCard({ data }: ProductCardProps) {
     <Box
       sx={{
         // padding: "40px",
-        maxWidth: "350px",
-        width: "550px",
+        maxWidth: "300px",
+        // width: "500px",
         boxShadow:
           "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
-        borderRadius: "5px",
+        borderRadius: "15px",
         position: "relative",
       }}
     >
@@ -38,6 +38,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
             height: "auto",
             margin: "0 auto",
             display: "block",
+            borderRadius:'15px'
           }}
           src={data.image}
           shape="square"
