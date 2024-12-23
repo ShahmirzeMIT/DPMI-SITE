@@ -1,39 +1,39 @@
-import { Box, Button, Typography, Grid, } from "@mui/material";
+import { Box, Button, Typography, Grid } from "@mui/material";
 // import logoImg from "../../assets/images/sfp.jpeg";
 import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 interface ProductCardProps {
-  data:{
-    title: string
-    text: string
-    links:string
-    enroll:string
-    image:string
-  }
+  data: {
+    title: string;
+    text: string;
+    links: string;
+    enroll: string;
+    image: string;
+  };
 }
-export default function ProductManagerCourseView({data}:ProductCardProps) {
-  
-  const navigate=useNavigate()
+export default function ProductManagerCourseView({ data }: ProductCardProps) {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
-        backgroundColor: "#F9FAFC", 
+        backgroundColor: "#F9FAFC",
         padding: "40px 10%",
-        marginTop:'120px'
+        marginTop: "120px",
       }}
+
     >
       <Grid
         container
         spacing={4}
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-between"
       >
         {/* Left Section */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} sx={{ textAlign: "start" }}>
           <Avatar
             src={data.image}
             alt="Certification Logo"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "auto", maxWidth: "350px" }}
             shape="square"
           />
         </Grid>
@@ -44,26 +44,37 @@ export default function ProductManagerCourseView({data}:ProductCardProps) {
             <Typography
               variant="h3"
               sx={{
-                fontWeight: "bold",
+                fontWeight: "400",
                 color: "#0E1C36",
                 marginBottom: "10px",
-                fontSize:'36px'
+                fontSize: "36px",
+                textAlign: "left",
               }}
-            > {data.title}
+            >
+              {" "}
+              {data.title}
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 color: "#555",
                 marginBottom: "20px",
-                fontSize:'18px'
+                fontSize: "18px",
+                textAlign: "left",
               }}
             >
               {data.text}
             </Typography>
 
             {/* Buttons */}
-            <Box sx={{ display: "flex", gap: "15px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "15px",
+                marginTop: "30px",
+              }}
+            >
               <Button
                 variant="outlined"
                 sx={{
@@ -75,7 +86,7 @@ export default function ProductManagerCourseView({data}:ProductCardProps) {
                     color: "white",
                   },
                 }}
-                onClick={() => navigate(data.links)}
+                href="#courses"
               >
                 View Courses
               </Button>
@@ -96,13 +107,6 @@ export default function ProductManagerCourseView({data}:ProductCardProps) {
             </Box>
 
             {/* Bottom Note */}
-            <Typography
-              variant="caption"
-              sx={{ display: "block", marginTop: "10px", color: "#333" }}
-            >
-              * Use code <b>CERT10</b> at checkout to save <b>10%</b> off all
-              three courses.
-            </Typography>
           </Box>
         </Grid>
       </Grid>

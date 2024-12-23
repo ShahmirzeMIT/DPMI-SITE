@@ -21,7 +21,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
 
       <Card
         sx={{
-          maxWidth: 600,
+          maxWidth: 380,
           width: "100%",
           boxShadow: 3,
           borderRadius: 2,
@@ -40,7 +40,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
               padding: 2,
               borderRadius: "5px 5px 0 0",
               textAlign: "center",
-              fontSize:'36px'
+              fontSize:'28px'
             }}
           >
             {data.title}
@@ -50,7 +50,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Short Description */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1,fontSize:'26px' }}
+              sx={{ fontWeight: "400", marginBottom: 1,fontSize:'26px' }}
             >
               Short Description
             </Typography>
@@ -63,7 +63,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Module Hours */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1 ,fontSize:'26px'}}
+              sx={{ fontWeight: "400", marginBottom: 1 ,fontSize:'26px'}}
             >
               Module Hours
             </Typography>
@@ -76,7 +76,7 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
             {/* Courses */}
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: "bold", marginBottom: 1 ,fontSize:'26px'}}
+              sx={{ fontWeight: "400", marginBottom: 1 ,fontSize:'26px'}}
             >
               Courses
             </Typography>

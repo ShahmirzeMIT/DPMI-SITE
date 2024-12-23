@@ -9,7 +9,7 @@ export const certificationsListData=[
     {
         id:"1003",
         title:"Startup Foundation Practitioner",
-        text:"The Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth",
+        text:"Discover essential strategies and frameworks to build, manage, and scale a successful startup in the digital product domain. Participants will learn foundational tools like SQL and APIs, as well as techniques for market analysis and responding to evolving customer needs. Perfect for aspiring entrepreneurs seeking to transform their innovative ideas into sustainable business ventures.he Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth",
         links:'/certificates',
         enroll:"/classes",
         image:Image1,
@@ -76,40 +76,40 @@ export const certificationsListData=[
         whatyouGet:[
 
     {   boldTitle:"Completion Certification",
-        title:' – Official recognition of course completion.'
+        title:' Official recognition of course completion.'
     },
     {
         boldTitle:"Access to Training Simulation System",
-        title:'– Real-world practice with digital tools.'
+        title:'Real-world practice with digital tools.'
     },
     {   
         boldTitle:"1-Year Full Access to Course Materials",
-        title:' – Continuous learning with unlimited resources.'
+        title:' Continuous learning with unlimited resources.'
     },
     {
         boldTitle:"Unlimited Real Projects in Training Simulation",
-        title:'– Hands-on project creation and sharing.'
+        title:'Hands-on project creation and sharing.'
     },
     {
         boldTitle:"Hands-On Projects",
-        title:'– Practical application through real-world scenarios.'
+        title:'Practical application through real-world scenarios.'
     },
     {
         boldTitle:"Quizzes & Assessments",
-        title:'– Test knowledge and track progress.'
+        title:'Test knowledge and track progress.'
     },
     {
         boldTitle:"Mentor Support",
-        title:' – Guidance from experienced professionals.'
+        title:' Guidance from experienced professionals.'
 
     }   ,
     {
         boldTitle:"Certification Exam Voucher",
-        title:' – Free voucher for certification exam.'
+        title:' Free voucher for certification exam.'
     },
     {
         boldTitle:"Interactive Learning Tools",
-        title:' – Engaging and immersive learning experience.'
+        title:' Engaging and immersive learning experience.'
     },
         ],
         whatLearn:[
@@ -133,7 +133,7 @@ export const certificationsListData=[
     {
         id:'1006',
         title:"Digital Product Manager",
-        text:"The Digital Product Manager Certification is designed for professionals seeking to master the art of managing digital products in today’s fast-paced, tech-driven market. This program covers key areas such as product strategy, user experience (UX), agile methodologies, and data-driven decision-making. Participants will learn how to define product visions, prioritize features, create roadmaps, and lead cross-functional teams. Whether you're looking to build new digital products or optimize existing ones, this certification equips you with the skills and knowledge to deliver impactful product outcomes, making you a valuable asset in the digital landscape.",
+        text:"Acquire comprehensive skills to manage digital products effectively, from initial concept to final launch. This program covers key areas such as backlog assessment, project management, and digital product design while emphasizing essential soft skills for leadership. Geared toward Product Managers, Startups, and Program Managers, it ensures a practical and impactful learning experience.",
         links:'/certificates',
         enroll:"/classes",
         image:Image2,
@@ -192,40 +192,40 @@ export const certificationsListData=[
         whatyouGet:[
 
             {   boldTitle:"Completion Certification",
-                title:' – Official recognition of course completion.'
+                title:' Official recognition of course completion.'
             },
             {
                 boldTitle:"Access to Training Simulation System",
-                title:'– Real-world practice with digital tools.'
+                title:'Real-world practice with digital tools.'
             },
             {   
                 boldTitle:"1-Year Full Access to Course Materials",
-                title:' – Continuous learning with unlimited resources.'
+                title:' Continuous learning with unlimited resources.'
             },
             {
                 boldTitle:"Unlimited Real Projects in Training Simulation",
-                title:'– Hands-on project creation and sharing.'
+                title:'Hands-on project creation and sharing.'
             },
             {
                 boldTitle:"Hands-On Projects",
-                title:'– Practical application through real-world scenarios.'
+                title:'Practical application through real-world scenarios.'
             },
             {
                 boldTitle:"Quizzes & Assessments",
-                title:'– Test knowledge and track progress.'
+                title:'Test knowledge and track progress.'
             },
             {
                 boldTitle:"Mentor Support",
-                title:' – Guidance from experienced professionals.'
+                title:' Guidance from experienced professionals.'
         
             }   ,
             {
                 boldTitle:"Certification Exam Voucher",
-                title:' – Free voucher for certification exam.'
+                title:' Free voucher for certification exam.'
             },
             {
                 boldTitle:"Interactive Learning Tools",
-                title:' – Engaging and immersive learning experience.'
+                title:' Engaging and immersive learning experience.'
             },
         ],
         whatLearn:[
@@ -250,7 +250,7 @@ export const certificationsListData=[
     {
         id:'1004',
         title:'AI Foundation Practitioner',
-        text:" The AI Practitioner Professional Certification is designed for professionals who want to deepen their expertise in Artificial Intelligence (AI) and advance their careers in AI-driven roles. This program builds on foundational AI knowledge and dives deeper into advanced topics such as deep learning, neural networks, computer vision, and AI deployment. Participants will gain hands-on experience with real-world AI applications, learning to design, implement, and optimize AI solutions. Ideal for data scientists, engineers, and AI professionals, this certification equips you with the skills and confidence to lead AI projects and drive innovation in complex, data-driven environments",
+        text:"Build a comprehensive understanding of AI fundamentals and their transformative impact on the modern business landscape. This certification focuses on equipping learners with the knowledge to navigate global market trends and integrate AI concepts into their strategies. Designed for professionals at all levels looking to future-proof their skill set in a rapidly evolving digital environment.",
         links:'/certificates',
         enroll:"/classes",
         image:Image3,
@@ -302,40 +302,40 @@ export const certificationsListData=[
         ],
         whatyouGet:[
             {   boldTitle:"Completion Certification",
-                title:' – Official recognition of course completion.'
+                title:' Official recognition of course completion.'
             },
             {
                 boldTitle:"Access to Training Simulation System",
-                title:'– Real-world practice with digital tools.'
+                title:'Real-world practice with digital tools.'
             },
             {   
                 boldTitle:"1-Year Full Access to Course Materials",
-                title:' – Continuous learning with unlimited resources.'
+                title:' Continuous learning with unlimited resources.'
             },
             {
                 boldTitle:"Unlimited Real Projects in Training Simulation",
-                title:'– Hands-on project creation and sharing.'
+                title:'Hands-on project creation and sharing.'
             },
             {
                 boldTitle:"Hands-On Projects",
-                title:'– Practical application through real-world scenarios.'
+                title:'Practical application through real-world scenarios.'
             },
             {
                 boldTitle:"Quizzes & Assessments",
-                title:'– Test knowledge and track progress.'
+                title:'Test knowledge and track progress.'
             },
             {
                 boldTitle:"Mentor Support",
-                title:' – Guidance from experienced professionals.'
+                title:' Guidance from experienced professionals.'
         
             }   ,
             {
                 boldTitle:"Certification Exam Voucher",
-                title:' – Free voucher for certification exam.'
+                title:' Free voucher for certification exam.'
             },
             {
                 boldTitle:"Interactive Learning Tools",
-                title:' – Engaging and immersive learning experience.'
+                title:' Engaging and immersive learning experience.'
             },
             
         ],
@@ -360,8 +360,8 @@ export const certificationsListData=[
     },
     {
         id:'1005',
-        title:'AI Practitioner Proffesional',
-        text:" The AI Practitioner Professional Certification is designed for professionals who want to deepen their expertise in Artificial Intelligence (AI) and advance their careers in AI-driven roles. This program builds on foundational AI knowledge and dives deeper into advanced topics such as deep learning, neural networks, computer vision, and AI deployment. Participants will gain hands-on experience with real-world AI applications, learning to design, implement, and optimize AI solutions. Ideal for data scientists, engineers, and AI professionals, this certification equips you with the skills and confidence to lead AI projects and drive innovation in complex, data-driven environments",
+        title:'AI  Profesional Practitioner ',
+        text:" Delve into advanced AI applications to craft real-world solutions and drive innovation in digital services. This certification explores niche segmentation, AI-driven service models, and financial hypothesis analysis to prepare participants for strategic roles in AI transformation. Ideal for professionals aiming to lead AI initiatives and unlock new opportunities in global markets.",
         links:'/certificates',
         enroll:"/classes",
         image:Image4,
@@ -413,40 +413,40 @@ export const certificationsListData=[
         ],
         whatyouGet:[
             {   boldTitle:"Completion Certification",
-                title:' – Official recognition of course completion.'
+                title:' Official recognition of course completion.'
             },
             {
                 boldTitle:"Access to Training Simulation System",
-                title:'– Real-world practice with digital tools.'
+                title:'Real-world practice with digital tools.'
             },
             {   
                 boldTitle:"1-Year Full Access to Course Materials",
-                title:' – Continuous learning with unlimited resources.'
+                title:' Continuous learning with unlimited resources.'
             },
             {
                 boldTitle:"Unlimited Real Projects in Training Simulation",
-                title:'– Hands-on project creation and sharing.'
+                title:'Hands-on project creation and sharing.'
             },
             {
                 boldTitle:"Hands-On Projects",
-                title:'– Practical application through real-world scenarios.'
+                title:'Practical application through real-world scenarios.'
             },
             {
                 boldTitle:"Quizzes & Assessments",
-                title:'– Test knowledge and track progress.'
+                title:'Test knowledge and track progress.'
             },
             {
                 boldTitle:"Mentor Support",
-                title:' – Guidance from experienced professionals.'
+                title:' Guidance from experienced professionals.'
         
             }   ,
             {
                 boldTitle:"Certification Exam Voucher",
-                title:' – Free voucher for certification exam.'
+                title:' Free voucher for certification exam.'
             },
             {
                 boldTitle:"Interactive Learning Tools",
-                title:' – Engaging and immersive learning experience.'
+                title:' Engaging and immersive learning experience.'
             },
             
         ],
@@ -471,7 +471,7 @@ export const certificationsListData=[
     {
         id:'1001',
         title:"Agile Communication Foundation Practitioner ",
-        text:"The Agile Communication Practitioner Foundation Certification is designed to equip professionals with the skills needed to effectively communicate in agile environments. This program covers key communication strategies, techniques, and tools for collaborating within cross-functional teams. Participants will learn how to facilitate agile ceremonies, manage stakeholder expectations, and adapt communication styles to different project needs. Ideal for project managers, Scrum Masters, and team leaders, this certification helps individuals build stronger communication skills that promote transparency, foster collaboration, and drive successful outcomes in fast-paced, agile projects and organizations",
+        text:"Master the core principles of Agile Communication to foster seamless collaboration and improve team efficiency. This certification equips professionals with tools to effectively analyze product requirements and leverage foundational frameworks for digital transformation projects. Ideal for individuals working directly in Digital Product Transformation, including Product Owners, Managers, and Engineers.",
         links:'/certificates',
         enroll:"/classes",
         image:Image5,
@@ -534,40 +534,40 @@ export const certificationsListData=[
         ],
         whatyouGet:[
             {   boldTitle:"Completion Certification",
-                title:' – Official recognition of course completion.'
+                title:' Official recognition of course completion.'
             },
             {
                 boldTitle:"Access to Training Simulation System",
-                title:'– Real-world practice with digital tools.'
+                title:'Real-world practice with digital tools.'
             },
             {   
                 boldTitle:"1-Year Full Access to Course Materials",
-                title:' – Continuous learning with unlimited resources.'
+                title:' Continuous learning with unlimited resources.'
             },
             {
                 boldTitle:"Unlimited Real Projects in Training Simulation",
-                title:'– Hands-on project creation and sharing.'
+                title:'Hands-on project creation and sharing.'
             },
             {
                 boldTitle:"Hands-On Projects",
-                title:'– Practical application through real-world scenarios.'
+                title:'Practical application through real-world scenarios.'
             },
             {
                 boldTitle:"Quizzes & Assessments",
-                title:'– Test knowledge and track progress.'
+                title:'Test knowledge and track progress.'
             },
             {
                 boldTitle:"Mentor Support",
-                title:' – Guidance from experienced professionals.'
+                title:' Guidance from experienced professionals.'
         
             }   ,
             {
                 boldTitle:"Certification Exam Voucher",
-                title:' – Free voucher for certification exam.'
+                title:' Free voucher for certification exam.'
             },
             {
                 boldTitle:"Interactive Learning Tools",
-                title:' – Engaging and immersive learning experience.'
+                title:' Engaging and immersive learning experience.'
             },
             
         ],
@@ -595,8 +595,8 @@ export const certificationsListData=[
     },
     {
         id:"1002",
-        title:"Agile Communication Practitioner Proffesional",
-        text:"The Agile Communication Practitioner Professional Certification is designed for experienced professionals seeking to enhance their communication expertise in agile environments. This advanced program focuses on mastering communication techniques for complex, high-stakes projects. Participants will learn how to lead cross-functional teams, manage stakeholder expectations, and drive alignment across diverse teams and departments. The course delves into advanced agile communication practices, conflict resolution, and strategies for fostering collaboration in fast-paced, evolving projects. Ideal for senior project managers, Scrum Masters, and agile coaches, this certification prepares professionals to effectively navigate and communicate in complex, agile-driven organizations",
+        title:"Agile Communication Profesional Practitioner ",
+        text:"Elevate your Agile Communication capabilities to lead high-performing teams and drive successful project execution. This program dives deeper into advanced concepts such as digital product design, SQL, and API fundamentals, alongside mastering business requirement and financial hypothesis analysis. Tailored for professionals managing Agile teams in dynamic, transformation-focused environments.",
         links:'/certificates',
         enroll:"/classes",
         image:Image6,
@@ -660,40 +660,40 @@ export const certificationsListData=[
         ],
         whatyouGet:[
             {   boldTitle:"Completion Certification",
-                title:' – Official recognition of course completion.'
+                title:' Official recognition of course completion.'
             },
             {
                 boldTitle:"Access to Training Simulation System",
-                title:'– Real-world practice with digital tools.'
+                title:'Real-world practice with digital tools.'
             },
             {   
                 boldTitle:"1-Year Full Access to Course Materials",
-                title:' – Continuous learning with unlimited resources.'
+                title:' Continuous learning with unlimited resources.'
             },
             {
                 boldTitle:"Unlimited Real Projects in Training Simulation",
-                title:'– Hands-on project creation and sharing.'
+                title:'Hands-on project creation and sharing.'
             },
             {
                 boldTitle:"Hands-On Projects",
-                title:'– Practical application through real-world scenarios.'
+                title:'Practical application through real-world scenarios.'
             },
             {
                 boldTitle:"Quizzes & Assessments",
-                title:'– Test knowledge and track progress.'
+                title:'Test knowledge and track progress.'
             },
             {
                 boldTitle:"Mentor Support",
-                title:' – Guidance from experienced professionals.'
+                title:' Guidance from experienced professionals.'
         
             }   ,
             {
                 boldTitle:"Certification Exam Voucher",
-                title:' – Free voucher for certification exam.'
+                title:' Free voucher for certification exam.'
             },
             {
                 boldTitle:"Interactive Learning Tools",
-                title:' – Engaging and immersive learning experience.'
+                title:' Engaging and immersive learning experience.'
             },],
         whatLearn:[
             {

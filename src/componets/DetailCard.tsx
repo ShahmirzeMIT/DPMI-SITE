@@ -4,20 +4,20 @@ const DetailCard = () => {
     <>
   
        <div
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        padding: "16px",
-        maxWidth: "420px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        // margin: "16px auto",
-        fontFamily: "Arial, sans-serif",
-        marginBottom:'40px'
+        style={{
+          border: "1px solid #ddd",
+          borderRadius: "15px",
+          padding: "16px",
+          maxWidth: "350px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          // margin: "16px auto",
+          fontFamily: "Arial, sans-serif",
+          marginBottom:'40px'
       }}
     >
       <h2
         style={{
-          color: "#f7991c",
+          color: "#1976d2",
           fontSize: "36px",
           marginBottom: "8px",
         }}

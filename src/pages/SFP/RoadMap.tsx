@@ -88,7 +88,8 @@ const Roadmap = () => {
           variants={markerVariants(0.5)}
           initial="hidden"
           animate="visible"
-        />
+          style={{color:'red'}}
+          />
         <motion.circle
           cx="250"
           cy="250"
