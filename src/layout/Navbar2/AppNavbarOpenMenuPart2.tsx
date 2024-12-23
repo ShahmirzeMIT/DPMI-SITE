@@ -18,7 +18,7 @@ const pages = [
     name: "Courses",
     page: '/courses',
   },
-  { name: "E-Learning  (LMS)", 
+  { name: "AI-Simulation", 
     page: '/lms',
   },
   { name: "For Individuals", 
@@ -31,7 +31,7 @@ const pages = [
   },
 ];
 
-const openPage = ['Courses', 'E-Learning  (LMS)', 'For Individuals', 'For Companies'];
+const openPage = ['Courses', 'AI-Simulation', 'For Individuals', 'For Companies'];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
