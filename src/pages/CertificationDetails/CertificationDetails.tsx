@@ -17,6 +17,7 @@ import RoadmapACPP from '../ACPP/RoadMapACPP';
 import RoadmapDPM from '../DPM/RoadMapDPM';
 import RoadmapAIPP from '../AIPP/RoadMapAIPP';
 import RoadmapAIFP from '../AIPF/RoadMapAIPF';
+import CertificationsProgress from './CertificationsProgress';
 
 const dataN = [
     { id: "1003", roadMap: <Roadmap /> },
@@ -52,6 +53,7 @@ export default function CertificationDetails() {
                             enroll: selectedData.enroll,
                             image: selectedData.image
                         }} />
+                        <CertificationsProgress/>
                         {/* <ResponsiveSteps /> */}
                         <CardCertificationView />
                         {/* Render the selected roadmap if it exists */}

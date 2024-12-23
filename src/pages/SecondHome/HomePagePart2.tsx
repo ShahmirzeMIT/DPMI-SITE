@@ -13,6 +13,7 @@ import CourseCardHome from "./CourseCardHome";
 import { Button } from "antd";
 import AILearn from "./AILearn";
 import { useNavigate } from "react-router-dom";
+// import CourseStatus from "../../componets/CourseStatus";
 export default function HomePagePart2() {
   const navigate=useNavigate()
   const [data, setData] = useState([]);
@@ -78,7 +79,8 @@ export default function HomePagePart2() {
             )}
       </Box>
       <Button style={{background:'#E9EDF1',padding: "17px 30px 17px 30px",height:'52px',color:'black',borderRadius:'none',marginTop:'80px'}} onClick={() => navigate("/courses")}>View Courses  &gt;&gt;</Button>
-
+{/* export default function () { */}
+         
       <Slider />
     </Box>
   );
