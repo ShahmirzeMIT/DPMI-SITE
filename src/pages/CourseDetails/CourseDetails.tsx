@@ -43,9 +43,18 @@ const CourseDetails = () => {
      fetchData()
  },[])
   return (
-    <Box sx={{marginTop:'230px',minHeight:'80vh'}}>
-        <CourseDetailHeader data={{title:data.CourseName,img:data.IconUrl}} />
-        <Box sx={{width:'90%',margin:'60px auto'}}>
+    <Box sx={{marginTop:'180px',minHeight:'80vh', }}>
+      <Box sx={{ width:'100%', backgroundColor: "#f5f5f5",}}>
+        <Box sx={{maxWidth:'1200px',margin:'0 auto'}}>
+         <CourseDetailHeader data={{title:data.CourseName,img:data.IconUrl,CourseShortDesc:data.CourseShortDesc}} />
+
+        </Box>
+      </Box>
+
+
+      <Box sx={{maxWidth:'1200px',margin:'0 auto'}}>
+
+        <Box sx={{width:'90%'}}>
            <ShortDesc data={{shortDesc:data.CourseShortDesc}}/>
            <OutCome/>
            <CourseHours/>
@@ -65,7 +74,7 @@ const CourseDetails = () => {
         </Box>
         <WhatLearnDPM/>
         <WhatGetACPP/>
-       
+        </Box>
     </Box>
   );
 };

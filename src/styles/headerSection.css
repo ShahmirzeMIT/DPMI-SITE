@@ -1,105 +1,170 @@
 /* Ana konteyner */
 .hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f5f5f5; /* Açıq boz fon */
-    padding: 40px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5; /* Açıq boz fon */
+  padding: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  min-height: 300px; /* Sekildəki ölçülərə uyğun */
+  gap: 20px; /* Elementlər arasındakı boşluq */
+}
+
+/* Sol tərəf məzmunu */
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 60%; /* Məzmunun genişliyini məhdudlaşdırır */
+  z-index: 2; /* Şəkildən yuxarıda olsun */
+  flex-wrap: wrap; /* Kiçik ekranlarda sətirlərə keçir */
+}
+
+.hero-content img.hero-icon {
+  width: 100px; /* Sol tərəfdəki kiçik ikon */
+  height: 100px;
+  object-fit: contain;
+}
+
+.hero-content h1 {
+  font-size: 24px;
+  color: #222; /* Tünd başlıq rəngi */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555; /* Açıq boz mətn rəngi */
+}
+
+/* Sağ tərəfdəki şəkil */
+.hero-image {
+  position: relative;
+  max-width: 40%;
+  display: flex;
+  align-items: flex-start; /* Şəkili yuxarı hizalama */
+  justify-content: center;
+  flex-direction: column; /* Şəkili aşağı salır */
+  margin-top: 50px; /* Şəkili aşağı doğru yerləşdirir */
+  z-index: 1; /* Məzmunun altında olsun */
+}
+
+.hero-image img {
+  width: 150px; /* Sağdakı əsas şəkil ölçüsü */
+  border-radius: 10px;
+  z-index: 2; /* Şəkil dekorasiyadan öndə olmalıdır */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Şəkil üçün kölgə */
+}
+
+/* Sarı dairə */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 30%; /* Üstdən aşağı düşür */
+  left: -20%; /* Sol tərəfə çıxarılır */
+  width: 200px;
+  height: 200px;
+  background-color: #ffd737; /* Sarı dekorativ dairə */
+  border-radius: 50%;
+  z-index: 0; /* Dairə şəkildən arxada olmalıdır */
+}
+
+/* Ağ dairə */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 150px;
+  height: 150px;
+  background-color: #fff; /* Ağ dekorativ dairə */
+  border-radius: 50%;
+  z-index: 0; /* Ən arxada */
+}
+
+/* === RESPONSIVE DİZAYN === */
+/* 1024px və kiçik ekranlar üçün */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column-reverse; /* Elementlər tərsinə düzülür: əvvəl şəkil, sonra mətn */
+    padding: 20px;
   }
-  
-  /* Sol tərəf məzmunu */
+
   .hero-content {
-    max-width: 50%;
-    z-index: 2; /* Şəkildən yuxarıda olsun */
+    max-width: 100%; /* Tam genişlikdə */
+    text-align: center; /* Məzmunu mərkəzləşdir */
   }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    color: #222; /* Tünd başlıq rəngi */
-    margin-bottom: 20px;
-    font-weight: 600;
+
+  .hero-content img.hero-icon {
+    margin-bottom: 20px; /* Şəkil ilə mətn arasında boşluq */
   }
-  
-  /* Düymələr */
-  .hero-buttons {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-  
-  .btn.yellow {
-    background-color: #ffd737; /* Sarı rəng */
-    border: none;
-    color: #000;
-  }
-  
-  .btn.yellow:hover {
-    background-color: #ffc107;
-  }
-  
-  .btn.outlined {
-    background-color: transparent;
-    border: 2px solid #000;
-    color: #000;
-  }
-  
-  .btn.outlined:hover {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  /* Şəkil və dekorativ hissələri */
+
   .hero-image {
-    position: relative;
-    max-width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-5deg); /* Şəkli əyirik */
-    z-index: 1; /* Məzmunun altında olsun */
+    max-width: 100%; /* Tam genişlikdə */
+    margin-top: 20px;
+    align-items: center; /* Mərkəzləşdir */
   }
-  
+
   .hero-image img {
-    width: 350PX;
-    border-radius: 10px;
-    z-index: 2; /* Şəkil dekorasiyadan öndə olmalıdır */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Şəkil üçün kölgə */
+    width: 200px; /* Sağ tərəf şəkli üçün yeni ölçü */
   }
-  
-  /* Sarı dairə */
+}
+
+/* 768px və kiçik ekranlar üçün (tablet və mobil) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 15px;
+    flex-direction: column-reverse; /* Kiçik ekranlarda şəkil birinci */
+  }
+
+  .hero-content h1 {
+    font-size: 20px; /* Başlıq ölçüsü kiçiləcək */
+  }
+
+  .hero-content p {
+    font-size: 14px; /* Mətn ölçüsü kiçiləcək */
+  }
+
+  .hero-image img {
+    width: 150px; /* Şəkil daha da kiçikləşir */
+  }
+
   .hero-image::before {
-    content: "";
-    position: absolute;
-    top: 20%; /* Yuxarı yerləşmə */
-    left: -15%; /* Sol tərəfə çıxma */
-    width: 400px;
-    height: 400px;
-    background-color: #ffd737; /* Sarı dekorativ dairə */
-    border-radius: 50%;
-    z-index: 0; /* Dairə şəkildən arxada olmalıdır */
+    width: 150px;
+    height: 150px;
   }
-  
-  /* Ağ dairə */
+
   .hero-image::after {
-    content: "";
-    position: absolute;
-    bottom: -20%;
-    right: -10%;
-    width: 250px;
-    height: 250px;
-    background-color: #fff; /* Ağ dekorativ dairə */
-    border-radius: 50%;
-    z-index: 0; /* Ən arxada */
+    width: 100px;
+    height: 100px;
   }
-  
+}
+
+/* 480px və kiçik ekranlar üçün (mobil) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 18px; /* Daha kiçik başlıq */
+  }
+
+  .hero-content p {
+    font-size: 12px; /* Daha kiçik mətn */
+  }
+
+  .hero-image img {
+    width: 120px; /* Şəkil daha da kiçikləşir */
+  }
+
+  .hero-image::before {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-image::after {
+    width: 80px;
+    height: 80px;
+  }
+}
