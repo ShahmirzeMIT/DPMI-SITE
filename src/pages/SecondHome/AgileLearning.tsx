@@ -46,7 +46,7 @@ const AgileLearning = () => {
 
         <Typography
           variant="h4"
-          style={{ marginBottom: "20px", color: "black",textAlign:'center',marginLeft:'60px',lineHeight:'56px', }}
+          style={{ marginBottom: "20px", color: "black",textAlign:'center',marginLeft:'60px',lineHeight:'56px',fontSize:'38px' }}
         >
           Our Certifications are  designed  to accelerate
           <br />

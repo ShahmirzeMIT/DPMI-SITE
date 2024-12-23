@@ -1,86 +1,78 @@
 import { Box } from "@mui/material";
-import { Avatar, Typography } from "antd";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "./styles.css";
+import { Avatar } from "antd";
+import logo1 from '../../assets/images/partner1.png'
+import logo2 from '../../assets/images/partner2.png'
+import logo3 from '../../assets/images/partner3.png'
+import logo4 from '../../assets/images/partner4.png'
+import logo5 from '../../assets/images/partner5.png'
+
 const data = [
   {
-    links: 'https://top101.ee/storage/app/uploads/public/634/fb2/ae7/thumb_241_100_100_0_0_fit.png',
-    text: 'TextMagic'
+    links: logo1,
+    text: 'TextMagic',
   },
   {
-    links: 'https://www.logo.wine/a/logo/Microsoft/Microsoft-Logo.wine.svg',
-    text: 'Microsoft'
+    links: logo2,
+    text: 'Microsoft',
   },
   {
-    links: 'https://play-lh.googleusercontent.com/-Udh2Qv4FyhP2uLfvNy27jzzXrrIfnDEi9kUqzhy8OQgGUcWXXud6nlg8UywECiRmME=w480-h960-rw',
-    text: 'Skype'
-  },
- 
-  {
-    links: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
-    text: 'Facebook'
+    links: logo3,
+    text: 'Skype',
   },
   {
-    links: 'https://mui.com/static/logo.png',
-    text: 'Material UI'
+    links: logo4,
+    text: 'Facebook',
   },
   {
-    links: 'https://seeklogo.com/images/A/ant-design-logo-EAB6B3D5D9-seeklogo.com.png',
-    text: 'Ant Design'
+    links: logo5,
+    text: 'Material UI',
   },
-  {
-    links: 'https://e7.pngegg.com/pngimages/392/47/png-clipart-graphics-cards-video-adapters-nvidia-geforce-shield-portable-pascal-nvidia-graphics-cards-video-adapters-nvidia.png',
-    text: 'NVIDIA'
-  },
-  {
-    links: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqCVzfqkoJCQ&psig=AOvVaw2sFmZ15AOtCYmKezk3gM_u&ust=1734966081907000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwiYk6y50ruKAxW2SrgEHRsRAvEQjRx6BAgAEBg',
-    text: 'Reddit'
-  },
+
 ];
 
-export default function Slider() {
-
+export default function PartnersGrid() {
   return (
-    <Box sx={{ padding: "60px 10px" }}>
+    <Box sx={{ padding: "60px 10px", textAlign: "center" }}>
       <h1
         style={{
           color: "black",
           fontSize: "36px",
-          // fontWeight: 600,
           width: "60%",
           margin: "0 auto",
           textAlign: "center",
-        
-          textTransform:'uppercase',
-          marginBottom:'60px'
+          textTransform: 'uppercase',
+          marginBottom: '60px',
         }}
       >
         Our Partners
       </h1>
-      <Swiper
-      slidesPerView="auto" 
-        // slidesPerView={3} // Konkret rəqəm qoyulur
-        spaceBetween={190} // Aradakı boşluğu kiçildin
-        loop={true} // Sonsuz scroll aktivləşdirilir
-        loopAdditionalSlides={1} // Əlavə slayd yüklənir
-        className="mySwiper"
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "40px",
+        }}
       >
-        {data.map((item:{links:string,text:string}, index) => (
-          <SwiperSlide className="custom-slide" key={index}>
+        {data.map((item, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
             <Avatar
-              size={90}
+              style={{width:"180px",height:"60px"}} 
               src={item.links}
-              alt={`Slide ${index + 1}`}
+              alt={`Logo of ${item.text}`}
+              shape="square"
             />
-            <Typography>
-               {item.text}
-            </Typography>
-           
-          </SwiperSlide>
+          </Box>
         ))}
-      </Swiper>
+      </Box>
     </Box>
   );
 }

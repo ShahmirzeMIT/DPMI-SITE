@@ -40,7 +40,7 @@ export default function HomePagePart2() {
       {/* <Testimonials /> */}
       <Box sx={{width:'80%',margin:'30px auto',}}><Typography variant='h3' sx={{color:'black',fontSize: "36px", fontWeight: 600}}>
        Top  Courses</Typography></Box>
-        <Typography sx={{color:'black',fontSize:'16px',margin:'20px auto',maxWidth:"650px"}}>Enhance your skills and knowledge with our AI-driven e-learning platform. Accelerate your journey into the competitive market with confidence and strength.</Typography>
+        <Typography sx={{color:'black',fontSize:'18px',margin:'20px auto',maxWidth:"650px"}}>Enhance your skills and knowledge with our AI-driven e-learning platform. Accelerate your journey into the competitive market with confidence and strength.</Typography>
       <Box
         sx={{
           display: "flex",

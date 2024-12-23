@@ -25,7 +25,7 @@ export default function AILearn() {
           variant="h4"
           style={{ marginBottom: "1.5rem", color: "black",fontSize:'48px',lineHeight:'56px',letterSpacing:'0', }}
         >
-          We've developed an <span style={{color:'#fb6b22',fontWeight:'bold'}}>AI-driven E-Learning </span>
+          We've developed an <span style={{color:'#fb6b22',fontWeight:'bold'}}>AI-Simulation Learning</span>
           <br />
           <span style={{color:'#fb6b22',fontWeight:'bold',marginRight:'5px'}}>Platform</span>
            {" "}that lets you apply {" "}
@@ -37,7 +37,7 @@ export default function AILearn() {
         <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px' ,marginBottom:'70px'}}
           onClick={() => navigate("/elearning")}
         >
-             Discover E-Learning Platform
+             Discover AI-Simulation Learning Platform
           </Button>
     </Box>
   )
