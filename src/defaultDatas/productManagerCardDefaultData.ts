@@ -45,7 +45,7 @@ export const ProductManagerCardData=[
     },
       {
         id:1002,
-        title: "Agile Communication Profesional Practitioner ",
+        title: "Agile Communication Professional Practitioner ",
         image: Image6,
         text:"Develop advanced Agile Communication skills to lead teams and manage projects effectively",
         bgColor:'#FFFFFF'

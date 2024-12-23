@@ -4,22 +4,22 @@ interface CourseStatus {
   data: {
     id: string;
     title: string;
-    text?: string;
+    shortDesc?: string;
   };
 }
 
 const colors = [
   {
     id: "1",
-    color: "#FFA726",
+    color: "#2a74b1",
   },
   {
     id: "2",
-    color: "#FFCA28",
+    color: "#D8531D",
   },
   {
     id: "3",
-    color: "#FFF176",
+    color: "#333333",
   },
   {
     id: "4",
@@ -29,35 +29,44 @@ const colors = [
     id: "5",
     color: "#66BB6A",
   },
+  {
+    id: "6",
+    color: "yellowgreen",
+  },
+  {
+    id: "7",
+    color: "orange",
+  }
 ];
 
 const CourseStatus = ({ data }: CourseStatus) => {
-  const matchedColor = colors.find((item) => item.id === data.id)?.color || "gray"; 
+  const matchedColor =
+    colors.find((item) => item.id === data.id)?.color || "gray";
 
   return (
     <Box
       display="flex"
-      alignItems="center"
       justifyContent="start"
-      p={4}
       sx={{
-        flexDirection: { xs: "column", sm: "row" }, 
+        flexDirection: { xs: "column", sm: "row" },
         textAlign: { xs: "center", sm: "left" },
+        alignItems: { xs: "center", sm: "start" },
+        marginBottom: { xs: "80px", sm: "0", md: "", lg: "" },
       }}
     >
       <Box
         sx={{
           position: "relative",
           display: "inline-flex",
-          mb: { xs: 2, sm: 0 }, 
-          mr: { sm: 2 }, 
+          mb: { xs: 2, sm: 0 },
+          mr: { sm: 2 },
         }}
       >
         <CircularProgress
           variant="determinate"
           value={100}
-          size={190} 
-          sx={{ color: matchedColor }} 
+          size={120}
+          sx={{ color: matchedColor }}
         />
         <Box
           sx={{
@@ -94,34 +103,34 @@ const CourseStatus = ({ data }: CourseStatus) => {
             variant="h6"
             component="div"
             color="text.primary"
-            sx={{ fontWeight: "400", fontSize: "46px" }}
+            sx={{ fontWeight: "800", fontSize: "46px", color: matchedColor }}
           >
             {data.id}
           </Typography>
         </Box>
       </Box>
-      <Box>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{
-            color: matchedColor,
-            fontWeight: "40",
-            mb: 1,
-            fontSize: "48px",
-          }}
-        >
-          {data.title}
-        </Typography>
+      <Box sx={{}}>
+        {data.title && (
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              color: "black",
+              fontWeight: "800",
+              mb: 1,
+              fontSize: "48px",
+              marginBottom: "0",
+              marginTop: { xs: "0px", sm: "10px" },
+            }}
+          >
+            {data.title}
+          </Typography>
+        )}
         <Typography
           variant="body2"
           color="text.secondary"
-          sx={{ fontSize: "18px", lineHeight: "40px" }}
-        >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s, when an unknown printer typesetting, remaining
-          essentially unchanged.
+          sx={{ fontSize: "18px", lineHeight: "27px", minHeight: 80 }}
+        >{data.shortDesc}
         </Typography>
       </Box>
     </Box>
