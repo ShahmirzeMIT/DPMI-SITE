@@ -3,6 +3,7 @@ import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerN
 import { Avatar } from "antd";
 import { ProductManagerCardData } from "../../defaultDatas/productManagerCardDefaultData";
 import CertificateCard from "../SecondHome/CertificateCard";
+import CompletedCertification from "./CompletedCertification";
 
 
 
@@ -53,6 +54,7 @@ export default function CertificationList() {
                     }} key={index}/>)
                 }
             </Box>
+      <CompletedCertification/>
   </Box>
   )
 }

@@ -10,7 +10,7 @@ const FirstCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2 }}
+            sx={{ fontWeight: "400", color: "black", mb: 2 }}
           >
           Startup Journey
           </Typography>

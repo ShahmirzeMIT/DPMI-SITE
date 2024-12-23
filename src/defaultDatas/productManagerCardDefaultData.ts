@@ -8,7 +8,7 @@ import Image6 from "../assets/images/acpp.png";
 export const ProductManagerCardData=[
     {
         id:1004,
-        title: " AI Foundation Practitioner",
+        title: "AI Foundation Practitioner",
         image: Image3,
         text:"Build a strong foundation in AI concepts and their practical applications in business.",
         bgColor:'#FFFFFF'
@@ -37,15 +37,15 @@ export const ProductManagerCardData=[
         bgColor:"#FFFFFF"
     },
     {
-        id:5,
+        id:1001,
         title: "Agile Communication  Foundation Practitioner ",
         image: Image5,
         text:"Master the fundamentals of Agile Communication to enhance collaboration and drive project success",
         bgColor:'#FFFFFF'
     },
       {
-        id:1,
-        title: "Agile Communication Proffesional Practitioner ",
+        id:1002,
+        title: "Agile Communication Profesional Practitioner ",
         image: Image6,
         text:"Develop advanced Agile Communication skills to lead teams and manage projects effectively",
         bgColor:'#FFFFFF'

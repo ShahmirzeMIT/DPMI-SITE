@@ -41,7 +41,7 @@ const FourthCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "bold", color: "black", mb: 2 ,}}
+            sx={{ fontWeight: "400", color: "black", mb: 2 ,}}
           >
               Agile Communication Practitioner
           </Typography>
@@ -57,7 +57,7 @@ const FourthCourse = () => {
           </Box>
           <Box sx={{marginTop:'20px'}}>
           <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }} onClick={() => navigate('/certificates/1002')}>
-              View Proffesional Level
+              View Profesional Level
           </Button>
           </Box>
        

@@ -34,7 +34,7 @@ export const ProductManagerCardDataNavbar=[
     },
     {
         id:4,
-        title: "AIPP | AI Practitioner Proffesional",
+        title: "AIPP | AI Profesional Practitioner",
         link:'/certificates/1005',
         image: Image4,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
@@ -43,15 +43,15 @@ export const ProductManagerCardDataNavbar=[
     {
         id:5,
         title: "ACPF | Agile Communication Practitioner Foundation",
-        link:'/certificates/5',
+        link:'/certificates/1001',
         image: Image5,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
     {
         id:6,
-        title: "ACPP | Agile Communication Practitioner Proffesional",
-        link:'/certificates/1',
+        title: "ACPP | Agile Communication Practitioner Profesional",
+        link:'/certificates/1002',
         image: Image6,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'

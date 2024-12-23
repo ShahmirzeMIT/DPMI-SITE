@@ -37,7 +37,7 @@ const AgileLearning = () => {
     >
 
       {/* Məzmun */}
-      <div style={{ position: "relative", zIndex: 3,display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',flexWrap:'wrap',gap:2 }}> {/* Məzmun tünd backgroundun üstündə qalır */}
+      <div style={{ position: "relative", zIndex: 3,display:'flex',flexDirection:'row',justifyContent:'space-around',alignItems:'center',flexWrap:'wrap',gap:2 }}> {/* Məzmun tünd backgroundun üstündə qalır */}
       <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center', gap: 2}}>
           {data.map((item) => (
               <AgileCard data={item} />
@@ -46,7 +46,7 @@ const AgileLearning = () => {
 
         <Typography
           variant="h4"
-          style={{ marginBottom: "20px", color: "black",textAlign:'center',marginLeft:'60px',lineHeight:'56px',fontSize:'38px' }}
+          style={{ marginBottom: "20px", color: "black",textAlign:'center',marginLeft:'60px',lineHeight:'70px',fontSize:'40px' }}
         >
           Our Certifications are  designed  to accelerate
           <br />
