@@ -12,7 +12,7 @@ export default function CourseDetailsHeader() {
           variant="h3"
           sx={{ fontWeight: "400", color: "black", mb: 2 }}
         >
-        Achive Excellence with Our Certifications
+        Unlock Your Potential with Our Courses
         </Typography>
         <Typography variant="body1" sx={{ color: "#555", mb: 1, fontSize:'18px' ,lineHeight:'27px',letterSpacing:'0' ,textAlign:'left'}}>
         Our certifications are designed to accelerate career growth for individuals and help companies build reliable, measurable, and practical pathways for AI Transformation. 
