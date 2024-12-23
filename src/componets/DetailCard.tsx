@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 interface DetailCardProps {
@@ -39,7 +39,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
         {data.title}
       </Typography>
 
-      <Box sx={{ marginTop: "30px", marginBottom: "60px" }}>
+      <Box sx={{ marginTop: "40px", marginBottom: "60px" }}>
         <Typography
           sx={{
             color: "#545454",
@@ -51,19 +51,8 @@ const DetailCard = ({ data }: DetailCardProps) => {
           {data.shortDesc}
         </Typography>
       </Box>
-      <Box
-        sx={{
-          marginTop: "30px",
-          position: "absolute",
-          bottom: "30px",
-          display: "flex",
-          left: "10px",
-          justifyContent: "space-between",
-          width: "90%",
-          margin: "0 auto",
-        }}
-      >
-        <div>
+      <Box sx={{display:'flex',width:'100%',justifyContent:'space-between',flexWrap:'wrap',marginBottom:'30px'}}>
+              <div>
           <strong>
             Total <br />
             Hours:
@@ -83,7 +72,38 @@ const DetailCard = ({ data }: DetailCardProps) => {
           </strong>{" "}
           {data.realProjectHours}
         </div>
+        </Box>
+      <Box
+        sx={{
+          marginTop: "90px",
+          position: "absolute",
+          bottom: "20px",
+          width: "90%",
+          margin: "0 auto",
+        }}
+      >
+        <Box sx={{display: "flex",
+          left: "10px",
+          justifyContent: "space-between",}}>
+       
+       <Button
+          sx={{
+            padding: "5px 20px",
+            color: "#fb1201",
+            border: "1px solid rgb(251, 107, 34)",
+            fontFamily:" Cabin, sans-serif !important",
+            "&:hover": { background: "rgb(251, 107, 34)", color: "white" },
+          }}
+          // onClick={handleNavigate}
+        >
+         View Course
+        </Button>
+        </Box>
+       
+       
+    
       </Box>
+      
     </Box>
   );
 };

@@ -8,6 +8,7 @@ import Logo from '../../assets/images/logoSite.png';
 import CertificationMenu from "../Navbar/CertificationMenu";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import ForIndividuals from "./ForIndividuals";
 
 const pages = [
   {
@@ -22,8 +23,8 @@ const pages = [
     page: '/lms',
   },
   { name: "For Individuals", 
-    children: [], 
-    page: '/for-individuals',
+    children: [<ForIndividuals key="for-individuals-menu"/>], 
+   
   },
   { name: "For Companies", 
     children: [], 
@@ -31,7 +32,7 @@ const pages = [
   },
 ];
 
-const openPage = ['Courses', 'AI-Simulation', 'For Individuals', 'For Companies'];
+const openPage = ['Courses', "AI-Simulation",'', 'For Companies'];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
@@ -125,7 +126,7 @@ const AppNavbarMenuPart2 = () => {
                              
                             }}
                             onClick={() => {
-                              setOpenMenu(null); // Menü bağlanır
+                              setOpenMenu(null); 
                             }}
                           >
                             {child}
