@@ -1,33 +1,25 @@
 import { Box } from '@mui/material'
 import { Avatar, Typography } from 'antd'
 import Logo from '../../assets/images/whatLearn.png'
+import PointText from '../../componets/PointText';
+interface WhatLearnSpfProps {
+  data:{title:string;desc:string,}[]
+}
 
-const data=[{
-    title:"How to Create and Manage a Project Backlog <br/>Master the use of UI Cards and Data Flow Cards to structure and organize all project tasks and features.",
-},
-{
-    title:"How to Plan and Adjust Sprints Effectively <br/>Learn to prioritize tasks, manage scope changes, and align sprint goals with business objectives.",
-},
-{
-    title:"How to Apply Estimation Techniques for Accurate Planning <br/>Explore methods like Parametric and Expert Judgment to calculate precise task completion times",
-},
-{
-    title:"How to Handle Change Requests During Sprints <br/> Discover strategies to manage change and new requests while maintaining project quality and timelines",
-},
-{
-    title:"How to Foster Collaboration Through Agile Communication <br>Develop skills to enhance team alignment, resolve conflicts, and integrate user feedback for continuous improvement",
-}]
-
-export default function WhatLearnDPM() {
+export default function WhatLearnDPM({data}:WhatLearnSpfProps) {
   return (
-    <Box sx={{width:'90%',margin:'90px auto'}}>
-    <Typography style={{color:'black',fontSize:'30px',fontWeight:'600',textAlign:'start',marginLeft:'10px'}}>
+    <Box sx={{width:'100%',margin:'90px auto'}}>
+    <Typography style={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',marginLeft:'10px',textTransform:'uppercase'}}>
        <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'20px'}} shape="square" />
        What you will learn</Typography>
-       <ul>
+       <ul style={{width:'100%',marginTop:'20px'}}>
        {
         data.map((item,_index)=>(
-           <li style={{color:'black',fontSize:'18px',fontWeight:'500',textAlign:'start',marginLeft:'70px',lineHeight:'40px'}}>{item.title}</li>
+           <li style={{color:'black',fontSize:'18px',fontWeight:'200',textAlign:'start',marginLeft:'40px',lineHeight:'30px',marginTop:'20px',listStyle:'none'
+            // ,display:'flex',alignItems:'center'
+           }}>
+            <PointText/>
+            <span style={{fontSize:'24px'}}>{item.title}</span> <div style={{marginLeft:'30px'}}>{item.desc}</div></li>
         ))
        }
       </ul>
