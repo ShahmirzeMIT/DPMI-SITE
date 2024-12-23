@@ -42,6 +42,7 @@ export default function PartnersGrid() {
           textAlign: "center",
           textTransform: 'uppercase',
           marginBottom: '60px',
+        
         }}
       >
         Our Partners
@@ -52,6 +53,9 @@ export default function PartnersGrid() {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: "40px",
+          // padding:'30px 0',
+          background:"#F4F4F4",
+          padding:"50px 0"
         }}
       >
         {data.map((item, index) => (
@@ -62,10 +66,11 @@ export default function PartnersGrid() {
               flexDirection: "column",
               alignItems: "center",
               gap: "10px",
+
             }}
           >
             <Avatar
-              style={{width:"180px",height:"60px"}} 
+              style={{width:"180px",height:"60px",objectFit:'none'}} 
               src={item.links}
               alt={`Logo of ${item.text}`}
               shape="square"

@@ -27,7 +27,7 @@ export default function CertificationMenu() {
           paddingBottom:'2rem',
           color: "rgb(105 105 105)",
         
-        }} onClick={() => navigate("/certificates") }>Certification Explore</Typography>
+        }} onClick={() => navigate("/certificates") }> Explore All Certifications</Typography>
         {
           ProductManagerCardDataNavbar.map((item:{title:string,link:string})=>{
             return(
