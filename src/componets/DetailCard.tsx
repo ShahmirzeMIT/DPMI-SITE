@@ -1,54 +1,90 @@
+import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const DetailCard = () => {
+interface DetailCardProps {
+  data: {
+    id: number;
+    title: string;
+    shortDesc: string;
+    totalHours: number;
+    interactivePracticeHours: number;
+    realProjectHours: number;
+  };
+}
+const DetailCard = ({ data }: DetailCardProps) => {
+  const navigate=useNavigate()
   return (
-    <>
-  
-       <div
-        style={{
-          border: "1px solid #ddd",
-          borderRadius: "15px",
-          padding: "16px",
-          maxWidth: "350px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          // margin: "16px auto",
-          fontFamily: "Arial, sans-serif",
-          marginBottom:'40px'
+    <Box
+      sx={{
+        padding: "40px 20px",
+        maxWidth: "350px",
+        boxShadow:
+          "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+        borderRadius: "15px",
+        position: "relative",
+        cursor: "pointer",
       }}
+      onClick={() => navigate(`/courses/${data.id}`)}
     >
-      <h2
-        style={{
-          color: "#1976d2",
-          fontSize: "36px",
-          marginBottom: "8px",
+      <Typography
+        variant="h4"
+        sx={{
+          color: "rgb(251, 107, 34)",
+          // textDecoration: "underline",
+          fontSize: "20px",
+          fontWeight: "600",
+          textAlign: "start",
         }}
       >
-        Page Foundation
-      </h2>
-      <p
-        style={{
-          fontSize: "16px",
-          lineHeight: "1.5",
-          color: "#333",
-          marginBottom: "18px",
+        {data.title}
+      </Typography>
+
+      <Box sx={{ marginTop: "30px", marginBottom: "60px" }}>
+        <Typography
+          sx={{
+            color: "#545454",
+            fontSize: "16px",
+            textAlign: "start",
+            minHeight: "120px",
+          }}
+        >
+          {data.shortDesc}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          marginTop: "30px",
+          position: "absolute",
+          bottom: "30px",
+          display: "flex",
+          left: "10px",
+          justifyContent: "space-between",
+          width: "90%",
+          margin: "0 auto",
         }}
       >
-       In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.
-      </p>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <strong>Total Hours:</strong>8
+          <strong>
+            Total <br />
+            Hours:
+          </strong>
+          {data.totalHours}
         </div>
         <div>
-          <strong>Interactive Practice Hours:</strong> 5
+          <strong>
+            Interactive Practice <br />
+            Hours:
+          </strong>{" "}
+          {data.interactivePracticeHours}
         </div>
         <div>
-          <strong>Real Project Hours:</strong> 3
+          <strong>
+            Real Project <br /> Hours:
+          </strong>{" "}
+          {data.realProjectHours}
         </div>
-      </div>
-    </div>
-    
-    </>
-    
+      </Box>
+    </Box>
   );
 };
 

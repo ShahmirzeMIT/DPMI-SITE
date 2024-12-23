@@ -18,6 +18,7 @@ import Logo from "../../assets/images/detailIcon.png";
 // import RoadmapAIPP from '../AIPP/RoadMapAIPP';
 // import RoadmapAIFP from '../AIPF/RoadMapAIPF';
 import CertificationsProgress from "./CertificationsProgress";
+import { dataDetail } from "../../defaultDatas/detailCourses";
 
 // const dataN = [
 //     { id: "1003", roadMap: <Roadmap /> },
@@ -126,10 +127,11 @@ export default function CertificationDetails() {
             justifyContent: "space-around",
             width: "90%",
             margin: "20px auto",
+            gap:'40px'
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_item, index) => (
-            <DetailCard key={index} />
+          {dataDetail.map((item, index) => (
+            <DetailCard key={index}  data={item}/>
           ))}
         </Box>
       </Box>
