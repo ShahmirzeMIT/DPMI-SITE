@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { callApi } from "../../utils/callApi";
 import { useEffect, useState } from "react";
-import { Button, Result } from "antd";
+import { Button, Result, message } from "antd";
 
 export default function PaymentProceedd() {
   const location = useLocation();
@@ -15,8 +15,14 @@ export default function PaymentProceedd() {
         const res = await callApi("/billing/main/payment/success", {
           CheckoutSessionId: sessionId,
         });
-        setCheckStatus("completed");
-        window.location.href = "https://dpmi.netlify.app/login"; 
+        if(res.error){
+          message.error(res.error);
+        }
+        else{
+          setCheckStatus("completed");
+          window.location.href = "https://dpmi.netlify.app/login"; 
+        }
+        
         if(res.error){
           setCheckStatus("error");
         }
