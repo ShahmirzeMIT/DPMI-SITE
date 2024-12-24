@@ -9,7 +9,7 @@ export const certificationsListData=[
     {
         id:"1003",
         title:"Startup Foundation Practitioner",
-        text:"Discover essential strategies and frameworks to build, manage, and scale a successful startup in the digital product domain. Participants will learn foundational tools like SQL and APIs, as well as techniques for market analysis and responding to evolving customer needs. Perfect for aspiring entrepreneurs seeking to transform their innovative ideas into sustainable business ventures.he Startup Foundation Practitioner Certification is designed for professionals who want to master the essentials of building and scaling startups. The program covers key areas such as business model development, market validation, customer acquisition, and agile methodologies. It equips individuals with practical tools and strategies to launch successful startups, adapt quickly to market changes, and make data-driven decisions. Ideal for aspiring entrepreneurs, intrapreneurs, and startup enthusiasts, this certification provides the skills needed to navigate the fast-paced startup ecosystem and drive business growth",
+        text:"Discover essential strategies and frameworks to build, manage, and scale a successful startup in the digital product domain. Participants will learn foundational tools like SQL and APIs, as well as techniques for market analysis and responding to evolving customer needs. Perfect for aspiring entrepreneurs seeking to transform their innovative ideas into sustainable business ventures.",
         links:'/certificates',
         enroll:"/classes",
         image:Image1,

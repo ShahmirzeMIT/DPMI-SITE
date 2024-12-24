@@ -1,8 +1,8 @@
 import { Box, Link, Typography } from "@mui/material";
 import { Avatar } from "antd";
-import { allForIndividuals } from "../../defaultDatas/forindividualsData";
-import Logo from '../../assets/images/individuals.png';
-export default function ForIndividuals() {
+import Logo from '../../assets/images/showAll.jpg';
+import { allForCOmpaines } from "../../defaultDatas/forCompanies";
+export default function ForCompanies() {
   return (
     <Box
       sx={{
@@ -23,7 +23,7 @@ export default function ForIndividuals() {
           width: "450px",
         }}
       >
-        {allForIndividuals.map((item: { title: string; id: string; text: string }) => {
+        {allForCOmpaines.map((item: { title: string; id: string; text: string }) => {
           return (
             <Box key={item.id} sx={{ marginBottom: "1.5rem" }}>
               <Typography
@@ -90,7 +90,7 @@ export default function ForIndividuals() {
                 style={{
                   width: "95%",
                   height: "270px",
-                  boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                //   boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                 }}
                 shape="square"
               />

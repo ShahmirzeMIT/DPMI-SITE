@@ -9,6 +9,7 @@ import CertificationMenu from "../Navbar/CertificationMenu";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import ForIndividuals from "./ForIndividuals";
+import ForCompanies from "./ForCompaines";
 
 const pages = [
   {
@@ -27,12 +28,12 @@ const pages = [
    
   },
   { name: "For Companies", 
-    children: [], 
+    children: [<ForCompanies key="for-companies-menu"/>], 
     page: '/companies',
   },
 ];
 
-const openPage = ['Courses', "AI-Simulation",'', 'For Companies'];
+const openPage = ['Courses', "AI-Simulation",];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
