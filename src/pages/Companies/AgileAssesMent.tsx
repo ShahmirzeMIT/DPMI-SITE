@@ -1,10 +1,9 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
-import StartupImage from '../../assets/images/alumni.jpg'; // Replace with your image path
+import StartupImage from "../../assets/images/agileCulture.jpg"; // Replace with your image path
 
 const AgileAssesMent = () => {
   return (
     <>
-
       {/* Startup Acceleration and Incubation Center Section */}
       <Box
         sx={{
@@ -20,41 +19,29 @@ const AgileAssesMent = () => {
             <Typography
               variant="h3"
               sx={{
-                fontWeight: "bold",
+                fontWeight: "400",
                 color: "black",
                 mb: 2,
-                
               }}
             >
-              Startup Acceleration & Incubation Center
+              Agile Communication Culture
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 color: "#555",
                 mb: 4,
-                
               }}
             >
-              Accelerate your startup's growth with expert mentoring,
-              cutting-edge resources, and a collaborative ecosystem. From
-              ideation to execution, this center supports entrepreneurs in
-              market research, MVP development, funding strategies, and
-              preparing for scalability. Join a community of innovators and turn
-              your vision into reality.
+              
+              Our Agile Communication Culture services teach organizations how
+              to foster a collaborative environment where communication is
+              clear, efficient, and effective. We provide both consultation and
+              training to help your team eliminate communication barriers,
+              reduce non-value-adding meetings, and enhance cross-functional
+              collaboration for faster, more successful
             </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                fontStyle: "italic",
-                fontWeight: "bold",
-                color: "#fb6b22",
-                mb: 4,
-                
-              }}
-            >
-              "Fueling Dreams, Accelerating Success, Empowering Entrepreneurs."
-            </Typography>
+
             <Box sx={{ marginTop: "20px" }}>
               <Button
                 variant="contained"
@@ -62,10 +49,9 @@ const AgileAssesMent = () => {
                   backgroundColor: "#fb6b22",
                   color: "white",
                   padding: "10px 70px",
-                  
                 }}
               >
-                Learn More
+                Contact Us
               </Button>
             </Box>
           </Grid>

@@ -129,7 +129,7 @@ const CourseDetails = () => {
           justifyContent: "center",
           gap: "20px",
           // width: "90%",
-          margin: "0 auto",
+          margin: "0 auto 80px 0",
         }}
       >
         {/* Sadece ilk 3 elementi göstər */}

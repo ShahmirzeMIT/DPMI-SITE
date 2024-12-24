@@ -1,5 +1,5 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
-import TransformationImage from '../../assets/images/agileTransformation.jpg'; // Replace with your image path
+import TransformationImage from "../../assets/images/agileTransformation.jpg"; // Replace with your image path
 
 const AgileTransformation = () => {
   return (
@@ -16,42 +16,28 @@ const AgileTransformation = () => {
           <Typography
             variant="h3"
             sx={{
-              fontWeight: "bold",
+              fontWeight: "400",
               color: "black",
               mb: 2,
-            
             }}
           >
-            Fostering Digital/Agile Transformation
+            Agile Transformation
           </Typography>
           <Typography
             variant="body1"
             sx={{
               color: "#555",
               mb: 4,
-            
             }}
           >
-            Achieving seamless collaboration between Agile Communication (AC)
-            frameworks and cutting-edge AI solutions requires tailored
-            strategies. This certification is designed to help individuals and
-            organizations overcome transformation barriers. Key topics include:
-            building scalable frameworks for agility, integrating AI solutions,
-            fostering a communication-first culture, and driving team alignment
-            to achieve innovation and growth.
+            Our Agile Transformation services help businesses transition to
+            Agile methodologies to improve team collaboration, flexibility, and
+            speed. Through consultation and tailored training, we guide you in
+            implementing Agile frameworks such as Scrum and Kanban, ensuring
+            your team can deliver projects with greater efficiency and
+            responsiveness.
           </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontStyle: "italic",
-              fontWeight: "bold",
-              color: "#fb6b22",
-              mb: 4,
-            
-            }}
-          >
-            "Empowering Collaboration, Innovation, and Transformation Through Agile and AI Synergy."
-          </Typography>
+
           <Box sx={{ marginTop: "20px" }}>
             <Button
               variant="contained"
@@ -59,10 +45,9 @@ const AgileTransformation = () => {
                 backgroundColor: "#fb6b22",
                 color: "white",
                 padding: "10px 70px",
-              
               }}
             >
-              Learn More
+              Contact Us
             </Button>
           </Box>
         </Grid>

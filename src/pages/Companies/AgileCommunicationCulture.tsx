@@ -1,5 +1,5 @@
 import { Box, Button, Typography, Grid } from "@mui/material";
-import AgileCommunicationImage from '../../assets/images/agileComunication.jpg'; // Replace with your image path
+import AgileCommunicationImage from "../../assets/images/DigitalProduct.png";
 
 const AgileCommunicationCulture = () => {
   return (
@@ -43,43 +43,27 @@ const AgileCommunicationCulture = () => {
           <Typography
             variant="h3"
             sx={{
-              fontWeight: "bold",
+              fontWeight: "400",
               color: "black",
               mb: 2,
-             
             }}
           >
-            Agile Communication Culture
+            Digital Product Managment
           </Typography>
           <Typography
             variant="body1"
             sx={{
               color: "#555",
               mb: 4,
-             
             }}
           >
-            Establishing a culture of effective communication is vital for
-            agile-driven companies. This certification is designed to help
-            organizations break silos, foster transparency, and create a
-            communication-first environment. Learn how to promote seamless
-            collaboration across teams, eliminate inefficiencies, and align
-            everyone toward common business objectives. 
+            We offer expert consultation and training to help your team manage
+            digital products from concept to launch. Our services focus on
+            practical skills in product strategy, backlog management, and
+            project delivery, enabling you to effectively align business
+            objectives with product outcomes and accelerate time- to-market.
           </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontStyle: "italic",
-              fontWeight: "bold",
-              color: "#fb6b22",
-              mb: 4,
-             
-            }}
-          >
-            "Transform Communication Barriers Into Bridges for Growth and Innovation."
-          </Typography>
-         
-           
+
           <Box sx={{ marginTop: "20px" }}>
             <Button
               variant="contained"
@@ -87,10 +71,9 @@ const AgileCommunicationCulture = () => {
                 backgroundColor: "#2a74b1",
                 color: "white",
                 padding: "10px 70px",
-               
               }}
             >
-              Learn More
+              Contact Us
             </Button>
           </Box>
         </Grid>
