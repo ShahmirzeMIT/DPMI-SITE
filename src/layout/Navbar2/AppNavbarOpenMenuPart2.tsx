@@ -21,7 +21,7 @@ const pages = [
     page: '/courses',
   },
   { name: "AI-Simulation", 
-    page: '/lms',
+    page: '/aisimulation',
   },
   { name: "For Individuals", 
     children: [<ForIndividuals key="for-individuals-menu"/>], 
