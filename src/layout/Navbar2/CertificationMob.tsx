@@ -1,5 +1,5 @@
 import { Box,  Link, Typography } from "@mui/material";
-import { Avatar } from "antd";
+// import { Avatar } from "antd";
 import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
 import { useNavigate } from "react-router-dom";
 export default function CertificationMenuMob() {
@@ -41,7 +41,7 @@ export default function CertificationMenuMob() {
         }
        
       </Box>
-      <Box sx={{marginTop:'5px',width:'100%',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px',background:'#f4f4f4'}}>
+      {/* <Box sx={{marginTop:'5px',width:'100%',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px',background:'#f4f4f4'}}>
         {
           ProductManagerCardDataNavbar.map((item:{image:string})=>{
             return(
@@ -54,7 +54,7 @@ export default function CertificationMenuMob() {
           })
         }
           
-      </Box>
+      </Box> */}
       
     </Box>
   );
