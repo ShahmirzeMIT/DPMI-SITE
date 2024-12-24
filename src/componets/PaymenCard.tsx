@@ -41,7 +41,6 @@ export default function PaymenCard({data}:PaymentCardProps) {
     
     setPriceList(res)
   }
-  console.log(priceList);
   
   return (
     <>

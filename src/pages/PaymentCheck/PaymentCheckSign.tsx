@@ -2,16 +2,19 @@
 import useSignState from "./useSignState";
 import InputText from "../../componets/InputText";
 import SelectSingleVertical from "../../componets/SelectSingle";
-import {  Col, Row, Typography } from "antd";
+import {  Checkbox, Col, Row, Typography } from "antd";
 // import InputMobile from "../../componets/InputMobile";
 import PaymenCard from "../../componets/PaymenCard";
 import InputPassWord from "../../componets/InputPassword";
 import { useEffect, useState } from "react";
 import ButtonPayment from "../../componets/ButtonPayment";
+import { useNavigate } from "react-router-dom";
 
 
 export default function PaymentCheckSign() {
+  const navigate = useNavigate();
   const {profileState}=useSignState()
+  const [disabled, setDisabled] = useState(false);
   const [localData, setLocalData] = useState<{
     Price: string;
     CourseName: string;
@@ -40,7 +43,9 @@ export default function PaymentCheckSign() {
 
 
 
-
+const onChange = (e:any) => {
+  setDisabled(e.target.checked)
+}
 
 
   return (
@@ -60,8 +65,14 @@ export default function PaymentCheckSign() {
             <InputText data={profileState.zipCode}/> 
             <InputText data={profileState.city}/>
             <SelectSingleVertical data={profileState.country}/>
-        
+            <Checkbox onChange={onChange}>
+            I agree
+            By checking the box below, you agree to DPM Institute's  {" "}
+            <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a>
+
+            </Checkbox>
           <br />
+    
           <ButtonPayment data={{
             FkClassId:localData?.Id || "",
             Email:profileState.Email.value,
@@ -76,7 +87,7 @@ export default function PaymentCheckSign() {
             City:profileState.city.value,
             ZipCode:profileState.zipCode.value,
      
-            // disabled:profileState.Email.message!='' || profileState.Password.message!='' ? true : false
+            disabled:disabled
           }}/>
         </div>
       </Col>

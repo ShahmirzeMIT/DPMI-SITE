@@ -88,7 +88,7 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
          type="primary"
          style={{ width: "100%", backgroundColor: "#3b82f6" }}
         onClick={handlePayment}
-        disabled={loading || data.disabled}
+        disabled={loading || !data.disabled}
       >
         {loading ? <Spin size="small" /> : "Register and Proceed"}
       </Button>

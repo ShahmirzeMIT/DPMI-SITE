@@ -1,14 +1,17 @@
-import {    Row, Col } from "antd";
+import {    Row, Col, Checkbox } from "antd";
 import usePaymentState from "./usePaymentState";
 import InputText from "../../componets/InputText";
 import InputPassWord from "../../componets/InputPassword";
 import PaymenCard from "../../componets/PaymenCard";
 import { useEffect, useState } from "react";
 import ButtonPaymentForLogin from "../../componets/ButtonPaymentForLogin";
+import { useNavigate } from "react-router-dom";
 
 
 export default function PayMentCheckLogin() {
+  const navigate = useNavigate();
   const {paymentState}=usePaymentState()
+  const [disabled, setDisabled] = useState(false);
   const [localData, setLocalData] = useState<{
     Price: string;
     CourseName: string;
@@ -37,7 +40,9 @@ export default function PayMentCheckLogin() {
     
   }, [])
 
-  console.log(localData,'localData');
+  const onChange = (e:any) => {
+    setDisabled(e.target.checked)
+  }
   
   
   return (
@@ -51,13 +56,19 @@ export default function PayMentCheckLogin() {
               <br />
             <InputPassWord data={paymentState.Password}/>
             <br />
-            
+            <Checkbox onChange={onChange}>
+            I agree
+            By checking the box below, you agree to DPM Institute's  {" "}
+            <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a>
+
+            </Checkbox>
             <ButtonPaymentForLogin data={{
               Email:paymentState.Email.value,
               FkClassId:localData?.Id || "",
               Password:paymentState.Password.value,
+              disabled:disabled,
             }}/>
-            
+             
           </div>
         </Col>
 
