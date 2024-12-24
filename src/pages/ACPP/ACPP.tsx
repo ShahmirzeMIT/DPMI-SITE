@@ -3,7 +3,7 @@ import ACPPCertificationView from './ACPPCertificationView'
 import CardDPMCaertificationView from '../DPM/CardDPMCaertificationView'
 import RoadmapACPP from './RoadMapACPP'
 import WhyACPP from './WhyACPP'
-import WhatGetACPP from './WhatGetACPP'
+
 import { Box } from '@mui/material'
 import { acppData } from './acppData'
 import DigitalProductFoundationModule from '../SFP/DigitalFounDationProductModule'
@@ -20,7 +20,7 @@ export default function ACPP() {
           {acppData.map((item, index) => <DigitalProductFoundationModule key={index} data={item}/>)}
         </Box>
         <WhyACPP/>
-        <WhatGetACPP/>
+        {/* <WhatGetACPP/> */}
         <WhatLearnACPP/>
         <DetailofACPP/>
     </Box>

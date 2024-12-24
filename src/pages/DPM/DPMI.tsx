@@ -6,7 +6,7 @@ import { dpmData } from "./dpmData";
 import DigitalProductFoundationModule from "../SFP/DigitalFounDationProductModule";
 import WhyDpm from "./WhyDpm";
 import WhatGetDPM from "./WhatGetDPM";
-import WhatLearnDPM from "./WhatLearnDPM";
+// import WhatLearnDPM from "./WhatLearnDPM";
 import DetailofDpmCourse from "./DetailofDpmCourse";
 
 export default function DPMI() {
@@ -20,7 +20,7 @@ export default function DPMI() {
       </Box>
       <WhyDpm/>
       <WhatGetDPM/>
-      <WhatLearnDPM/>
+      {/* <WhatLearnDPM/> */}
       <DetailofDpmCourse/>
     </Box>
   );
