@@ -41,11 +41,11 @@ export default function FooterBottom() {
       title:'Login',
     },
     {
-      id:'3',
+      id:'/termofuse',
       title:'Term of Use',
     },
     {
-      id:'4',
+      id:'/privacy',
       title:'Privacy Statement',
     },
   ]
@@ -171,7 +171,13 @@ export default function FooterBottom() {
          marginTop: "10px",
        }}
        onClick={() => {
-         navigate(`/certificate/${item.id}`);
+        if(item.id=="/termofuse" || item.id=="/privacy"){
+          navigate(item.id);
+        }
+        else{
+          navigate(`/certificate/${item.id}`);
+
+        }
        }}
      >
        {item.title}

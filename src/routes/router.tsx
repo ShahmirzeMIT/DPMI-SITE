@@ -20,6 +20,8 @@ import CertificationList from "../pages/CertificationList/CertificationList";
 import OurServices from "../pages/OurServices/OurServices";
 import CertificationDetails from "../pages/CertificationDetails/CertificationDetails";
 import AISimulation from "../pages/LMS/AISimulation";
+import TermsOfUse from "../pages/Terms/TermStatement";
+import PrivacyStatement from "../pages/Terms/Privacy";
 
 export const routes = [
     {
@@ -46,6 +48,8 @@ export const routes = [
             {path:"/certificates",element:<CertificationList/>},
             {path:'/certificates/:certificateId',element:<CertificationDetails/>},
             { path: "/ourservices", element: <OurServices /> },
+            { path: "/termofuse", element: <TermsOfUse /> },
+            { path: "/privacy", element: <PrivacyStatement /> },
             { path: "*", element: <NotFound /> },
         ]
     },
