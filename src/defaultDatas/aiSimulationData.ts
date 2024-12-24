@@ -8,8 +8,8 @@ export interface SkillData {
   export const aiSimulationData: SkillData[] = [
     {
       id: "1",
-      quote: '"Exposure to diverse case studies and complex dilemmas through years of experience."',
-      title: "The Challenges of Becoming a Skilled Professional",
+      quote: 'AI-Simulation Platform empowers you to gain these skills in a structured and efficient manne',
+      title: "What Makes Someone Truly Skilled",
       text: [
         { title: "Exposure to diverse case studies and complex dilemmas through years of experience." },
         { title: "Familiarity with various criteria and alternatives for solving problems effectively." },
@@ -44,7 +44,7 @@ export interface SkillData {
   
   export const whyChoose = [
     {
-      title: 'Why AI-Simulation is Your Best Choice',
+      title: 'AI-Simulation is Your Best Choice',
       data: [
         { title: 'Simulate real-world challenges and learn through experience.' },
         { title: 'Gain expertise in decision-making and strategic analysis.' },

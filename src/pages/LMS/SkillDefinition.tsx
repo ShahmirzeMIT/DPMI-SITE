@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Typography, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Box, Grid, Typography, List, Divider } from '@mui/material';
 
 interface SkillDefinitionProps {
   data: {
@@ -16,7 +16,7 @@ const SkillDefinition = ({ data }: SkillDefinitionProps) => {
 
   return (
     <Box sx={{ padding: { xs: 2, md: 4 }, maxWidth: '1200px', margin: '0 auto' }}>
-      <Typography variant="h4" gutterBottom align="center">
+      <Typography variant="h4" gutterBottom align="center" sx={{fontWeight:400}}>
         {data.title}
       </Typography>
 
@@ -26,9 +26,9 @@ const SkillDefinition = ({ data }: SkillDefinitionProps) => {
           <List>
             {data.text.map((item, index) => (
               <React.Fragment key={index}>
-                <ListItem>
-                  <ListItemText primary={item.title} />
-                </ListItem>
+                <li style={{fontSize:'16px',textAlign:'start',lineHeight:'35px'}}>
+                  {item.title }
+                </li>
                 <Divider />
               </React.Fragment>
             ))}
@@ -39,10 +39,11 @@ const SkillDefinition = ({ data }: SkillDefinitionProps) => {
         <Grid item xs={12} md={6} order={isOddId ? 1 : 2}>
           <Box
             sx={{
-              backgroundColor: '#f1f1f1',
+              backgroundColor:isOddId ? '#F86C21' : '#1876D1',
               padding: 3,
               borderRadius: 2,
               boxShadow: 2,
+              color:'white',
               textAlign: 'center',
             }}
           >

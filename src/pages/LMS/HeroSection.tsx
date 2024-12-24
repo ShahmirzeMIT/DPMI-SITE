@@ -1,7 +1,9 @@
 import  { useState, useEffect } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import Logo from '../../assets/images/aiSimulation.jpg'
+import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
+  const navigate=useNavigate()
   // State to track if screen is small
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -53,7 +55,7 @@ const HeroSection = () => {
         <Typography
           variant="body1"
           style={{
-            fontSize: isSmallScreen ? '1rem' : '18px',
+            fontSize: isSmallScreen ? '1rem' : '20px',
             marginBottom: '24px',
             lineHeight:'36px'
           }}
@@ -70,10 +72,11 @@ const HeroSection = () => {
               width: isSmallScreen ? '100%' : 'auto',
               marginBottom: isSmallScreen ? '16px' : '0',
             }}
+            onClick={()=>navigate('/certificates')}
           >
             Start Your Journey to Mastery
           </Button>
-          <Button
+          {/* <Button
             variant="outlined"
             color="primary"
             style={{
@@ -82,7 +85,7 @@ const HeroSection = () => {
             }}
           >
             Explore the Platform
-          </Button>
+          </Button> */}
         </Box>
       </Box>
 

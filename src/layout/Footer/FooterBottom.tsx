@@ -7,13 +7,48 @@ import { HiPhone } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
 import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
-import { companiesCard } from "../../defaultDatas/compainesCard";
-import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
+// import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
 export default function FooterBottom() {
  const navigate = useNavigate();
  const startYear = 2024; // Starting year
   const currentYear = new Date().getFullYear();
 
+  const data=[
+    {
+      id:'/certificates',
+      title:'Certifications ',
+    },
+    {
+      id:'/courses',
+      title:'Courses',
+    },
+    {
+      id:'/aisimulation',
+      title:'AI Simulations ',
+    },
+    {
+      id:'/companies',
+      title:'For Companies ',
+    },
+  ]
+  const data2=[
+    {
+      id:'/classes',
+      title:'Find Classes ',
+    },
+    {
+      id:'2',
+      title:'Login',
+    },
+    {
+      id:'3',
+      title:'Term of Use',
+    },
+    {
+      id:'4',
+      title:'Privacy Statement',
+    },
+  ]
   return (
 <Box
   component="footer"
@@ -100,17 +135,7 @@ export default function FooterBottom() {
         textAlign: { xs: "center", sm: "left" }, // Mobilde merkezleme
       }}
     >
-      <Typography
-        variant="h6"
-        sx={{
-          fontSize: { xs: "16px", sm: "18px" },
-          marginBottom: "10px",
-          fontWeight: "bold",
-        }}
-      >
-        Certificates
-      </Typography>
-      {ProductManagerCardDataNavbar.map((item, index) => (
+      {data.map((item, index) => (
         <Typography
           key={index}
           sx={{
@@ -121,7 +146,7 @@ export default function FooterBottom() {
             marginTop: "10px",
           }}
           onClick={() => {
-            navigate(`${item.link}`);
+            navigate(`/certificate/${item.id}`);
           }}
         >
           {item.title}
@@ -135,28 +160,22 @@ export default function FooterBottom() {
         textAlign: { xs: "center", sm: "left" }, // Mobilde merkezleme
       }}
     >
-      <Typography
-        variant="h6"
-        sx={{
-          fontSize: { xs: "16px", sm: "18px" },
-          marginBottom: "10px",
-          fontWeight: "bold",
-        }}
-      >
-        Company
-      </Typography>
-      {companiesCard.map((item, index) => (
-        <Typography
-          key={index}
-          sx={{
-            fontSize: { xs: "14px", sm: "16px" },
-            cursor: "pointer",
-            color: "#555",
-            "&:hover": { textDecoration: "underline" },
-          }}
-        >
-          {item.title}
-        </Typography>
+      {data2.map((item, index) => (
+       <Typography
+       key={index}
+       sx={{
+         fontSize: { xs: "14px", sm: "16px" },
+         cursor: "pointer",
+         color: "#555",
+         "&:hover": { textDecoration: "underline" },
+         marginTop: "10px",
+       }}
+       onClick={() => {
+         navigate(`/certificate/${item.id}`);
+       }}
+     >
+       {item.title}
+     </Typography>
       ))}
     </Box>
 

@@ -71,7 +71,7 @@ const SkillGapComponent = () => {
         <Typography
           variant="body1"
           style={{
-            fontSize: isSmallScreen ? '1rem' : '18px',
+            fontSize: isSmallScreen ? '1rem' : '20px',
             marginBottom: '24px',
              lineHeight:'36px'
           }}

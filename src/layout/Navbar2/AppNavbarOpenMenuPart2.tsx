@@ -143,6 +143,24 @@ const AppNavbarMenuPart2 = () => {
 
         {/* Right side: Login and Register */}
         <Box sx={{ display: "flex", gap: 2 }}>
+        <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#2a74b1",
+              color: "#fff",
+              textTransform: "capitalize",
+              fontSize: "15px",
+              border: '1px solid #2a74b1',
+              fontFamily:" Cabin, sans-serif !important",
+              "&:hover": {
+                backgroundColor: "white",
+                color: '#2a74b1'
+              },
+            }}
+            onClick={() => navigate("/classes")}
+          >
+            Find  Classes
+          </Button>
           <Button
             variant="text"
             sx={{
@@ -159,26 +177,9 @@ const AppNavbarMenuPart2 = () => {
             }}
             onClick={() => navigate("/classes")}
           >
-            Register
+            Log in
           </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#2a74b1",
-              color: "#fff",
-              textTransform: "capitalize",
-              fontSize: "15px",
-              border: '1px solid #2a74b1',
-              fontFamily:" Cabin, sans-serif !important",
-              "&:hover": {
-                backgroundColor: "white",
-                color: '#2a74b1'
-              },
-            }}
-            onClick={() => navigate("/classes")}
-          >
-            Find A Classes
-          </Button>
+          
         </Box>
       </Toolbar>
     </AppBar>
