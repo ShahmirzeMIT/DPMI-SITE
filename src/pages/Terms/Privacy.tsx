@@ -3,7 +3,7 @@ import './PrivacyStatement.css'; // Assuming you have an external CSS file
 
 const PrivacyStatement = () => {
   return (
-    <div className="privacy-container" style={{marginTop:'80px'}}>
+    <div className="privacy-container" style={{marginTop:'120px'}}>
       <h1>Privacy Statement</h1>
 
       <section>
@@ -76,12 +76,12 @@ const PrivacyStatement = () => {
       <section>
         <h2>Use of Personal Data</h2>
         <p>Your data is used to:</p>
-        <ul>
-          <li>Operate and deliver DPMI services,</li>
-          <li>Communicate with you about your account, certifications, and relevant updates,</li>
-          <li>Respond to inquiries and provide customer support,</li>
-          <li>Analyze usage to improve the Site and services, and</li>
-          <li>Comply with legal requirements.</li>
+        <ul style={{color:'black !important'}}>
+          <li style={{color:'black !important'}}>Operate and deliver DPMI services,</li>
+          <li style={{color:'black !important'}}>Communicate with you about your account, certifications, and relevant updates,</li>
+          <li style={{color:'black !important'}}>Respond to inquiries and provide customer support,</li>
+          <li style={{color:'black !important'}}>Analyze usage to improve the Site and services, and</li>
+          <li style={{color:'black !important'}}>Comply with legal requirements.</li>
         </ul>
         <p>We do not sell, rent, or lease your personal data to third parties. Data shared with trusted service providers (e.g., hosting or analytics) is strictly for operational purposes and subject to confidentiality agreements.</p>
       </section>

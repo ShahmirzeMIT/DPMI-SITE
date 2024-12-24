@@ -42,6 +42,7 @@ export default function PaymentCheckSign() {
 
 
 
+
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
     <Row gutter={[16, 16]}>
@@ -54,12 +55,8 @@ export default function PaymentCheckSign() {
             <InputText data={profileState.Email}/>
             <InputPassWord data={profileState.Password}/>
             <Typography style={{color: "rgba(0, 0, 0, 0.88)",fontWeight: 600,fontSize: "20px",lineHeight: "1.4"}}>Billing Information</Typography>
-            {/* <InputPassWord data={profileState.ConfirmPassword}/> */}
             <InputText data={profileState.company}/>
-            {/* <InputMobile data={profileState.mobile}/> */}
             <InputText data={profileState.addressLine1}/>
-            {/* <InputText data={profileState.linkedin}/> */}
-            {/* <InputText data={profileState.website}/> */}
             <InputText data={profileState.zipCode}/> 
             <InputText data={profileState.city}/>
             <SelectSingleVertical data={profileState.country}/>
@@ -90,6 +87,7 @@ export default function PaymentCheckSign() {
             CourseName:localData?.CourseName || "", 
             CourseImgUrl:localData?.CourseImgUrl || "",
             DiscountedPrice:localData?.DiscountedPrice || "",
+            FkClassId:localData?.Id || ""
           }}/>
         </Col>
       </Row>

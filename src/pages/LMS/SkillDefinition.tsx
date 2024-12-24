@@ -47,7 +47,7 @@ const SkillDefinition = ({ data }: SkillDefinitionProps) => {
               textAlign: 'center',
             }}
           >
-            <Typography variant="h6" paragraph>
+            <Typography variant="h6" paragraph sx={{color:'white'}}>
               {`"${data.quote}"`}
             </Typography>
           </Box>

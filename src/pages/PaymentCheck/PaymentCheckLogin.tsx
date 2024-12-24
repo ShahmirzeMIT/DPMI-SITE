@@ -14,6 +14,7 @@ export default function PayMentCheckLogin() {
     CourseName: string;
     CourseImgUrl: string;
     DiscountedPrice:string
+    FkClassId:string
     Id:string;
   } | null>(null);
   
@@ -67,7 +68,8 @@ export default function PayMentCheckLogin() {
             Price:localData?.Price || "",
             CourseName:localData?.CourseName || "", 
             CourseImgUrl:localData?.CourseImgUrl || "",
-            DiscountedPrice:localData?.DiscountedPrice || ""
+            DiscountedPrice:localData?.DiscountedPrice || "",
+            FkClassId:localData?.FkClassId || "",
           }}/>
         </Col>
       </Row>
