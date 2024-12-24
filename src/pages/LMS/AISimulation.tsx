@@ -1,9 +1,10 @@
 import { Box } from '@mui/material';
 import HeroSectionAi from './HeroSection';
-import SkillGapComponent from './SkillGapComponent';
+
 import SkillDefinition from './SkillDefinition';
 import { aiSimulationData, whyChoose } from '../../defaultDatas/aiSimulationData';
 import WhySpf from '../SFP/WhySpf';
+import SkillGapComponent from './SkillGapCOmponent';
 
 export default function AISimulation() {
   const data = aiSimulationData;

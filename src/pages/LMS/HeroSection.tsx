@@ -26,7 +26,7 @@ const HeroSection = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '40px',
-        height: '60vh',
+        height: 'auto',
         backgroundColor: '#f5f5f5',
         flexDirection: isSmallScreen ? 'column' : 'row',
         textAlign: isSmallScreen ? 'center' : 'left',
