@@ -9,7 +9,7 @@ interface WhatGetSPFProps{
 export default function WhatGetSPF({data}:WhatGetSPFProps) {
   return (
     <Box sx={{width:'95%',margin:'90px auto'}}>
-    <Typography style={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',marginLeft:'10px',textTransform:'uppercase'}}>
+    <Typography style={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',marginLeft:'10px',textTransform:'uppercase',marginBottom:'40px'}}>
        <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'20px'}} shape="square" />
        What you will get</Typography>
        {

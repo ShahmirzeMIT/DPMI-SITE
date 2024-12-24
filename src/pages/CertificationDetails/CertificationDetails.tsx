@@ -47,7 +47,7 @@ export default function CertificationDetails() {
 
   // Find the corresponding roadmap based on the certificateId
   // const selectedRoadmap = dataN.find(item => item.id === certificateId);
-console.log(selectedData,'selectedData');
+  console.log(selectedData, "selectedData");
 
   return (
     <Box sx={{}}>
@@ -72,6 +72,11 @@ console.log(selectedData,'selectedData');
         {/* <ResponsiveSteps /> */}
         <CardCertificationView />
         <Box sx={{ marginTop: "90px" }}>
+          <Typography
+            style={{ color: "black", fontWeight: "400", fontSize: "48px",marginBottom:'40px' }}
+          >
+            Learning Journey
+          </Typography>
           {selectedData.courseModules.map((item, index) => (
             // <Box key={index} sx={{ width: '30%', margin: '20px' }}>
             <CertificationsProgress
@@ -87,15 +92,29 @@ console.log(selectedData,'selectedData');
           ))}
           ;
           <Box sx={{ width: "80%", margin: "0px auto" }}>
-              <CourseCardStatic data={{
-              id:"Success", 
-              title:"Certified"+` `+ `"`+selectedData.title+`"`,
-              shortDesc: "You have completed all courses",
-            }}/>
+            <CourseCardStatic
+              data={{
+                id: "Success",
+                title: "Certified" + ` ` + `"` + selectedData.title + `"`,
+                shortDesc: "You have completed all courses",
+              }}
+            />
           </Box>
-         
         </Box>
-        <Typography style={{color:'black',fontSize: "36px", fontWeight: 400,width:'100%',margin:'60px auto 0 auto',   background:'#F9FAFC',padding:'30px 0'}}>Details of Modules</Typography>
+        <Typography
+          style={{
+            color: "black",
+            fontSize: "36px",
+            fontWeight: 400,
+            width: "100%",
+            margin: "60px auto 0 auto",
+            background: "#F9FAFC",
+            padding: "30px 0",
+           
+          }}
+        >
+          Details of Modules
+        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -104,35 +123,36 @@ console.log(selectedData,'selectedData');
             margin: "0px auto",
             flexWrap: "wrap",
             gap: "60px",
-            background:'#F9FAFC',
-            padding:'40px 10px'
+            background: "#F9FAFC",
+            padding: "40px 10px",
           }}
         >
-         
           {selectedData.courseModules.map((item, index) => (
             <DigitalProductFoundationModule key={index} data={item} />
           ))}
         </Box>
-        <WhySpf data={selectedData.whyUs}  title={selectedData.title}/>
+        <WhySpf data={selectedData.whyUs} title={selectedData.title} />
         <WhatGetSPF data={selectedData.whatyouGet} />
         <WhatLearnSpf data={selectedData.whatLearn} />
-      
+
         <Box id="courses">
           <Typography
             style={{
               color: "black",
               fontSize: "30px",
-              fontWeight: "600",
+              fontWeight: "400",
               textAlign: "start",
               marginLeft: "80px",
+               textTransform:'uppercase',
+               marginBottom:'60px'
             }}
           >
             <Avatar
               src={Logo}
-              style={{ width: "60px", height: "60px", marginRight: "20px" }}
+              style={{ width: "60px", height: "60px", marginRight: "20px", }}
               shape="square"
             />
-            Details of the Courses
+             Course Lists
           </Typography>
         </Box>
         <Box
@@ -142,11 +162,11 @@ console.log(selectedData,'selectedData');
             justifyContent: "space-around",
             width: "90%",
             margin: "20px auto",
-            gap:'40px'
+            gap: "40px",
           }}
         >
           {dataDetail.map((item, index) => (
-            <DetailCard key={index}  data={item}/>
+            <DetailCard key={index} data={item} />
           ))}
         </Box>
       </Box>

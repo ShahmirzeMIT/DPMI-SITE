@@ -40,7 +40,8 @@ const DigitalProductFoundationModule = ({data}:ProductCardProps) => {
               padding: 2,
               borderRadius: "5px 5px 0 0",
               textAlign: "center",
-              fontSize:'28px'
+              fontSize:'28px',
+              bold:'400'
             }}
           >
             {data.title}

@@ -118,7 +118,7 @@ const CourseCardStatic = ({ data }: CourseStatus) => {
             component="div"
             sx={{
               color: "black",
-              fontWeight: "800",
+              fontWeight: "400",
               mb: 1,
               fontSize: "36px",
               marginBottom: "0",

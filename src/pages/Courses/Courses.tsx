@@ -23,7 +23,8 @@ export default function Courses() {
         }}
       >
          <CourseDetailsHeader/>
-        { data.length>0 && data?.map((item:{CourseId:string,CourseName:string,IconUrl:string,CourseShortDesc:string}, index) => (
+         <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'50px'}}>
+         { data.length>0 && data?.map((item:{CourseId:string,CourseName:string,IconUrl:string,CourseShortDesc:string}, index) => (
           <CourseCard key={index} data={{
             id: item.CourseId,
             title: item.CourseName,
@@ -31,6 +32,8 @@ export default function Courses() {
             description: item.CourseShortDesc
            }} />
         ))}
+         </Box>
+        
       </Box>
       
     </Box>

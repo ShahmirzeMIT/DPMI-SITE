@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import { Avatar, Typography } from 'antd'
 import PointText from '../../componets/PointText';
-import Logo from '../../assets/images/evaluation.png'
+import Logo from '../../assets/images/whatLearn.png'
 interface WhatGetSPFProps{
     data:{desc:string,title:string}[]
 }

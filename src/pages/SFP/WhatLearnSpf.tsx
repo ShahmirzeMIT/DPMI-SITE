@@ -18,6 +18,7 @@ export default function WhatLearnSpf({ data }: WhatLearnSpfProps) {
           textAlign: 'start',
           marginLeft: '10px',
           textTransform: 'uppercase',
+          marginBottom:'40px'
         }}
       >
         <Avatar

@@ -10,9 +10,10 @@ export default function CourseDetailsHeader() {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "400", color: "black", mb: 2 }}
+            sx={{ fontWeight: "400", color: "black", mb: 2,fontSize:'48px' }}
           >
-            Unlock Your Potential with Our Courses
+            Unlock Your Potential
+            <br /> with Our Courses
           </Typography>
           <Typography
             variant="body1"
