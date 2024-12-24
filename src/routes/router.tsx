@@ -32,7 +32,7 @@ export const routes = [
             { path: "/courses", element: <Courses />  },
             { path: "/courses/:courseId", element: <CourseDetails />, },
             { path: "/sfp-course", element: <ProductManager />, },
-            {path:"/aisimulation'",element:<AISimulation/>},
+            {path:"/aisimulation",element:<AISimulation/>},
             { path: "/dpm-course", element: <DPMI />, },
             { path: "/aipf-course", element: <AIPF />, },
             { path: "/aipp-course", element: <AIPP />, },
