@@ -23,8 +23,8 @@ export default function CourseCard({ data }: ProductCardProps) {
   return (
     <Box
       sx={{
-        padding: "40px",
-        maxWidth: "350px",
+        padding: "20px 15px",
+        maxWidth: "300px",
         boxShadow:"0 0 10px gray",
         borderRadius: "15px",
         position: "relative",

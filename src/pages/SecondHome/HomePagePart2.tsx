@@ -47,7 +47,7 @@ export default function HomePagePart2() {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          gap: "20px",
+          gap:"30px",
           // width: "90%",
           margin: "0 auto",
         }}

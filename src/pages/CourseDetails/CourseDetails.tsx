@@ -28,11 +28,13 @@ const CourseDetails = () => {
     CourseName: string;
     IconUrl: string;
     CourseShortDesc: string;
+    CourseLongDesc: string;
   }>({
     CourseId: "",
     CourseName: "",
     IconUrl: "",
     CourseShortDesc: "",
+    CourseLongDesc: "",
   })
 
   const [dataCourse, setDataCourse] = useState([]);
@@ -76,13 +78,15 @@ const CourseDetails = () => {
       <Box sx={{maxWidth:'1200px',margin:'0 auto'}}>
 
         <Box sx={{width:'90%'}}>
-           <ShortDesc data={{shortDesc:data.CourseShortDesc}}/>
+
+           <ShortDesc data={{shortDesc:data.CourseLongDesc}}/>
+
            <OutCome/>
            {/* <CourseHours/ */}
            <Box>
           
            </Box>
-           <Box sx={{marginLeft:"35px"}}>
+           <Box sx={{}}>
            {selectedWhatLearn?.whatLearn && (
             <WhatLearnDPM data={selectedWhatLearn.whatLearn} />
           )}
@@ -100,7 +104,7 @@ const CourseDetails = () => {
           }
         </Box>
         <Box>
-        <h1 style={{color:'black',fontSize: "36px", fontWeight: 400,width:'60%',margin:'0 auto'}}>Our Certifications</h1>
+        <h1 style={{color:'black',fontSize: "36px", fontWeight: 400,width:'60%',margin:'0 auto'}}>Top Certifications</h1>
 
           <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',width:'100%',margin:'0 auto',gap:4,  marginBottom:'60px',marginTop:'40px' }}>
           {
@@ -120,14 +124,14 @@ const CourseDetails = () => {
           </Box>
         </Box>
 
-        <Box sx={{width:'80%',margin:'30px auto',}}><Typography variant='h3' sx={{color:'black',fontSize: "36px", fontWeight: 400}}>
+        <Box sx={{width:'80%',margin:'120px auto 40px auto',}}><Typography variant='h3' sx={{color:'black',fontSize: "36px", fontWeight: 400}}>
        Top  Courses</Typography></Box>
       <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          gap: "20px",
+          gap: "30px",
           // width: "90%",
           margin: "0 auto 80px 0",
         }}

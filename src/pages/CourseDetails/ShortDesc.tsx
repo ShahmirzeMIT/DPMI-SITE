@@ -5,12 +5,14 @@ import Logo from '../../assets/images/courseLogo.png';
 interface ShortDescProps {
   data: {
     shortDesc: string;
+    
   };
 }
 
 export default function ShortDesc({ data }: ShortDescProps) {
   return (
-    <Box
+    <>
+      <Box
       sx={{
         display: { xs: 'block', md: 'flex' }, // Mobilde dikey, geniş ekranlarda yatay
         alignItems: 'center',
@@ -38,9 +40,12 @@ export default function ShortDesc({ data }: ShortDescProps) {
       {/* Text Section */}
       <Box
         sx={{
-          textAlign: { xs: 'center', md: 'left' }, // Mobilde merkez, genişte sola hizalı
+          textAlign: { xs: 'center', md: 'left' },
+          marginLeft:'20px' // Mobilde merkez, genişte sola hizalı
         }}
       >
+    <Typography sx={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',textTransform:'uppercase',marginBottom:'15px'}}>Purpose</Typography>
+
         <Typography
           sx={{
             color: 'black',
@@ -55,5 +60,7 @@ export default function ShortDesc({ data }: ShortDescProps) {
         </Typography>
       </Box>
     </Box>
+    </>
+  
   );
 }

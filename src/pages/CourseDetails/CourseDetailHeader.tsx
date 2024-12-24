@@ -66,9 +66,9 @@ const CourseDetailHeader = ({ data }: CourseDetailHeaderProps) => {
           <Typography
             variant="h4"
             sx={{
-              fontSize: { xs: "20px", md: "24px" }, // Kiçik ekranlarda kiçilir
+              fontSize: { xs: "20px", md: "48px" }, // Kiçik ekranlarda kiçilir
               color: "#222",
-              fontWeight: 600,
+              fontWeight: 400,
               marginBottom: "10px",
 
               textAlign: { xs: "center", sm: "left" }, // Mobil üçün mərkəzləşdir
