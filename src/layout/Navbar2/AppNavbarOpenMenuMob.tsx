@@ -1,28 +1,36 @@
 import { Menu, MenuItem, Typography, Box, Collapse, Button } from "@mui/material";
 import  { useState } from "react";
 // import TraningsMenuMob from "../Navbar/TraningsMenuMob";
-import CertificationMenu from "../Navbar/CertificationMenu";
 // import ContactMenu from "../Navbar/ContactMenu";
-import Lms from "./Lms";
-import OurAlumni from "./OurAlumni";
-import Mentors from "./Mentors";
+
+import ForIndividuals from "./ForIndividuals";
+import ForCompanies from "./ForCompaines";
+import { useNavigate } from "react-router-dom";
+import CertificationMenuMob from "./CertificationMob";
 // import TraningsMenu from "./TraningsMenu";
 
 const pages = [
- 
   {
     name: "Certifications",
-    children: [<CertificationMenu key="certifications-menu" />],
+    children: [<CertificationMenuMob key="certifications-menu" />],
   },
   {
     name: "Courses",
-    page:'/courses'
+    page: '/courses',
   },
-  { name: "Learning Management System (LMS)", children:[ <Lms/>] },
-  { name: "Our Alumni", children: [<OurAlumni/>] },
-  { name: "Mentor ", children: [<Mentors/> ]},
- 
+  { name: "AI-Simulation", 
+    page: '/lms',
+  },
+  { name: "For Individuals", 
+    children: [<ForIndividuals key="for-individuals-menu"/>], 
+   
+  },
+  { name: "For Companies", 
+    children: [<ForCompanies key="for-companies-menu"/>], 
+    page: '/companies',
+  },
 ];
+const openPage = ['Courses', "AI-Simulation",];
 
 export default function AppNavbarOpenMenuMob({
   anchorElNav,
@@ -32,9 +40,16 @@ export default function AppNavbarOpenMenuMob({
   handleCloseNavMenu: () => void;
 }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null); // Tracks which menu is open
+  const navigate=useNavigate()
 
   const handleMenuToggle = (pageName: string) => {
-    setOpenMenu((prev) => (prev === pageName ? null : pageName));
+    if (openPage.includes(pageName)) {
+      navigate(pages.find(p => p.name === pageName)?.page || '/');
+    } else {
+      // Otherwise, open the menu dropdown
+      setOpenMenu((prev) => (prev === pageName ? null : pageName));
+    }
+   
   };
 
   return (
@@ -55,6 +70,7 @@ export default function AppNavbarOpenMenuMob({
       sx={{
         display: { xs: "block", md: "block", lg: "none" },
         margin: "10px !important",
+        minWidth:'350px'
       }}
     >
       {pages.map((page) => (

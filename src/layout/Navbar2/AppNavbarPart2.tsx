@@ -43,7 +43,7 @@ const AppNavbarPart2 = () => {
         </Box>
 
         {/* Hamburger menu for smaller screens */}
-        <Box sx={{ display: { xs: "block", md: "none" ,lg:'none'} }}>
+        <Box sx={{ display: { xs: "block", md: "none" ,lg:'none'} ,paddingTop:'20px'}}>
           <IconButton edge="start" color="inherit" onClick={handleMenuOpen}  sx={{position:'absolute',top:'0px',right:'0'}}>
           <CiMenuBurger />
           </IconButton>
@@ -53,7 +53,7 @@ const AppNavbarPart2 = () => {
         </Box>
      
       </Toolbar>
-      <Avatar src={Logo} style={{ width: "11rem", height: "50px",position:'absolute',top:'0px',left:'0',cursor:'pointer' }} shape="square" onClick={()=>navigate('/')} />
+      <Avatar src={Logo} style={{ width: "11rem", height: "80px",position:'absolute',top:'10px',left:'0',cursor:'pointer' }} shape="square" onClick={()=>navigate('/')} />
     </AppBar>
   );
 };
