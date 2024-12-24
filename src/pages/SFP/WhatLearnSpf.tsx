@@ -4,25 +4,84 @@ import Logo from '../../assets/images/whatLearn.png'
 import PointText from '../../componets/PointText'
 
 interface WhatLearnSpfProps {
-  data:{title:string;desc:string}[]
+  data: { title: string; desc: string }[]
 }
 
-export default function WhatLearnSpf({data}:WhatLearnSpfProps) {
+export default function WhatLearnSpf({ data }: WhatLearnSpfProps) {
   return (
-    <Box sx={{width:'90%',margin:'90px auto'}}>
-    <Typography style={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',marginLeft:'10px',textTransform:'uppercase'}}>
-       <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'20px'}} shape="square" />
-       What you will learn</Typography>
-       <ul style={{width:'1000px',marginTop:'20px'}}>
-       {
-        data.map((item,_index)=>(
-           <li style={{color:'black',fontSize:'18px',fontWeight:'200',textAlign:'start',marginLeft:'40px',lineHeight:'30px',marginTop:'20px',listStyle:'none'
-            // ,display:'flex',alignItems:'center'
-           }}>
-            <PointText/>
-            <span style={{fontSize:'24px'}}>{item.title}</span> <div style={{marginLeft:'30px'}}>{item.desc}</div></li>
-        ))
-       }
+    <Box sx={{ width: '90%', margin: '90px auto' }}>
+      <Typography
+        style={{
+          color: 'black',
+          fontSize: '36px',
+          fontWeight: '400',
+          textAlign: 'start',
+          marginLeft: '10px',
+          textTransform: 'uppercase',
+        }}
+      >
+        <Avatar
+          src={Logo}
+          style={{ width: '70px', height: '70px', marginRight: '20px' }}
+          shape="square"
+        />
+        What you will learn
+      </Typography>
+      <ul
+        style={{
+          width: '100%',
+          marginTop: '20px',
+          whiteSpace: 'normal',
+          padding: 0,
+        }}
+      >
+        {data.map((item, _index) => (
+          <li
+            key={_index}
+            style={{
+              color: 'black',
+              fontSize: '18px',
+              fontWeight: '200',
+              textAlign: 'start',
+              marginLeft: '40px',
+              lineHeight: '30px',
+              marginTop: '20px',
+              listStyle: 'none',
+              whiteSpace: 'normal',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '10px',
+                flexDirection: 'column',
+              }}
+            >
+
+              <span
+                style={{
+                  fontSize: '24px',
+                  whiteSpace: 'normal',
+                  maxWidth: '100%',
+                  display: 'block',
+                }}
+              >
+            <PointText />
+            {item.title}
+              </span>
+              <div
+                style={{
+                  marginLeft: '30px',
+                  whiteSpace: 'normal',
+                  maxWidth: '100%',
+                }}
+              >
+                {item.desc}
+              </div>
+            </div>
+          </li>
+        ))}
       </ul>
     </Box>
   )
