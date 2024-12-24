@@ -41,7 +41,7 @@ const FourthCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "400", color: "black", mb: 2 ,}}
+            sx={{ fontWeight: "400", color: "black", mb: 2 ,whiteSpace: "wrap",}}
           >
               Agile Communication Practitioner
           </Typography>
@@ -50,13 +50,13 @@ const FourthCourse = () => {
             If you are a Product Owner, Agile Coach, Business Owner, Product Manager, or Project Manager struggling with communication issues with the development team, this certification can help you a lot. It makes it possible to eliminate weekly and daily meetings with no business value completely. This certification is also designed for software developers, QA engineers, UI/UX designers, and other engineers who find it challenging to understand business requirements
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center",justifyContent: "center"}}>
-          <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',padding:'10px 70px', }} onClick={() => navigate('/certificates/1001')}>
+          <Button variant="contained" sx={{ backgroundColor: '#fb6b22', color: 'white', padding: {xs:"10px 20px",md:"10px 70px"}, }} onClick={() => navigate('/certificates/1001')}>
               View Fundamental Level
           </Button>
 
           </Box>
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }} onClick={() => navigate('/certificates/1002')}>
+          <Button variant="contained" sx={{ backgroundColor: '#2a74b1', color: 'white', padding: {xs:"10px 20px",md:"10px 70px"}, }} onClick={() => navigate('/certificates/1002')}>
               View Professional Level
           </Button>
           </Box>

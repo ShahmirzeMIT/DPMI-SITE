@@ -3,10 +3,10 @@ import  { useState } from "react";
 // import TraningsMenuMob from "../Navbar/TraningsMenuMob";
 // import ContactMenu from "../Navbar/ContactMenu";
 
-import ForIndividuals from "./ForIndividuals";
-import ForCompanies from "./ForCompaines";
 import { useNavigate } from "react-router-dom";
 import CertificationMenuMob from "./CertificationMob";
+import ForCompaniesMob from "./ForCompainesMob";
+import ForIndividualsMob from "./ForIndividualsMob";
 // import TraningsMenu from "./TraningsMenu";
 
 const pages = [
@@ -22,11 +22,11 @@ const pages = [
     page: '/lms',
   },
   { name: "For Individuals", 
-    children: [<ForIndividuals key="for-individuals-menu"/>], 
+    children: [<ForIndividualsMob key="for-individuals-menu"/>], 
    
   },
   { name: "For Companies", 
-    children: [<ForCompanies key="for-companies-menu"/>], 
+    children: [<ForCompaniesMob key="for-companies-menu"/>], 
     page: '/companies',
   },
 ];
@@ -70,7 +70,7 @@ export default function AppNavbarOpenMenuMob({
       sx={{
         display: { xs: "block", md: "block", lg: "none" },
         margin: "10px !important",
-        minWidth:'350px'
+       
       }}
     >
       {pages.map((page) => (
@@ -79,6 +79,7 @@ export default function AppNavbarOpenMenuMob({
             onClick={() => handleMenuToggle(page.name)}
             sx={{
               justifyContent: "space-between",
+             
             }}
           >
             <Typography
@@ -108,7 +109,7 @@ export default function AppNavbarOpenMenuMob({
           )}
         </Box>
       ))}
-      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'230px'}}>
           <Button
                 variant="text"
                 sx={{

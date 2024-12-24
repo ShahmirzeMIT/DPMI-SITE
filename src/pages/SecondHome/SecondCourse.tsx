@@ -50,7 +50,7 @@ const SecondCourse = () => {
           </Typography>
        
           <Box sx={{marginTop:'20px'}}>
-          <Button variant="contained" style={{ backgroundColor: '#2a74b1', color: 'white',padding:'10px 70px', }} onClick={() => navigate('/certificates/1006')}>
+          <Button variant="contained" sx={{ backgroundColor: '#2a74b1', color: 'white', padding: {xs:"10px 20px",md:"10px 70px"},}} onClick={() => navigate('/certificates/1006')}>
               View Certification
           </Button>
           </Box>

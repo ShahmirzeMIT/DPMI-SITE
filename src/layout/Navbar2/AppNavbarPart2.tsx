@@ -53,7 +53,7 @@ const AppNavbarPart2 = () => {
         </Box>
      
       </Toolbar>
-      <Avatar src={Logo} style={{ width: "11rem", height: "80px",position:'absolute',top:'10px',left:'0',cursor:'pointer' }} shape="square" onClick={()=>navigate('/')} />
+      <Avatar src={Logo} style={{ width: "5rem", height: "60px",position:'absolute',top:'-10px',left:'0',cursor:'pointer' }} shape="square" onClick={()=>navigate('/')} />
     </AppBar>
   );
 };
