@@ -31,6 +31,11 @@ const AgileAssesMent = () => {
               sx={{
                 color: "#555",
                 mb: 4,
+                fontSize: "22px",
+              lineHeight: "37px",
+              letterSpacing: "0",
+              maxWidth: "600px",
+              textAlign: "center",
               }}
             >
               
@@ -50,6 +55,7 @@ const AgileAssesMent = () => {
                   color: "white",
                   padding: "10px 70px",
                 }}
+                 href="mailto:info@dpminstitute.org"
               >
                 Contact Us
               </Button>

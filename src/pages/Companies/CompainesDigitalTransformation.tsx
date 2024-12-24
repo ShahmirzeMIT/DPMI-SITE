@@ -1,9 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Logo from "../../assets/images/digitalTransformation.png";
-import { useNavigate } from "react-router-dom";
 
 export default function CompainesDigitalTransformation() {
-  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -54,9 +52,11 @@ export default function CompainesDigitalTransformation() {
             sx={{
               color: "#555",
               mb: 4,
-              fontSize: "18px",
-              lineHeight: "27px",
+              fontSize: "22px",
+              lineHeight: "37px",
               letterSpacing: "0",
+              maxWidth: "600px",
+              textAlign: "center",
             }}
           >
             We provide comprehensive consultation and training to help
@@ -74,7 +74,7 @@ export default function CompainesDigitalTransformation() {
                 color: "white",
                 padding: "10px 70px",
               }}
-              onClick={() => navigate("/certificates/1006")}
+               href="mailto:info@dpminstitute.org"
             >
               Contact Us
             </Button>

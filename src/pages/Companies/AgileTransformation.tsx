@@ -28,6 +28,11 @@ const AgileTransformation = () => {
             sx={{
               color: "#555",
               mb: 4,
+              fontSize: "22px",
+              lineHeight: "37px",
+              letterSpacing: "0",
+              maxWidth: "600px",
+              textAlign: "center",
             }}
           >
             Our Agile Transformation services help businesses transition to
@@ -46,6 +51,7 @@ const AgileTransformation = () => {
                 color: "white",
                 padding: "10px 70px",
               }}
+               href="mailto:info@dpminstitute.org"
             >
               Contact Us
             </Button>

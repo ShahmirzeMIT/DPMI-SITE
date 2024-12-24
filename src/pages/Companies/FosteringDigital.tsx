@@ -1,7 +1,7 @@
 import { Box, Typography, Grid } from "@mui/material";
 import logo from '../../assets/images/transformLife.jpg'
 import CompaniesCard from "./CompaniesCard";
-import { companiesCard } from "../../defaultDatas/compainesCard";
+import { allForCOmpaines } from "../../defaultDatas/forCompanies";
 const FosteringDigital = () => {
   return (
     <Box
@@ -62,9 +62,10 @@ const FosteringDigital = () => {
               fontWeight: "bold",
               color: "#fb6b22",
               mt: 2,
+              fontSize:'22px'
             }}
           >
-            "Accelerate Transformation with Agile Communication and AI."
+            "Accelerate Transformation with AI and Agile Communication, Digital Product Management"
           </Typography>
         </Box>
 
@@ -72,7 +73,7 @@ const FosteringDigital = () => {
         <Grid container spacing={3} justifyContent="center">
         
             {
-              companiesCard.map((card, index) => (
+              allForCOmpaines.map((card, index) => (
                 <CompaniesCard key={index} data={card}/>
               ))
             }
