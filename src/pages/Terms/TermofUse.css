@@ -7,37 +7,11 @@
     padding: 20px;
     font-family: Arial, sans-serif;
   }
+  h1, h2, h3, p, ul, li, section {
+    text-align: start; /* Ensures all text aligns from the start */
+    /* color:'black !important', */
+    color: black; 
+    margin-bottom: 20px;
   
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
   }
-  
-  h2 {
-    font-size: 1.5em;
-    color: #333;
-  }
-  
-  p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #666;
-  }
-  
-  ul {
-    margin-left: 20px;
-    list-style-type: disc;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-  
-  section {
-    margin-bottom: 30px;
-  }
-  
-  section p, section ul {
-    margin-left: 20px;
-  }
-  
+ 
