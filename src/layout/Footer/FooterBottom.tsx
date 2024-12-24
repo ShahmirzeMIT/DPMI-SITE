@@ -9,6 +9,8 @@ import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 export default function FooterBottom() {
  const navigate = useNavigate();
+ const startYear = 2024; // Starting year
+  const currentYear = new Date().getFullYear();
   return (
     <Box
       component="footer"
@@ -134,8 +136,10 @@ export default function FooterBottom() {
           borderTop: "1px solid #E0E0E0",
           paddingTop: "10px",
         }}
-      >
-        <Typography>© 2023 Skillbridge. All rights reserved.</Typography>
+      > <Typography color="text.secondary" style={{ textAlign: 'center' }}>
+      
+      {`  ${startYear} - ${currentYear} `} {`©`} ACF System GmbH. DPM Institute is managed by ACF System GmbH. All rights reserved.
+    </Typography>
       </Box>
     </Box>
   );

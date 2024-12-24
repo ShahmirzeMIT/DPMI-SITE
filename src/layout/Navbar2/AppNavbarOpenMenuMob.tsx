@@ -124,7 +124,7 @@ export default function AppNavbarOpenMenuMob({
                   },
                 }}
               >
-                Find A Class
+                Find  Classes
               </Button>
       </Box>
     

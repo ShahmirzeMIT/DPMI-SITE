@@ -177,7 +177,7 @@ const AppNavbarMenuPart2 = () => {
             }}
             onClick={() => navigate("/classes")}
           >
-            Find A Class
+            Find A Classes
           </Button>
         </Box>
       </Toolbar>
