@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material'
 import { Avatar } from 'antd'
-import Logo from '../../assets/images/alumni.jpg'
+import Logo from '../../assets/images/showAll.jpg'
 
 export default function CourseDetailsHeader() {
   return (
-    <div>
+    <div style={{marginBottom:'60px'}}>
        <Grid container spacing={4} alignItems="center">
       {/* Left Side */}
       <Grid item xs={12} md={6}>

@@ -9,7 +9,7 @@ export default function Courses() {
   const{data}=useCourseState()
   
   return (
-    <Box sx={{ margin: "250px auto" }}>
+    <Box sx={{ margin: "150px auto" }}>
      
       <Box
         sx={{

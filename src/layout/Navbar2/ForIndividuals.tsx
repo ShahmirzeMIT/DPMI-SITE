@@ -28,8 +28,8 @@ export default function ForIndividuals() {
             <Box key={item.id} sx={{ marginBottom: "1.5rem" }}>
               <Typography
                 sx={{
-                  fontSize: "1rem",
-                  lineHeight: "1.5rem",
+                  fontSize: "16px",
+                  lineHeight: "20px",
                   paddingBottom: "0.5rem",
                   maxWidth: "400px", // Maksimum genişlik
                   wordWrap: "break-word", // Uzun mətnləri qırmaq
@@ -39,14 +39,15 @@ export default function ForIndividuals() {
                 <Link
                   href={item.id}
                   style={{
-                    fontSize: "1rem",
-                    lineHeight: "1.5rem",
+                    fontSize: "22px",
+                    lineHeight: "20px",
                     color: "black",
                     textDecoration: "none",
                     fontWeight: "bold",
                     cursor: "pointer",
                     marginBottom:'0',
-                    paddingBottom:'0'
+                    paddingBottom:'0',
+                    whiteSpace: "wrap",
                   }}
                 >
                   {item.title}
@@ -72,7 +73,7 @@ export default function ForIndividuals() {
       {/* Sağ tərəfdəki şəkillər */}
       <Box
         sx={{
-          marginTop: "5px",
+          marginBottom: "45px",
           width: "480px",
           height: "250px",
           display: "flex",
