@@ -1,3 +1,6 @@
+*{
+  list-style-type: none;
+}
 .terms-container {
     width: 80%;
     margin: 0 auto;

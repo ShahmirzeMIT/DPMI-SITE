@@ -31,7 +31,6 @@ export interface ButtonPaymentProps {
 export default function ButtonPayment({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
-  console.log(data,'data');
 
   
   const handlePayment = async () => {
@@ -91,7 +90,7 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
         onClick={handlePayment}
         disabled={loading || data.disabled}
       >
-        {loading ? <Spin size="small" /> : "Apply"}
+        {loading ? <Spin size="small" /> : "Register and Proceed"}
       </Button>
     </div>
   );

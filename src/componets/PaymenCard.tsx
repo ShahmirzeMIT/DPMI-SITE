@@ -1,4 +1,4 @@
-import { Avatar, Card, Col, Divider, Row, Typography } from 'antd'
+import { Avatar, Button, Card, Col, Divider, Input, Row, Typography } from 'antd'
 const { Title, Text } = Typography;
 export interface PaymentCardProps{
   data:{
@@ -11,7 +11,25 @@ export interface PaymentCardProps{
 export default function PaymenCard({data}:PaymentCardProps) {
   return (
     <>
-       <Card
+  
+  {/* Shopping Cart */}
+  <Card bordered={false}>
+    <Row>
+      <Col xs={24} sm={8} md={6}>
+        <Avatar src={data.CourseImgUrl} style={{ height: "100px", width: "100px" }}  shape="square"/>
+      </Col>
+      <Col xs={24} sm={16} md={18} style={{ paddingLeft: "10px" }}>
+        <Row justify="space-between">
+          <Col>
+            <Text style={{ fontWeight: "400", fontSize:'28px'}}>{data.CourseName}</Text>
+          </Col>
+          
+        </Row>
+        
+      </Col>
+    </Row>
+  </Card>
+  <Card
     title={<b>ORDER SUMMARY</b>}
     bordered={false}
     style={{ marginBottom: "20px" }}
@@ -26,12 +44,29 @@ export default function PaymenCard({data}:PaymentCardProps) {
     </Row>
     <Row justify="space-between">
       <Col>
-        <Text>DiscountedPrice:</Text>
+        <Text>Discounted Price:</Text>
       </Col>
       <Col>
         <Text>{data.DiscountedPrice}$</Text>
       </Col>
     </Row>
+    <Row justify="space-between">
+      <Col>
+        <Text>Promocode Discount:</Text>
+      </Col>
+      <Col>
+        <Text>{data.DiscountedPrice}$</Text>
+      </Col>
+    </Row>
+    <Row justify="space-between">
+      <Col>
+        <Text>Quantity:</Text>
+      </Col>
+      <Col>
+        <Text>1</Text>
+      </Col>
+    </Row>
+    {/* <Text>Quantity: 1</Text> */}
     <Row justify="space-between">
       <Col>
         <Text>Tax:</Text>
@@ -43,34 +78,18 @@ export default function PaymenCard({data}:PaymentCardProps) {
     <Divider />
     <Row justify="space-between">
       <Col>
-        <Title level={5}>Due at check-out:</Title>
+        <Title level={5}>Final Price:</Title>
       </Col>
       <Col>
         <Title level={5}>{data.DiscountedPrice}$</Title>
       </Col>
     </Row>
-  </Card>
-  {/* Shopping Cart */}
-  <Card title={<b>SHOPPING CART</b>} bordered={false}>
-    <Row>
-      <Col xs={24} sm={8} md={6}>
-        <Avatar src={data.CourseImgUrl} style={{ height: "100px", width: "100px" }}  shape="square"/>
-      </Col>
-      <Col xs={24} sm={16} md={18} style={{ paddingLeft: "10px" }}>
-        <Row justify="space-between">
-          <Col>
-            <Text>{data.CourseName}</Text>
-          </Col>
-          <Col>
-            <Text>{data.DiscountedPrice}$</Text>
-          </Col>
-        </Row>
-        <div style={{ marginTop: "10px" }}>
-          <Text>Quantity: 1</Text>
-          <br />
-          <Text>Price: {data.DiscountedPrice}$</Text>
-        </div>
-      </Col>
+    <Divider />
+    <Row justify="space-between">
+      {/* <Col> */}
+      <Input placeholder={"Promocode"} style={{width:'200px'}}/>
+      <Button style={{backgroundColor:'#2A73B3',color:'white'}}>Apply</Button>
+
     </Row>
   </Card>
     </>

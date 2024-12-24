@@ -8,7 +8,7 @@ import PaymenCard from "../../componets/PaymenCard";
 import InputPassWord from "../../componets/InputPassword";
 import { useEffect, useState } from "react";
 import ButtonPayment from "../../componets/ButtonPayment";
-const { Title, Text } = Typography;
+
 
 export default function PaymentCheckSign() {
   const {profileState}=useSignState()
@@ -46,16 +46,6 @@ export default function PaymentCheckSign() {
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
     <Row gutter={[16, 16]}>
       <Col xs={24} sm={24} md={10} lg={8}>
-        <Title level={4}>
-          Already don't have  a membership?{" "}
-          <span style={{ color: "#1A73E8", cursor: "pointer" }}>
-            <b>Sign here</b>
-          </span>
-        </Title>
-        <Text type="secondary">
-          To inquire about membership, please get in touch with your Corporate
-          Trainer.
-        </Text>
 
         <div style={{ marginTop: "20px" }}>
             <Typography style={{color: "rgba(0, 0, 0, 0.88)",fontWeight: 600,fontSize: "20px",lineHeight: "1.4"}}>Personal Information</Typography>
