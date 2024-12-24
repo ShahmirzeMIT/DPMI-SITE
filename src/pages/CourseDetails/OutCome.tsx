@@ -1,6 +1,11 @@
 import { Avatar, Box, Typography } from '@mui/material'
 import Logo from '../../assets/images/outComeLogo.jpeg'
-export default function OutCome() {
+interface OutComeProps {
+  data: {
+    title: string
+  }
+}
+export default function OutCome({ data }: OutComeProps) {
   return (
     <Box
       sx={{
@@ -29,7 +34,9 @@ export default function OutCome() {
             lineHeight: '1.8',
             padding: { xs: '0 10px', md: '0' }, // Mobilde iç boşluk
           }}
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ea et quos iusto assumenda quis necessitatibus nobis, minus reprehenderit iste voluptatum minima eveniet. Tempore doloribus magni, eum molestias eveniet exercitationem itaque, expedita hic ipsa ullam non velit ex perspiciatis! Laboriosam, doloribus. Laboriosam sunt et suscipit tenetur nihil repellat dicta veritatis.
+        >{
+          data.title
+        }
           {/* {data.shortDesc} */}
         </Typography>
       </Box>
