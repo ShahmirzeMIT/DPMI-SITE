@@ -9,10 +9,11 @@ export interface PaymentCardProps{
     CourseImgUrl:string
     DiscountedPrice:string
     FkClassId:string
+    onChage:(Promocode:string)=>void
   }
 }
 export default function PaymenCard({data}:PaymentCardProps) {
-  console.log(data,'data');
+
   
   const [promoCode, setPromoCode] = useState("");
   const [priceList, setPriceList] = useState({
@@ -31,9 +32,8 @@ export default function PaymenCard({data}:PaymentCardProps) {
     }))
   },[data])
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
-    
+    data.onChage(e.target.value)
     setPromoCode(e.target.value);
-     
   }
   const onSubmit=async ()=>{
     const res=await callApi("/billing/main/payment/calculate",{
@@ -50,6 +50,15 @@ export default function PaymenCard({data}:PaymentCardProps) {
       Price:res.Price?res.Price:prev.Price
     }))
   }
+  useEffect(() => {
+    const storedPaymentData = localStorage.getItem('paymentData');
+  
+    if (storedPaymentData) {
+      const paymentData = JSON.parse(storedPaymentData);
+      paymentData.Promocode = promoCode;
+      localStorage.setItem('paymentData', JSON.stringify(paymentData));
+    }
+  }, [promoCode]); 
   
   return (
     <>

@@ -16,6 +16,7 @@ export interface ButtonPaymentProps {
   FkClassId: string;
   Password: string;
   disabled?:boolean
+  Promocode?:string
 }
 }
 export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
@@ -25,6 +26,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
 
   
   const handlePayment = async () => {
+    // return 
     setLoading(true); // Yüklənmə spinnerini göstər
     const stripe = await stripePromise;
 
@@ -42,6 +44,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           })
 
           if(!res.token)  return
+          
       const response = await fetch(
         "https://api.dpminstitute.org/billing/main/payment/init",
         {
@@ -57,6 +60,8 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           }),
         }
       );
+      console.log(response);
+      
 
       const session = await response.json();
 

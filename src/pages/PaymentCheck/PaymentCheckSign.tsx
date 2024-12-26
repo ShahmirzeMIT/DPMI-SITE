@@ -15,6 +15,7 @@ import { Box } from "@mui/material";
 export default function PaymentCheckSign() {
   const navigate = useNavigate();
   const {profileState}=useSignState()
+  const [promocode, setPromocode] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [localData, setLocalData] = useState<{
     Price: string;
@@ -22,6 +23,7 @@ export default function PaymentCheckSign() {
     CourseImgUrl: string;
     Id:string;
     DiscountedPrice:string
+    Promocode:string
   } | null>(null);
   const getPaymentData=()=>{
     const data=localStorage.getItem('paymentData')
@@ -44,7 +46,9 @@ export default function PaymentCheckSign() {
 const onChange = (e:any) => {
   setDisabled(e.target.checked)
 }
-
+const PromoCodeChange=(Promocode:string)=>{
+  setPromocode(Promocode)
+}
 
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
@@ -88,7 +92,7 @@ const onChange = (e:any) => {
             Country:profileState.country.value,
             City:profileState.city.value,
             ZipCode:profileState.zipCode.value,
-     
+            Promocode:promocode || "",
             disabled:disabled
           }}/>
         </div>
@@ -100,7 +104,8 @@ const onChange = (e:any) => {
             CourseName:localData?.CourseName || "", 
             CourseImgUrl:localData?.CourseImgUrl || "",
             DiscountedPrice:localData?.DiscountedPrice || "",
-            FkClassId:localData?.Id || ""
+            FkClassId:localData?.Id || "",
+            onChage:PromoCodeChange
           }}/>
         </Col>
       </Row>

@@ -13,6 +13,7 @@ export default function PayMentCheckLogin() {
   const navigate = useNavigate();
   const {paymentState}=usePaymentState()
   const [disabled, setDisabled] = useState(false);
+  const [promocode, setPromocode] = useState("");
   const [localData, setLocalData] = useState<{
     Price: string;
     CourseName: string;
@@ -20,6 +21,7 @@ export default function PayMentCheckLogin() {
     DiscountedPrice:string
     FkClassId:string
     Id:string;
+    Promocode:string
   } | null>(null);
   
 
@@ -47,6 +49,9 @@ export default function PayMentCheckLogin() {
     setDisabled(e.target.checked)
   }
   
+  const PromoCodeChange=(Promocode:string)=>{
+    setPromocode(Promocode)
+  }
   
   return (
     <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
@@ -72,6 +77,7 @@ export default function PayMentCheckLogin() {
               FkClassId:localData?.Id || "",
               Password:paymentState.Password.value,
               disabled:disabled,
+              Promocode:promocode || ''
             }}/>
              
           </div>
@@ -86,6 +92,7 @@ export default function PayMentCheckLogin() {
             CourseImgUrl:localData?.CourseImgUrl || "",
             DiscountedPrice:localData?.DiscountedPrice || "",
             FkClassId:localData?.Id || "",
+            onChage:PromoCodeChange
           }}/>
         </Col>
       </Row>
