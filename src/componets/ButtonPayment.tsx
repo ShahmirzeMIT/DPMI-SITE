@@ -70,10 +70,8 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
         });
 
         if (result.error) {
-          toast.error(result.error.message); // Error mesajını göstər
+          toast.error(`${result.error}`);
         }
-      } else {
-        toast.error("Failed to initialize payment session.");
       }
     } catch (error) {
       console.error("Error:", error);

@@ -27,18 +27,16 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
 
   
   const handlePayment = async () => {
-    // return 
+
     setLoading(true); // Yüklənmə spinnerini göstər
     const stripe = await stripePromise;
     const {disabled,...payload}=data
-    // stripe obyektini yoxlayın
     if (!stripe) {
       message.error("Stripe.js could not be loaded. Please refresh the page.");
       setLoading(false);
       return;
     }
 
-    try {
       const res= await callApi('/user/main/login',{
             "Email":data.Email,
             "Password":data.Password
@@ -71,18 +69,11 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
         const result = await stripe.redirectToCheckout({
           sessionId: session.sessionId,
         });
-
         if (result.error) {
-          toast.error(result.error.message); // Error mesajını göstər
+          toast.error(`${result.error}`);
         }
-      } else {
-        toast.error("Failed to initialize payment session.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      message.error("Payment failed! Please try again.");
-    } finally {
-      setLoading(false); // Spinneri gizlət
+       
+      
     }
   };
 
