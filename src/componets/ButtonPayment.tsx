@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Button, Spin, message } from "antd";
+import { toast } from "react-toastify";
 
 // Stripe açarınızı burada saxlayın
 const stripePromise = loadStripe(
@@ -69,10 +70,10 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
         });
 
         if (result.error) {
-          message.error(result.error.message); // Error mesajını göstər
+          toast.error(result.error.message); // Error mesajını göstər
         }
       } else {
-        message.error("Failed to initialize payment session.");
+        toast.error("Failed to initialize payment session.");
       }
     } catch (error) {
       console.error("Error:", error);

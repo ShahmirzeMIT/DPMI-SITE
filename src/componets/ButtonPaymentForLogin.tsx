@@ -2,6 +2,7 @@ import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Button, Spin, message } from "antd";
 import { callApi } from "../utils/callApi";
+import { toast } from "react-toastify";
 
 // Stripe açarınızı burada saxlayın
 const stripePromise = loadStripe(
@@ -29,7 +30,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
     // return 
     setLoading(true); // Yüklənmə spinnerini göstər
     const stripe = await stripePromise;
-
+    const {disabled,...payload}=data
     // stripe obyektini yoxlayın
     if (!stripe) {
       message.error("Stripe.js could not be loaded. Please refresh the page.");
@@ -44,7 +45,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           })
 
           if(!res.token)  return
-          
+         
       const response = await fetch(
         "https://api.dpminstitute.org/billing/main/payment/init",
         {
@@ -55,12 +56,12 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
             `Bearer ${res.token}`,
           },
           body: JSON.stringify({
-            ...data,
+            ...payload,
+            FkClassId:+data.FkClassId,
             createCheckoutSession: 1,
           }),
         }
       );
-      console.log(response,'eqw');
       
 
       const session = await response.json();
@@ -72,10 +73,10 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
         });
 
         if (result.error) {
-          message.error(result.error.message); // Error mesajını göstər
+          toast.error(result.error.message); // Error mesajını göstər
         }
       } else {
-        message.error("Failed to initialize payment session.");
+        toast.error("Failed to initialize payment session.");
       }
     } catch (error) {
       console.error("Error:", error);
