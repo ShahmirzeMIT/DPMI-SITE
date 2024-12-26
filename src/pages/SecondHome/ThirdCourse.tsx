@@ -11,7 +11,7 @@ const ThirdCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "400", color: "black", mb: 2, }}
+            sx={{ fontWeight: "400", color: "black", mb: 2,fonrSize:'48px',textAlign:'center' }}
           >
             AI Practitioner
           </Typography>

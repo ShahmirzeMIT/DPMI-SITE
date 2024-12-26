@@ -49,7 +49,7 @@ export default function CourseCard({ data }: ProductCardProps) {
           textDecoration: "underline",
           fontSize: "20px",
           fontWeight: "600",
-          textAlign: "start",
+          textAlign: "center",
         }}
       >
         {data.title}

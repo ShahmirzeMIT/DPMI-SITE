@@ -41,7 +41,7 @@ const FourthCourse = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h3"
-            sx={{ fontWeight: "400", color: "black", mb: 2 ,whiteSpace: "wrap",}}
+            sx={{ fontWeight: "400", color: "black", mb: 2 ,whiteSpace: "wrap",fonrSize:'48px',textAlign:'center'}}
           >
               Agile Communication Practitioner
           </Typography>

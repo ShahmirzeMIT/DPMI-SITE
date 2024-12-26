@@ -16,7 +16,7 @@ const data = [
     title: "For Companies",
     description: "We want fastest, measureable applicable AI Transformation",
     button: "Check our Services",
-     links:"/ourservices"
+     links:"/companies"
   },
 ];
 

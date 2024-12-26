@@ -51,7 +51,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
           textDecoration: "underline",
           fontSize: "20px",
           fontWeight: "600",
-          textAlign: "start",
+          textAlign: "center",
         }}
       >
         {data.title}
