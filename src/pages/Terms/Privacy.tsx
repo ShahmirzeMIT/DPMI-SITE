@@ -16,15 +16,16 @@ const PrivacyStatement = () => {
       <section>
         <h2>Updates to This Privacy Statement</h2>
         <p>
-          We may periodically update this Privacy Statement to reflect changes in legal requirements, technology, or our business operations. Please review this Privacy Statement regularly to stay informed about how we protect your data. The current version is effective as of [Insert Date].
+          We may periodically update this Privacy Statement to reflect changes in legal requirements, technology, or our business operations. Please review this Privacy Statement regularly to stay informed about how we protect your data. 
         </p>
+        <p>The current version is effective as of.</p>
       </section>
 
       <section>
         <h2>Scope of This Privacy Statement</h2>
         <p>
           This Privacy Statement applies to:
-          <ul>
+          <ul style={{marginLeft:'40px'}}>
             <li>DPMI’s website (the “Site”),</li>
             <li>Interactions with DPMI (e.g., inquiries, service use), and</li>
             <li>Services provided through DPMI.</li>
@@ -35,14 +36,14 @@ const PrivacyStatement = () => {
 
       <section>
         <h2>Data Collection</h2>
-        <h3>Personal Data We Collect</h3>
+        <h3 style={{fontWeight:'bold'}}>Personal Data We Collect</h3>
         <p>
           We collect and process the following types of personal data:
-          <ul>
-            <li><strong>Identification Information:</strong> Name, email address, phone number, and address.</li>
-            <li><strong>Professional Data:</strong> Certifications obtained, training participation records, and affiliations.</li>
-            <li><strong>Technical Data:</strong> IP address, device type, browser type, and interaction data (e.g., pages visited).</li>
-            <li><strong>Demographic Information:</strong> Age, preferences, and interests (non-sensitive data).</li>
+          <ul style={{marginLeft:'40px'}}>
+            <li><strong style={{fontWeight:'bold'}}>Identification Information:</strong> Name, email address, phone number, and address.</li>
+            <li><strong style={{fontWeight:'bold'}}>Professional Data:</strong> Certifications obtained, training participation records, and affiliations.</li>
+            <li><strong style={{fontWeight:'bold'}}>Technical Data:</strong> IP address, device type, browser type, and interaction data (e.g., pages visited).</li>
+            <li><strong style={{fontWeight:'bold'}}>Demographic Information:</strong> Age, preferences, and interests (non-sensitive data).</li>
           </ul>
           We do not collect sensitive data such as race, religion, or political affiliations unless explicitly required by law.
         </p>
@@ -50,7 +51,7 @@ const PrivacyStatement = () => {
         <h3>Sources of Data</h3>
         <p>
           We collect data directly from you through:
-          <ul>
+          <ul style={{marginLeft:'40px'}}>
             <li>Website registrations,</li>
             <li>Forms you fill out,</li>
             <li>Communication with DPMI (e.g., support or inquiries), and</li>
@@ -64,11 +65,11 @@ const PrivacyStatement = () => {
         <h2>Legal Basis for Processing</h2>
         <p>
           We process personal data in compliance with GDPR and German data protection laws under the following legal bases:
-          <ul>
-            <li><strong>Contractual Necessity:</strong> To fulfill our obligations under agreements with you.</li>
-            <li><strong>Consent:</strong> Where you have given clear consent for processing.</li>
-            <li><strong>Legal Obligation:</strong> To comply with applicable laws or regulations.</li>
-            <li><strong>Legitimate Interests:</strong> To improve our services, communicate updates, and ensure security.</li>
+          <ul style={{marginLeft:'40px'}}>
+            <li><strong style={{fontWeight:'bold'}}>Contractual Necessity:</strong> To fulfill our obligations under agreements with you.</li>
+            <li><strong style={{fontWeight:'bold'}}>Consent:</strong> Where you have given clear consent for processing.</li>
+            <li><strong style={{fontWeight:'bold'}}>Legal Obligation:</strong> To comply with applicable laws or regulations.</li>
+            <li><strong style={{fontWeight:'bold'}}>Legitimate Interests:</strong> To improve our services, communicate updates, and ensure security.</li>
           </ul>
         </p>
       </section>
@@ -76,7 +77,7 @@ const PrivacyStatement = () => {
       <section>
         <h2>Use of Personal Data</h2>
         <p>Your data is used to:</p>
-        <ul style={{color:'black !important'}}>
+        <ul style={{marginLeft:'40px'}}>
           <li style={{color:'black !important'}}>Operate and deliver DPMI services,</li>
           <li style={{color:'black !important'}}>Communicate with you about your account, certifications, and relevant updates,</li>
           <li style={{color:'black !important'}}>Respond to inquiries and provide customer support,</li>
@@ -90,7 +91,7 @@ const PrivacyStatement = () => {
         <h2>Cookies and Similar Technologies</h2>
         <p>
           Our Site uses cookies to enhance your browsing experience. Cookies store information about your preferences and session data to:
-          <ul>
+          <ul style={{marginLeft:'40px'}}>
             <li>Simplify access and personalization,</li>
             <li>Analyze usage patterns, and</li>
             <li>Deliver targeted content.</li>
@@ -102,7 +103,7 @@ const PrivacyStatement = () => {
       <section>
         <h2>Data Sharing and Disclosure</h2>
         <p>We only share data:</p>
-        <ul>
+        <ul style={{marginLeft:'40px'}}>
           <li>With your consent,</li>
           <li>With trusted third-party service providers under strict confidentiality,</li>
           <li>To comply with legal obligations or enforce our rights, or</li>
@@ -114,7 +115,7 @@ const PrivacyStatement = () => {
         <h2>International Data Transfers</h2>
         <p>
           If data is transferred outside the European Economic Area (EEA), we ensure adequate protection through:
-          <ul>
+          <ul style={{marginLeft:'40px'}}>
             <li>Standard contractual clauses,</li>
             <li>Binding corporate rules, or</li>
             <li>Other GDPR-compliant mechanisms.</li>
@@ -133,7 +134,7 @@ const PrivacyStatement = () => {
         <h2>Your Rights</h2>
         <p>
           Under GDPR and German law, you have the right to:
-          <ul>
+          <ul style={{marginLeft:'40px'}}>
             <li>Access your data,</li>
             <li>Correct inaccurate data,</li>
             <li>Request deletion of your data,</li>

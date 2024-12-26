@@ -33,8 +33,8 @@ const TermsOfUse = () => {
     By using the <span style={{fontWeight:'bold'}}>DPM Institute</span> website, you confirm that:
   </p>
   <ol style={{listStyleType: 'decimal',marginLeft:'20px'}}>
-    <li> 1. You are not a minor and are of legal age to agree to and be bound by these Terms.</li>
-    <li> 2. You will not use the <span style={{fontWeight:'bold'}}>DPM Institute</span> website for any purpose that is unlawful or prohibited by these Terms.</li>
+    <li>  You are not a minor and are of legal age to agree to and be bound by these Terms.</li>
+    <li> You will not use the <span style={{fontWeight:'bold'}}>DPM Institute</span> website for any purpose that is unlawful or prohibited by these Terms.</li>
   </ol>
   <p>
     You must not use the website in any way that could damage, disable, overburden, or impair it or interfere with another user's experience. You must not attempt to access materials or information through unauthorized means not intentionally made available through the website.
@@ -148,13 +148,13 @@ const TermsOfUse = () => {
         <h2>NOTICES AND PROCEDURE FOR MAKING CLAIMS OF COPYRIGHT INFRINGEMENT</h2>
         <p>Pursuant to applicable copyright laws within the European Union, including Directive 2019/790 and the German Copyright Act (UrhG), notifications of claimed copyright infringement should be sent to the Service Provider's Designated Agent. Inquiries unrelated to the following procedure will not receive a response.</p>
         <p>To file a notice, please provide the following information in writing to the Designated Agent:</p>
-        <ul style={{listStyleType: 'circle !important',marginLeft:'20px',color:'black'}}>
-            <li  style={{display:'flex',alignItems:'center'}}>1. Identification of the copyrighted work or material alleged to have been infringed.
+        <ul style={{listStyleType: 'decimal',marginLeft:'20px',color:'black'}}>
+            <li  > Identification of the copyrighted work or material alleged to have been infringed.
             .</li>
-            <li  style={{display:'flex',alignItems:'center'}}>2. dentification of the material that is claimed to be infringing and information reasonably sufficient to permit the Service Provider to locate the material..</li>
-            <li  style={{display:'flex',alignItems:'center'}}>3. Contact information, including name, address, email address, and telephone number</li>
-            <li>4. A statement that the complaining party has a good-faith belief that the use of the material is unauthorized by the copyright owner, its agent, or the law</li>
-            <li>5. A statement, under penalty of perjury, that the information provided is accurate and that the complaining party is authorized to act on behalf of the copyright owner.</li>
+            <li > dentification of the material that is claimed to be infringing and information reasonably sufficient to permit the Service Provider to locate the material..</li>
+            <li  > Contact information, including name, address, email address, and telephone number</li>
+            <li> A statement that the complaining party has a good-faith belief that the use of the material is unauthorized by the copyright owner, its agent, or the law</li>
+            <li> A statement, under penalty of perjury, that the information provided is accurate and that the complaining party is authorized to act on behalf of the copyright owner.</li>
           </ul>
           <p>For further details, please refer to the relevant sections of the German Copyright Act or applicable EU laws.</p>
       </section>
