@@ -1,4 +1,4 @@
-import {    Row, Col, Checkbox } from "antd";
+import {    Row, Col, Checkbox, Typography } from "antd";
 import usePaymentState from "./usePaymentState";
 import InputText from "../../componets/InputText";
 import InputPassWord from "../../componets/InputPassword";
@@ -6,6 +6,7 @@ import PaymenCard from "../../componets/PaymenCard";
 import { useEffect, useState } from "react";
 import ButtonPaymentForLogin from "../../componets/ButtonPaymentForLogin";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 
 
 export default function PayMentCheckLogin() {
@@ -40,6 +41,8 @@ export default function PayMentCheckLogin() {
     
   }, [])
 
+  console.log(localData,'localData');
+  
   const onChange = (e:any) => {
     setDisabled(e.target.checked)
   }
@@ -56,12 +59,14 @@ export default function PayMentCheckLogin() {
               <br />
             <InputPassWord data={paymentState.Password}/>
             <br />
-            <Checkbox onChange={onChange}>
-            I agree
-            By checking the box below, you agree to DPM Institute's  {" "}
-            <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a>
-
+            <Box sx={{textAlign:'start'}}>
+                <Checkbox onChange={onChange}>
+                I agree
             </Checkbox>
+            </Box>
+           
+            <Typography style={{color:'blacl',textAlign:'start'}}>  By checking the box below, you agree to DPM Institute's  {" "}
+                        <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a></Typography>
             <ButtonPaymentForLogin data={{
               Email:paymentState.Email.value,
               FkClassId:localData?.Id || "",
@@ -80,7 +85,7 @@ export default function PayMentCheckLogin() {
             CourseName:localData?.CourseName || "", 
             CourseImgUrl:localData?.CourseImgUrl || "",
             DiscountedPrice:localData?.DiscountedPrice || "",
-            FkClassId:localData?.FkClassId || "",
+            FkClassId:localData?.Id || "",
           }}/>
         </Col>
       </Row>

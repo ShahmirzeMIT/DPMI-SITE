@@ -59,7 +59,7 @@ const AppNavbarMenuPart2 = () => {
         <Box sx={{ display: "flex", alignItems: "center",paddingTop:'10px' }}>
           <Avatar
             src={Logo}
-            style={{ width: "150px", height: "70px" }}
+            style={{ width: "150px", height: "70px",cursor:'pointer' }}
             shape="square"
             onClick={()=>navigate('/')}
           />

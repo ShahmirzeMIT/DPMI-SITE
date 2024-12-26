@@ -12,11 +12,13 @@ export interface PaymentCardProps{
   }
 }
 export default function PaymenCard({data}:PaymentCardProps) {
+  console.log(data,'data');
+  
   const [promoCode, setPromoCode] = useState("");
   const [priceList, setPriceList] = useState({
     Price: data.Price,
     DiscountPrice: data.DiscountedPrice,
-    PromocodeDiscount:"",
+    PromocodeDiscount:0,
     Currency:"USD",
     FinalPrice:""
   });
@@ -39,7 +41,14 @@ export default function PaymenCard({data}:PaymentCardProps) {
         "Promocode":promoCode
     })
     
-    setPriceList(res)
+    setPriceList((prev)=>({
+      ...prev,
+      PromocodeDiscount:res.PromocodeDiscount?res.PromocodeDiscount:prev.PromocodeDiscount,
+      FinalPrice:res.FinalPrice?res.FinalPrice:prev.FinalPrice,
+      Currency:res.Currency?res.Currency:prev.Currency,
+      DiscountPrice:res.DiscountPrice?res.DiscountPrice:prev.DiscountPrice,
+      Price:res.Price?res.Price:prev.Price
+    }))
   }
   
   return (

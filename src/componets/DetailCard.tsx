@@ -51,7 +51,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
           {data.shortDesc}
         </Typography>
       </Box>
-      <Box sx={{display:'flex',width:'100%',justifyContent:'space-between',flexWrap:'wrap',marginBottom:'30px'}}>
+      {/* <Box sx={{display:'flex',width:'100%',justifyContent:'space-between',flexWrap:'wrap',marginBottom:'30px'}}>
               <div>
           <strong>
             Total <br />
@@ -72,7 +72,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
           </strong>{" "}
           {data.realProjectHours}
         </div>
-        </Box>
+        </Box> */}
       <Box
         sx={{
           marginTop: "90px",

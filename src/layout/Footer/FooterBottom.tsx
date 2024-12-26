@@ -16,7 +16,7 @@ export default function FooterBottom() {
   const data=[
     {
       id:'/certificates',
-      title:'Certifications ',
+      title:'Certifications',
     },
     {
       id:'/courses',
@@ -24,20 +24,20 @@ export default function FooterBottom() {
     },
     {
       id:'/aisimulation',
-      title:'AI Simulations ',
+      title:'AI Simulations',
     },
     {
       id:'/companies',
-      title:'For Companies ',
+      title:'For Companies',
     },
   ]
   const data2=[
     {
       id:'/classes',
-      title:'Find Classes ',
+      title:'Find Classes',
     },
     {
-      id:'2',
+      id:'https://dpminstitute.org/my/login',
       title:'Login',
     },
     {
@@ -146,7 +146,9 @@ export default function FooterBottom() {
             marginTop: "10px",
           }}
           onClick={() => {
-            navigate(`/certificate/${item.id}`);
+            console.log(item.id,'item.id');
+            
+            navigate(item.id); 
           }}
         >
           {item.title}
@@ -175,7 +177,7 @@ export default function FooterBottom() {
           navigate(item.id);
         }
         else{
-          navigate(`/certificate/${item.id}`);
+          navigate(`/${item.id}`);
 
         }
        }}
@@ -229,7 +231,7 @@ export default function FooterBottom() {
       paddingTop: "10px",
     }}
   >
-    <Typography color="text.secondary">
+    <Typography color="text.secondary" style={{textAlign:'center'}}>
       {`  ${startYear} - ${currentYear} `} {`©`} ACF System GmbH. DPM Institute
       is managed by ACF System GmbH. All rights reserved.
     </Typography>

@@ -9,6 +9,7 @@ import InputPassWord from "../../componets/InputPassword";
 import { useEffect, useState } from "react";
 import ButtonPayment from "../../componets/ButtonPayment";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 
 
 export default function PaymentCheckSign() {
@@ -40,9 +41,6 @@ export default function PaymentCheckSign() {
     
   }, [])
   
-
-
-
 const onChange = (e:any) => {
   setDisabled(e.target.checked)
 }
@@ -65,12 +63,16 @@ const onChange = (e:any) => {
             <InputText data={profileState.zipCode}/> 
             <InputText data={profileState.city}/>
             <SelectSingleVertical data={profileState.country}/>
-            <Checkbox onChange={onChange}>
-            I agree
-            By checking the box below, you agree to DPM Institute's  {" "}
-            <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a>
-
+            <Box sx={{textAlign:'start'}}>
+                <Checkbox onChange={onChange}>
+                I agree
             </Checkbox>
+            </Box>
+           
+            <Typography style={{color:'blacl',textAlign:'start'}}>  By checking the box below, you agree to DPM Institute's  {" "}
+                        <a  onClick={() =>navigate('/termofuse')} >Terms of Use</a></Typography>
+          
+
           <br />
     
           <ButtonPayment data={{

@@ -88,7 +88,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
         onClick={handlePayment}
         disabled={loading || !data.disabled}
       >
-        {loading ? <Spin size="small" /> : "Apply"}
+        {loading ? <Spin size="small" /> : "Login and Proceed"}
       </Button>
     </div>
   );
