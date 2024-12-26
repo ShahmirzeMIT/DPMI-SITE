@@ -1,6 +1,4 @@
-*{
-  list-style-type: none;
-}
+
 .terms-container {
     width: 80%;
     margin: 0 auto;
@@ -13,5 +11,12 @@
     color: black; 
     margin-bottom: 20px;
   
+  }
+  h1{
+    font-weight: bold;
+  }
+ 
+  h2{
+    font-weight: bold;
   }
  

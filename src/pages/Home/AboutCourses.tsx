@@ -9,7 +9,7 @@ export default function AboutCourses() {
   return (
     <Box >
         <Box sx={{ padding: "80px 10px 60px 10px",margin:{xs:'0', sm:'0',md:'120px',lg:0}}}>
-            <h1 style={{color:'black',fontSize: "36px", fontWeight: 400,width:'60%',margin:'0 auto'}}>Our Certifications</h1>
+            <h1 style={{color:'black',fontSize: "36px", fontWeight: 400,width:'60%',margin:'0 auto',textAlign:'center'}}>Our Certifications</h1>
 
             <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',width:'80%',margin:'0 auto',gap:"30px",  marginBottom:'60px',marginTop:'40px' }}>
                 {

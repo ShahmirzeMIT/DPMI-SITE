@@ -18,7 +18,7 @@ export default function AgileCard({data}:AgileCardProps) {
               <Typography variant="h6" gutterBottom sx={{fontSize:'28px',margin:'0 !important'}}>
                 {data.title}
               </Typography>
-              <Typography variant="body2" gutterBottom sx={{height:'60px',fontSize:'18px',lineHeight:'20px',lineSpacing:'0',marginBottom:'0 !important'}}>
+              <Typography variant="body2" gutterBottom sx={{height:'60px',fontSize:'18px',lineHeight:'20px',lineSpacing:'0',marginBottom:'0 !important',color:'white',textAlign:'center'}}>
                 {data.description}
               </Typography>
               <Button variant="contained" style={{ backgroundColor: '#fb6b22', color: 'white',width:"80%" ,}} onClick={() => navigate(data.links)}>
