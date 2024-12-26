@@ -6,6 +6,7 @@ import PointText from "../../componets/PointText";
 interface WhySpfProps {
     data: {
         title: string;
+        text:string
     }[];
     title:string
 }
@@ -17,9 +18,14 @@ export default function WhySpf({data,title}:WhySpfProps) {
            <Avatar src={Logo} style={{width:'70px',height:'70px',marginRight:'10px',fontSize:'36px'}} shape="square" /> Why {title} </Typography>
            {
             data.map((item,_index)=>(
-                <Typography style={{display:'flex',fontWeight:'400',textAlign:'start',marginLeft:'70px',lineHeight:'40px',fontSize:'18px',marginTop:'5px', alignItems:'center'}}>
+              <>
+               <Typography style={{display:'flex',fontWeight:'400',textAlign:'start',marginLeft:'70px',lineHeight:'40px',fontSize:'18px',marginTop:'5px', alignItems:'center'}}>
                   <PointText/>
                   {item.title}</Typography>
+                <Typography style={{textAlign:'start',marginLeft:'110px',lineHeight:'40px',fontSize:'14px'}}>{item.text}</Typography>
+
+              </>
+                
             ))
            }
           

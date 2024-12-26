@@ -46,9 +46,13 @@ export interface SkillData {
     {
       title: 'AI-Simulation is Your Best Choice',
       data: [
-        { title: 'Simulate real-world challenges and learn through experience.' },
-        { title: 'Gain expertise in decision-making and strategic analysis.' },
-        { title: 'Develop industry-specific skills in a fraction of the time' }
+        { title: ' Real-World Learning Through Challenges.',text:"Tackle realistic scenarios to master problem-solving, decision-making, and strategic analysis in a risk-free environment." },
+        { title: 'Accelerated Skill Development',text:"Acquire industry-specific skills and global terminologies in a fraction of the time through interactive, hands-on practice." },
+        { title: 'Personalized Feedback and Accurate Insights',text:"Receive tailored guidance from AI mentors and rely on precise, KPI-driven metrics to measure progress and refine your expertise." },
+        {title:"Practical Applications and Team Collaboration",text:"Apply knowledge to real-world projects, enhance team collaboration, and prepare for real organizational dynamics."},
+        {title:'Future-Ready Skills with Societal Awareness',text:"Gain the skills needed for an AI-driven future while exploring the societal and ethical impacts of AI solutions."},
+        {title:"Comprehensive Knowledge Integration",text:"Seamlessly transition from theory to practice, ensuring the retention and application of knowledge in professional settings."},
+        {title:"Enhanced Decision-Making Confidence",text:"Strengthen your ability to analyze situations critically and make impactful decisions with a clear understanding of strategic outcomes."},
       ]
     }
   ];

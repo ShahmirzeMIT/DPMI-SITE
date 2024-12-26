@@ -1,6 +1,7 @@
 export const courseTopics = [
     {
       "id": 2001,
+      tabelId:'1',
       "courseWhatyouGet": [
         {
           "title": "Digital Product Components & UX Design",
@@ -26,6 +27,7 @@ export const courseTopics = [
     },
     {
       "id": 2002,
+      tabelId:'2',
       "courseWhatyouGet": [
         {
           "title": "Understanding Digital Product Requirements",
@@ -51,6 +53,7 @@ export const courseTopics = [
     },
     {
       "id": 2003,
+      tabelId:'3',
       "courseWhatyouGet": [
         {
           "title": "Understanding Digital Product Data Flow",
@@ -76,6 +79,7 @@ export const courseTopics = [
     },
     {
       "id": 2004,
+      tabelId:'4',
       "courseWhatyouGet": [
         {
           "title": "SQL Basics and Database Queries",
@@ -101,6 +105,7 @@ export const courseTopics = [
     },
     {
       "id": 2005,
+      tabelId:'5',
       "courseWhatyouGet": [
         {
           "title": "Introduction to API Basics",
@@ -126,6 +131,7 @@ export const courseTopics = [
     },
     {
       "id": 2006,
+      tabelId:'6',
       "courseWhatyouGet": [
         {
           "title": "Creating Data Flow Diagrams (DFD)",
@@ -151,6 +157,7 @@ export const courseTopics = [
     },
     {
       "id": 2007,
+      tabelId:'7',
       "courseWhatyouGet": [
         {
           "title": "Understanding Business Requirements",
@@ -176,6 +183,7 @@ export const courseTopics = [
     },
     {
       "id": 2008,
+      tabelId:'8',
       "courseWhatyouGet": [
         {
           "title": "Understanding Financial Statements and Forecasting",
@@ -201,6 +209,7 @@ export const courseTopics = [
     },
     {
       "id": 2009,
+      tabelId:'9',
       "courseWhatyouGet": [
         {
           "title": "Creating and Managing a Project Backlog",
@@ -226,6 +235,7 @@ export const courseTopics = [
     },
     {
       "id": 2010,
+      tabelId:'10',
       "courseWhatyouGet": [
         {
           "title": "Sprint Planning and Backlog Creation",
@@ -251,6 +261,7 @@ export const courseTopics = [
     },
     {
       "id": 2011,
+      tabelId:'11',
       "courseWhatyouGet": [
         {
           "title": "Building and Leading Agile Teams",
@@ -276,6 +287,7 @@ export const courseTopics = [
     },
     {
       "id": 2012,
+      tabelId:'12',
       "courseWhatyouGet": [
         {
           "title": "Design Thinking in Product Development",
@@ -301,6 +313,7 @@ export const courseTopics = [
     },
     {
       "id": 2013,
+      tabelId:'13',
       "courseWhatyouGet": [
         {
           "title": "Managing Digital Transformation Projects",
@@ -326,6 +339,7 @@ export const courseTopics = [
     },
     {
       "id": 2014,
+      tabelId:'14',
       "courseWhatyouGet": [
         {
           "title": "Understanding SEO for Digital Products",
@@ -351,6 +365,7 @@ export const courseTopics = [
     },
     {
       "id": 2015,
+      tabelId:'15',
       "courseWhatyouGet": [
         {
           "title": "Introduction to Cloud Computing and Platforms",
@@ -376,6 +391,7 @@ export const courseTopics = [
     },
     {
       "id": 2016,
+      tabelId:'16',
       "courseWhatyouGet": [
         {
           "title": "Building and Deploying Mobile Applications",
@@ -401,6 +417,7 @@ export const courseTopics = [
     },
     {
       "id": 2017,
+      tabelId:'17',
       "courseWhatyouGet": [
         {
           "title": "Introduction to DevOps and Continuous Delivery",
@@ -426,6 +443,7 @@ export const courseTopics = [
     },
     {
       "id": 2018,
+      tabelId:'18',
       "courseWhatyouGet": [
         {
           "title": "Introduction to Data Science",

@@ -1,8 +1,8 @@
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import TabelPaymet from '../../componets/TabelPaymet'
 import { callApi } from '../../utils/callApi';
 import { useEffect, useState } from 'react';
-import { Avatar, Button } from 'antd';
+import { Avatar } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 export default function Payment() {
@@ -13,9 +13,13 @@ export default function Payment() {
         navigate('/payment');
         localStorage.setItem('paymentData', JSON.stringify(item));
     }
+    const changedetailPage=(item: string) => {
+        console.log(item,'item');
+        navigate(`/classes/${item}`);
+    }
       const getTableData = async() => {
         const res= await callApi('/lms/main/class/list')
-        console.log(res);
+        
         const updatedData=res.map((item: any, index: number) => ({
           ...item,
           Id: index+1 ,
@@ -32,12 +36,14 @@ export default function Payment() {
               <span>{item.MentorName}</span>
             </div>
           ),
-          enroll:(   <Button  style={{  background: "#68b631",  height: "32px",  borderRadius: "4px",width: "150px", color: "white",  }}
+          enroll:(   <Button  sx={{  background: "#68b631",  height: "25px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize'  }}
             onClick={() => onClickNavigate(item)} >
               Pay
-          </Button>)
+          </Button>),
+          MoreInfo:(<Button style={{background:'#2A73B1',height: "25px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize' }} onClick={()=>changedetailPage(item.FkCourseId)}>More Info</Button>)
         
         }));
+        
         setTabelValues(updatedData);
       }
           
@@ -56,6 +62,7 @@ export default function Payment() {
         Price: "Price",
         DiscountedPrice: "Discount Price",
         EnrolmentCount: "Enrolment Count",
+        MoreInfo: "More Info",
         enroll: "Enroll",
       };
       

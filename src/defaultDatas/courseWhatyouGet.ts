@@ -1,6 +1,7 @@
 export const courseWhatyouGet = [
   {
     id: 2001,
+    tabelId:'1',
     courseWhatyouGet: [
       {
         title: "Digital Product Components & UX Design",
@@ -26,6 +27,7 @@ export const courseWhatyouGet = [
   },
   {
     id: 2002,
+    tabelId:'2',
     courseWhatyouGet: [
       {
         title: "How to analyze and structure product requirements",
@@ -53,6 +55,7 @@ export const courseWhatyouGet = [
   },
   {
     id: 2003,   
+    tabelId:'3',
     courseWhatyouGet: [
         {
             title: "How to Understand Data Flow in Digital Products and Services",
@@ -78,6 +81,7 @@ export const courseWhatyouGet = [
   },
 {
     id: 2004,
+    tabelId:'4',
     courseWhatyouGet: [
         {
             title: "How to Insert, Delete, and Update Data in Databases",
@@ -103,6 +107,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2005,
+    tabelId:'5',
     courseWhatyouGet: [  {
     title: "How to Use API Basics to Connect Systems",
     desc: "Gain foundational knowledge about APIs and their role in enabling communication between software systems.",
@@ -126,6 +131,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2006,
+    tabelId:'6',
     courseWhatyouGet: [
          {
     title: "How to create and analyze data flow diagrams for digital services",
@@ -152,6 +158,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2007,
+    tabelId:'7',
     courseWhatyouGet: [
         {
             title:
@@ -182,6 +189,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2008,
+    tabelId:'8',
     courseWhatyouGet: [  {
     title: "How to interpret financial statements to inform business decisions",
     desc: "Learn how to read and analyze key financial statements (e.g., profit and loss, cash flow) for strategic decision-making.",
@@ -208,6 +216,7 @@ export const courseWhatyouGet = [
 },
  {
     id: 2009,
+    tabelId:'9',
     courseWhatyouGet: [
   {
     title: "How to create and manage a project backlog",
@@ -232,6 +241,7 @@ export const courseWhatyouGet = [
  },
 {
     id: 2010,
+    tabelId:'10',
     courseWhatyouGet: [
         {
     title: "How to create and manage a sprint backlog efficiently",
@@ -257,6 +267,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2011,
+    tabelId:'11',
     courseWhatyouGet: [
  {
     title:
@@ -286,6 +297,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2012,
+    tabelId:'12',
     courseWhatyouGet: [  {
     title: "How to resolve conflicts and foster collaboration across teams",
     desc: "Develop techniques for managing team dynamics and creating productive work environments.",
@@ -313,6 +325,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2013,
+    tabelId:'13',
     courseWhatyouGet: [
         {
     title:
@@ -339,6 +352,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2014,
+    tabelId:'14',
     courseWhatyouGet: [  {
     title: "Collaborative Approach to AI Projects",
     desc: "Learn how agile communication and cross-functional collaboration are essential for the successful development and implementation of AI and GenAI technologies.",
@@ -362,6 +376,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2015,
+    tabelId:'15',
     courseWhatyouGet: [  
   {
     title: "How to Integrate AI/GenAI in Digital Service Automation",
@@ -388,6 +403,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2016,
+    tabelId:'16',
     courseWhatyouGet: [
  
   {
@@ -409,6 +425,7 @@ export const courseWhatyouGet = [
 },
 {
     id: 2017,
+    tabelId:'17',
         courseWhatyouGet: [ {
         title: "How to Align Team Goals with Organizational Objectives",
         desc: "Learn strategies to coach teams in aligning their goals with broader organizational objectives, ensuring that their efforts contribute to the success of digital transformation.",
@@ -433,6 +450,7 @@ export const courseWhatyouGet = [
 },
  {
     id: 2018,
+    tabelId:'18',
     courseWhatyouGet: [ 
         {
         title: "How to Apply Active Listening in Coaching",

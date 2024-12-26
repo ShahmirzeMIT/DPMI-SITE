@@ -22,6 +22,7 @@ import CertificationDetails from "../pages/CertificationDetails/CertificationDet
 import AISimulation from "../pages/LMS/AISimulation";
 import TermsOfUse from "../pages/Terms/TermStatement";
 import PrivacyStatement from "../pages/Terms/Privacy";
+import ClassesDeatil from "../pages/ClassesDetail/ClassesDeatil";
 
 export const routes = [
     {
@@ -43,6 +44,7 @@ export const routes = [
             { path: "/elearning", element: <LMS/>, },
             {path:"/companies",element:<Companies/>, },
             {path:'/classes',element:<Payment/>},
+            {path:'/classes/:courseId',element:<ClassesDeatil/>},
             {path:'/payment',element:<PaymentCheck/>},
             {path:'/paymentprocedd',element:<PaymentProceedd/>},
             {path:"/certificates",element:<CertificationList/>},

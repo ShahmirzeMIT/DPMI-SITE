@@ -1,6 +1,7 @@
 export const courseLearn = [
   {
     id: "2001",
+    tabelId:'1',
     whatLearn: [
       {
         title: "Introduction to Digital Product Components and UX Design",
@@ -26,6 +27,7 @@ export const courseLearn = [
   },
   {
     id: "2002",
+    tabelId:'2',
     whatLearn: [
       {
         title: "Understanding Digital Product Requirements",
@@ -51,6 +53,7 @@ export const courseLearn = [
   },
   {
     id: "2003",
+    tabelId:'3',
     whatLearn: [
       {
         title: "Understanding Digital Product Data Flow",
@@ -76,6 +79,7 @@ export const courseLearn = [
   },
   {
     id: "2004",
+    tabelId:'4',
     whatLearn: [
       {
         title: "SQL Basics and Database Queries",
@@ -101,6 +105,7 @@ export const courseLearn = [
   },
   {
     id: "2005",
+    tabelId:'5',
     whatLearn: [
       {
         title: "API Basics and HTTP Requests",
@@ -126,6 +131,7 @@ export const courseLearn = [
   },
   {
     id: "2006",
+    tabelId:'6',
     whatLearn: [
       {
         title: "Creating Data Flow Diagrams (DFD)",
@@ -151,6 +157,7 @@ export const courseLearn = [
   },
   {
     id: "2007",
+    tabelId:'7',
     whatLearn: [
     {
         "title": "Understanding Business Requirements",
@@ -176,6 +183,7 @@ export const courseLearn = [
   },
   {
     id: "2008",
+    tabelId:'8',
     whatLearn: [
     {
         "title": "Understanding Financial Statements and Forecasting",
@@ -201,6 +209,7 @@ export const courseLearn = [
   },
   {
     id: "2009",
+    tabelId:'9',
     whatLearn:[
         {
             "title": "Creating and Managing a Project Backlog",
@@ -226,6 +235,7 @@ export const courseLearn = [
   },
   {
     id: "2010",
+    tabelId:'10',
     whatLearn: [
         {
             "title": "Sprint Planning and Backlog Creation",
@@ -251,6 +261,7 @@ export const courseLearn = [
   },
   {
     id: "2011",
+    tabelId:'11',
     whatLearn:[
         {
             "title": "Understanding Market Demands",
@@ -276,6 +287,7 @@ export const courseLearn = [
   },
   {
     id: "2012",
+    tabelId:'12',
     whatLearn: [
     {
         "title": "The Role of Agile Communication in Digital Product Management",
@@ -301,6 +313,7 @@ export const courseLearn = [
   },
   {
     id: "2013",
+    tabelId:'13',
     whatLearn: [
         {
             "title": "Digital Service Models and Innovation",
@@ -326,6 +339,7 @@ export const courseLearn = [
   },
   {
     id: "2014",
+    tabelId:'14',
     whatLearn: [
         {
             "title": "Introduction to AI and GenAI",
@@ -351,6 +365,7 @@ export const courseLearn = [
   },
   {
     id: "2015",
+    tabelId:'15',
     whatLearn: [
          {
         "title": "Niche Market Segmentation Techniques",
@@ -376,6 +391,7 @@ export const courseLearn = [
   },
   {
     id: "2016",
+    tabelId:'16',
     whatLearn: [
         {
             "title": "Introduction to AI and GenAI in Digital Services",
@@ -401,6 +417,7 @@ export const courseLearn = [
   },
   {
     id: "2017",
+    tabelId:'17',
     whatLearn: [
         {
             "title": "Understanding Digital Transformation and Its Challenges",
@@ -426,6 +443,7 @@ export const courseLearn = [
   },
   {
     id: "2018",
+    tabelId:'18',
     whatLearn: [
         {
             "title": "Core Coaching Skills for Agile Communication",
