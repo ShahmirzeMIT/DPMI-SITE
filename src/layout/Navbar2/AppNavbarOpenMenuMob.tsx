@@ -123,6 +123,9 @@ export default function AppNavbarOpenMenuMob({
                     color:'white'
                   },
                 }}
+                onClick={()=>{
+                  window.location.href = "https://dpmi.netlify.app/login";
+                }}
               >
               Sign In
               </Button>

@@ -175,7 +175,9 @@ const AppNavbarMenuPart2 = () => {
                 color: 'white'
               },
             }}
-            onClick={() => navigate("/classes")}
+            onClick={()=>{
+              window.location.href = "https://dpmi.netlify.app/login";
+            }}
           >
             Log in
           </Button>
