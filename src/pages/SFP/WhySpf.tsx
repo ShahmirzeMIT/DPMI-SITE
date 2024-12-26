@@ -6,7 +6,7 @@ import PointText from "../../componets/PointText";
 interface WhySpfProps {
     data: {
         title: string;
-        text:string
+        text?:string
     }[];
     title:string
 }
