@@ -60,7 +60,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           }),
         }
       );
-      console.log(response);
+      console.log(response,'eqw');
       
 
       const session = await response.json();

@@ -32,9 +32,7 @@ export interface ButtonPaymentProps {
 export default function ButtonPayment({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
-console.log(data,'data');
-return
-  
+
   const handlePayment = async () => {
     setLoading(true); // Yüklənmə spinnerini göstər
     const stripe = await stripePromise;
