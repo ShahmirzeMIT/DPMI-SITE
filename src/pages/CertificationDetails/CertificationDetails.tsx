@@ -45,10 +45,6 @@ export default function CertificationDetails() {
     );
   }
 
-  // Find the corresponding roadmap based on the certificateId
-  // const selectedRoadmap = dataN.find(item => item.id === certificateId);
-  console.log(selectedData, "selectedData");
-
   return (
     <Box sx={{}}>
       <Box

@@ -69,7 +69,7 @@ export default function CourseCard({ data }: ProductCardProps) {
             color: "white",
             "&:hover": { background: "white", color: "rgb(251, 107, 34)", border: "1px solid rgb(251, 107, 34)" },
           }}
-         
+          onClick={() => navigate(`/classes`)}  
         >
          Register
         </Button>
