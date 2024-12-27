@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 interface DetailCardProps {
@@ -12,7 +13,7 @@ interface DetailCardProps {
   };
 }
 const DetailCard = ({ data }: DetailCardProps) => {
-  // const navigate=useNavigate()
+  const navigate=useNavigate()
   return (
     <Box
       sx={{
@@ -24,7 +25,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
         position: "relative",
         cursor: "pointer",
       }}
-      // onClick={() => navigate(`/courses/${data.id}`)}
+    
     >
       <Typography
         variant="h4"
@@ -95,6 +96,7 @@ const DetailCard = ({ data }: DetailCardProps) => {
             "&:hover": { background: "rgb(251, 107, 34)", color: "white" },
           }}
           // onClick={handleNavigate}
+            onClick={() => navigate(`/courses/${data.id}`)}
         >
          View Course
         </Button>
