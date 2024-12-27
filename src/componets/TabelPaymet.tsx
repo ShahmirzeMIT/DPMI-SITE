@@ -100,7 +100,7 @@ export default function TabelPaymet({ data,columnConfig }: { data: DataType[],co
     <Table
       columns={columns}
       dataSource={data}
-      style={{ border: "1px solid #E9EDF1", width: "98%", margin: "0 auto",textAlign:"center",minHeight:'79vh' }}
+      style={{ border: "1px solid #E9EDF1", width: "98%", margin: "0 auto",textAlign:"center",minHeight:'79vh',background:'white' }}
       scroll={{ x: "100%", }} // Cədvəl içində scroll əlavə edir
       pagination={{ pageSize: 13 }} 
       // tableLayout="auto"
