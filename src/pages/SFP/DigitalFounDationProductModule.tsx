@@ -79,7 +79,7 @@ const DigitalProductFoundationModule = ({ data }: ProductCardProps) => {
           </Typography>
           <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-around' }}>
             {data.course?.map((courseItem: any) => (
-              <div>
+              <div style={{marginLeft:'3px'}}>
                 <Popover content={<Box sx={{width:'300px'}}><Typography>{courseItem.text}</Typography>
                   <Button onClick={() => navigate(`/courses/${courseItem.id}`)}  style={{backgroundColor: '#2a74b1', color: 'white',marginTop:'10px'}}>Read More</Button>
                 </Box>} >
