@@ -73,11 +73,11 @@ export default function Payment() {
           MoreInfo:(  
             <div style={{width:'100px',height:'100%'}}>
               <div style={{position:'absolute',top:'20px',left:'-40px'}}>
-               <Button  sx={{  background: "#68b631",  height: "35px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize'  }}
+               <Button  sx={{  background: "#5693F0",  height: "35px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize'  }}
                   onClick={() => onClickNavigate(item)} >
-                  Pay
+                  Enroll Now
                </Button>
-               <Button style={{background:'#2A73B1',height: "35px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize',display:'block',marginTop:'20px' }} onClick={()=>changedetailPage(item.FkCourseId)}>More Info</Button>
+               <Button style={{background:'#ED1C24',height: "35px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize',display:'block',marginTop:'20px' }} onClick={()=>changedetailPage(item.FkCourseId)}>More Info</Button>
             </div>
             </div>
             ),

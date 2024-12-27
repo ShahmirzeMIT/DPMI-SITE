@@ -13,3 +13,6 @@
     table-layout: auto !important; /* Genişliyi avtomatik uyğunlaşdır */
   }
   
+  .no-header-table .ant-table-thead {
+  display: none;
+}
