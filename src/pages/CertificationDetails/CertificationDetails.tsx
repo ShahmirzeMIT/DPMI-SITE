@@ -18,10 +18,11 @@ import Logo from "../../assets/images/detailIcon.png";
 // import RoadmapAIPP from '../AIPP/RoadMapAIPP';
 // import RoadmapAIFP from '../AIPF/RoadMapAIPF';
 import CertificationsProgress from "./CertificationsProgress";
-import { dataDetail } from "../../defaultDatas/detailCourses";
+// import { dataDetail } from "../../defaultDatas/detailCourses";
 // import CourseStatus from "../../componets/CourseStatus";
 import CourseCardStatic from "../../componets/CourseCardStatic";
 import StepOver from "./StepOver";
+import { Key } from "react";
 
 
 
@@ -73,7 +74,6 @@ export default function CertificationDetails() {
         </Box>
         <Box sx={{ }}>
            <StepOver/>
-
         </Box>
         {/* <ResponsiveSteps /> */}
         <CardCertificationView />
@@ -171,9 +171,12 @@ export default function CertificationDetails() {
             gap: "40px",
           }}
         >
-          {dataDetail.map((item, index) => (
-            <DetailCard key={index} data={item} />
-          ))}
+        {selectedData.courseModules.map((module, index) =>
+            module.course.map((item, subIndex) => (
+              <DetailCard key={`${index}-${subIndex}`} data={item} />
+            ))
+          )}
+
         </Box>
       </Box>
     </Box>

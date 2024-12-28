@@ -18,7 +18,8 @@ const StepOver = () => {
             <div
               className="step"
               style={{
-                transform: `translate(${index * 2}%, ${-index * 100}px)`,
+                transform: `translate(${index * 1
+                }%, ${-index * 100}px)`,
               }}
             >
               <div className="icon">{step.icon}</div>

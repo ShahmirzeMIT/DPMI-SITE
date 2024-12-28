@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 interface DetailCardProps {
   data: {
     id: number;
-    title: string;
+    title?: string;
     shortDesc: string;
     totalHours: number;
     interactivePracticeHours: number;
@@ -52,28 +52,6 @@ const DetailCard = ({ data }: DetailCardProps) => {
           {data.shortDesc}
         </Typography>
       </Box>
-      {/* <Box sx={{display:'flex',width:'100%',justifyContent:'space-between',flexWrap:'wrap',marginBottom:'30px'}}>
-              <div>
-          <strong>
-            Total <br />
-            Hours:
-          </strong>
-          {data.totalHours}
-        </div>
-        <div>
-          <strong>
-            Interactive Practice <br />
-            Hours:
-          </strong>{" "}
-          {data.interactivePracticeHours}
-        </div>
-        <div>
-          <strong>
-            Real Project <br /> Hours:
-          </strong>{" "}
-          {data.realProjectHours}
-        </div>
-        </Box> */}
       <Box
         sx={{
           marginTop: "90px",
