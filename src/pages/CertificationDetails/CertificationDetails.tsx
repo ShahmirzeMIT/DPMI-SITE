@@ -22,19 +22,7 @@ import CertificationsProgress from "./CertificationsProgress";
 // import CourseStatus from "../../componets/CourseStatus";
 import CourseCardStatic from "../../componets/CourseCardStatic";
 import StepOver from "./StepOver";
-import { Key } from "react";
 
-
-
-
-// const dataN = [
-//     { id: "1003", roadMap: <Roadmap /> },
-//     { id: "1001", roadMap: <RoadmapACPF /> },
-//     { id: "1002", roadMap: <RoadmapACPP /> },
-//     { id: "1006", roadMap: <RoadmapDPM /> },
-//     { id: '1004', roadMap: <RoadmapAIPP /> },
-//     { id: '1005', roadMap: <RoadmapAIFP /> }
-// ];
 
 export default function CertificationDetails() {
   const { certificateId } = useParams<{ certificateId: string }>();
@@ -63,7 +51,7 @@ export default function CertificationDetails() {
         <ProductManagerCourseView
           data={{
             title: selectedData.title,
-            text: selectedData.text,
+            text: selectedData.shortDesc,
             links: selectedData.links,
             enroll: selectedData.enroll,
             image: selectedData.image,

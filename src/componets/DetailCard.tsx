@@ -3,14 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 interface DetailCardProps {
-  data: {
-    id: number;
-    title?: string;
-    shortDesc: string;
-    totalHours: number;
-    interactivePracticeHours: number;
-    realProjectHours: number;
-  };
+  data: any;
 }
 const DetailCard = ({ data }: DetailCardProps) => {
   const navigate=useNavigate()
