@@ -3,6 +3,7 @@ import { Table, Input, Button, Space } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import type { TableColumnsType } from "antd";
 import "./paymentStyle.css";
+import { Box } from "@mui/material";
 
 interface DataType {
   key: string;
@@ -93,11 +94,14 @@ export default function TabelPaymet({ data, columnConfig }: { data: DataType[]; 
   const columns = generateColumns(data);
 
   return (
-    <Table
+    <Box sx={{maxWidth:"1200px",margin:'0 auto'}}>
+       <Table
       columns={columns}
       dataSource={data}
       style={{
-        border: "1px solid #E9EDF1",
+        // borderLeft: "10px solid #E9EDF1",
+        border: "10px solid white",
+        borderCollapse: "collapse",
         width: "98%",
         margin: "0 auto",
         textAlign: "center",
@@ -108,5 +112,7 @@ export default function TabelPaymet({ data, columnConfig }: { data: DataType[]; 
       pagination={{ pageSize: 13 }}
       className="no-header-table"
     />
+    </Box>
+   
   );
 }

@@ -35,14 +35,18 @@ export default function Payment() {
             </div>
           ),
           MentorName: (
-            <div style={{ borderRight:'2px solid #E0E0E0',height:'100%'}}>
-              <Box sx={{padding:'20px 0PX 0 0PX' ,width:'200px'}}>
-                 <Avatar src={item.MentorImgUrl} style={{ height: "40px", width: "40px", marginRight: "10px",position:'absolute',top:'20px',left:'10px',}} />
-              <span style={{position:'absolute',top:'30px',left:'70px',fontWeight:'600',fontSize:'16px',color:'#898AA2'}}>{item.MentorName}</span>
-              <Box sx={{display:'flex',justifyContent:'center',position:'absolute',top:'70px',left:'55px'}}>
-                <span style={{display:'block',fontSize:'17px',fontWeight:'600',color:'#898AA2'}}>Language</span>
-                <span style={{display:'block',fontSize:'17px',fontWeight:'600',color:'#972033',margin:'0px 0 10px 10px'}}>English</span>
+            <div style={{ borderRight:'2px solid #E0E0E0',height:'100%',width:'150px'}}>
+               <Box sx={{position:'absolute',top:'20px',left:'-10px'}}>
+               <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <Avatar src={item.MentorImgUrl} style={{ height: "40px", width: "40px", marginRight: "10px"}} />
+                  <p style={{fontWeight:'600',fontSize:'16px',color:'#898AA2',paddingTop:'20px'}}>{item.MentorName}</p>
               </Box>
+              <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <span style={{display:'block',fontSize:'17px',fontWeight:'600',color:'#898AA2'}}>Language</span>
+                <span style={{display:'block',fontSize:'17px',fontWeight:'600',color:'#972033',margin:'0 10px'}}>English</span>
+              </Box>
+                
+             
               </Box>
              
             </div>
@@ -71,7 +75,7 @@ export default function Payment() {
             </div>
           ),
           MoreInfo:(  
-            <div style={{width:'100px',height:'100%'}}>
+            <div style={{width:'50px',height:'100%'}}>
               <div style={{position:'absolute',top:'20px',left:'-40px'}}>
                <Button  sx={{  background: "#5693F0",  height: "35px",  borderRadius: "4px",width: "100px", color: "white",fontWeight:'normal',textTransform:'capitalize'  }}
                   onClick={() => onClickNavigate(item)} >

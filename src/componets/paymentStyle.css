@@ -1,4 +1,9 @@
 /* paymentStyle.css */
+.ant-table-tbody{
+  background: transparent !important;
+  padding:'0'
+}
+
 .ant-table-tbody > tr > td {
     height: 20px !important; /* Sətir hündürlüyü 70px */
     line-height: 15px; /* Mətnin dikey ortalanması */
@@ -6,13 +11,20 @@
     word-wrap: break-word;
     min-width: 230px !important;
     width: auto !important;
-    
+    background-color: #F8F8F8;
+    padding:'0 !important';
+    margin:'20px 0!important'    
   }
   
   .ant-table {
     table-layout: auto !important; /* Genişliyi avtomatik uyğunlaşdır */
+    padding:'0 !important';
+    border-collapse: separate !important;
+    margin:'0 !important' 
   }
   
   .no-header-table .ant-table-thead {
   display: none;
+  padding:'0 !important';
+  margin:'0 !important' 
 }
