@@ -21,6 +21,10 @@ import CertificationsProgress from "./CertificationsProgress";
 import { dataDetail } from "../../defaultDatas/detailCourses";
 // import CourseStatus from "../../componets/CourseStatus";
 import CourseCardStatic from "../../componets/CourseCardStatic";
+import StepOver from "./StepOver";
+
+
+
 
 // const dataN = [
 //     { id: "1003", roadMap: <Roadmap /> },
@@ -64,7 +68,13 @@ export default function CertificationDetails() {
             image: selectedData.image,
           }}
         />
+        <Box sx={{height:"340px", backgroundColor:"#F9FAFC"}}>
 
+        </Box>
+        <Box sx={{ }}>
+           <StepOver/>
+
+        </Box>
         {/* <ResponsiveSteps /> */}
         <CardCertificationView />
         <Box sx={{ marginTop: "90px" }}>

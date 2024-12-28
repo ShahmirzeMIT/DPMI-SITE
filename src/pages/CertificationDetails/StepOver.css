@@ -1,0 +1,83 @@
+.step-over-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 60vh;
+    background-color: #f8f9fa;
+  }
+  
+  .steps {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .step {
+    width: 290px;
+    height: 240px;
+    margin: 10px;
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+  }
+  
+  .step .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .step .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .step .description {
+    font-size: 14px;
+  }
+  
+  .divider {
+    width: 40px;
+    height: 4px;
+    background-color: #2563eb;
+    position: relative;
+    z-index: 0;
+    margin: 0 -20px;
+  }
+  
+  @media (max-width: 1000px) {
+    .step-over-container{
+      height: 160vh;
+    }
+    .steps {
+      flex-direction: column; /* Stack steps vertically */
+      align-items: center;
+    }
+  
+    .step {
+      transform: none;
+      margin-top: 130px; /* Add spacing between steps */
+    }
+  
+    .step:first-child {
+      margin-top: 0; /* Remove margin from the first step */
+    }
+  
+    .divider {
+      width: 4px; /* Vertical divider */
+      height: 40px;
+      margin: -20px 0;
+    }
+  }
+  

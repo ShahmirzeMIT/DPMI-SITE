@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export const callApi = async (url: string, params?: any) => {
     try {
-        const response = await axios.post(`https://api.dpminstitute.org${url}`, params);
+        const response = await axios.post(`https://dpminstitute.org/api${url}`, params);
         return response.data;
     } catch (error: any) {
         if (error.response.status === 401) {
