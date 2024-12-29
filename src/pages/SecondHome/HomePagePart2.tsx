@@ -13,6 +13,7 @@ import CourseCardHome from "./CourseCardHome";
 import { Button } from "antd";
 import AILearn from "./AILearn";
 import { useNavigate } from "react-router-dom";
+import MyNeeds from "../MyNeeds/MyNeeds";
 // import CourseStatus from "../../componets/CourseStatus";
 export default function HomePagePart2() {
   const navigate=useNavigate()
@@ -32,6 +33,7 @@ export default function HomePagePart2() {
   return (
     <Box > 
       <AILearn/>
+      <MyNeeds/>
       <AgileLearning />
       <ThirdCourse />
       <SecondCourse />

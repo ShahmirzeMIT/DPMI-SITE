@@ -109,7 +109,7 @@ export default function TabelPaymet({ data, columnConfig }: { data: DataType[]; 
         background: "white",
       }}
       scroll={{ x: "100%" }}
-      pagination={{ pageSize: 13 }}
+      pagination={{ pageSize: 30 }}
       className="no-header-table"
       
     />

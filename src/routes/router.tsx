@@ -23,6 +23,7 @@ import TermsOfUse from "../pages/Terms/TermStatement";
 import PrivacyStatement from "../pages/Terms/Privacy";
 import ClassesDeatil from "../pages/ClassesDetail/ClassesDeatil";
 import ScrollToTop from "./ScrollTop";
+import MyNeedsDetail from "../pages/MyNeeds/MyNeedsDetail";
 
 export const routes = [
   {
@@ -60,6 +61,7 @@ export const routes = [
       { path: "/ourservices", element: <OurServices /> },
       { path: "/termofuse", element: <TermsOfUse /> },
       { path: "/privacy", element: <PrivacyStatement /> },
+      {path:'/myneeds',element:<MyNeedsDetail/>},
       { path: "*", element: <NotFound /> },
     ],
   },

@@ -101,7 +101,7 @@ const CourseDetails = () => {
 
         {/* Top Certifications Section */}
         <Box>
-          <h1 style={{ color: 'black', fontSize: "36px", fontWeight: 400, width: '60%', margin: '0 auto' }}>Top Certifications</h1>
+          <h1 style={{ color: 'black', fontSize: "36px", fontWeight: 400, width: '60%', margin: '0 auto',textAlign:'center' }}>Top Certifications</h1>
 
           <Box sx={{
             display: 'flex',
@@ -129,7 +129,7 @@ const CourseDetails = () => {
 
         {/* Top Courses Section */}
         <Box sx={{ width: '80%', margin: '120px auto 40px auto' }}>
-          <Typography variant="h3" sx={{ color: 'black', fontSize: "36px", fontWeight: 400 }}>
+          <Typography variant="h3" sx={{ color: 'black', fontSize: "36px", fontWeight: 400 ,textAlign:'center'}}>
             Top Courses
           </Typography>
         </Box>

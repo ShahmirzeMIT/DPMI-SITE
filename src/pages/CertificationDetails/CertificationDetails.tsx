@@ -14,7 +14,7 @@ import { Avatar, Typography } from "antd";
 import Logo from "../../assets/images/detailIcon.png";
 import CertificationsProgress from "./CertificationsProgress";
 import CourseCardStatic from "../../componets/CourseCardStatic";
-import StepOver from "./StepOver";
+// import StepOver from "./StepOver";
 
 
 export default function CertificationDetails() {
@@ -53,9 +53,9 @@ export default function CertificationDetails() {
         <Box sx={{height:"340px", backgroundColor:"#F9FAFC"}}>
 
         </Box>
-        <Box sx={{ }}>
+        {/* <Box sx={{ }}>
            <StepOver/>
-        </Box>
+        </Box> */}
         {/* <ResponsiveSteps /> */}
         <CardCertificationView />
         <Box sx={{ marginTop: "90px" }}>

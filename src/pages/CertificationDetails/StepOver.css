@@ -15,10 +15,7 @@
 
     background-color: #f8f9fa;
   }
-  .step:hover {
-    transform: scale(2.15);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
+ 
   .steps {
     display: flex;
     align-items: center;
@@ -41,10 +38,13 @@
     position: relative;
     z-index: 1;
     transform-origin: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s;
   }
 
-  
+  .step:hover {
+    transform: scale(1543.535);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
   
   .step .icon {
     font-size: 70px;

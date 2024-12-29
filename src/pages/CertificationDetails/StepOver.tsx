@@ -32,6 +32,7 @@ const StepOver = () => {
             }}
             whileHover={{
               scale: 2.5, 
+              transition: { duration: 0.3 },
             }}
             transition={{
               duration: 1,
