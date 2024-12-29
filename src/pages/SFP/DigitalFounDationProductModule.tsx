@@ -13,6 +13,8 @@ interface ProductCardProps {
 }
 
 const DigitalProductFoundationModule = ({ data }: ProductCardProps) => {
+  console.log(data,'data');
+  
   const navigate=useNavigate()
   return (
     <Card
@@ -80,7 +82,7 @@ const DigitalProductFoundationModule = ({ data }: ProductCardProps) => {
           <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-around' }}>
             {data.course?.map((courseItem: any) => (
               <div style={{marginLeft:'3px'}}>
-                <Popover content={<Box sx={{width:'300px'}}><Typography>{courseItem.text}</Typography>
+                <Popover content={<Box sx={{width:'300px'}}><Typography>{courseItem.shortDesc}</Typography>
                   <Button onClick={() => navigate(`/courses/${courseItem.id}`)}  style={{backgroundColor: '#2a74b1', color: 'white',marginTop:'10px'}}>Read More</Button>
                 </Box>} >
                  {courseItem.title}

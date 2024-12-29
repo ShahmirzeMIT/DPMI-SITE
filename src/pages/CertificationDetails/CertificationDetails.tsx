@@ -12,14 +12,7 @@ import WhatLearnSpf from "../SFP/WhatLearnSpf";
 import DetailCard from "../../componets/DetailCard";
 import { Avatar, Typography } from "antd";
 import Logo from "../../assets/images/detailIcon.png";
-// import RoadmapACPF from '../ACFP/RoadMapACPF';
-// import RoadmapACPP from '../ACPP/RoadMapACPP';
-// import RoadmapDPM from '../DPM/RoadMapDPM';
-// import RoadmapAIPP from '../AIPP/RoadMapAIPP';
-// import RoadmapAIFP from '../AIPF/RoadMapAIPF';
 import CertificationsProgress from "./CertificationsProgress";
-// import { dataDetail } from "../../defaultDatas/detailCourses";
-// import CourseStatus from "../../componets/CourseStatus";
 import CourseCardStatic from "../../componets/CourseCardStatic";
 import StepOver from "./StepOver";
 
