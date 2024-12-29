@@ -111,7 +111,7 @@ export default function Payment() {
       };
       
   return ( 
-    <Box sx={{marginTop:'135px'}}>
+    <Box sx={{marginTop:'135px',}}>
         <TabelPaymet data={tabelValues} columnConfig={columnConfig}/>
     </Box>
   )

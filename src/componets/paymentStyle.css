@@ -1,6 +1,6 @@
 /* paymentStyle.css */
 .ant-table-tbody{
-  background: transparent !important;
+  background: "white";
   padding:'0'
 }
 
@@ -14,7 +14,7 @@
     background-color: #F8F8F8;
     padding:'0 !important';
     margin:'20px 0!important'  ;
-    border-bottom: 50px solid #E9E9E9 !important;
+    border-bottom: 50px solid white !important;
   }
   
   .ant-table {
