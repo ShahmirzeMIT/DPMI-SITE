@@ -1,4 +1,3 @@
-
 import NotFound from "../pages/NotFound/NotFound";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
@@ -23,39 +22,47 @@ import AISimulation from "../pages/LMS/AISimulation";
 import TermsOfUse from "../pages/Terms/TermStatement";
 import PrivacyStatement from "../pages/Terms/Privacy";
 import ClassesDeatil from "../pages/ClassesDetail/ClassesDeatil";
+import ScrollToTop from "./ScrollTop";
 
 export const routes = [
-    {
-        path: '/',
-        element: <App />,
-        errorElement: <NotFound />,
-        children: [
-            { path: "/", element: <HomePagePart2 /> },
-            { path: "/home", element: <HomePagePart2 /> },
-            { path: "/courses", element: <Courses />  },
-            { path: "/courses/:courseId", element: <CourseDetails />, },
-            { path: "/sfp-course", element: <ProductManager />, },
-            {path:"/aisimulation",element:<AISimulation/>},
-            { path: "/dpm-course", element: <DPMI />, },
-            { path: "/aipf-course", element: <AIPF />, },
-            { path: "/aipp-course", element: <AIPP />, },
-            { path: "/acfp-course", element: <ACPF />, },
-            { path: "/acpp-course", element: <ACPP />, },
-            { path: "/elearning", element: <LMS/>, },
-            {path:"/companies",element:<Companies/>, },
-            {path:'/classes',element:<Payment/>},
-            {path:'/classes/:courseId',element:<ClassesDeatil/>},
-            {path:'/payment',element:<PaymentCheck/>},
-            {path:'/paymentprocedd',element:<PaymentProceedd/>},
-            {path:"/certificates",element:<CertificationList/>},
-            {path:'/certificates/:certificateId',element:<CertificationDetails/>},
-            { path: "/ourservices", element: <OurServices /> },
-            { path: "/termofuse", element: <TermsOfUse /> },
-            { path: "/privacy", element: <PrivacyStatement /> },
-            { path: "*", element: <NotFound /> },
-        ]
-    },
-   
+  {
+    path: "/",
+    element: (
+      <>
+        <ScrollToTop />
+        <App />
+      </>
+    ),
+    errorElement: <NotFound />,
+    children: [
+      { path: "/", element: <HomePagePart2 /> },
+      { path: "/home", element: <HomePagePart2 /> },
+      { path: "/courses", element: <Courses /> },
+      { path: "/courses/:courseId", element: <CourseDetails /> },
+      { path: "/sfp-course", element: <ProductManager /> },
+      { path: "/aisimulation", element: <AISimulation /> },
+      { path: "/dpm-course", element: <DPMI /> },
+      { path: "/aipf-course", element: <AIPF /> },
+      { path: "/aipp-course", element: <AIPP /> },
+      { path: "/acfp-course", element: <ACPF /> },
+      { path: "/acpp-course", element: <ACPP /> },
+      { path: "/elearning", element: <LMS /> },
+      { path: "/companies", element: <Companies /> },
+      { path: "/classes", element: <Payment /> },
+      { path: "/classes/:courseId", element: <ClassesDeatil /> },
+      { path: "/payment", element: <PaymentCheck /> },
+      { path: "/paymentprocedd", element: <PaymentProceedd /> },
+      { path: "/certificates", element: <CertificationList /> },
+      {
+        path: "/certificates/:certificateId",
+        element: <CertificationDetails />,
+      },
+      { path: "/ourservices", element: <OurServices /> },
+      { path: "/termofuse", element: <TermsOfUse /> },
+      { path: "/privacy", element: <PrivacyStatement /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
 ];
 
 export const router = createBrowserRouter(routes);

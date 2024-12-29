@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Delius&family=Fira+Code:wght@300..700&display=swap');
+*{
+  font-family: "Cabin", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .step-over-container {
     display: flex;
     justify-content: center;
@@ -5,9 +12,13 @@
     padding: 20px;
     width: 100%;
     height: 60vh;
+
     background-color: #f8f9fa;
   }
-  
+  .step:hover {
+    transform: scale(2.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
   .steps {
     display: flex;
     align-items: center;
@@ -30,21 +41,25 @@
     position: relative;
     z-index: 1;
     transform-origin: center;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
+
+  
   
   .step .icon {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 70px;
   }
   
   .step .title {
     font-size: 18px;
+    font-family: "Delius", serif;
     font-weight: bold;
     margin-bottom: 5px;
   }
   
   .step .description {
     font-size: 14px;
+    font-family: "Delius", serif;
   }
   
   .divider {
@@ -55,6 +70,7 @@
     z-index: 0;
     margin: 0 -20px;
   }
+ 
   
   @media (max-width: 1000px) {
     .step-over-container{
@@ -65,6 +81,10 @@
       align-items: center;
     }
   
+    .step:hover {
+      transform: scale(2.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
     .step {
       transform: none;
       margin-top: 130px; /* Add spacing between steps */

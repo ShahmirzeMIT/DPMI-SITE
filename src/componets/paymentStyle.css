@@ -13,7 +13,8 @@
     width: auto !important;
     background-color: #F8F8F8;
     padding:'0 !important';
-    margin:'20px 0!important'    
+    margin:'20px 0!important'  ;
+    border-bottom: 50px solid #E9E9E9 !important;
   }
   
   .ant-table {
