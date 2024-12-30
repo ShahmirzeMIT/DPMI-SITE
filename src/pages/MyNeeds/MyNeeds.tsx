@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Progress, Switch, Button, Typography } from "antd";
 import { Box } from "@mui/material";
+import MyNeedsPopOver from "./MyNeedsPopOver";
 
 const { Title, Paragraph } = Typography;
 
@@ -56,8 +57,8 @@ const MyNeeds = () => {
     >
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
-        <Title level={3}>Business Requirements Analysis</Title>
-        <Paragraph  style={{background:'white',margin:'0',padding:'20px 0'}}>
+        <Title level={3} style={{fontSize:'28px'}}>Business Requirements Analysis</Title>
+        <Paragraph  style={{background:'white',margin:'0',padding:'20px 10px',textAlign:'left'}}>
           <strong>Anyone</strong> who wants to communicate with the{" "}
           <strong>Development Team</strong> during the Digital Product
           Development Process, the following languages are required.
@@ -88,9 +89,11 @@ const MyNeeds = () => {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
+          // marginTop:'6'
         }}
       >
-        <Title level={4}>Required Skills to overcome with the challanges</Title>
+        <Box sx={{height:'60px'}}></Box>
+        <Title level={4} style={{width:'90%',textAlign:'center'}}>Required Skills to overcome with the challanges</Title>
         {/* Dynamic Progress */}
         <Progress
           type="circle"
@@ -98,20 +101,22 @@ const MyNeeds = () => {
         //   width={200}
           size={220}
           strokeWidth={12}
-          strokeColor="#FFD700"
-          format={(percent) => `${percent}%`}
+          strokeColor="#FCBD06"
+          style={{color:'white'}}
+          format={(percent) => <p style={{color:'black',textAlign:'center',verticalAlign:'center',paddingTop:'20px'}}>{percent}%</p>}
         />
         <Button
           style={{ marginTop: "20px", borderColor: "#2C73B4" ,padding:'10px 40px',color:'#2C73B4'}}
         >
           View All Skills
         </Button>
-        <Button
+        {/* <Button
           type="primary"
           style={{ marginTop: "20px", backgroundColor: "#F96C23", borderColor: "#F96C23", }}
         >
           Check Required Skills
-        </Button>
+        </Button> */}
+       <MyNeedsPopOver/>
       </div>
     </Box>
   );
