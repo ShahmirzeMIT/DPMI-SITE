@@ -1,69 +1,76 @@
 import { Box } from "@mui/material";
-import { Button, Popover } from "antd";
+import { Button } from "antd";
+import { useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
 
-const content = (
-  <Box
-    sx={{
-      width: "100vw", // Full viewport width
-      height: "300px", // Maximum height for the content
-      background: "#f9f9f9", // Light background
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "flex-start", // Align items at the top
-      margin: 0, // Remove any extra margin
-      padding: 0, // Remove any extra padding
-      overflowY: "scroll",
-      overflowX: "hidden", // Enable vertical scrolling
-      "@media (min-width: 768px)": {
-        height: "450px", // Adjust for larger screens
-      },
-      "@media (min-width: 1200px)": {
-        height: "550px", // Adjust for even larger screens
-      },
-    }}
-  >
-    <Box sx={{ width: "100%", padding: "120px" }}>
-      {/* Render multiple accordions */}
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-    </Box>
-  </Box>
-);
-
-// interface MyNeedsPopOverProps{
-//     data:{
-//         title:string;
-        
-//     }
-// }
 export default function MyNeedsPopOver() {
-  return (
-    <Popover
-      content={content}
-      overlayInnerStyle={{
-        padding: 0, // Remove padding inside the popover
-        borderRadius: 0, // Optional: Remove border radius
-        backgroundColor: "transparent", // Ensure the popover background matches the content
+  const [visible, setVisible] = useState(false); // Popoverun görünüş vəziyyətini idarə et
+
+  const closePopover = () => {
+    setVisible(false); // Popoveru bağlayır
+  };
+
+  const content = (
+    <Box
+      sx={{
+        position: "fixed", // Sabit yer tutur
+        top: 30,
+        left: 0,
+        width: "100vw", // Tam ekranın eni
+        height: "100vh", // Tam ekranın hündürlüyü
+        background: "#f9f9f9", // Açıq rəngdə fon
+        zIndex: 1000, // Üstünlük verilir
+        display: "flex",
+        flexDirection: "column", // X düyməsini və məzmunu vertikal düz
+        alignItems: "center",
+        justifyContent: "flex-start", // Üst hissədən başlayır
+        padding: "20px",
+        overflowY: "scroll", // Şaquli skrol aktiv
+        overflowX: "hidden", // Üfüqi skrol deaktiv
       }}
-      overlayStyle={{
-        width: "100vw", // Ensure the popover takes the full screen width
-        maxWidth: "none", // Disable max-width limitation
-        left: 0, // Ensure it aligns with the left edge of the screen
-        right: 0, // Ensure it aligns with the right edge of the screen
-      }}
-      trigger="click" // Optional: Trigger the popover on click
     >
+      {/* Close Button */}
+     
+
+      {/* Accordion content */}
+      <Box sx={{ width: "100%", padding: "20px" }}>
+        <Box sx={{textAlign:'right'}}>
+        <Button 
+      type="primary"
+        danger
+        onClick={closePopover}
+        style={{
+          alignSelf: "flex-end", // Sağ üstə hizalanır
+          fontSize: "24px",
+          color: "white",
+          cursor: "pointer",
+          marginTop:'100px'
+        }}
+      >
+        X
+      </Button>
+        </Box>
+      
+        {/* Render multiple accordions */}
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+        <HeaderWithAccordion />
+      </Box>
+    </Box>
+  );
+
+  return (
+    <>
+      {/* Popover düyməsi */}
       <Button
         type="primary"
+        onClick={() => setVisible(true)} // Popoveru açır
         style={{
           marginTop: "20px",
           backgroundColor: "#F96C23",
@@ -73,6 +80,9 @@ export default function MyNeedsPopOver() {
       >
         Check Required Skills
       </Button>
-    </Popover>
+
+      {/* Şərtli Popover */}
+      {visible && content}
+    </>
   );
 }

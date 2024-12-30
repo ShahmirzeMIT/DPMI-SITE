@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
 import MyNeedsPopOver from "./MyNeedsPopOver";
@@ -29,6 +29,7 @@ const MyNeeds = ({
 }: MyNeedProps) => {
   const challenges = data.Challenges || [];
   const [isExpanded, setIsExpanded] = useState(false);
+  const [percent, setPercent] = useState(100);
 
   // Assign a percentage to each challenge
   const challengesWithPercentages: (Challenge & { percentage: number })[] =
@@ -49,16 +50,22 @@ const MyNeeds = ({
     }, {} as Record<string, boolean>)
   );
 
-  // Calculate total progress
-  const calculateTotal = () => {
+  // Calculate total progress using useEffect
+  useEffect(() => {
+    if (challengesWithPercentages.length === 0) {
+      setPercent(100); // If no challenges, set progress to 100%
+      return;
+    }
+
     const completedCount = challengesWithPercentages.reduce(
       (acc, challenge) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
       0
     );
     const total =
       100 - (completedCount * 100) / challengesWithPercentages.length;
-    return total;
-  };
+
+    setPercent(total);
+  }, [completedChallenges, challengesWithPercentages]);
 
   // Toggle challenge completion state
   const toggleChallenge = (id: string) => {
@@ -102,22 +109,20 @@ const MyNeeds = ({
   sx={{
     background: "white",
     padding: "20px 10px",
-    maxHeight: isExpanded ? "none" : "350px",
-    overflow: "hidden",
     position: "relative",
-    boxShadow: isExpanded
-      ? "none"
-      : "", // Daha təbii bir kölgə effekti
-    transition: "all 0.3s ease-in-out",
+    overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
+    height: isExpanded ? "auto" : "350px", // Hündürlüyü dəyiş
     cursor: "pointer",
     "&::after": {
-      content: '""',
+      content: isExpanded ? '""' : '""',
       position: "absolute",
       left: 0,
       bottom: 0,
       width: "100%",
-      height: "40px", // Kölgənin hündürlüyü
-      background:isExpanded?"": "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.3) 100%)", // Daha təbii kölgə rəngi
+      height: isExpanded ? "0" : "90px", // Şəffaflığın görünüşü
+      background: isExpanded
+        ? ""
+        : "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%)",
       zIndex: 1,
       pointerEvents: "none",
     },
@@ -147,6 +152,22 @@ const MyNeeds = ({
       </span>
     </div>
   ))}
+  {!isExpanded && (
+    <Typography
+      style={{ color: "blue", cursor: "pointer", textAlign: "center" }}
+      onClick={() => setIsExpanded(true)}
+    >
+      Show More...
+    </Typography>
+  )}
+  {isExpanded && (
+    <Typography
+      style={{ color: "blue", cursor: "pointer", textAlign: "center" }}
+      onClick={() => setIsExpanded(false)}
+    >
+      Show Less...
+    </Typography>
+  )}
 </Box>
 
       </div>
@@ -167,7 +188,7 @@ const MyNeeds = ({
         {/* Dynamic Progress */}
         <Progress
           type="circle"
-          percent={calculateTotal()}
+          percent={percent}
           size={220}
           strokeWidth={12}
           strokeColor="#FCBD06"
@@ -185,7 +206,7 @@ const MyNeeds = ({
             </p>
           )}
         />
-        <MyOwnNeedsPopOver />
+        {percent !== 100 ? <MyOwnNeedsPopOver /> : ""}
         <MyNeedsPopOver />
       </div>
     </Box>
