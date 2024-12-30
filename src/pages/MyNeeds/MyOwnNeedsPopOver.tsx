@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Button, Popover } from "antd";
-import HeaderWithAccordion from "./MyNeedsAccordion";
+// import HeaderWithAccordion from "./MyNeedsAccordion";
 
 const content = (
   <Box
@@ -13,8 +13,7 @@ const content = (
       alignItems: "flex-start", // Align items at the top
       margin: 0, // Remove any extra margin
       padding: 0, // Remove any extra padding
-      overflowY: "scroll",
-      overflowX: "hidden", // Enable vertical scrolling
+      overflowY: "scroll", // Enable vertical scrolling
       "@media (min-width: 768px)": {
         height: "450px", // Adjust for larger screens
       },
@@ -24,17 +23,8 @@ const content = (
     }}
   >
     <Box sx={{ width: "100%", padding: "120px" }}>
-      {/* Render multiple accordions */}
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
-      <HeaderWithAccordion />
+      Render multiple accordions
+    
     </Box>
   </Box>
 );
@@ -45,7 +35,7 @@ const content = (
         
 //     }
 // }
-export default function MyNeedsPopOver() {
+export default function MyOwnNeedsPopOver() {
   return (
     <Popover
       content={content}
@@ -65,13 +55,14 @@ export default function MyNeedsPopOver() {
       <Button
         type="primary"
         style={{
-          marginTop: "20px",
-          backgroundColor: "#F96C23",
-          borderColor: "#F96C23",
-          padding: "10px 20px",
-        }}
+            marginTop: "20px",
+          backgroundColor: "white",
+          borderColor: "#2A73B1",
+          padding: "15px 25px",
+          color:'#2A73B1'
+          }}
       >
-        Check Required Skills
+        You own all skills 😃
       </Button>
     </Popover>
   );

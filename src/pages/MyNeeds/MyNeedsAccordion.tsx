@@ -1,26 +1,29 @@
-import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, Button } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useState } from "react";
+import { Box, Typography, Card, CardContent, Button } from "@mui/material";
 
-export default function HeaderWithAccordion() {
-  const [expanded, setExpanded] = useState<string | false>(false);
-
-  // Example accordion data
-  const accordionData = [
-    { id: "1", title: "Tələbin 1", content: "Bu, 1-ci tələbin geniş məzmunudur." },
-    { id: "2", title: "Tələbin 2", content: "Bu, 2-ci tələbin geniş məzmunudur." },
-    { id: "3", title: "Tələbin 3", content: "Bu, 3-cü tələbin geniş məzmunudur." },
+export default function HeaderWithCards() {
+  // Example card data
+  const cardData = [
+    {
+      id: "1",
+      title: "Tələbin 1",
+      content: "Bu, 1-ci tələbin geniş məzmunudur.",
+    },
+    {
+      id: "2",
+      title: "Tələbin 2",
+      content: "Bu, 2-ci tələbin geniş məzmunudur.",
+    },
+    {
+      id: "3",
+      title: "Tələbin 3",
+      content: "Bu, 3-cü tələbin geniş məzmunudur.",
+    },
   ];
-
-  // Handle accordion changes
-  const handleAccordionChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false);
-  };
 
   return (
     <Box
       sx={{
-        width: "100vw", // Full viewport width
+        width: "99vw", // Full viewport width
         minHeight: "10vh", // Full viewport height
         backgroundColor: "#f9f9f9", // Light background
         display: "flex",
@@ -42,68 +45,52 @@ export default function HeaderWithAccordion() {
         Proqramlaşdırma Komandası ilə Ünsiyyət
       </Typography>
 
-      {/* Accordion Section */}
+      {/* Card Section */}
       <Box
         sx={{
           width: "90%",
           maxWidth: "600px",
-          borderRadius: "8px",
-        //   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          padding: "20px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px", // Space between cards
         }}
       >
-        {accordionData.map((item) => (
-          <Accordion
+        {cardData.map((item) => (
+          <Card
             key={item.id}
-            expanded={expanded === item.id}
-            onChange={handleAccordionChange(item.id)}
             sx={{
-              marginTop: "20px", // Space between accordion items
-              borderRadius: "8px", // Optional rounded corners
-              border: "1px solid #f0f0f0", // Border around accordion
-            //   boxShadow: "none", // No box shadow
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              "&:before": {
-                display: "none", // Remove default divider
+              border: "1px solid #f0f0f0", // Border for cards
+              borderRadius: "8px", // Rounded corners
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow
+              "&:hover": {
+                transform: "scale(1.01)", // Subtle hover effect
+                transition: "transform 0.3s ease-in-out",
               },
             }}
           >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+            <CardContent
               sx={{
-                backgroundColor: "white", // Light background for summary
-                "&:hover": {
-                  transform: "scale(1.002)", // Hover effect
-                  transition: "transform 0.3s ease-in-out",
-                },
+                padding: "16px", // Adjust padding to match accordion
+                minHeight: "10px", // Ensure consistent height
               }}
             >
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  color: "#333", // Dark text color
-                }}
-              >
-                {item.title}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>{item.content}</Typography>
+              <Box sx={{ display: "flex", justifyContent: "space-between" ,alignItems:'center'}}>
+                <Typography
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#333", // Dark text color for title
+                    //   marginBottom: "8px",
+                    fontSize: "18px",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+                <Button style={{background:'#1976d2',color:'white'}}>More Info</Button>
+              </Box>
+
               {/* More button */}
-              <Button
-                onClick={() => alert("Daha ətraflı məlumat...")}
-                sx={{
-                  marginTop: "10px",
-                  padding: 0,
-                  color: "#F96C23",
-                  fontWeight: "bold",
-                  textTransform: "none", // Remove uppercase text
-                }}
-              >
-                Daha çox...
-              </Button>
-            </AccordionDetails>
-          </Accordion>
+            </CardContent>
+          </Card>
         ))}
       </Box>
     </Box>

@@ -1,50 +1,77 @@
 import { useState } from "react";
-import { Progress, Switch, Button, Typography } from "antd";
+import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
 import MyNeedsPopOver from "./MyNeedsPopOver";
+import MyOwnNeedsPopOver from "./MyOwnNeedsPopOver";
 
 const { Title, Paragraph } = Typography;
 
-const MyNeeds = () => {
-  // Array of languages
-  const languages = [
-    { key: "form", name: "The Language of Form", percentage: 30 },
-    { key: "userStory", name: "The Language of User Story", percentage: 30 },
-    { key: "data", name: "The Language of Data", percentage: 20 },
-    { key: "dataOrientedProgramming", name: "The Language of Data Oriented Programming", percentage: 20 },
-  ];
+interface Challenge {
+  Id: string;
+  ChallengeName: string;
+  FkChallengesGroupId: string;
+  LongDesc: string;
+  ShortDesc: string;
+}
 
-  // Switch state for each language
-  const [levels, setLevels] = useState({
-    form: false,
-    userStory: false,
-    data: false,
-    dataOrientedProgramming: false,
-  });
+interface MyNeedProps {
+  data?: {
+    GroupName: string;
+    ShortDesc: string;
+    Id: string;
+    ImgUrl: string;
+    Challenges?: Challenge[];
+  };
+}
 
-  // Calculate the total progress
+const MyNeeds = ({
+  data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Challenges: [] },
+}: MyNeedProps) => {
+  const challenges = data.Challenges || [];
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Assign a percentage to each challenge
+  const challengesWithPercentages: (Challenge & { percentage: number })[] =
+    challenges.length > 0
+      ? challenges.map((challenge) => ({
+          ...challenge,
+          percentage: Math.floor(100 / challenges.length), // Distribute percentage equally
+        }))
+      : [];
+
+  // Switch state for each challenge
+  const [completedChallenges, setCompletedChallenges] = useState<
+    Record<string, boolean>
+  >(
+    challenges.reduce((acc, challenge) => {
+      acc[challenge.Id] = false; // Initialize all challenges as incomplete
+      return acc;
+    }, {} as Record<string, boolean>)
+  );
+
+  // Calculate total progress
   const calculateTotal = () => {
-    let total = 100; // Start with 100%.
-    languages.forEach((lang) => {
-      if (levels[lang.key as keyof typeof levels]) { // Check the value of the corresponding key
-        total -= lang.percentage; // Add percentage if checked
-      }
-    });
+    const completedCount = challengesWithPercentages.reduce(
+      (acc, challenge) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
+      0
+    );
+    const total =
+      100 - (completedCount * 100) / challengesWithPercentages.length;
     return total;
   };
 
-  // Toggle the switch state
-  const toggleLevel = (key: string) => {
-    setLevels((prev) => ({
+  // Toggle challenge completion state
+  const toggleChallenge = (id: string) => {
+    setCompletedChallenges((prev) => ({
       ...prev,
-      [key]: !prev[key as keyof typeof prev], // Toggle the state
+      [id]: !prev[id],
     }));
   };
 
   return (
     <Box
       sx={{
-        display:{sx:'block',md:'flex'},
+        display: { xs: "block", md: "flex" },
         justifyContent: "space-between",
         alignItems: "flex-start",
         maxWidth: "1200px",
@@ -57,29 +84,71 @@ const MyNeeds = () => {
     >
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
-        <Title level={3} style={{fontSize:'28px'}}>Business Requirements Analysis</Title>
-        <Paragraph  style={{background:'white',margin:'0',padding:'20px 10px',textAlign:'left'}}>
-          <strong>Anyone</strong> who wants to communicate with the{" "}
-          <strong>Development Team</strong> during the Digital Product
-          Development Process, the following languages are required.
+        <Title level={3} style={{ fontSize: "28px" }}>
+          {data.GroupName}
+        </Title>
+        <Paragraph
+          style={{
+            background: "white",
+            margin: "0",
+            padding: "20px 10px",
+            textAlign: "left",
+          }}
+        >
+          {data.ShortDesc}
         </Paragraph>
-        {/* Dynamic Switches */}
-        <Box sx={{background:'white',padding:'20px 10px'}}>
-        {languages.map((lang) => (
-          <div
-            key={lang.key}
-            style={{ marginBottom: "15px", display: "flex", alignItems: "center" }}
-          >
-            <Switch
-              checked={levels[lang.key as keyof typeof levels]}
-              onChange={() => toggleLevel(lang.key)}
-              style={{ marginRight: "10px" }}
-            />
-            <span style={{ fontSize: "16px", color: "#333" }}>{lang.name}</span>
-          </div>
-        ))}
-        </Box>
-       
+        {/* Dynamic Challenge Switches */}
+        <Box
+  sx={{
+    background: "white",
+    padding: "20px 10px",
+    maxHeight: isExpanded ? "none" : "350px",
+    overflow: "hidden",
+    position: "relative",
+    boxShadow: isExpanded
+      ? "none"
+      : "", // Daha təbii bir kölgə effekti
+    transition: "all 0.3s ease-in-out",
+    cursor: "pointer",
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      left: 0,
+      bottom: 0,
+      width: "100%",
+      height: "40px", // Kölgənin hündürlüyü
+      background:isExpanded?"": "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.3) 100%)", // Daha təbii kölgə rəngi
+      zIndex: 1,
+      pointerEvents: "none",
+    },
+  }}
+>
+  {challengesWithPercentages.map((challenge) => (
+    <div
+      key={challenge.Id}
+      style={{
+        marginBottom: "15px",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Switch
+        checked={completedChallenges[challenge.Id]}
+        onChange={() => toggleChallenge(challenge.Id)}
+        style={{ marginRight: "10px" }}
+      />
+      <span
+        style={{ fontSize: "16px", color: "#333", textAlign: "start" }}
+        onClick={() => {
+          setIsExpanded(!isExpanded);
+        }}
+      >
+        {challenge.ChallengeName}
+      </span>
+    </div>
+  ))}
+</Box>
+
       </div>
 
       {/* Right Section */}
@@ -89,34 +158,35 @@ const MyNeeds = () => {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          // marginTop:'6'
         }}
       >
-        <Box sx={{height:'60px'}}></Box>
-        <Title level={4} style={{width:'90%',textAlign:'center'}}>Required Skills to overcome with the challanges</Title>
+        <Box sx={{ height: "60px" }}></Box>
+        <Title level={4} style={{ width: "90%", textAlign: "center" }}>
+          Required Skills to Overcome the Challenges
+        </Title>
         {/* Dynamic Progress */}
         <Progress
           type="circle"
           percent={calculateTotal()}
-        //   width={200}
           size={220}
           strokeWidth={12}
           strokeColor="#FCBD06"
-          style={{color:'white'}}
-          format={(percent) => <p style={{color:'black',textAlign:'center',verticalAlign:'center',paddingTop:'20px'}}>{percent}%</p>}
+          style={{ color: "white" }}
+          format={(percent) => (
+            <p
+              style={{
+                color: "black",
+                textAlign: "center",
+                verticalAlign: "center",
+                paddingTop: "20px",
+              }}
+            >
+              {percent?.toFixed(0)}%
+            </p>
+          )}
         />
-        <Button
-          style={{ marginTop: "20px", borderColor: "#2C73B4" ,padding:'10px 40px',color:'#2C73B4'}}
-        >
-          View All Skills
-        </Button>
-        {/* <Button
-          type="primary"
-          style={{ marginTop: "20px", backgroundColor: "#F96C23", borderColor: "#F96C23", }}
-        >
-          Check Required Skills
-        </Button> */}
-       <MyNeedsPopOver/>
+        <MyOwnNeedsPopOver />
+        <MyNeedsPopOver />
       </div>
     </Box>
   );
