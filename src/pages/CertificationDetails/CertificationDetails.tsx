@@ -50,9 +50,9 @@ export default function CertificationDetails() {
             image: selectedData.image,
           }}
         />
-        <Box sx={{height:"340px", backgroundColor:"#F9FAFC"}}>
+        {/* <Box sx={{height:"340px", backgroundColor:"#F9FAFC"}}>
 
-        </Box>
+        </Box> */}
         {/* <Box sx={{ }}>
            <StepOver/>
         </Box> */}

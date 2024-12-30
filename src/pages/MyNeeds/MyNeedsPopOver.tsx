@@ -3,9 +3,14 @@ import { useEffect, useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
+interface CardDataProps {
+  requestData:string[],
+  title:string
+}
 
-
-export default function MyNeedsModal() {
+export default function MyNeedsModal({ requestData,title }: CardDataProps) {
+  console.log(requestData, "requestData");
+  
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,9 +36,10 @@ export default function MyNeedsModal() {
         onClick={handleOpen}
         style={{
           marginTop: "20px",
-          backgroundColor: "#F96C23",
-          borderColor: "#F96C23",
+          // backgroundColor: "",
+          borderColor: "#F96C21",
           padding: "10px 20px",
+          backgroundColor: "#F96C21",
         }}
       >
         Check Required Skills
@@ -50,8 +56,8 @@ export default function MyNeedsModal() {
         
         </Box> */}
         <>
-        <Box sx={{background:'#F9F9F9',textAlign:'end'}}><Button onClick={handleClose} style={{color:'red'}}>X</Button></Box>
-        <HeaderWithAccordion  cardData={data}/>
+        <Box sx={{background:'#F9F9F9',textAlign:'end'}}><Button onClick={handleClose} type="primary" danger style={{marginTop:'40px',marginRight:'40px'}}>X</Button></Box>
+        <HeaderWithAccordion  cardData={data} title={data.title}/>
         </>
           
 

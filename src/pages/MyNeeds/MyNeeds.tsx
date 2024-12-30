@@ -9,7 +9,7 @@ const { Title, Paragraph } = Typography;
 interface Challenge {
   Id: string;
   ChallengeName: string;
-  FkChallengesGroupId: string;
+  Challenges: string;
   LongDesc: string;
   ShortDesc: string;
 }
@@ -29,6 +29,7 @@ const MyNeeds = ({
 }: MyNeedProps) => {
   const challenges = data.Challenges || [];
   const [isExpanded, setIsExpanded] = useState(false);
+  const [takeId, setTakeId] = useState([]);
   const [percent, setPercent] = useState(100);
 
   // Assign a percentage to each challenge
@@ -73,6 +74,16 @@ const MyNeeds = ({
       ...prev,
       [id]: !prev[id],
     }));
+
+    setTakeId((prev:any) => {
+      if (prev.includes(id)) {
+        return prev.filter((existingId : any ) => existingId !== id);
+      } else {
+        return [...prev, id];
+      }
+    });
+    // const filteredData=data.Challenges.filter((item)=>item.Challenges==id )
+    // console.log(filteredData,'filteredData')
   };
 
   return (
@@ -106,71 +117,77 @@ const MyNeeds = ({
         </Paragraph>
         {/* Dynamic Challenge Switches */}
         <Box
-  sx={{
-    background: "white",
-    padding: "20px 10px",
-    position: "relative",
-    overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
-    height: isExpanded ? "auto" : "350px", // Hündürlüyü dəyiş
-    cursor: "pointer",
-    "&::after": {
-      content: isExpanded ? '""' : '""',
-      position: "absolute",
-      left: 0,
-      bottom: 0,
-      width: "100%",
-      height: isExpanded ? "0" : "90px", // Şəffaflığın görünüşü
-      // background: isExpanded
-      //   ? ""
-      //   : "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%)",
-      zIndex: 1,
-      pointerEvents: "none",
-    },
-  }}
->
-{!isExpanded && (
-    <Typography
-      style={{ color: "blue", cursor: "pointer", textAlign: "center",position:'absolute',bottom:0,left:'40%' }}
-      onClick={() => setIsExpanded(true)}
-    >
-      Show More...
-    </Typography>
-  )}
-  {challengesWithPercentages.map((challenge) => (
-    <div
-      key={challenge.Id}
-      style={{
-        marginBottom: "15px",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <Switch
-        checked={completedChallenges[challenge.Id]}
-        onChange={() => toggleChallenge(challenge.Id)}
-        style={{ marginRight: "10px" }}
-      />
-      <span
-        style={{ fontSize: "16px", color: "#333", textAlign: "start" }}
-        // onClick={() => {
-        //   setIsExpanded(!isExpanded);
-        // }}
-      >
-        {challenge.ChallengeName}
-      </span>
-    </div>
-  ))}
- 
-  {isExpanded && (
-    <Typography
-      style={{ color: "blue", cursor: "pointer", textAlign: "center" }}
-      onClick={() => setIsExpanded(false)}
-    >
-      Show Less...
-    </Typography>
-  )}
-</Box>
+          sx={{
+            background: "white",
+            padding: "20px 10px",
+            position: "relative",
+            overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
+            height: isExpanded ? "auto" : "360px", // Hündürlüyü dəyiş
+            cursor: "pointer",
+            "&::after": {
+              content: isExpanded ? '""' : '""',
+              position: "absolute",
+              left: 0,
+              bottom: 0,
+              width: "100%",
+              height: isExpanded ? "0" : "40px", // Şəffaflığın görünüşü
+              background: isExpanded
+                ? ""
+                : "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%)",
+              zIndex: 1,
+              pointerEvents: "none",
+            },
+          }}
+        >
+          {!isExpanded && (
+            <Typography
+              style={{
+                color: "blue",
+                cursor: "pointer",
+                textAlign: "center",
+                position: "absolute",
+                bottom: 0,
+                left: "40%",
+              }}
+              onClick={() => setIsExpanded(true)}
+            >
+              Show More...
+            </Typography>
+          )}
+          {challengesWithPercentages.map((challenge) => (
+            <div
+              key={challenge.Id}
+              style={{
+                marginBottom: "15px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Switch
+                checked={completedChallenges[challenge.Id]}
+                onChange={() => toggleChallenge(challenge.Id)}
+                style={{ marginRight: "10px" }}
+              />
+              <span
+                style={{ fontSize: "16px", color: "#333", textAlign: "start" }}
+                // onClick={() => {
+                //   setIsExpanded(!isExpanded);
+                // }}
+              >
+                {challenge.ChallengeName}
+              </span>
+            </div>
+          ))}
 
+          {isExpanded && (
+            <Typography
+              style={{ color: "blue", cursor: "pointer", textAlign: "center" }}
+              onClick={() => setIsExpanded(false)}
+            >
+              Show Less...
+            </Typography>
+          )}
+        </Box>
       </div>
 
       {/* Right Section */}
@@ -207,15 +224,16 @@ const MyNeeds = ({
             </p>
           )}
         />
-       
-        {
-          percent==100?  <Box sx={{ color:'#2A73B1',paddingTop:'20px'}}> You own all skills 😃</Box>:<MyNeedsPopOver />
-        }
-        <MyOwnNeedsPopOver />
-        
 
-        
-        
+        {percent == 100 ? (
+          <Box sx={{ color: "#2A73B1", paddingTop: "20px" }}>
+            {" "}
+            You own all skills 😃
+          </Box>
+        ) : (
+          <MyNeedsPopOver requestData={takeId}  />
+        )}
+        <MyOwnNeedsPopOver />
       </div>
     </Box>
   );

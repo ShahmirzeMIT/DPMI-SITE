@@ -1,30 +1,34 @@
 import { Box, Typography, Card, CardContent, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+
 interface CardData {
   cardData: {
     SkillName: string;
     FkCourseId: number;
   }[];
+  title:string
 }
 
-export default function HeaderWithCards({ cardData }: CardData) {
+export default function HeaderWithCards({ cardData,title }: CardData) {
   const navigate = useNavigate();
+
   if (!cardData || cardData.length === 0) {
     return (
       <Box
         sx={{
-          width: "100vw", // Full viewport width
-          minHeight: "10vh", // Full viewport height
-          backgroundColor: "#f9f9f9", // Light background
+          width: "100vw",
+          minHeight: "10vh",
+          backgroundColor: "#f9f9f9",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          opacity: "0.6",
           padding: "20px 0",
         }}
       >
         <Typography
           sx={{
-            color: "#F96C23", // Orange text color for the header
+            color: "#F96C23",
             fontSize: "24px",
             fontWeight: "bold",
             textAlign: "center",
@@ -40,28 +44,26 @@ export default function HeaderWithCards({ cardData }: CardData) {
   return (
     <Box
       sx={{
-        width: "100vw", // Full viewport width
-        // minHeight: "10vh", // Full viewport height
-        backgroundColor: "#f9f9f9", // Light background
+        width: "100vw",
+        backgroundColor: "#f9f9f9",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         padding: "20px 0",
-        // position:"absolute",
-        top:'60px'
+        top: "60px",
       }}
     >
       {/* Header */}
       <Typography
         sx={{
-          color: "#F96C23", // Orange text color for the header
+          color: "#F96C23",
           fontSize: "24px",
           fontWeight: "bold",
           textAlign: "center",
           marginBottom: "20px",
         }}
       >
-        Proqramlaşdırma Komandası ilə Ünsiyyət
+        {title}
       </Typography>
 
       {/* Card Section */}
@@ -71,26 +73,26 @@ export default function HeaderWithCards({ cardData }: CardData) {
           maxWidth: "900px",
           display: "flex",
           flexDirection: "column",
-          gap: "20px", // Space between cards
+          gap: "20px",
         }}
       >
         {cardData.map((item) => (
           <Card
-            key={item.FkCourseId} // Unique key for each card
+            key={item.FkCourseId}
             sx={{
-              border: "1px solid #f0f0f0", // Border for cards
-              borderRadius: "8px", // Rounded corners
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow
+              border: "1px solid #f0f0f0",
+              borderRadius: "8px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
               "&:hover": {
-                transform: "scale(1.01)", // Subtle hover effect
+                transform: "scale(1.01)",
                 transition: "transform 0.3s ease-in-out",
               },
             }}
           >
             <CardContent
               sx={{
-                padding: "16px", // Adjust padding to match accordion
-                minHeight: "10px", // Ensure consistent height
+                padding: "16px",
+                minHeight: "10px",
               }}
             >
               <Box
@@ -103,12 +105,12 @@ export default function HeaderWithCards({ cardData }: CardData) {
                 <Typography
                   sx={{
                     fontWeight: "bold",
-                    color: "#333", // Dark text color for title
+                    color: "#333",
                     fontSize: "18px",
                     whiteSpace: "wrap",
                   }}
                 >
-                  {item.SkillName} {/* Display card title */}
+                  {item.SkillName}
                 </Typography>
                 <Box sx={{ display: "flex", gap: "10px" }}>
                   <Button
@@ -120,7 +122,7 @@ export default function HeaderWithCards({ cardData }: CardData) {
                       fontSize: "12px",
                     }}
                     onClick={() => {
-                      navigate(`/courses/${item.FkCourseId}`);
+                      window.open(`/courses/${item.FkCourseId}`, "_blank");
                     }}
                   >
                     Course Info
@@ -133,8 +135,9 @@ export default function HeaderWithCards({ cardData }: CardData) {
                       height: "40px",
                       fontSize: "12px",
                     }}
+                    onClick={navigate('/classes')}
                   >
-                    More Info
+                   Find Classes
                   </Button>
                 </Box>
               </Box>
