@@ -1,59 +1,52 @@
-import { Box } from "@mui/material";
-import { Button, Popover } from "antd";
-// import HeaderWithAccordion from "./MyNeedsAccordion";
+import { Modal, Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import HeaderWithAccordion from "./MyNeedsAccordion";
+import { callApi } from "../../utils/callApi";
+import { Button } from "antd";
 
-const content = (
-  <Box
-    sx={{
-      width: "100vw", // Full viewport width
-      height: "300px", // Maximum height for the content
-      background: "#f9f9f9", // Light background
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "flex-start", // Align items at the top
-      margin: 0, // Remove any extra margin
-      padding: 0, // Remove any extra padding
-      overflowY: "scroll", // Enable vertical scrolling
-      "@media (min-width: 768px)": {
-        height: "450px", // Adjust for larger screens
-      },
-      "@media (min-width: 1200px)": {
-        height: "550px", // Adjust for even larger screens
-      },
-    }}
-  >
-    <Box sx={{ width: "100%", padding: "120px" }}>
-      Render multiple accordions
+interface CardDataProps {
+  requestData: string[];
+  title: string;
+  Challenges: any[];
+}
+
+export default function MyOwnNeedsModalPopOver({ requestData, Challenges }: CardDataProps) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const [changTitle, setChangTitle] = useState("");
+  const handleClose = () => setOpen(false);
+  const [data, setData] = useState([]);
+
+
+  const getData = async () => {
+    const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
+      FkChallengesId: "1",
+    });
+    setData(response);
+  };
+
+  useEffect(() => {
+    getData();
     
-    </Box>
-  </Box>
-);
+  }, []);
+  useEffect(() => {
+    if (requestData.length > 0) {
+      // Filter items where Id matches "1"
+      const filteredData = Challenges.filter((item:any) => item.Id === "1");
+      console.log(filteredData, "filteredData");
+      setChangTitle(filteredData[0]?.ChallengeName || "");
+      // Optionally update the state if needed
+      // setChangTitle(filteredData[0]?.ChallengeName || "");
+    }
+  }, [requestData]);
+  
 
-// interface MyNeedsPopOverProps{
-//     data:{
-//         title:string;
-        
-//     }
-// }
-export default function MyOwnNeedsPopOver() {
   return (
-    <Popover
-      content={content}
-      overlayInnerStyle={{
-        padding: 0, // Remove padding inside the popover
-        borderRadius: 0, // Optional: Remove border radius
-        backgroundColor: "transparent", // Ensure the popover background matches the content
-      }}
-      overlayStyle={{
-        width: "100vw", // Ensure the popover takes the full screen width
-        maxWidth: "none", // Disable max-width limitation
-        left: 0, // Ensure it aligns with the left edge of the screen
-        right: 0, // Ensure it aligns with the right edge of the screen
-      }}
-      trigger="click" // Optional: Trigger the popover on click
-    >
+    <>
+      {/* Button to open the modal */}
       <Button
         type="primary"
+        onClick={handleOpen}
         style={{
             marginTop: "20px",
           backgroundColor: "white",
@@ -64,6 +57,18 @@ export default function MyOwnNeedsPopOver() {
       >
        Show all skills 
       </Button>
-    </Popover>
+
+      <Modal open={open} onClose={handleClose}>
+        <>
+      
+
+          {/* Spacer to Account for Fixed Header */}
+          <Box sx={{ height: "30px" }}></Box>
+
+          {/* Accordion Section */}
+          <HeaderWithAccordion cardData={data} title={changTitle} handleClose={handleClose}  />
+        </>
+      </Modal>
+    </>
   );
 }

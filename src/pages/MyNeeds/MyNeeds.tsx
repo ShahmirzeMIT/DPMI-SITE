@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
 import MyNeedsPopOver from "./MyNeedsPopOver";
-import MyOwnNeedsPopOver from "./MyOwnNeedsPopOver";
+import MyOwnNeedsModalPopOver from "./MyOwnNeedsPopOver";
 
 const { Title, Paragraph } = Typography;
 
@@ -133,7 +133,7 @@ const MyNeeds = ({
             },
           }}
         >
-          {!isExpanded && (
+          {   !isExpanded && (
             <Typography
               style={{
                 color: "blue",
@@ -141,6 +141,7 @@ const MyNeeds = ({
                 textAlign: "center",
                 position: "absolute",
                 bottom: 0,
+                display:data.Challenges.length>0 ? "block" : "none",
                 left: "40%",
               }}
               onClick={() => setIsExpanded(true)}
@@ -227,7 +228,7 @@ const MyNeeds = ({
         ) : (
           <MyNeedsPopOver requestData={takeId}   title={"hjdasj"}  Challenges={data.Challenges}/>
         )}
-        <MyOwnNeedsPopOver />
+        <MyOwnNeedsModalPopOver requestData={takeId} Challenges={data.Challenges} title={""}   />
       </div>
     </Box>
   );

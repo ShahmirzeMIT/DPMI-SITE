@@ -7,10 +7,10 @@ import { Button } from "antd";
 interface CardDataProps {
   requestData: string[];
   title: string;
-  Challenges: any[];
+  Challenges: [];
 }
 
-export default function MyNeedsModal({ requestData, Challenges }: CardDataProps) {
+export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const [changTitle, setChangTitle] = useState("");
@@ -20,28 +20,32 @@ export default function MyNeedsModal({ requestData, Challenges }: CardDataProps)
 
   const getData = async () => {
     const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
-      FkChallengesId: "1",
+      FkChallengesId: requestData,
     });
-    setData(response);
+
+    const challanges= await callApi('/lms/main/myneeds/challenges/list')
+    const updatedData=challanges.map((item:any)=>({
+      ...item,
+      Chanllanges:response.filter((challengeResponse:any)=>challengeResponse.FkChallengesId==item.Id)
+    }))
+    
+    console.log(updatedData,'updatedData');
+    
+    setData(updatedData);
   };
 
   useEffect(() => {
     getData();
     
-  }, []);
-  useEffect(() => {
-    if (requestData.length > 0) {
-      // Filter items where Id matches "1"
-      const filteredData = Challenges.filter((item:any) => item.Id === "1");
-      console.log(filteredData, "filteredData");
-      setChangTitle(filteredData[0]?.ChallengeName || "");
-      // Optionally update the state if needed
-      // setChangTitle(filteredData[0]?.ChallengeName || "");
-    }
   }, [requestData]);
+ 
   
-
-  console.log(Challenges,requestData, "Challenges");
+const checkData=data.map((item:any)=>{
+  // console.log(item,'item');
+  
+  return item
+})
+console.log(checkData,'checkData');
 
   return (
     <>
@@ -67,7 +71,22 @@ export default function MyNeedsModal({ requestData, Challenges }: CardDataProps)
           <Box sx={{ height: "30px" }}></Box>
 
           {/* Accordion Section */}
-          <HeaderWithAccordion cardData={data} title={changTitle} handleClose={handleClose}  />
+          <Box sx={{ maxHeight: "85vh",
+        overflowY: "scroll",
+        position: "relative",}}>
+{
+            data.map((item: any, index: number) => (
+              <HeaderWithAccordion
+                key={index}
+                cardData={item.Chanllanges}
+                title={item.ChallengeName}
+                handleClose={handleClose}
+              />
+            ))
+          }
+          </Box>
+          
+          {/* <HeaderWithAccordion cardData={data.} title={"My Needs"} handleClose={handleClose}  /> */}
         </>
       </Modal>
     </>
