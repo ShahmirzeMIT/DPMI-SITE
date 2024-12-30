@@ -1,82 +1,34 @@
-import { Box } from "@mui/material";
-import { Button } from "antd";
+import { Modal, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
 import { callApi } from "../../utils/callApi";
+import { Button } from "antd";
 
-export default function MyNeedsPopOver() {
-  const [visible, setVisible] = useState(false); // Popoverun görünüş vəziyyətini idarə et
-  const [data,setData]=useState([])
-  const getData=async() => {
-    const response = await callApi('/lms/main/myneeds/skill/by/challenges', {
-      "FkChallengesId": "1"
-  })
-  setData(response);
-  console.log(response,'response');
-  
-  }
-  useEffect(() => {
-    getData()
-  },[])
-  const closePopover = () => {
-    setVisible(false); // Popoveru bağlayır
+
+export default function MyNeedsModal() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
+      FkChallengesId: "1",
+    });
+    setData(response);
+    console.log(response, "response");
   };
 
-  const content = (
-    <Box
-      sx={{
-        position: "fixed", // Sabit yer tutur
-        top: 30,
-        left: 0,
-        width: "100vw", // Tam ekranın eni
-        height: "100vh", // Tam ekranın hündürlüyü
-        background: "#f9f9f9", // Açıq rəngdə fon
-        zIndex: 1000, // Üstünlük verilir
-        display: "flex",
-        flexDirection: "column", // X düyməsini və məzmunu vertikal düz
-        alignItems: "center",
-        justifyContent: "flex-start", // Üst hissədən başlayır
-        padding: "20px",
-        overflowY: "scroll", // Şaquli skrol aktiv
-        overflowX: "hidden", // Üfüqi skrol deaktiv
-      }}
-    >
-      {/* Close Button */}
-     
-
-      {/* Accordion content */}
-      <Box sx={{ width: "100%", padding: "20px" }}>
-        <Box sx={{textAlign:'right'}}>
-        <Button 
-      type="primary"
-        danger
-        onClick={closePopover}
-        style={{
-          alignSelf: "flex-end", // Sağ üstə hizalanır
-          fontSize: "24px",
-          color: "white",
-          cursor: "pointer",
-          marginTop:'100px'
-        }}
-      >
-        X
-      </Button>
-        </Box>
-      {
-
-      }
-        {/* Render multiple accordions */}
-        <HeaderWithAccordion  cardData={data}/>
-      </Box>
-    </Box>
-  );
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
-      {/* Popover düyməsi */}
+      {/* Button to open the modal */}
       <Button
         type="primary"
-        onClick={() => setVisible(true)} // Popoveru açır
+        onClick={handleOpen}
         style={{
           marginTop: "20px",
           backgroundColor: "#F96C23",
@@ -87,8 +39,23 @@ export default function MyNeedsPopOver() {
         Check Required Skills
       </Button>
 
-      {/* Şərtli Popover */}
-      {visible && content}
+      <Modal
+        open={open} // Correct close mechanism
+        style={{
+          overflow: "auto",
+        }}
+      >
+        {/* Wrap the modal content in a Box */}
+        {/* <Box sx={style}>
+        
+        </Box> */}
+        <>
+        <Box sx={{background:'#F9F9F9',textAlign:'end'}}><Button onClick={handleClose} style={{color:'red'}}>X</Button></Box>
+        <HeaderWithAccordion  cardData={data}/>
+        </>
+          
+
+      </Modal>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Box, Typography, Card, CardContent, Button } from "@mui/material";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 interface CardData {
   cardData: {
     SkillName: string;
@@ -8,12 +8,12 @@ interface CardData {
 }
 
 export default function HeaderWithCards({ cardData }: CardData) {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   if (!cardData || cardData.length === 0) {
     return (
       <Box
         sx={{
-          width: "99vw", // Full viewport width
+          width: "100vw", // Full viewport width
           minHeight: "10vh", // Full viewport height
           backgroundColor: "#f9f9f9", // Light background
           display: "flex",
@@ -40,13 +40,15 @@ export default function HeaderWithCards({ cardData }: CardData) {
   return (
     <Box
       sx={{
-        width: "99vw", // Full viewport width
-        minHeight: "10vh", // Full viewport height
+        width: "100vw", // Full viewport width
+        // minHeight: "10vh", // Full viewport height
         backgroundColor: "#f9f9f9", // Light background
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         padding: "20px 0",
+        // position:"absolute",
+        top:'60px'
       }}
     >
       {/* Header */}
@@ -65,7 +67,7 @@ export default function HeaderWithCards({ cardData }: CardData) {
       {/* Card Section */}
       <Box
         sx={{
-          width: "90%",
+          width: "100vw",
           maxWidth: "900px",
           display: "flex",
           flexDirection: "column",
@@ -74,7 +76,7 @@ export default function HeaderWithCards({ cardData }: CardData) {
       >
         {cardData.map((item) => (
           <Card
-            key={item.FkCourseId} // Burada hər bir kart üçün unikal açar
+            key={item.FkCourseId} // Unique key for each card
             sx={{
               border: "1px solid #f0f0f0", // Border for cards
               borderRadius: "8px", // Rounded corners
@@ -104,41 +106,37 @@ export default function HeaderWithCards({ cardData }: CardData) {
                     color: "#333", // Dark text color for title
                     fontSize: "18px",
                     whiteSpace: "wrap",
-                    // minWidth: "90%",
                   }}
                 >
-                  {item.SkillName} {/* Kartın başlığını göstər */}
+                  {item.SkillName} {/* Display card title */}
                 </Typography>
-                <Box sx={{display:'flex',gap:'10px'}}>
+                <Box sx={{ display: "flex", gap: "10px" }}>
                   <Button
-                  style={{
-                    background: "#F96C23",
-                    color: "white",
-                    width: "100px",
-                    height: "40px",
-                    fontSize:'12px'
-                  }}
-                  onClick={()=>{
-                    navigate(`/courses/${item.FkCourseId}`)
-                  }}
-                >
-                
-                  Course Info
-                </Button>
-                <Button
-                  style={{
-                    background: "#1976d2",
-                    color: "white",
-                    width: "100px",
-                    height: "40px",
-                     fontSize:'12px'
-                  }}
-                >
-
-                  More Info
-                </Button>
+                    style={{
+                      background: "#F96C23",
+                      color: "white",
+                      width: "100px",
+                      height: "40px",
+                      fontSize: "12px",
+                    }}
+                    onClick={() => {
+                      navigate(`/courses/${item.FkCourseId}`);
+                    }}
+                  >
+                    Course Info
+                  </Button>
+                  <Button
+                    style={{
+                      background: "#1976d2",
+                      color: "white",
+                      width: "100px",
+                      height: "40px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    More Info
+                  </Button>
                 </Box>
-                
               </Box>
             </CardContent>
           </Card>

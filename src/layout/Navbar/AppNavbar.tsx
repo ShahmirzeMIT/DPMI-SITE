@@ -30,7 +30,7 @@ function AppNavbar() {
   return (
     <AppBar position="fixed" style={{  backgroundColor: "white",
       height: '70px',
-      boxShadow: "none"}}>
+      boxShadow: "none",zIndex:9}}>
       <Container maxWidth="xl" sx={{
            position:'relative',
       }}>

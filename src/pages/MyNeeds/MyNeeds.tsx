@@ -120,14 +120,22 @@ const MyNeeds = ({
       bottom: 0,
       width: "100%",
       height: isExpanded ? "0" : "90px", // Şəffaflığın görünüşü
-      background: isExpanded
-        ? ""
-        : "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%)",
+      // background: isExpanded
+      //   ? ""
+      //   : "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.9) 100%)",
       zIndex: 1,
       pointerEvents: "none",
     },
   }}
 >
+{!isExpanded && (
+    <Typography
+      style={{ color: "blue", cursor: "pointer", textAlign: "center",position:'absolute',bottom:0,left:'40%' }}
+      onClick={() => setIsExpanded(true)}
+    >
+      Show More...
+    </Typography>
+  )}
   {challengesWithPercentages.map((challenge) => (
     <div
       key={challenge.Id}
@@ -144,22 +152,15 @@ const MyNeeds = ({
       />
       <span
         style={{ fontSize: "16px", color: "#333", textAlign: "start" }}
-        onClick={() => {
-          setIsExpanded(!isExpanded);
-        }}
+        // onClick={() => {
+        //   setIsExpanded(!isExpanded);
+        // }}
       >
         {challenge.ChallengeName}
       </span>
     </div>
   ))}
-  {!isExpanded && (
-    <Typography
-      style={{ color: "blue", cursor: "pointer", textAlign: "center" }}
-      onClick={() => setIsExpanded(true)}
-    >
-      Show More...
-    </Typography>
-  )}
+ 
   {isExpanded && (
     <Typography
       style={{ color: "blue", cursor: "pointer", textAlign: "center" }}

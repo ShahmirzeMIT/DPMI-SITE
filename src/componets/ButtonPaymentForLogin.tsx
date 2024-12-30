@@ -42,7 +42,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
             "Password":data.Password
           })
 
-          if(!res.token)  return
+        if(!res.token)  return
          
       const response = await fetch(
         "https://dpminstitute.org/api/billing/main/payment/init",
@@ -57,6 +57,17 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
             ...payload,
             FkClassId:+data.FkClassId,
             createCheckoutSession: 1,
+            Price:4,
+            DiscountPrice:5,
+            FirstName:"dksakoif",
+            LastName:"kdsao",
+            Company:'fdsklfklds',
+            ZipCode:'samdlkasm',
+            AddressLine1:'213',
+            AddressLine2:"lwqplep",
+            Country:"koq",
+            City:'4',
+            Currency:'USD'
           }),
         }
       );
