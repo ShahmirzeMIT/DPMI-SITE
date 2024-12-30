@@ -47,7 +47,7 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
 
     try {
       const response = await fetch(
-        "https://api.dpminstitute.org/billing/main/payment/init",
+        "https://dpminstitute.org/api/billing/main/payment/init",
         {
           method: "POST",
           headers: {
