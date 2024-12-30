@@ -206,8 +206,15 @@ const MyNeeds = ({
             </p>
           )}
         />
-        {percent !== 100 ? <MyOwnNeedsPopOver /> : ""}
-        <MyNeedsPopOver />
+       
+        {
+          percent==100?  <Box sx={{ color:'#2A73B1',paddingTop:'20px'}}> You own all skills 😃</Box>:<MyNeedsPopOver />
+        }
+        <MyOwnNeedsPopOver />
+        
+
+        
+        
       </div>
     </Box>
   );

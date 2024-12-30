@@ -1,11 +1,23 @@
 import { Box } from "@mui/material";
 import { Button } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
+import { callApi } from "../../utils/callApi";
 
 export default function MyNeedsPopOver() {
   const [visible, setVisible] = useState(false); // Popoverun görünüş vəziyyətini idarə et
-
+  const [data,setData]=useState([])
+  const getData=async() => {
+    const response = await callApi('/lms/main/myneeds/skill/by/challenges', {
+      "FkChallengesId": "1"
+  })
+  setData(response);
+  console.log(response,'response');
+  
+  }
+  useEffect(() => {
+    getData()
+  },[])
   const closePopover = () => {
     setVisible(false); // Popoveru bağlayır
   };
@@ -50,17 +62,11 @@ export default function MyNeedsPopOver() {
         X
       </Button>
         </Box>
-      
+      {
+
+      }
         {/* Render multiple accordions */}
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
-        <HeaderWithAccordion />
+        <HeaderWithAccordion  cardData={data}/>
       </Box>
     </Box>
   );

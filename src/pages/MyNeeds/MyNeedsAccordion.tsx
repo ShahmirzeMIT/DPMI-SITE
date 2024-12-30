@@ -1,24 +1,41 @@
 import { Box, Typography, Card, CardContent, Button } from "@mui/material";
+import {useNavigate} from 'react-router-dom'
+interface CardData {
+  cardData: {
+    SkillName: string;
+    FkCourseId: number;
+  }[];
+}
 
-export default function HeaderWithCards() {
-  // Example card data
-  const cardData = [
-    {
-      id: "1",
-      title: "Tələbin 1",
-      content: "Bu, 1-ci tələbin geniş məzmunudur.",
-    },
-    {
-      id: "2",
-      title: "Tələbin 2",
-      content: "Bu, 2-ci tələbin geniş məzmunudur.",
-    },
-    {
-      id: "3",
-      title: "Tələbin 3",
-      content: "Bu, 3-cü tələbin geniş məzmunudur.",
-    },
-  ];
+export default function HeaderWithCards({ cardData }: CardData) {
+  const navigate=useNavigate()
+  if (!cardData || cardData.length === 0) {
+    return (
+      <Box
+        sx={{
+          width: "99vw", // Full viewport width
+          minHeight: "10vh", // Full viewport height
+          backgroundColor: "#f9f9f9", // Light background
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px 0",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#F96C23", // Orange text color for the header
+            fontSize: "24px",
+            fontWeight: "bold",
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
+          No data available
+        </Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box
@@ -49,7 +66,7 @@ export default function HeaderWithCards() {
       <Box
         sx={{
           width: "90%",
-          maxWidth: "600px",
+          maxWidth: "900px",
           display: "flex",
           flexDirection: "column",
           gap: "20px", // Space between cards
@@ -57,7 +74,7 @@ export default function HeaderWithCards() {
       >
         {cardData.map((item) => (
           <Card
-            key={item.id}
+            key={item.FkCourseId} // Burada hər bir kart üçün unikal açar
             sx={{
               border: "1px solid #f0f0f0", // Border for cards
               borderRadius: "8px", // Rounded corners
@@ -74,21 +91,55 @@ export default function HeaderWithCards() {
                 minHeight: "10px", // Ensure consistent height
               }}
             >
-              <Box sx={{ display: "flex", justifyContent: "space-between" ,alignItems:'center'}}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <Typography
                   sx={{
                     fontWeight: "bold",
                     color: "#333", // Dark text color for title
-                    //   marginBottom: "8px",
                     fontSize: "18px",
+                    whiteSpace: "wrap",
+                    // minWidth: "90%",
                   }}
                 >
-                  {item.title}
+                  {item.SkillName} {/* Kartın başlığını göstər */}
                 </Typography>
-                <Button style={{background:'#1976d2',color:'white'}}>More Info</Button>
-              </Box>
+                <Box sx={{display:'flex',gap:'10px'}}>
+                  <Button
+                  style={{
+                    background: "#F96C23",
+                    color: "white",
+                    width: "100px",
+                    height: "40px",
+                    fontSize:'12px'
+                  }}
+                  onClick={()=>{
+                    navigate(`/courses/${item.FkCourseId}`)
+                  }}
+                >
+                
+                  Course Info
+                </Button>
+                <Button
+                  style={{
+                    background: "#1976d2",
+                    color: "white",
+                    width: "100px",
+                    height: "40px",
+                     fontSize:'12px'
+                  }}
+                >
 
-              {/* More button */}
+                  More Info
+                </Button>
+                </Box>
+                
+              </Box>
             </CardContent>
           </Card>
         ))}

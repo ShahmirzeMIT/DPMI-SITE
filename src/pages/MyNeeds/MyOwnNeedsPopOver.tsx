@@ -62,7 +62,7 @@ export default function MyOwnNeedsPopOver() {
           color:'#2A73B1'
           }}
       >
-        You own all skills 😃
+       Show all skills 
       </Button>
     </Popover>
   );
