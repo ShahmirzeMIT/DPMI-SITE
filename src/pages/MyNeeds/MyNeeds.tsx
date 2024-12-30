@@ -15,13 +15,7 @@ interface Challenge {
 }
 
 interface MyNeedProps {
-  data?: {
-    GroupName: string;
-    ShortDesc: string;
-    Id: string;
-    ImgUrl: string;
-    Challenges?: Challenge[];
-  };
+  data?: any
 }
 
 const MyNeeds = ({
@@ -35,7 +29,7 @@ const MyNeeds = ({
   // Assign a percentage to each challenge
   const challengesWithPercentages: (Challenge & { percentage: number })[] =
     challenges.length > 0
-      ? challenges.map((challenge) => ({
+      ? challenges.map((challenge: Challenge) => ({
           ...challenge,
           percentage: Math.floor(100 / challenges.length), // Distribute percentage equally
         }))
@@ -45,7 +39,7 @@ const MyNeeds = ({
   const [completedChallenges, setCompletedChallenges] = useState<
     Record<string, boolean>
   >(
-    challenges.reduce((acc, challenge) => {
+    challenges.reduce((acc: Record<string, boolean>, challenge: Challenge) => {
       acc[challenge.Id] = false; // Initialize all challenges as incomplete
       return acc;
     }, {} as Record<string, boolean>)
@@ -122,7 +116,7 @@ const MyNeeds = ({
             padding: "20px 10px",
             position: "relative",
             overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
-            height: isExpanded ? "auto" : "360px", // Hündürlüyü dəyiş
+            height: isExpanded ? "auto" :data.Challenges.length>0 ? "360px" : "auto", // Hündürlüyü dəyiş
             cursor: "pointer",
             "&::after": {
               content: isExpanded ? '""' : '""',
@@ -231,7 +225,7 @@ const MyNeeds = ({
             You own all skills 😃
           </Box>
         ) : (
-          <MyNeedsPopOver requestData={takeId}  />
+          <MyNeedsPopOver requestData={takeId}   title={"hjdasj"}  Challenges={data.Challenges}/>
         )}
         <MyOwnNeedsPopOver />
       </div>

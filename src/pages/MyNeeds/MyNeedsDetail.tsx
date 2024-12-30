@@ -50,7 +50,6 @@ export default function MyNeedsDetail() {
   useEffect(() => {
     getData();
   }, []);
-console.log( groupedData,'groupedData');
   return (
     <div style={{ marginTop: '120px' }}>
       {

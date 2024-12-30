@@ -6,10 +6,11 @@ interface CardData {
     SkillName: string;
     FkCourseId: number;
   }[];
-  title:string
+  title: string;
+  handleClose: () => void;
 }
 
-export default function HeaderWithCards({ cardData,title }: CardData) {
+export default function HeaderWithCards({ cardData, title, handleClose }: CardData) {
   const navigate = useNavigate();
 
   if (!cardData || cardData.length === 0) {
@@ -23,7 +24,7 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
           flexDirection: "column",
           alignItems: "center",
           opacity: "0.6",
-          padding: "20px 0",
+          padding: "0",
         }}
       >
         <Typography
@@ -44,15 +45,48 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
   return (
     <Box
       sx={{
-        width: "100vw",
+        width: "85vw",
         backgroundColor: "#f9f9f9",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "20px 0",
-        top: "60px",
+        padding: "70px 90px",
+        maxWidth:'1200px',
+        margin: "0 auto",
+        maxHeight: "75vh",
+        overflowY: "scroll",
+        position: "relative",
       }}
     >
+      {/* Fixed Header within the Box */}
+      <Box
+        sx={{
+          textAlign: "end",
+          width: "110%", // Matches the parent Box width
+          position: "sticky", // Sticky within the scrollable container
+          top: "0%",
+          background: "transparent",
+          zIndex: "1000",
+          height: "70px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          padding: "0 10px",
+          // right:'-100%'
+        }}
+      >
+        <Button
+          style={{
+            background: "#d32f2f",
+            color: "white",
+            fontSize: "16px",
+          }}
+          onClick={handleClose}
+        >
+          X
+        </Button>
+      </Box>
+
       {/* Header */}
       <Typography
         sx={{
@@ -69,8 +103,8 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
       {/* Card Section */}
       <Box
         sx={{
-          width: "100vw",
-          maxWidth: "900px",
+          width: "100%",
+          maxWidth: "80vw",
           display: "flex",
           flexDirection: "column",
           gap: "20px",
@@ -92,7 +126,6 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
             <CardContent
               sx={{
                 padding: "16px",
-                minHeight: "10px",
               }}
             >
               <Box
@@ -100,19 +133,29 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
+                  flexWrap: "wrap", // Ensures wrapping on smaller screens
+                  gap: "10px", // Adds spacing between wrapped items
                 }}
               >
+                {/* Skill Name */}
                 <Typography
                   sx={{
                     fontWeight: "bold",
                     color: "#333",
                     fontSize: "18px",
-                    whiteSpace: "wrap",
+                    flex: "1", // Allows the title to grow/shrink appropriately
                   }}
                 >
                   {item.SkillName}
                 </Typography>
-                <Box sx={{ display: "flex", gap: "10px" }}>
+
+                {/* Buttons */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "10px",
+                  }}
+                >
                   <Button
                     style={{
                       background: "#F96C23",
@@ -128,16 +171,18 @@ export default function HeaderWithCards({ cardData,title }: CardData) {
                     Course Info
                   </Button>
                   <Button
-                    style={{
+                    sx={{
                       background: "#1976d2",
                       color: "white",
                       width: "100px",
                       height: "40px",
                       fontSize: "12px",
                     }}
-                    onClick={navigate('/classes')}
+                    onClick={() => {
+                      navigate("/classes");
+                    }}
                   >
-                   Find Classes
+                    Find Classes
                   </Button>
                 </Box>
               </Box>
