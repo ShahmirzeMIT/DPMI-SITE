@@ -11,6 +11,10 @@ import ForIndividualsMob from "./ForIndividualsMob";
 
 const pages = [
   {
+    name:"My Challanges",
+    page:"/mychallanges"
+  },
+  {
     name: "Certifications",
     children: [<CertificationMenuMob key="certifications-menu" />],
   },
@@ -30,7 +34,7 @@ const pages = [
     page: '/companies',
   },
 ];
-const openPage = ['Courses', "AI-Simulation",];
+const openPage = ['Courses', "AI-Simulation","My Challanges"];
 
 export default function AppNavbarOpenMenuMob({
   anchorElNav,
