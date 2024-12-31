@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import MyNeeds from './MyNeeds';
 import { callApi } from '../../utils/callApi';
 import { Box } from '@mui/material';
+import MyNeedsSearch from './MyNeedsSearch';
+import MyNeedsIntroduce from './MyNeedsIntroduce';
 
 interface Challenge {
   Id: string;
@@ -20,46 +22,58 @@ interface Group {
 }
 
 export default function MyNeedsDetail() {
-  const [groupedData, setGroupedData] = useState<{ 
-    GroupName: string
-    ShortDesc: string
-    Id: string
-    ImgUrl: string  
-    Challenges: {
-      Id: string
-      ChallengeName: string;
-      FkChallengesGroupId: string;
-      LongDesc: string
-      ShortDesc: string
-    }[]
-   }[]>([]);
+  const [groupedData, setGroupedData] = useState<Group[]>([]);
+  const [filteredData, setFilteredData] = useState<Group[]>([]); // Filtrlənmiş datanı saxlamaq üçün
 
   const getData = async () => {
-      const challenges: Challenge[] = await callApi('/lms/main/myneeds/challenges/list');
-      const groups: Omit<Group, 'Challenges'>[] = await callApi('/lms/main/myneeds/group/list');
+    const challenges: Challenge[] = await callApi('/lms/main/myneeds/challenges/list');
+    const groups: Omit<Group, 'Challenges'>[] = await callApi('/lms/main/myneeds/group/list');
 
-      const grouped = groups.map(group => ({
-        ...group,
-        Challenges: challenges.filter(challenge => challenge.FkChallengesGroupId === group.Id),
-      }));
+    const grouped = groups.map(group => ({
+      ...group,
+      Challenges: challenges.filter(challenge => challenge.FkChallengesGroupId === group.Id),
+    }));
 
-      setGroupedData(grouped as any);
-   
+    setGroupedData(grouped);
+    setFilteredData(grouped); // İlk olaraq groupedData-nı filteredData-ya kopyala
   };
 
   useEffect(() => {
     getData();
   }, []);
+
+  const onSearchData = (value: string) => {
+    if (value.trim() === '') {
+      // Əgər input boşdursa, groupedData-nı ilkin vəziyyətinə qaytar
+      setFilteredData(groupedData);
+      return;
+    }
+
+    // Filtrləmə prosesi
+    const filtered = groupedData.map(group => ({
+      ...group,
+      Challenges: group.Challenges.filter(challenge =>
+        challenge.ChallengeName.toLowerCase().includes(value.toLowerCase())
+      ),
+    })).filter(group => group.Challenges.length > 0); // Boş Challenge qruplarını göstərmə
+
+    setFilteredData(filtered); // Filtrlənmiş nəticəni saxla
+  };
+
+  console.log(filteredData, 'filteredData');
+  
   return (
     <div style={{ marginTop: '120px' }}>
-      {
-        groupedData.map((item, _index) => (
-          <Box sx={{marginBottom:'40px'}}>
-            <MyNeeds data={item} key={item.Id} />
+      {/* Axtarış komponenti */}
+      <MyNeedsIntroduce/>
+      <MyNeedsSearch onSearchData={onSearchData} />
 
-          </Box>
-        ))
-      }
+      {/* Filtrlənmiş datanı göstər */}
+      {filteredData.map((item, _index) => (
+        <Box sx={{ marginBottom: '40px' }} key={item.Id}>
+          <MyNeeds data={item} />
+        </Box>
+      ))}
     </div>
   );
 }

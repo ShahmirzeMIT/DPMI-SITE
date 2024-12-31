@@ -21,7 +21,6 @@ interface MyNeedProps {
 const MyNeeds = ({
   data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Challenges: [] },
 }: MyNeedProps) => {
-  console.log(data.Challenges, "data");
   
   const challenges = data.Challenges || [];
   const [isExpanded, setIsExpanded] = useState(false);
@@ -36,7 +35,6 @@ const MyNeeds = ({
   // Set `takeId` with all challenge IDs when the component mounts
   useEffect(() => {
     const allIds = getIdsFromChallenges(data.Challenges || []);
-    console.log(allIds, "allIds");
     setAllTakeId(allIds);
   }, [data]);
   // Assign a percentage to each challenge
@@ -44,7 +42,7 @@ const MyNeeds = ({
     challenges.length > 0
       ? challenges.map((challenge: Challenge) => ({
           ...challenge,
-          percentage: Math.floor(100 / challenges.length), // Distribute percentage equally
+          percentage: Math.floor(100 / challenges.length), 
         }))
       : [];
 
@@ -53,7 +51,7 @@ const MyNeeds = ({
     Record<string, boolean>
   >(
     challenges.reduce((acc: Record<string, boolean>, challenge: Challenge) => {
-      acc[challenge.Id] = false; // Initialize all challenges as incomplete
+      acc[challenge.Id] = false;
       return acc;
     }, {} as Record<string, boolean>)
   );
@@ -105,10 +103,11 @@ const MyNeeds = ({
         boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
+   
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
         <Title level={3} style={{ fontSize: "28px" }}>
-          {data.GroupName}
+          {data.GroupName}{challengesWithPercentages?.length > 0 && " - "}{`${challengesWithPercentages?.length==0?"":challengesWithPercentages?.length}`}
         </Title>
         <Paragraph
           style={{
