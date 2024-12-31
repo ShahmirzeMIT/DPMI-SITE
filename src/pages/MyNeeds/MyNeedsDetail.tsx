@@ -60,7 +60,6 @@ export default function MyNeedsDetail() {
     setFilteredData(filtered); // Filtrlənmiş nəticəni saxla
   };
 
-  console.log(filteredData, 'filteredData');
   
   return (
     <div style={{ marginTop: '120px' }}>

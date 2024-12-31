@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
-import MyNeedsPopOver from "./MyNeedsPopOver";
-import MyOwnNeedsModalPopOver from "./MyOwnNeedsPopOver";
+import MySkillsModalPopOver from "./MySkillsPopOver";
+import MyOwnNeedsModalPopOver from "../MyNeeds/MyOwnNeedsPopOver";
 
 const { Title, Paragraph } = Typography;
 
@@ -14,13 +14,13 @@ interface Challenge {
   ShortDesc: string;
 }
 
-interface MyNeedProps {
+interface MySkillsProps {
   data?: any;
 }
 
-const MyNeeds = ({
+const MySkills = ({
   data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Challenges: [] },
-}: MyNeedProps) => {
+}: MySkillsProps) => {
   
   const challenges = data.Challenges || [];
   const [isExpanded, setIsExpanded] = useState(false);
@@ -107,7 +107,7 @@ const MyNeeds = ({
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
         <Title level={3} style={{ fontSize: "28px" }}>
-          {data.GroupName}{" "}{challengesWithPercentages?.length > 0 && "("}{`${challengesWithPercentages?.length==0?"":challengesWithPercentages?.length})`}
+          {data.GroupName}{challengesWithPercentages?.length > 0 && " - "}{`${challengesWithPercentages?.length==0?"":challengesWithPercentages?.length}`}
         </Title>
         <Paragraph
           style={{
@@ -218,15 +218,17 @@ const MyNeeds = ({
           percent={percent}
           size={220}
           strokeWidth={12}
-          strokeColor="#FCBD06"
+          strokeColor="#5693F0"
           style={{ color: "white" }}
           format={(percent) => (
             <p
               style={{
-                color: "black",
+                color: "#F86C25",
                 textAlign: "center",
                 verticalAlign: "center",
                 paddingTop: "20px",
+                fontSize:'36px',
+                fontWeight:'600'
               }}
             >
               {percent?.toFixed(0)}%
@@ -237,10 +239,10 @@ const MyNeeds = ({
         {percent == 100 ? (
           <Box sx={{ color: "#2A73B1", paddingTop: "20px" }}>
             {" "}
-            You own all skills 😃
+            You Can Solve All Challenges 😃
           </Box>
         ) : (
-          <MyNeedsPopOver
+          <MySkillsModalPopOver
             requestData={takeId}
             title={"hjdasj"}
             Challenges={data.Challenges}
@@ -256,4 +258,4 @@ const MyNeeds = ({
   );
 };
 
-export default MyNeeds;
+export default MySkills;

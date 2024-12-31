@@ -1,8 +1,8 @@
 import { Modal, Box } from "@mui/material";
 import { useEffect, useState } from "react";
-import HeaderWithAccordion from "./MyNeedsAccordion";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
+import MySkillsAccordion from "./MySkillsAccordion";
 
 interface CardDataProps {
   requestData: string[];
@@ -10,7 +10,7 @@ interface CardDataProps {
   Challenges: [];
 }
 
-export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
+export default function MyOwnSkills({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   // const [changTitle, setChangTitle] = useState("");
@@ -54,7 +54,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
           color:'#2A73B1'
           }}
       >
-       Show all Challenges 
+       Show all skills 
       </Button>
       <Modal
         open={open}
@@ -116,7 +116,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
 
             {/* </Box> */}
             {data.map((item: any, index: number) => (
-              <HeaderWithAccordion
+              <MySkillsAccordion
                 key={index}
                 cardData={item.Chanllanges}
                 title={item.ChallengeName}
