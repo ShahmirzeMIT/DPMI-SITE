@@ -18,6 +18,7 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [data, setData] = useState([]);
 
 
+  
   const getData = async () => {
     const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
       FkChallengesId: requestData,

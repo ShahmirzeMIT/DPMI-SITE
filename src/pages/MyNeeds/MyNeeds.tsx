@@ -15,17 +15,30 @@ interface Challenge {
 }
 
 interface MyNeedProps {
-  data?: any
+  data?: any;
 }
 
 const MyNeeds = ({
   data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Challenges: [] },
 }: MyNeedProps) => {
+  console.log(data.Challenges, "data");
+  
   const challenges = data.Challenges || [];
   const [isExpanded, setIsExpanded] = useState(false);
   const [takeId, setTakeId] = useState([]);
+  const [allTakeId, setAllTakeId] = useState<string[]>([]);
   const [percent, setPercent] = useState(100);
 
+  const getIdsFromChallenges = (challenges: Challenge[]): string[] => {
+    return challenges.map((challenge) => challenge.Id);
+  };
+
+  // Set `takeId` with all challenge IDs when the component mounts
+  useEffect(() => {
+    const allIds = getIdsFromChallenges(data.Challenges || []);
+    console.log(allIds, "allIds");
+    setAllTakeId(allIds);
+  }, [data]);
   // Assign a percentage to each challenge
   const challengesWithPercentages: (Challenge & { percentage: number })[] =
     challenges.length > 0
@@ -69,15 +82,13 @@ const MyNeeds = ({
       [id]: !prev[id],
     }));
 
-    setTakeId((prev:any) => {
+    setTakeId((prev: any) => {
       if (prev.includes(id)) {
-        return prev.filter((existingId : any ) => existingId !== id);
+        return prev.filter((existingId: any) => existingId !== id);
       } else {
         return [...prev, id];
       }
     });
-    // const filteredData=data.Challenges.filter((item)=>item.Challenges==id )
-    // console.log(filteredData,'filteredData')
   };
 
   return (
@@ -116,7 +127,11 @@ const MyNeeds = ({
             padding: "20px 10px",
             position: "relative",
             overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
-            height: isExpanded ? "auto" :data.Challenges.length>0 ? "360px" : "auto", // Hündürlüyü dəyiş
+            height: isExpanded
+              ? "auto"
+              : data.Challenges.length > 0
+              ? "360px"
+              : "auto", // Hündürlüyü dəyiş
             cursor: "pointer",
             "&::after": {
               content: isExpanded ? '""' : '""',
@@ -133,7 +148,7 @@ const MyNeeds = ({
             },
           }}
         >
-          {   !isExpanded && (
+          {!isExpanded && (
             <Typography
               style={{
                 color: "blue",
@@ -141,7 +156,7 @@ const MyNeeds = ({
                 textAlign: "center",
                 position: "absolute",
                 bottom: 0,
-                display:data.Challenges.length>0 ? "block" : "none",
+                display: data.Challenges.length > 0 ? "block" : "none",
                 left: "40%",
               }}
               onClick={() => setIsExpanded(true)}
@@ -226,9 +241,17 @@ const MyNeeds = ({
             You own all skills 😃
           </Box>
         ) : (
-          <MyNeedsPopOver requestData={takeId}   title={"hjdasj"}  Challenges={data.Challenges}/>
+          <MyNeedsPopOver
+            requestData={takeId}
+            title={"hjdasj"}
+            Challenges={data.Challenges}
+          />
         )}
-        <MyOwnNeedsModalPopOver requestData={takeId} Challenges={data.Challenges} title={""}   />
+        <MyOwnNeedsModalPopOver
+          requestData={allTakeId}
+          Challenges={data.Challenges}
+          title={""}
+        />
       </div>
     </Box>
   );
