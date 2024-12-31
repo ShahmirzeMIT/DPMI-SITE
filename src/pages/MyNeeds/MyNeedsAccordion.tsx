@@ -14,9 +14,8 @@ interface CardData {
 export default function HeaderWithCards({
   cardData,
   title,
-  handleClose,
+  // handleClose,
 }: CardData) {
-console.log(cardData, "cardData");
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null); // Individual hover state
 
@@ -39,32 +38,7 @@ console.log(cardData, "cardData");
         margin: "0 auto",
       }}
     >
-      <Box
-        sx={{
-          textAlign: "end",
-          width: "110%",
-          position: "sticky",
-          top: "0%",
-          background: "transparent",
-          zIndex: "1000",
-          height: "70px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: "0 10px",
-        }}
-      >
-        <Button
-          style={{
-            background: "#d32f2f",
-            color: "white",
-            fontSize: "16px",
-          }}
-          onClick={handleClose}
-        >
-          X
-        </Button>
-      </Box>
+     
       <Box sx={{ background: "white",width:"80vw",padding:'10px'}}>
   
         <Typography

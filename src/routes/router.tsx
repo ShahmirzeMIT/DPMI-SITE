@@ -61,7 +61,7 @@ export const routes = [
       { path: "/ourservices", element: <OurServices /> },
       { path: "/termofuse", element: <TermsOfUse /> },
       { path: "/privacy", element: <PrivacyStatement /> },
-      {path:'/myneeds',element:<MyNeedsDetail/>},
+      {path:'/mychallanges',element:<MyNeedsDetail/>},
       { path: "*", element: <NotFound /> },
     ],
   },

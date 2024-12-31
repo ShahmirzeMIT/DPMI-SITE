@@ -13,7 +13,7 @@ interface CardDataProps {
 export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const [changTitle, setChangTitle] = useState("");
+  // const [changTitle, setChangTitle] = useState("");
   const handleClose = () => setOpen(false);
   const [data, setData] = useState([]);
 
@@ -39,13 +39,6 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
     
   }, [requestData]);
  
-  
-const checkData=data.map((item:any)=>{
-  // console.log(item,'item');
-  
-  return item
-})
-console.log(checkData,'checkData');
 
   return (
     <>
@@ -63,7 +56,7 @@ console.log(checkData,'checkData');
         Check Required Skills
       </Button>
 
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={handleClose}  sx={{maxWidth:'1400px',margin:'0 auto'}}>
         <>
       
 
@@ -71,9 +64,46 @@ console.log(checkData,'checkData');
           <Box sx={{ height: "30px" }}></Box>
 
           {/* Accordion Section */}
-          <Box sx={{ maxHeight: "85vh",
+          <Box sx={{ maxHeight: "92vh",
         overflowY: "scroll",
         position: "relative",}}>
+           {/* <Box
+        sx={{
+          textAlign: "end",
+          width: "100%",
+          position: "sticky",
+          top: "0%",
+          right:'10%',
+          background: "transparent",
+          zIndex: "1000",
+          height: "70px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          padding: "0 10px",
+        }}
+      > */}
+      <Box sx={{width: {xs:"100%",md:"93%"},
+    height: "50px",
+    background: "#f9f9f9",
+    display: "flex",
+    justifyContent: "end",
+    alignItems: "center",
+    position: "fixed",
+    zIndex: 1000,margin:{xs:'0',md:'0 20px'}}}>
+        <Button
+          style={{
+            background: "#d32f2f",
+            color: "white",
+            fontSize: "16px",
+          }}
+          onClick={handleClose}
+        >
+          X
+        </Button>
+      </Box>
+        
+      {/* </Box> */}
 {
             data.map((item: any, index: number) => (
               <HeaderWithAccordion
