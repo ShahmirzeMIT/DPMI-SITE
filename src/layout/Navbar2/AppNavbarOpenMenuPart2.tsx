@@ -13,6 +13,10 @@ import ForCompanies from "./ForCompaines";
 
 const pages = [
   {
+    name: "My Skills",
+    page:"/myskills"
+  },
+  {
     name:"My Challanges",
     page:"/mychallanges"
   },
@@ -37,7 +41,7 @@ const pages = [
   },
 ];
 
-const openPage = ['Courses', "AI-Simulation","My Challanges"];
+const openPage = ['Courses', "AI-Simulation","My Challanges","My Skills"];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
