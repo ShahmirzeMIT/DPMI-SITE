@@ -46,8 +46,7 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-            `Bearer ${res.token}`,
+            Authorization: `Bearer ${res.token}`,
           },
           body: JSON.stringify({
             ...payload,
