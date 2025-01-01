@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
 import MySkillsModalPopOver from "./MySkillsPopOver";
-import MyOwnNeedsModalPopOver from "../MyNeeds/MyOwnNeedsPopOver";
+import MyOwnSkills from "./MyOwnSkills";
 
 const { Title, Paragraph } = Typography;
 
 interface Challenge {
   Id: string;
   ChallengeName: string;
-  Challenges: string;
+  Skills: string;
   LongDesc: string;
   ShortDesc: string;
 }
@@ -19,28 +19,30 @@ interface MySkillsProps {
 }
 
 const MySkills = ({
-  data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Challenges: [] },
+  data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Skills: [] },
 }: MySkillsProps) => {
   
-  const challenges = data.Challenges || [];
+  const challenges = data.Skills || [];
   const [isExpanded, setIsExpanded] = useState(false);
   const [takeId, setTakeId] = useState([]);
   const [allTakeId, setAllTakeId] = useState<string[]>([]);
   const [percent, setPercent] = useState(100);
 
+ 
+  
   const getIdsFromChallenges = (challenges: Challenge[]): string[] => {
     return challenges.map((challenge) => challenge.Id);
   };
 
   // Set `takeId` with all challenge IDs when the component mounts
   useEffect(() => {
-    const allIds = getIdsFromChallenges(data.Challenges || []);
+    const allIds = getIdsFromChallenges(data.Skills || []);
     setAllTakeId(allIds);
   }, [data]);
   // Assign a percentage to each challenge
-  const challengesWithPercentages: (Challenge & { percentage: number })[] =
+  const challengesWithPercentages: (any & { percentage: number })[] =
     challenges.length > 0
-      ? challenges.map((challenge: Challenge) => ({
+      ? challenges.map((challenge: any) => ({
           ...challenge,
           percentage: Math.floor(100 / challenges.length), 
         }))
@@ -59,7 +61,7 @@ const MySkills = ({
   // Calculate total progress using useEffect
   useEffect(() => {
     if (challengesWithPercentages.length === 0) {
-      setPercent(100); // If no challenges, set progress to 100%
+      setPercent(100);
       return;
     }
 
@@ -106,9 +108,11 @@ const MySkills = ({
    
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
-        <Title level={3} style={{ fontSize: "28px" }}>
-          {data.GroupName}{challengesWithPercentages?.length > 0 && " - "}{`${challengesWithPercentages?.length==0?"":challengesWithPercentages?.length}`}
+      <Title level={3} style={{ fontSize: "28px" }}>
+          {data.CourseName}
+          {challengesWithPercentages.length > 0 && ` - ${challengesWithPercentages.length}`}
         </Title>
+
         <Paragraph
           style={{
             background: "white",
@@ -117,7 +121,7 @@ const MySkills = ({
             textAlign: "left",
           }}
         >
-          {data.ShortDesc}
+          {data.CourseShortDesc}
         </Paragraph>
         {/* Dynamic Challenge Switches */}
         <Box
@@ -128,7 +132,7 @@ const MySkills = ({
             overflow: isExpanded ? "visible" : "hidden", // Overflow ilə nəzarət
             height: isExpanded
               ? "auto"
-              : data.Challenges.length > 0
+              : data.Skills.length > 0
               ? "360px"
               : "auto", // Hündürlüyü dəyiş
             cursor: "pointer",
@@ -155,7 +159,7 @@ const MySkills = ({
                 textAlign: "center",
                 position: "absolute",
                 bottom: 0,
-                display: data.Challenges.length > 0 ? "block" : "none",
+                display: data.Skills.length > 0 ? "block" : "none",
                 left: "40%",
               }}
               onClick={() => setIsExpanded(true)}
@@ -183,7 +187,7 @@ const MySkills = ({
                 //   setIsExpanded(!isExpanded);
                 // }}
               >
-                {challenge.ChallengeName}
+                {challenge.SkillName}
               </span>
             </div>
           ))}
@@ -245,12 +249,12 @@ const MySkills = ({
           <MySkillsModalPopOver
             requestData={takeId}
             title={"hjdasj"}
-            Challenges={data.Challenges}
+            Challenges={data.Skills}
           />
         )}
-        <MyOwnNeedsModalPopOver
+        <MyOwnSkills
           requestData={allTakeId}
-          Challenges={data.Challenges}
+          Challenges={data.Skills}
           title={""}
         />
       </div>

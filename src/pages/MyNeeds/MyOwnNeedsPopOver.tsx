@@ -19,6 +19,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
 
   
   const getData = async () => {
+    if(requestData.length == 0) return
     const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
       FkChallengesId: requestData,
     });
@@ -38,7 +39,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
 
   useEffect(() => {
     getData();
-  }, [requestData]);
+  }, []);
 
   return (
     <>

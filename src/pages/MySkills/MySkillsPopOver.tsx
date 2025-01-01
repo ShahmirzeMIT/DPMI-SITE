@@ -17,29 +17,38 @@ export default function MySkillsModalPopOver({ requestData }: CardDataProps) {
   const handleClose = () => setOpen(false);
   const [data, setData] = useState([]);
 
-
-  
   const getData = async () => {
-    const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
-      FkChallengesId: requestData,
-    });
+    if (requestData.length == 0) return;
+    const responseSkills = await callApi("/lms/main/myneeds/skills/list");
+    const responseChallenges = await callApi(
+      "/lms/main/myneeds/challenges/by/skills",
+      { FkSkillsId: requestData }
+    );
+    const filterResponseSkills = responseSkills.filter((item: any) =>
+      requestData.includes(item.Id)
+    );
 
-    const challanges= await callApi('/lms/main/myneeds/challenges/list')
-    const updatedData=challanges.map((item:any)=>({
-      ...item,
-      Chanllanges:response.filter((challengeResponse:any)=>challengeResponse.FkChallengesId==item.Id)
-    }))
-    
-    console.log(updatedData,'updatedData');
-    
-    setData(updatedData);
+    console.log(filterResponseSkills, "filterResponseSkills");
+
+    // Combine skills with their respective challenges
+    const combinedData = filterResponseSkills.map((skill: any) => ({
+      ...skill,
+      Challenges: responseChallenges.filter(
+        (challenge: any) => challenge.FkSkillsId == skill.Id
+      ),
+    }));
+
+    console.log(combinedData, "combinedData");
+
+    setData(combinedData);
   };
 
+  // Fetch data when `requestData` changes
   useEffect(() => {
-    getData();
-    
+    if (requestData?.length) {
+      getData();
+    }
   }, [requestData]);
- 
 
   return (
     <>
@@ -57,18 +66,24 @@ export default function MySkillsModalPopOver({ requestData }: CardDataProps) {
         Challenges to Be Solved
       </Button>
 
-      <Modal open={open} onClose={handleClose}  sx={{maxWidth:'1400px',margin:'0 auto'}}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        sx={{ maxWidth: "1400px", margin: "0 auto" }}
+      >
         <>
-      
-
           {/* Spacer to Account for Fixed Header */}
           <Box sx={{ height: "30px" }}></Box>
 
           {/* Accordion Section */}
-          <Box sx={{ maxHeight: "92vh",
-        overflowY: "scroll",
-        position: "relative",}}>
-           {/* <Box
+          <Box
+            sx={{
+              maxHeight: "92vh",
+              overflowY: "scroll",
+              position: "relative",
+            }}
+          >
+            {/* <Box
         sx={{
           textAlign: "end",
           width: "100%",
@@ -84,40 +99,43 @@ export default function MySkillsModalPopOver({ requestData }: CardDataProps) {
           padding: "0 10px",
         }}
       > */}
-      <Box sx={{width: {xs:"100%",md:"93%"},
-    height: "50px",
-    background: "#f9f9f9",
-    display: "flex",
-    justifyContent: "end",
-    alignItems: "center",
-    position: "fixed",
-    zIndex: 1000,margin:{xs:'0',md:'0 20px'}}}>
-        <Button
-          style={{
-            background: "#d32f2f",
-            color: "white",
-            fontSize: "16px",
-          }}
-          onClick={handleClose}
-        >
-          X
-        </Button>
-      </Box>
-        
-      {/* </Box> */}
-{
-            data.map((item: any, index: number) => (
+            <Box
+              sx={{
+                width: { xs: "100%", md: "93%" },
+                height: "50px",
+                background: "#f9f9f9",
+                display: "flex",
+                justifyContent: "end",
+                alignItems: "center",
+                position: "fixed",
+                zIndex: 1000,
+                margin: { xs: "0", md: "0 20px" },
+              }}
+            >
+              <Button
+                style={{
+                  background: "#d32f2f",
+                  color: "white",
+                  fontSize: "16px",
+                }}
+                onClick={handleClose}
+              >
+                X
+              </Button>
+            </Box>
+
+            {/* </Box> */}
+            {data.map((item: any, index: number) => (
               <MySkillsAccordion
                 key={index}
-                cardData={item.Chanllanges}
-                title={item.ChallengeName}
+                cardData={item.Challenges}
+                title={item.SkillName}
                 handleClose={handleClose}
               />
-            ))
-          }
+            ))}
           </Box>
-          
-          {/* <HeaderWithAccordion cardData={data.} title={"My Needs"} handleClose={handleClose}  /> */}
+
+          {/* <HeaderWithAccordio cardData={data.} title={"My Needs"} handleClose={handleClose}  /> */}
         </>
       </Modal>
     </>

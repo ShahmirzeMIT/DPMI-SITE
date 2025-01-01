@@ -17,28 +17,34 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
   const handleClose = () => setOpen(false);
   const [data, setData] = useState([]);
 
-  
   const getData = async () => {
-    const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
-      FkChallengesId: requestData,
-    });
+    const responseSkills = await callApi("/lms/main/myneeds/skills/list");
+    const responseChallenges = await callApi(
+      "/lms/main/myneeds/challenges/by/skills",
+      { FkSkillsId: requestData }
+    );
+    const filterResponseSkills = responseSkills.filter((item: any) =>
+      requestData.includes(item.Id)
+    );
 
-    const challanges = await callApi("/lms/main/myneeds/challenges/list");
-    const updatedData = challanges.map((item: any) => ({
-      ...item,
-      Chanllanges: response.filter(
-        (challengeResponse: any) => challengeResponse.FkChallengesId == item.Id
+    console.log(filterResponseSkills, "filterResponseSkills");
+
+    // Combine skills with their respective challenges
+    const combinedData = filterResponseSkills.map((skill: any) => ({
+      ...skill,
+      Challenges: responseChallenges.filter(
+        (challenge: any) => challenge.FkSkillsId == skill.Id
       ),
     }));
 
-    console.log(updatedData, "updatedData");
+    console.log(combinedData, "combinedData");
 
-    setData(updatedData);
+    setData(combinedData);
   };
 
   useEffect(() => {
     getData();
-  }, [requestData]);
+  }, []);
 
   return (
     <>
@@ -47,14 +53,14 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
         type="primary"
         onClick={handleOpen}
         style={{
-            marginTop: "20px",
+          marginTop: "20px",
           backgroundColor: "white",
           borderColor: "#2A73B1",
           padding: "15px 25px",
-          color:'#2A73B1'
-          }}
+          color: "#2A73B1",
+        }}
       >
-       Show all skills 
+        Show all skills
       </Button>
       <Modal
         open={open}
@@ -118,8 +124,8 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
             {data.map((item: any, index: number) => (
               <MySkillsAccordion
                 key={index}
-                cardData={item.Chanllanges}
-                title={item.ChallengeName}
+                cardData={item.Challenges}
+                title={item.SkillName}
                 handleClose={handleClose}
               />
             ))}

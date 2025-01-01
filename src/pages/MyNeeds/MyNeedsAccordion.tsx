@@ -68,7 +68,7 @@ export default function HeaderWithCards({
             sx={{
               border: "1px solid #f0f0f0",
               borderRadius: "8px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              boxShadow: "none",
               "&:hover": {
                 transform: "scale(1.01)",
                 transition: "transform 0.3s ease-in-out",
@@ -100,9 +100,9 @@ export default function HeaderWithCards({
               >
                 <Typography
                   sx={{
-                    padding: "0",
+                    padding: "2px",
                     margin: "0",
-                    fontWeight: "bold",
+                    fontWeight: "400",
                     color: "#333",
                     fontSize: "18px",
                     flex: "1",
@@ -115,6 +115,7 @@ export default function HeaderWithCards({
                   sx={{
                     display: hoveredCard === index ? "flex" : "none", // Hover edilən kartın düymələrini göstər
                     gap: "10px",
+                    marginTop:'2px'
                   }}
                 >
                   <Button
@@ -122,7 +123,7 @@ export default function HeaderWithCards({
                       background: "#F96C23",
                       color: "white",
                       width: "100px",
-                      height: "30px",
+                      height: "20px",
                       fontSize: "12px",
                     }}
                     onClick={(e) => {
@@ -137,15 +138,16 @@ export default function HeaderWithCards({
                       background: "#1976d2",
                       color: "white",
                       width: "100px",
-                      height: "30px",
+                      height: "20px",
                       fontSize: "12px",
+                    
                     }}
                     onClick={(e) => {
                       e.stopPropagation(); // Parent klik hadisəsini blokla
                       window.open(`/classes`, "_blank");
                     }}
                   >
-                    Find Classes
+                    Register
                   </Button>
                 </Box>
               </Box>

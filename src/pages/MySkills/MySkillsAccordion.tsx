@@ -3,7 +3,7 @@ import { useState } from "react";
 
 interface CardData {
   cardData: {
-    SkillName: string;
+    ChallengeName: string;
     FkCourseId: number;
     Id: number;
   }[];
@@ -19,11 +19,13 @@ export default function MySkillsAccordion({
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null); // Individual hover state
 
+  
   if (!cardData || cardData.length === 0) {
     return (
       <></>
     );
   }
+
 
   return (
     <Box
@@ -68,7 +70,7 @@ export default function MySkillsAccordion({
             sx={{
               border: "1px solid #f0f0f0",
               borderRadius: "8px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              boxShadow: "none",
               "&:hover": {
                 transform: "scale(1.01)",
                 transition: "transform 0.3s ease-in-out",
@@ -102,13 +104,13 @@ export default function MySkillsAccordion({
                   sx={{
                     padding: "0",
                     margin: "0",
-                    fontWeight: "bold",
+                    fontWeight: "400",
                     color: "#333",
                     fontSize: "18px",
                     flex: "1",
                   }}
                 >
-                  {item.SkillName}
+                  {item.ChallengeName}
                 </Typography>
 
                 <Box
@@ -145,7 +147,7 @@ export default function MySkillsAccordion({
                       window.open(`/classes`, "_blank");
                     }}
                   >
-                    Find Classes
+                    Register
                   </Button>
                 </Box>
               </Box>

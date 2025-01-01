@@ -5,37 +5,43 @@ import MySkillsIntroduce from './MySkillsIntroduce';
 import MyNeedsSearch from '../MyNeeds/MyNeedsSearch';
 import MySkills from './MySkills';
 
-interface Challenge {
-  Id: string;
-  ChallengeName: string;
-  FkChallengesGroupId: string;
-  LongDesc: string;
-  ShortDesc: string;
+
+interface Course {
+  CourseId: string;
+  CourseName: string;
+  CourseLongDesc: string;
+  CourseShortDesc: string;
+  FkCertificateId?: string;
+  IconUrl?: string;
+  PdfUrl?: string;
+  Skills: any[];
+  Id:string;
 }
 
-interface Group {
+interface Skill {
   Id: string;
-  GroupName: string;
+  SkillName: string;
+  FkCourseId: string;
   ShortDesc: string;
-  ImgUrl: string;
-  Challenges: Challenge[];
+  LongDesc: string;
 }
 
 export default function MySkillsDetail() {
-  const [groupedData, setGroupedData] = useState<Group[]>([]);
-  const [filteredData, setFilteredData] = useState<Group[]>([]); // Filtrlənmiş datanı saxlamaq üçün
+  const [coursesData, setCoursesData] = useState<Course[]>([]);
+  const [filteredData, setFilteredData] = useState<Course[]>([]);
 
   const getData = async () => {
-    const challenges: Challenge[] = await callApi('/lms/main/myneeds/challenges/list');
-    const groups: Omit<Group, 'Challenges'>[] = await callApi('/lms/main/myneeds/group/list');
+    const courses: Course[] = await callApi('/lms/main/course/read');
+    const skills: Skill[] = await callApi('/lms/main/myneeds/skills/list');
 
-    const grouped = groups.map(group => ({
-      ...group,
-      Challenges: challenges.filter(challenge => challenge.FkChallengesGroupId === group.Id),
+    // Map courses and skills
+    const coursesWithSkills = courses.map(course => ({
+      ...course,
+      Skills: skills.filter(skill => skill.FkCourseId == course.Id),
     }));
-
-    setGroupedData(grouped);
-    setFilteredData(grouped); // İlk olaraq groupedData-nı filteredData-ya kopyala
+  
+    setCoursesData(coursesWithSkills); // Store courses with skills
+    setFilteredData(coursesWithSkills); // Set filtered data for initial display
   };
 
   useEffect(() => {
@@ -44,32 +50,28 @@ export default function MySkillsDetail() {
 
   const onSearchData = (value: string) => {
     if (value.trim() === '') {
-      // Əgər input boşdursa, groupedData-nı ilkin vəziyyətinə qaytar
-      setFilteredData(groupedData);
+      setFilteredData(coursesData);
       return;
     }
-
-    // Filtrləmə prosesi
-    const filtered = groupedData.map(group => ({
-      ...group,
-      Challenges: group.Challenges.filter(challenge =>
-        challenge.ChallengeName.toLowerCase().includes(value.toLowerCase())
+  
+    const filtered =coursesData.map(courses => ({
+      ...courses,
+      Skills: courses.Skills.filter(challenge =>
+        challenge.SkillName.toLowerCase().includes(value.toLowerCase())
       ),
-    })).filter(group => group.Challenges.length > 0); // Boş Challenge qruplarını göstərmə
-
-    setFilteredData(filtered); // Filtrlənmiş nəticəni saxla
+    })).filter(group => group.Skills.length > 0); 
+  
+    setFilteredData(filtered);
   };
-
   
   return (
     <div style={{ marginTop: '120px' }}>
-      {/* Axtarış komponenti */}
-      <MySkillsIntroduce/>
+      <MySkillsIntroduce />
       <MyNeedsSearch onSearchData={onSearchData} />
 
-      {/* Filtrlənmiş datanı göstər */}
+      {/* Render filtered data */}
       {filteredData.map((item, _index) => (
-        <Box sx={{ marginBottom: '40px' }} key={item.Id}>
+        <Box sx={{ marginBottom: '40px' }} key={item.CourseId}>
           <MySkills data={item} />
         </Box>
       ))}

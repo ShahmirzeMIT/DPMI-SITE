@@ -26,6 +26,7 @@ export default function MyNeedsDetail() {
   const [filteredData, setFilteredData] = useState<Group[]>([]); // Filtrlənmiş datanı saxlamaq üçün
 
   const getData = async () => {
+    
     const challenges: Challenge[] = await callApi('/lms/main/myneeds/challenges/list');
     const groups: Omit<Group, 'Challenges'>[] = await callApi('/lms/main/myneeds/group/list');
 
@@ -35,7 +36,7 @@ export default function MyNeedsDetail() {
     }));
 
     setGroupedData(grouped);
-    setFilteredData(grouped); // İlk olaraq groupedData-nı filteredData-ya kopyala
+    setFilteredData(grouped);
   };
 
   useEffect(() => {
@@ -44,7 +45,6 @@ export default function MyNeedsDetail() {
 
   const onSearchData = (value: string) => {
     if (value.trim() === '') {
-      // Əgər input boşdursa, groupedData-nı ilkin vəziyyətinə qaytar
       setFilteredData(groupedData);
       return;
     }
@@ -59,6 +59,7 @@ export default function MyNeedsDetail() {
 
     setFilteredData(filtered); // Filtrlənmiş nəticəni saxla
   };
+
 
   
   return (
