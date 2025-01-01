@@ -63,7 +63,7 @@ export default function MySkillsModalPopOver({ requestData }: CardDataProps) {
           backgroundColor: "#F96C21",
         }}
       >
-        Challenges to Be Solved
+        Challenges to be Solved
       </Button>
 
       <Modal
@@ -83,22 +83,6 @@ export default function MySkillsModalPopOver({ requestData }: CardDataProps) {
               position: "relative",
             }}
           >
-            {/* <Box
-        sx={{
-          textAlign: "end",
-          width: "100%",
-          position: "sticky",
-          top: "0%",
-          right:'10%',
-          background: "transparent",
-          zIndex: "1000",
-          height: "70px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: "0 10px",
-        }}
-      > */}
             <Box
               sx={{
                 width: { xs: "100%", md: "93%" },

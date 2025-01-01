@@ -1,5 +1,5 @@
 import { Modal, Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
@@ -12,7 +12,10 @@ interface CardDataProps {
 
 export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true)
+    getData();
+  };
   // const [changTitle, setChangTitle] = useState("");
   const handleClose = () => setOpen(false);
   const [data, setData] = useState([]);
@@ -34,10 +37,6 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
 
     setData(updatedData);
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <>

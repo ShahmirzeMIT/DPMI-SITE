@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
@@ -7,22 +7,17 @@ import { Avatar } from "antd";
 import Logo from '../../assets/images/logoSite.png';
 import CertificationMenu from "../Navbar/CertificationMenu";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ForIndividuals from "./ForIndividuals";
 import ForCompanies from "./ForCompaines";
 
 const pages = [
-  {
-    name: "My Skills",
-    page:"/myskills"
-  },
-  {
-    name:"My Challanges",
-    page:"/mychallanges"
-  },
+
+
   {
     name: "Certifications",
     children: [<CertificationMenu key="certifications-menu" />],
+    page: '/certificates',
   },
   {
     name: "Courses",
@@ -33,11 +28,18 @@ const pages = [
   },
   { name: "For Individuals", 
     children: [<ForIndividuals key="for-individuals-menu"/>], 
-   
   },
   { name: "For Companies", 
     children: [<ForCompanies key="for-companies-menu"/>], 
     page: '/companies',
+  },
+  {
+    name:"My Challanges",
+    page:"/mychallanges"
+  },
+  {
+    name: "My Skills",
+    page:"/myskills"
   },
 ];
 
@@ -45,8 +47,10 @@ const openPage = ['Courses', "AI-Simulation","My Challanges","My Skills"];
 
 const AppNavbarMenuPart2 = () => {
   const navigate = useNavigate();
+  const location=useLocation();
   const [_anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [menuId,setMenuId]=useState("")
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, page: string) => {
     if (openPage.includes(page)) {
@@ -59,6 +63,19 @@ const AppNavbarMenuPart2 = () => {
     }
   };
 
+useEffect(() => {
+  console.log(location.pathname.includes('/certificates'),'location.pathname.includ')
+  if(location.pathname.includes('/certificates'))
+    {
+  const slicePath=location.pathname.slice(0, location.pathname.lastIndexOf('/'));
+
+      setMenuId(slicePath)
+    }else{
+      setMenuId(location.pathname)
+
+    }
+
+}, [location.pathname]);
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", color: "#333", boxShadow: 'none',padding:'10px 0 20px 0' }}>
@@ -79,6 +96,7 @@ const AppNavbarMenuPart2 = () => {
             pages.map((page) => (
               <Box key={page.name}>
                 <Box
+                
                   sx={{
                     color: "#000",
                     textTransform: "capitalize",
@@ -87,11 +105,9 @@ const AppNavbarMenuPart2 = () => {
                     display: "flex",
                     alignItems: "center",
                     padding:'2px 5px',
-                    borderBottom: "2px solid white",
+                    borderBottom:menuId==page.page?'2px solid #2a74b1': "2px solid white",
                     "&:hover": {
                       borderBottom: "2px solid #2a74b1",
-                      // textDecoration: "underline",
-                      // textDecorationColor: "#2a74b1",
                     },
                   }}
                   onClick={(event) => handleMenuOpen(event, page.name)}

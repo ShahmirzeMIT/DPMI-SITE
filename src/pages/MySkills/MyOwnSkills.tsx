@@ -1,5 +1,5 @@
 import { Modal, Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
 import MySkillsAccordion from "./MySkillsAccordion";
@@ -12,7 +12,9 @@ interface CardDataProps {
 
 export default function MyOwnSkills({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    getData();
+    setOpen(true)};
   // const [changTitle, setChangTitle] = useState("");
   const handleClose = () => setOpen(false);
   const [data, setData] = useState([]);
@@ -40,9 +42,6 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
     setData(combinedData);
   };
 
-  useEffect(() => {
-    getData();
-  }, [requestData]);
 
   return (
     <>
@@ -58,7 +57,7 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
           color: "#2A73B1",
         }}
       >
-        Show all skills
+        Show all Challenges
       </Button>
       <Modal
         open={open}

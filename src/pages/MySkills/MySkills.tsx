@@ -3,7 +3,7 @@ import { Progress, Switch, Typography } from "antd";
 import { Box } from "@mui/material";
 import MySkillsModalPopOver from "./MySkillsPopOver";
 import MyOwnSkills from "./MyOwnSkills";
-
+import {Avatar} from 'antd'
 const { Title, Paragraph } = Typography;
 
 interface Challenge {
@@ -21,7 +21,7 @@ interface MySkillsProps {
 const MySkills = ({
   data = { GroupName: "", ShortDesc: "", Id: "", ImgUrl: "", Skills: [] },
 }: MySkillsProps) => {
-  
+  console.log(data, "data");
   const challenges = data.Skills || [];
   const [isExpanded, setIsExpanded] = useState(false);
   const [takeId, setTakeId] = useState([]);
@@ -39,12 +39,13 @@ const MySkills = ({
     const allIds = getIdsFromChallenges(data.Skills || []);
     setAllTakeId(allIds);
   }, [data]);
+
   // Assign a percentage to each challenge
   const challengesWithPercentages: (any & { percentage: number })[] =
     challenges.length > 0
       ? challenges.map((challenge: any) => ({
           ...challenge,
-          percentage: Math.floor(100 / challenges.length), 
+          // percentage: Math.floor(100 / challenges.length), 
         }))
       : [];
 
@@ -53,7 +54,7 @@ const MySkills = ({
     Record<string, boolean>
   >(
     challenges.reduce((acc: Record<string, boolean>, challenge: Challenge) => {
-      acc[challenge.Id] = false;
+      acc[challenge.Id] = true;
       return acc;
     }, {} as Record<string, boolean>)
   );
@@ -65,12 +66,18 @@ const MySkills = ({
       return;
     }
 
-    const completedCount = challengesWithPercentages.reduce(
-      (acc, challenge) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
+    const completedCount = challenges.reduce(
+      (acc: number, challenge: Challenge[]) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
       0
     );
-    const total =
-      100 - (completedCount * 100) / challengesWithPercentages.length;
+    const total = (completedCount * 100) / challenges.length;
+
+    // const completedCount = challengesWithPercentages.reduce(
+    //   (acc, challenge) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
+    //   0
+    // );
+    // const total =
+    //   100 - (completedCount * 100) / challengesWithPercentages.length;
 
     setPercent(total);
   }, [completedChallenges, challengesWithPercentages]);
@@ -109,16 +116,19 @@ const MySkills = ({
       {/* Left Section */}
       <div style={{ flex: 1, marginRight: "20px" }}>
       <Title level={3} style={{ fontSize: "28px" }}>
+        <Avatar src={data.IconUrl} style={{ marginRight: "10px" ,width:'50px',height:'50px'}} />
           {data.CourseName}
-          {challengesWithPercentages.length > 0 && ` - ${challengesWithPercentages.length}`}
+          {challengesWithPercentages.length > 0 && ` (${challengesWithPercentages.length})`}
         </Title>
 
         <Paragraph
           style={{
             background: "white",
             margin: "0",
-            padding: "20px 10px",
+            padding: "10px 10px",
             textAlign: "left",
+            fontSize:'18px',
+            color:"#FB6B23"
           }}
         >
           {data.CourseShortDesc}
@@ -214,7 +224,7 @@ const MySkills = ({
       >
         <Box sx={{ height: "60px" }}></Box>
         <Title level={4} style={{ width: "90%", textAlign: "center" }}>
-          Required Skills to Overcome the Challenges
+          My Skills to Overcome the Challenges
         </Title>
         {/* Dynamic Progress */}
         <Progress

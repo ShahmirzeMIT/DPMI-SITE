@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Input } from 'antd';
 import './MyNeedsSearch.css';
-const { Search } = Input;
+
 
 interface SearchProps {
   onSearchData: (value: string) => void;
@@ -9,8 +9,10 @@ interface SearchProps {
 }
 
 export default function MyNeedsSearch({ onSearchData,placheolder }: SearchProps) {
-  const onSearch = (value: string) => {
+  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
     onSearchData(value);
+
   };
 
   return (
@@ -20,14 +22,15 @@ export default function MyNeedsSearch({ onSearchData,placheolder }: SearchProps)
         margin: "50px auto",
       }}
     >
-      <Search
-        placeholder={placheolder}
-        onSearch={onSearch}
-        enterButton
+      <Input
+        placeholder={placheolder || ""}
+        onPressEnter={onSearch}
+        // enterButton
         style={{
-          padding: '20px 10px',
+          padding: '20px 20px',
           height: '60px', // Hündürlüyü artırır
-          fontSize: '16px', // Yazı ölçüsünü artırır
+          fontSize: '18px', // Yazı ölçüsünü artırır
+          borderRadius: '28px',
         }}
         className="custom-search"
       />

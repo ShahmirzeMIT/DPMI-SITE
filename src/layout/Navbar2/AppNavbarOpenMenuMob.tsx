@@ -10,11 +10,8 @@ import ForIndividualsMob from "./ForIndividualsMob";
 // import TraningsMenu from "./TraningsMenu";
 
 const pages = [
-  {
-    name: "My Skills",
-    page:"/myskills"
-  }
-  ,
+
+  
   {
     name:"My Challanges",
     page:"/mychallanges"
@@ -38,6 +35,10 @@ const pages = [
     children: [<ForCompaniesMob key="for-companies-menu"/>], 
     page: '/companies',
   },
+  {
+    name: "My Skills",
+    page:"/myskills"
+  }
 ];
 const openPage = ['Courses', "AI-Simulation","My Challanges","My Skills"];
 

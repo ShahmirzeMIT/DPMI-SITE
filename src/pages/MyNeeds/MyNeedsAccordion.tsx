@@ -1,5 +1,6 @@
 import { Box, Typography, Card, CardContent, Button } from "@mui/material";
 import { useState } from "react";
+import PointText from "../../componets/PointText";
 
 interface CardData {
   cardData: {
@@ -33,7 +34,7 @@ export default function HeaderWithCards({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "70px 90px",
+        padding: "40px 90px",
         maxWidth: "1200px",
         margin: "0 auto",
       }}
@@ -66,7 +67,7 @@ export default function HeaderWithCards({
           <Card
             key={item.FkCourseId}
             sx={{
-              border: "1px solid #f0f0f0",
+              // border: "1px solid #f0f0f0",
               borderRadius: "8px",
               boxShadow: "none",
               "&:hover": {
@@ -106,9 +107,10 @@ export default function HeaderWithCards({
                     color: "#333",
                     fontSize: "18px",
                     flex: "1",
+                    alignItems:'center'
                   }}
                 >
-                  {item.SkillName}
+                 <PointText/> {item.SkillName}
                 </Typography>
 
                 <Box

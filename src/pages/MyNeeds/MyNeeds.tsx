@@ -113,8 +113,10 @@ const MyNeeds = ({
           style={{
             background: "white",
             margin: "0",
-            padding: "20px 10px",
+            padding: "10px 10px",
             textAlign: "left",
+            fontSize:'18px',
+            color:"#FB6B23"
           }}
         >
           {data.ShortDesc}
@@ -210,7 +212,7 @@ const MyNeeds = ({
       >
         <Box sx={{ height: "60px" }}></Box>
         <Title level={4} style={{ width: "90%", textAlign: "center" }}>
-          Required Skills to Overcome the Challenges
+          My Skills to Overcome the Challenges
         </Title>
         {/* Dynamic Progress */}
         <Progress

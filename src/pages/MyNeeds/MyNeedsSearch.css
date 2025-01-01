@@ -1,10 +1,14 @@
 .custom-search .ant-input {
-    height: 40px; /* Daxili input hündürlüyü */
-    font-size: 16px; /* Yazı ölçüsü */
+    height: 80px; /* Daxili input hündürlüyü */
+    font-size: 29px; /* Yazı ölçüsü */
+    border-radius: 30px;
   }
   
   .custom-search .ant-btn {
-    height: 40px; /* Axtarış düyməsinin hündürlüyü */
-    font-size: 16px; /* Düymə yazı ölçüsü */
+    height: 80px; /* Axtarış düyməsinin hündürlüyü */
+    font-size: 29px; /* Düymə yazı ölçüsü */
+    border-radius: 30px;
+    background-color: #F9F9F9;
+    border:'1px solid black'
   }
   

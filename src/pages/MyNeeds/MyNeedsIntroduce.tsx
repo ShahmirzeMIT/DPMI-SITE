@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import logo from "../../assets/images/challangesLogo.jpeg";
+import logo from "../../assets/images/myChallangesLogo.jpg";
 const MyNeedsIntroduce = () => {
   return (
     <Box
       sx={{
         position: "relative",
         padding: "40px",
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "white",
         color: "#333",
         display: "flex",
         flexDirection: "column",
@@ -14,6 +14,8 @@ const MyNeedsIntroduce = () => {
         justifyContent: "center",
         minHeight: "600px",
         overflow: "hidden",
+        // width:'1200px',
+        // margin:'0 auto'
       }}
     >
       {/* Background Image */}
@@ -24,8 +26,8 @@ const MyNeedsIntroduce = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage:
-            "url('https://via.placeholder.com/1920x1080.png?text=Corporate+Consultation')",
+          // backgroundImage:
+          //   "url('https://via.placeholder.com/1920x1080.png?text=Corporate+Consultation')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.3,
@@ -34,32 +36,26 @@ const MyNeedsIntroduce = () => {
       ></Box>
 
       {/* Content */}
-      <Box sx={{ zIndex: 2, textAlign: "center", maxWidth: "800px" }}>
+      <Box sx={{ zIndex: 2, textAlign: "center" }}>
         {/* Problem Statement */}
         <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-          Small steps, big skills, endless possibilities with{" "}
           <span
-            style={{ color: "#fb6b22", fontWeight: "bold", marginRight: "5px" }}
+            style={{ color: "#fb6b22", fontWeight: "400", marginRight: "5px" ,fontSize:'48px'}}
           >
-            Our Courses
+            Transform Challenges into Skills.
+
           </span>
         </Typography>
-        <Typography variant="body1" sx={{ mb: 4 ,textAlign:'center'}}>
-          At our courses, we believe that every great journey with begins a
-          single step. Designed to be accessible and engaging, our programs
-          guide you through practical, step-by-step learning that builds real,
-          impactful skills. Whether you're starting from scratch or advancing
-          your knowledge, our courses provide the tools and support you need to
-          grow. With us, small efforts lead to big results, unlocking endless
-          opportunities for your future.
+        <Typography variant="body1" sx={{ mb: 4 ,textAlign:'center',maxWidth:'800px',margin:'20px auto',fontSize:'18px',lineHeight:'32px',letterSpacing:'0'}}>
+        Identify your challenges in Digital Transformation, AI Transformation, Agile Transformation, and Digital Product Management. Access personalized skills and courses to drive your growth, stay competitive in a fast-paced world, and lead the future of innovation
         </Typography>
 
         {/* Image and Slogan */}
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ }}>
           <img
             src={logo}
             alt="Agile Transformation"
-            style={{ width: "100%", maxWidth: "600px", borderRadius: "8px" }}
+            style={{ maxWidth: "1200px", borderRadius: "8px" }}
           />
         </Box>
       </Box>
