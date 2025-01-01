@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
-import { Avatar, Typography, Button } from 'antd';
-import Logo from '../../assets/images/whatLearn.png';
+import { Avatar, Typography } from 'antd';
+import Logo from '../../assets/images/challenges.png';
 import PointText from '../../componets/PointText';
 
 interface WhatLearnSpfProps {
-  data: { Id: string; ChallengeName: string }[];
+  data: { Id: string; ChallengeName: string,GroupName:string }[];
 }
 
 export default function ByChallange({ data }: WhatLearnSpfProps) {
@@ -20,6 +20,26 @@ export default function ByChallange({ data }: WhatLearnSpfProps) {
   const handleShowLess = () => {
     setVisibleCount(8); // Reset to show only the first 8 items
   };
+
+  if (data.length == 0) {
+    return (
+      <Box sx={{ width: '100%', margin: '90px auto' }}>
+        <Typography
+          style={{
+            color: 'red',
+            fontSize: '36px',
+            fontWeight: '400',
+            marginLeft: '10px',
+            textTransform: 'uppercase',
+            marginBottom: '50px',
+            textAlign:'center'
+          }}
+        >
+        {"Records Not Founded"}
+        </Typography>
+          </Box>
+          )
+          }
 
   return (
     <Box sx={{ width: '100%', margin: '90px auto' }}>
@@ -42,7 +62,7 @@ export default function ByChallange({ data }: WhatLearnSpfProps) {
         CHALLENGES YOU WILL OVERCOME
       </Typography>
       <ul style={{ width: '100%', marginTop: '20px' }}>
-        {data.slice(0, visibleCount).map((item, _index) => (
+        {data.length>0 ? data.slice(0, visibleCount).map((item, _index) => (
           <li
             key={item.Id}
             style={{
@@ -58,8 +78,9 @@ export default function ByChallange({ data }: WhatLearnSpfProps) {
           >
             <PointText />
             <span style={{ fontSize: '24px' }}>{item.ChallengeName}</span>
+            <span style={{fontSize:'18px',color:'black', opacity: '0.7'}}>{` [${item.GroupName}]`}</span>
           </li>
-        ))}
+        )): <Typography style={{textAlign:'center',color:'red'}}>{"Records Not Founded"}</Typography>}
       </ul>
       <div style={{ marginTop: '20px', marginLeft: '40px' }}>
       {visibleCount < data.length && (

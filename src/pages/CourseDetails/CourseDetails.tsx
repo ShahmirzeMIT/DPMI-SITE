@@ -17,12 +17,14 @@ import ByChallange from "./ByChallange";
 const CourseDetails = () => {
   const { courseId } = useParams();
   const [data, setData] = useState<{
+    Id:string;
     CourseId: string;
     CourseName: string;
     IconUrl: string;
     CourseShortDesc: string;
     CourseLongDesc: string;
   }>({
+    Id:"",
     CourseId: "",
     CourseName: "",
     IconUrl: "",
@@ -50,7 +52,7 @@ const CourseDetails = () => {
   const fetchData = async () => {
     const res = await callApi("/lms/main/course/read");
     const data2 = await callApi("/lms/main/course/info", {
-      FkCourseId: "1",
+      FkCourseId: courseId,
     });
     setSelectedWhatLearn(JSON.parse(data2[0].WhatYouWillLearn));
     setSelectedWhatYouGet(JSON.parse(data2[0].WhatYouWillGet));
@@ -58,20 +60,22 @@ const CourseDetails = () => {
     setOutCome(data2[0].Outcome);
 
     if (res) {
+      console.log(res,courseId,"data")
       const data = res.find(
-        (item: { CourseId: string }) => item.CourseId === courseId
+        (item: { Id: string }) => item.Id == courseId
       );
-      setData(data);
+      console.log(data,"data")
+      setData(data || []);
     }
 
     const getCourses = await callApi("/lms/main/myneeds/skills/by/course", {
-      FkCourseId: ["1"],
+      FkCourseId: [courseId],
     });
     if(!getCourses) return
     setAboutCourses(getCourses);
     
     const challangesData = await callApi("/lms/main/myneeds/challenges/by/course",{
-      FkCourseId: "1"
+      FkCourseId: courseId
     })
     if(!challangesData) return
     setChallenges(challangesData)

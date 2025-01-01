@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import { Avatar, Typography } from 'antd'
-import Logo from '../../assets/images/whatLearn.png'
+import Logo from '../../assets/images/learn.png'
 import PointText from '../../componets/PointText';
 interface WhatLearnSpfProps {
   data:{title:string;desc:string,}[]

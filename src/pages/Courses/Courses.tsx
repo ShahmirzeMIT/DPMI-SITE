@@ -26,7 +26,7 @@ export default function Courses() {
          <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'50px'}}>
          { data.length>0 && data?.map((item:{CourseId:string,CourseName:string,IconUrl:string,CourseShortDesc:string}, index) => (
           <CourseCard key={index} data={{
-            id: item.CourseId,
+            id: item.Id,
             title: item.CourseName,
             image: item.IconUrl,
             description: item.CourseShortDesc
