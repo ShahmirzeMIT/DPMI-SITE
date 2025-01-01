@@ -94,7 +94,7 @@ export default function TabelPaymet({ data, columnConfig }: { data: DataType[]; 
   const columns = generateColumns(data);
 
   return (
-    <Box sx={{maxWidth:"1200px",margin:'0 auto'}}>
+    <Box sx={{maxWidth:"1250px",margin:'0 auto', overFlowX:'hidden'}}>
        <Table
       columns={columns}
       dataSource={data}
@@ -107,6 +107,8 @@ export default function TabelPaymet({ data, columnConfig }: { data: DataType[]; 
         textAlign: "center",
         minHeight: "79vh",
         background: "white",
+        boxShadow:'none',
+        // overflowX:'hidden'
       }}
       scroll={{ x: "100%" }}
       pagination={{ pageSize: 30 }}
