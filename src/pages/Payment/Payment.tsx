@@ -2,6 +2,8 @@ import { Box, Button, Typography, Avatar } from "@mui/material";
 import { useEffect, useState } from "react";
 import { callApi } from "../../utils/callApi";
 import { useNavigate } from "react-router-dom";
+import PaymentModal from "./PaymentModal";
+import PaymentCourseDescription from "./PaymentCourseDescription";
 
 export default function Payment() {
   const [cardValues, setCardValues] = useState([]);
@@ -43,6 +45,7 @@ export default function Payment() {
             marginBottom: "20px",
             overflow: "hidden",
             boxShadow: "none",
+            background:"#F8F8F8"
           }}
         >
           {/* Section 1: Course Image */}
@@ -57,11 +60,11 @@ export default function Payment() {
           </Box>
 
           {/* Section 2: Course Info */}
-          <Box sx={{ flex: "1.7", padding: "20px" }}>
+          <Box sx={{ flex: "1.5", padding: "25px 20px" }}>
             <Typography
               variant="h6"
               sx={{
-                fontSize: "22px",
+                fontSize: "28px",
                 fontWeight: "600",
                 margin: "10px 0",
                 color: "black",
@@ -70,24 +73,15 @@ export default function Payment() {
             >
               {item.CourseName}
             </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: "14px",
-                fontWeight: "600",
-                color: "#F27D82",
-                margin: "0px 0 10px 0",
-              }}
-            >
-              {item.ClassType}
-            </Typography>
+          
+            <PaymentCourseDescription title={item.ClassTitle} desc={item.ShortDesc}/>
           </Box>
 
           {/* Section 3: Mentor Info */}
           <Box
             sx={{
               flex: "1",
-              padding: "20px 20px",
+              padding: "35px 20px",
               borderLeft: { sm: "1px solid #E0E0E0" },
               textAlign: { xs: "center", sm: "left" },
             }}
@@ -101,27 +95,48 @@ export default function Payment() {
             >
               <Avatar
                 src={item.MentorImgUrl}
-                sx={{ height: "40px", width: "40px", marginRight: "10px",marginBottom:'10px' }}
+                sx={{
+                  height: "40px",
+                  width: "40px",
+                  marginRight: "10px",
+                  marginBottom: "10px",
+                }}
               />
               <Typography
                 variant="body1"
                 sx={{ fontWeight: "600", fontSize: "18px", color: "black" }}
               >
-                {item.MentorName}
+                <PaymentModal
+                  title={item.MentorName}
+                  Img={item.MentorImgUrl}
+                  name={item.MentorName}
+                  desc={item.ShortBio}
+                  JobTitle={item.JobTitle}
+                  Linkedin={item.Linkedin}
+                  Company={item.Company}
+                />
               </Typography>
             </Box>
+          
             <Typography
               variant="body2"
-              sx={{ fontSize: "15px", color: "black" }}
+              sx={{
+                fontSize: "14px",
+                fontWeight: "600",
+                color: "#F27D82",
+                margin: "0px 0 10px 0",
+                marginTop:'10px'
+              }}
             >
-              {item.ClassTitle}
+              {item.ClassType}
             </Typography>
             <Typography
               variant="body2"
-              sx={{ fontSize: "15px", color: "black" }}
+              sx={{ fontSize: "15px", color: "black",marginTop:'10px' }}
             >
               Language: Engish
             </Typography>
+           
           </Box>
 
           {/* Section 4: Schedule Info */}
@@ -131,10 +146,8 @@ export default function Payment() {
               padding: "10px 20px",
               borderLeft: { sm: "1px solid #E0E0E0" },
               textAlign: { xs: "center", sm: "left" },
-              
             }}
           >
-
             <Typography
               variant="body1"
               sx={{
@@ -193,29 +206,28 @@ export default function Payment() {
               height: "100%",
             }}
           >
-            <Box sx={{display: "flex",
-              justifyContent: "center",}}>
+            <Box sx={{ display: "flex", justifyContent: "center",alignItems:'center' }}>
               <Typography
-              variant="h6"
-              sx={{ color: "#2A73B1", fontWeight: "bold" }}
-            >
-              {item.Currency}
-              {item.DiscountedPrice}
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                color: "red",
-                textDecoration: "line-through",
-                marginTop: "5px",
-                marginLeft: "10px",
-              }}
-            >
-              {item.Currency}
-              {item.Price}
-            </Typography>
-              </Box>
-            
+                variant="h6"
+                sx={{ color: "#2A73B1", fontWeight: "bold",fontSize:'36px' }}
+              >
+                {item.Currency}
+                {item.DiscountedPrice}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "red",
+                  textDecoration: "line-through",
+                  marginTop: "5px",
+                  marginLeft: "10px"
+                  ,fontSize:'24px'
+                }}
+              >
+                {item.Currency}
+                {item.Price}
+              </Typography>
+            </Box>
           </Box>
 
           {/* Section 6: Actions */}

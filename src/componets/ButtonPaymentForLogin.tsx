@@ -23,9 +23,6 @@ export interface ButtonPaymentProps {
 export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
-
-
-  
   const handlePayment = async () => {
 
     setLoading(true); // Yüklənmə spinnerini göstər
@@ -43,7 +40,6 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           })
 
         if(!res.token)  return
-         console.log(res.token,'res.token')
       const response = await fetch(
         "https://dpminstitute.org/api/billing/main/payment/init",
         {

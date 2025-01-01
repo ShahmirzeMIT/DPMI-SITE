@@ -1,17 +1,11 @@
 import { useState } from "react";
-import { Modal, Box, Typography, Avatar } from "@mui/material";
+import { Modal, Box, Typography } from "@mui/material";
 import { Button } from "antd";
-import { FaLinkedin } from "react-icons/fa";
 interface PaymentModalProps {
     title: string;
-    Img: string
-    name: string
-    desc: string
-    JobTitle: string
-    Linkedin: string
-    Company:string
+    desc:string
 }
-export default function PaymentModal({title,Img,name,desc,JobTitle,Linkedin,Company}:PaymentModalProps) {
+export default function PaymentCourseDescription({title,desc}:PaymentModalProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -45,37 +39,12 @@ export default function PaymentModal({title,Img,name,desc,JobTitle,Linkedin,Comp
             boxShadow: 24,
           }}
         >
-          {/* Header */}
-          <Box sx={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
-            <Avatar
-              src={Img}// Şəkil yolunu daxil edin
-              sx={{ width: 150, height: 150, marginRight: "20px" }}
-            />
-            <Typography sx={{ fontWeight: "bold",fontSize:'36px' }}>
-              {name}
-            </Typography>
-          </Box>
 
-          {/* Content */}
           <Typography variant="body1" sx={{ marginBottom: "20px", lineHeight: "1.8" }}>
             {desc}
           </Typography>
 
-          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
-            {JobTitle}
-          </Typography>
-
-          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
-            {Company}
-          </Typography>
-
-          {/* LinkedIn */}
-          <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}>
-            <FaLinkedin
-            onClick={() => window.open(Linkedin, "_blank")}
-              style={{ width: "24px", height: "24px", marginRight: "8px" }}
-            />
-          </Typography>
+    
 
           {/* Close Button */}
           <Box sx={{ textAlign: "right", marginTop: "20px" }}>
