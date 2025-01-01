@@ -5,9 +5,10 @@ const { Search } = Input;
 
 interface SearchProps {
   onSearchData: (value: string) => void;
+  placheolder?: string;
 }
 
-export default function MyNeedsSearch({ onSearchData }: SearchProps) {
+export default function MyNeedsSearch({ onSearchData,placheolder }: SearchProps) {
   const onSearch = (value: string) => {
     onSearchData(value);
   };
@@ -20,7 +21,7 @@ export default function MyNeedsSearch({ onSearchData }: SearchProps) {
       }}
     >
       <Search
-        placeholder="Search Challenges"
+        placeholder={placheolder}
         onSearch={onSearch}
         enterButton
         style={{

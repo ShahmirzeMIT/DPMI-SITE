@@ -133,7 +133,7 @@ const MySkills = ({
             height: isExpanded
               ? "auto"
               : data.Skills.length > 0
-              ? "360px"
+              ? "340px"
               : "auto", // Hündürlüyü dəyiş
             cursor: "pointer",
             "&::after": {

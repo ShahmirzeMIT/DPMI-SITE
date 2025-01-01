@@ -66,7 +66,7 @@ export default function MyNeedsDetail() {
     <div style={{ marginTop: '120px' }}>
       {/* Axtarış komponenti */}
       <MyNeedsIntroduce/>
-      <MyNeedsSearch onSearchData={onSearchData} />
+      <MyNeedsSearch onSearchData={onSearchData} placheolder="Search Challenge" />
 
       {/* Filtrlənmiş datanı göstər */}
       {filteredData.map((item, _index) => (

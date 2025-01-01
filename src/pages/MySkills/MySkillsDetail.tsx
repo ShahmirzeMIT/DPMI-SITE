@@ -67,7 +67,7 @@ export default function MySkillsDetail() {
   return (
     <div style={{ marginTop: '120px' }}>
       <MySkillsIntroduce />
-      <MyNeedsSearch onSearchData={onSearchData} />
+      <MyNeedsSearch onSearchData={onSearchData} placheolder="Search Skills"  />
 
       {/* Render filtered data */}
       {filteredData.map((item, _index) => (
