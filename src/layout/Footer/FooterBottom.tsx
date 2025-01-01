@@ -26,12 +26,21 @@ export default function FooterBottom() {
       id:'/aisimulation',
       title:'AI Simulations',
     },
+   
+    {
+      id:'/mychallanges',
+      title:'My Challanges',
+    },
+    {
+      id:'/myskills',
+      title:'My Skills',
+    },
+  ]
+  const data2=[
     {
       id:'/companies',
       title:'For Companies',
     },
-  ]
-  const data2=[
     {
       id:'/classes',
       title:'Find Classes',
@@ -48,6 +57,7 @@ export default function FooterBottom() {
       id:'/privacy',
       title:'Privacy Statement',
     },
+   
   ]
   return (
 <Box

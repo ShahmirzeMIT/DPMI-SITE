@@ -24,15 +24,22 @@ export default function AILearn() {
       <Typography
         variant="h4"
         style={{
-          marginBottom: "1.5rem",
           color: "black",
           fontSize: "48px",
           lineHeight: "56px",
           letterSpacing: "0",
+          maxWidth: "1000px",
+          margin:'0 auto 1.5rem auto'
         }}
       >
-        We've developed an{" "}
+        Gather <span style={{ color: "#fb6b22", fontWeight: "bold" }}>
+        New Skills
+        </span>  by Applying Your Knowledge on Real-World Projects through Our {" "}
+        <br />
         <span style={{ color: "#fb6b22", fontWeight: "bold" }}>
+          AI-Simulation Learning Platform
+        </span>{" "}
+        {/* <span style={{ color: "#fb6b22", fontWeight: "bold" }}>
           AI-Simulation Learning
         </span>
         <br />
@@ -54,7 +61,7 @@ export default function AILearn() {
         </span>{" "}
         of your
         <br />
-        knowledge on the real-world projects.
+        knowledge on the real-world projects. */}
       </Typography>
       <Typography
         sx={{
@@ -73,18 +80,36 @@ export default function AILearn() {
         AI Simulator, AI Mentor, Live Mentorship, Comprehensive Guidelines,
         Video Tutorials, Gamified Learning, and Project Sharing.
       </Typography>
-      <Button
+   
+      <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
+         <Button
         variant="contained"
         sx={{
           backgroundColor: "#fb6b22",
           color: "white",
           padding: {xs:"10px 10px",md:"10px 70px"},
           marginBottom: "70px",
+          marginLeft:'10px'
         }}
-        onClick={() => navigate("/elearning")}
+        onClick={() => navigate("/mychallanges")}
       >
-        Discover AI-Simulation Learning Platform
+        Discover My Challenges
       </Button>
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: "#2A73B3",
+          color: "white",
+          padding: {xs:"10px 10px",md:"10px 70px"},
+          marginBottom: "70px",
+          marginLeft:'10px'
+        }}
+        onClick={() => navigate("/myskills")}
+      >
+        Discover My Skills
+      </Button>
+      </Box>
+     
     </Box>
   );
 }

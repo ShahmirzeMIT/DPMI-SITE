@@ -21,7 +21,6 @@ export default function HomePagePart2() {
   // Fetch data from API
   const fetchData = async () => {
     const res = await callApi("/lms/main/course/read");
-    console.log(res, "res");
     setData(res);
   };
 

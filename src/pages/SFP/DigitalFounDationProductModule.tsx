@@ -7,13 +7,13 @@ import {
 } from "@mui/material";
 import { Button, Popover } from "antd";
 import { useNavigate } from "react-router-dom";
+import PointText from "../../componets/PointText";
 
 interface ProductCardProps {
   data: any;
 }
 
 const DigitalProductFoundationModule = ({ data }: ProductCardProps) => {
-  console.log(data,'data');
   
   const navigate=useNavigate()
   return (
@@ -79,13 +79,18 @@ const DigitalProductFoundationModule = ({ data }: ProductCardProps) => {
           >
             Courses
           </Typography>
-          <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-around' }}>
+          <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'start' ,flexDirection:'column',textAlign:'start'}}>
             {data.course?.map((courseItem: any) => (
-              <div style={{marginLeft:'3px'}}>
+              <div style={{marginLeft:'3px',marginBottom:'10px'}}>
                 <Popover content={<Box sx={{width:'300px'}}><Typography>{courseItem.shortDesc}</Typography>
                   <Button onClick={() => navigate(`/courses/${courseItem.id}`)}  style={{backgroundColor: '#2a74b1', color: 'white',marginTop:'10px'}}>Read More</Button>
                 </Box>} >
-                 {courseItem.title}
+                <span style={{display:'flex',alignItems:'center',fontSize:'16px'}}>
+                <PointText/>
+
+                {courseItem.title}
+                </span>
+                 
                 </Popover>
               </div>
             ))}
