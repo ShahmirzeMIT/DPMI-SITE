@@ -27,7 +27,6 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
       requestData.includes(item.Id)
     );
 
-    console.log(filterResponseSkills, "filterResponseSkills");
 
     // Combine skills with their respective challenges
     const combinedData = filterResponseSkills.map((skill: any) => ({
@@ -37,14 +36,13 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
       ),
     }));
 
-    console.log(combinedData, "combinedData");
 
     setData(combinedData);
   };
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [requestData]);
 
   return (
     <>
