@@ -65,22 +65,17 @@ const MySkills = ({
       setPercent(100);
       return;
     }
-
+  
     const completedCount = challenges.reduce(
-      (acc: number, challenge: Challenge[]) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
+      (acc: number, challenge: Challenge) =>
+        completedChallenges[challenge.Id] ? acc + 1 : acc,
       0
     );
     const total = (completedCount * 100) / challenges.length;
-
-    // const completedCount = challengesWithPercentages.reduce(
-    //   (acc, challenge) => (completedChallenges[challenge.Id] ? acc + 1 : acc),
-    //   0
-    // );
-    // const total =
-    //   100 - (completedCount * 100) / challengesWithPercentages.length;
-
+  
     setPercent(total);
   }, [completedChallenges, challengesWithPercentages]);
+  
 
   // Toggle challenge completion state
   const toggleChallenge = (id: string) => {
