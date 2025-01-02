@@ -60,7 +60,13 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
       <Modal
         open={open}
         onClose={handleClose}
-        sx={{ maxWidth: "1400px", margin: "0 auto" }}
+        sx={{
+          width: "100%",
+          maxWidth: "1240px", // Maksimum eni məhdudlaşdırır
+          margin: "0 auto",
+          overflow: "hidden",
+          // position:'relative'
+        }}
       >
         <>
           {/* Spacer to Account for Fixed Header */}
@@ -76,7 +82,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
           >
             <Box
               sx={{
-                width: { xs: "100%", md: "93%" },
+                  width: { xs: "100%", md: "1200px" },
                 height: "50px",
                 background: "#f9f9f9",
                 display: "flex",

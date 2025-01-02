@@ -45,7 +45,9 @@ export default function Payment() {
             marginBottom: "20px",
             overflow: "hidden",
             boxShadow: "none",
-            background:"#F8F8F8"
+            background:"#F8F8F8",
+            maxWidth: "1340px",
+            margin:'40px auto'
           }}
         >
           {/* Section 1: Course Image */}
@@ -209,7 +211,7 @@ export default function Payment() {
             <Box sx={{ display: "flex", justifyContent: "center",alignItems:'center' }}>
               <Typography
                 variant="h6"
-                sx={{ color: "#2A73B1", fontWeight: "bold",fontSize:'36px' }}
+                sx={{ color: "#2A73B1", fontWeight: "bold",fontSize:'30px' }}
               >
                 {item.Currency}
                 {item.DiscountedPrice}
@@ -221,7 +223,7 @@ export default function Payment() {
                   textDecoration: "line-through",
                   marginTop: "5px",
                   marginLeft: "10px"
-                  ,fontSize:'24px'
+                  ,fontSize:'20px'
                 }}
               >
                 {item.Currency}

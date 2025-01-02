@@ -8,31 +8,27 @@ const stripePromise = loadStripe(
   "pk_test_51NldrbB1rL2qIZ841q0gdzCwpKlrIIM7SUp3tdlTvw76AfMT741lI6hQlDl7F7adSPQ2IVlyyC9ZVFyIMIWwmrox00PWBIpouM"
 );
 
-
 export interface ButtonPaymentProps {
-  
- data:{ 
-  Email: string;
-  FkClassId?: string;
-  Password: string;
-  Price?: string;
-  DiscountPrice?: string;
-  FirstName?: string;
-  LastName?:string;
-  Company?:string;
-  AddressLine1?:string;
-  Country?:string;
-  City?:string;
-  ZipCode?:string;
-  Promocode?:string;
-  Currency?:string
-  disabled?:boolean
-  
+  data: {
+    Email: string;
+    FkClassId?: string;
+    Password: string;
+    Price?: string;
+    DiscountPrice?: string;
+    FirstName?: string;
+    LastName?: string;
+    Company?: string;
+    AddressLine1?: string;
+    Country?: string;
+    City?: string;
+    ZipCode?: string;
+    Promocode?: string;
+    Currency?: string;
+    disabled?: boolean;
+  };
 }
-}
-export default function ButtonPayment({data}:ButtonPaymentProps) {
+export default function ButtonPayment({ data }: ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
-
 
   const handlePayment = async () => {
     setLoading(true); // Yüklənmə spinnerini göstər
@@ -60,14 +56,19 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
           }),
         }
       );
+      console.log(response);
 
       const session = await response.json();
+      if (session.error) {
+        toast.error(`${session.error}`);
+      }
 
       if (session.sessionId) {
         // Stripe Checkout-a yönləndir
         const result = await stripe.redirectToCheckout({
           sessionId: session.sessionId,
         });
+        console.log(result, "result");
 
         if (result.error) {
           toast.error(`${result.error}`);
@@ -84,8 +85,8 @@ export default function ButtonPayment({data}:ButtonPaymentProps) {
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
       <Button
-         type="primary"
-         style={{ width: "100%", backgroundColor: "#3b82f6" }}
+        type="primary"
+        style={{ width: "100%", backgroundColor: "#3b82f6" }}
         onClick={handlePayment}
         disabled={loading || !data.disabled}
       >

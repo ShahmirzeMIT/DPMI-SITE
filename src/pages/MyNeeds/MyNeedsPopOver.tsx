@@ -1,5 +1,5 @@
 import { Modal, Box } from "@mui/material";
-import {  useState } from "react";
+import { useState } from "react";
 import HeaderWithAccordion from "./MyNeedsAccordion";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
@@ -13,7 +13,7 @@ interface CardDataProps {
 export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
-    setOpen(true)
+    setOpen(true);
     getData();
   };
   // const [changTitle, setChangTitle] = useState("");
@@ -21,7 +21,7 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    if(requestData.length == 0) return
+    if (requestData.length == 0) return;
     const response = await callApi("/lms/main/myneeds/skill/by/challenges", {
       FkChallengesId: requestData,
     });
@@ -33,7 +33,6 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
         (challengeResponse: any) => challengeResponse.FkChallengesId == item.Id
       ),
     }));
-
 
     setData(updatedData);
   };
@@ -57,7 +56,13 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
       <Modal
         open={open}
         onClose={handleClose}
-        sx={{ maxWidth: "1400px", margin: "0 auto" }}
+        sx={{
+          width: "100%",
+          maxWidth: "1240px", // Maksimum eni məhdudlaşdırır
+          margin: "0 auto",
+          overflow: "hidden",
+          // position:'relative'
+        }}
       >
         <>
           {/* Spacer to Account for Fixed Header */}
@@ -71,25 +76,9 @@ export default function MyNeedsModal({ requestData }: CardDataProps) {
               position: "relative",
             }}
           >
-            {/* <Box
-        sx={{
-          textAlign: "end",
-          width: "100%",
-          position: "sticky",
-          top: "0%",
-          right:'10%',
-          background: "transparent",
-          zIndex: "1000",
-          height: "70px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: "0 10px",
-        }}
-      > */}
             <Box
               sx={{
-                width: { xs: "100%", md: "93%" },
+                width: { xs: "100%", md: "1200px" },
                 height: "50px",
                 background: "#f9f9f9",
                 display: "flex",

@@ -1,4 +1,4 @@
-import { Modal, Box } from "@mui/material";
+import {  Box, Modal } from "@mui/material";
 import { useState } from "react";
 import { callApi } from "../../utils/callApi";
 import { Button } from "antd";
@@ -62,7 +62,12 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
       <Modal
         open={open}
         onClose={handleClose}
-        sx={{ maxWidth: "1400px", margin: "0 auto" }}
+        sx={{
+          width: "100%",
+          maxWidth: "1240px", // Maksimum eni məhdudlaşdırır
+          margin: "0 auto",
+          overflow: "hidden",
+        }}
       >
         <>
           {/* Spacer to Account for Fixed Header */}
@@ -76,25 +81,9 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
               position: "relative",
             }}
           >
-            {/* <Box
-        sx={{
-          textAlign: "end",
-          width: "100%",
-          position: "sticky",
-          top: "0%",
-          right:'10%',
-          background: "transparent",
-          zIndex: "1000",
-          height: "70px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: "0 10px",
-        }}
-      > */}
             <Box
               sx={{
-                width: { xs: "100%", md: "93%" },
+                width: { xs: "100%", md: "1200px" },
                 height: "50px",
                 background: "#f9f9f9",
                 display: "flex",

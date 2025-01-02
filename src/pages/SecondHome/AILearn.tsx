@@ -39,29 +39,6 @@ export default function AILearn() {
         <span style={{ color: "#fb6b22", fontWeight: "bold" }}>
           AI-Simulation Learning Platform
         </span>{" "}
-        {/* <span style={{ color: "#fb6b22", fontWeight: "bold" }}>
-          AI-Simulation Learning
-        </span>
-        <br />
-        <span
-          style={{ color: "#fb6b22", fontWeight: "bold", marginRight: "5px" }}
-        >
-          Platform
-        </span>{" "}
-        that lets you apply{" "}
-        <span
-          style={{
-            color: "#fb6b22",
-            fontWeight: "bold",
-            marginLeft: "5px",
-            marginRight: "5px",
-          }}
-        >
-          100%
-        </span>{" "}
-        of your
-        <br />
-        knowledge on the real-world projects. */}
       </Typography>
       <Typography
         sx={{
@@ -93,7 +70,7 @@ export default function AILearn() {
         }}
         onClick={() => navigate("/mychallanges")}
       >
-        Discover My Challenges
+        Discover Challenges
       </Button>
       <Button
         variant="contained"
@@ -106,7 +83,7 @@ export default function AILearn() {
         }}
         onClick={() => navigate("/myskills")}
       >
-        Discover My Skills
+        Discover Skills
       </Button>
       </Box>
      

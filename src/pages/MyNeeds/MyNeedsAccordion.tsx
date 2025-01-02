@@ -29,18 +29,18 @@ export default function HeaderWithCards({
   return (
     <Box
       sx={{
-        width: "85vw",
+        width: { xs: "95vw", sm: "1280px", lg: "1280px" },
         backgroundColor: "#f9f9f9",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "40px 90px",
+        padding: "40px 20px",
         maxWidth: "1200px",
         margin: "0 auto",
       }}
     >
      
-      <Box sx={{ background: "white",width:"80vw",padding:'10px'}}>
+      <Box sx={{ background: "white", maxw: "1280px", padding: "10px"}}>
   
         <Typography
           sx={{
@@ -49,7 +49,7 @@ export default function HeaderWithCards({
             fontWeight: "bold",
             textAlign: "center",
             marginBottom: "20px",
-           
+            padding:'10px'
           }}
         >
           {title}
@@ -58,7 +58,7 @@ export default function HeaderWithCards({
       <Box
         sx={{
           width: "100%",
-          maxWidth: "80vw",
+          maxWidth: "1280px",
           display: "flex",
           flexDirection: "column",
         }}
