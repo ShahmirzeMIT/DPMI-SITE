@@ -27,97 +27,95 @@ export default function HeaderWithCards({
   }
 
   return (
-    <Box
+<Box
+  sx={{
+    width: { xs: "80vw", sm: "85vw", md: "95vw",lg:"100vw" }, // Responsive genişlik
+    maxWidth: "1240px",
+    backgroundColor: "#f9f9f9",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: { xs: "20px 10px", sm: "30px 20px", md: "40px 40px" }, // Responsive padding
+    margin: "0 auto",
+    height: "auto", // Yükseklik ekrana uygun ayarlanır
+    overflow: "hidden",
+  }}
+>
+  <Box
+    sx={{
+      background: "white",
+      width: "100%",
+      maxWidth: "1240px",
+      padding: "10px",
+    }}
+  >
+    <Typography
       sx={{
-        width: { xs: "95vw", sm: "1280px", lg: "1280px" },
-        backgroundColor: "#f9f9f9",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "40px 20px",
-        maxWidth: "1200px",
-        margin: "0 auto",
+        color: "#F96C23",
+        fontSize: { xs: "18px", sm: "22px", md: "24px" }, // Responsive font size
+        fontWeight: "bold",
+        textAlign: "center",
+         marginBottom:{xs:"40px",md:"20px"},
       }}
     >
-     
-      <Box sx={{ background: "white", maxw: "1280px", padding: "10px"}}>
-  
-        <Typography
+      {title}
+    </Typography>
+
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px", // Kartlar arası boşluk
+      }}
+    >
+      {cardData.map((item, index) => (
+        <Card
+          key={item.FkCourseId}
           sx={{
-            color: "#F96C23",
-            fontSize: "24px",
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-            padding:'10px'
+            borderRadius: "8px",
+            boxShadow: "none",
+            "&:hover": {
+              transform: "scale(1.01)",
+              transition: "transform 0.3s ease-in-out",
+            },
+            position: "relative",
           }}
+          onMouseEnter={() => setHoveredCard(index)}
+          onMouseLeave={() => setHoveredCard(null)}
         >
-          {title}
-        </Typography>
-
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: "1280px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {cardData.map((item, index) => (
-          <Card
-            key={item.FkCourseId}
+          <CardContent
             sx={{
-              // border: "1px solid #f0f0f0",
-              borderRadius: "8px",
-              boxShadow: "none",
-              "&:hover": {
-                transform: "scale(1.01)",
-                transition: "transform 0.3s ease-in-out",
+              padding: "0",
+              "&:last-child": {
+                paddingBottom: "0",
               },
-
-              padding: "2px !important",
-              position: "relative",
             }}
-            onMouseEnter={() => setHoveredCard(index)} // Hover başladığında kartın Id-si set edilir
-            onMouseLeave={() => setHoveredCard(null)}
           >
-            <CardContent
+            <Box
               sx={{
-                padding: "2px !important",
-                "&:last-child": {
-                  paddingBottom: "5px !important",
-                },
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "10px", // Hover düymələr arası boşluq
               }}
             >
-              <Box
+              <Typography
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  padding: "0",
-                  margin: "0",
+                  fontWeight: "400",
+                  color: "#333",
+                  fontSize: { xs: "16px", sm: "18px" },
+                  flex: "1",
                 }}
               >
-                <Typography
-                  sx={{
-                    padding: "2px",
-                    margin: "0",
-                    fontWeight: "400",
-                    color: "#333",
-                    fontSize: "18px",
-                    flex: "1",
-                    alignItems:'center'
-                  }}
-                >
-                 <PointText/> {item.SkillName}
-                </Typography>
+                <PointText /> {item.SkillName}
+              </Typography>
 
+              {hoveredCard === index && (
                 <Box
                   sx={{
-                    display: hoveredCard === index ? "flex" : "none", // Hover edilən kartın düymələrini göstər
+                    display: "flex",
                     gap: "10px",
-                    marginTop:'2px'
                   }}
                 >
                   <Button
@@ -136,7 +134,7 @@ export default function HeaderWithCards({
                     Course Info
                   </Button>
                   <Button
-                    sx={{
+                     sx={{
                       background: "#1976d2",
                       color: "white",
                       width: "100px",
@@ -152,13 +150,14 @@ export default function HeaderWithCards({
                     Register
                   </Button>
                 </Box>
-              </Box>
-            </CardContent>
-          </Card>
-        ))}
-      </Box>
-      </Box>
-  
+              )}
+            </Box>
+          </CardContent>
+        </Card>
+      ))}
     </Box>
+  </Box>
+</Box>
+
   );
 }

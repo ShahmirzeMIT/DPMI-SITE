@@ -64,9 +64,11 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
         onClose={handleClose}
         sx={{
           width: "100%",
-          maxWidth: "1240px", // Maksimum eni məhdudlaşdırır
+          maxWidth: "1340px", // Maksimum eni məhdudlaşdırır
           margin: "0 auto",
           overflow: "hidden",
+         background: "white",
+          // position:'relative'
         }}
       >
         <>
@@ -82,17 +84,17 @@ export default function MyOwnSkills({ requestData }: CardDataProps) {
             }}
           >
             <Box
-              sx={{
-                width: { xs: "100%", md: "1200px" },
-                height: "50px",
-                background: "#f9f9f9",
-                display: "flex",
-                justifyContent: "end",
-                alignItems: "center",
-                position: "fixed",
-                zIndex: 1000,
-                margin: { xs: "0", md: "0 20px" },
-              }}
+             sx={{
+              width: { xs: "82vw", sm: "88vw", md: "85vw", lg: "1280px",xl:"1280px" }, 
+              height: "50px",
+              background: "#f9f9f9",
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
+              position: "fixed",
+              zIndex: 1000,
+              margin: { xs: "0px 35px",sm:"0px 40px", md: "0 130px", lg: "0 10px",xl:"0 20px" },
+            }}
             >
               <Button
                 style={{

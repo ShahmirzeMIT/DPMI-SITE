@@ -27,36 +27,41 @@ CardData) {
   return (
     <Box
       sx={{
-        width: { xs: "95vw", sm: "1280px", lg: "1280px" },
+        width: { xs: "80vw", sm: "85vw", md: "90vw", lg: "95vw",xl:"100vw" }, // Responsive genişlik
+        maxWidth: "1240px",
         backgroundColor: "#f9f9f9",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "40px 20px",
-        maxWidth: "1200px",
+        padding: { xs: "20px 10px", sm: "30px 20px", md: "40px 40px" }, // Responsive padding
         margin: "0 auto",
+        height: "auto", // Yükseklik ekrana uygun ayarlanır
+        overflow: "hidden",
       }}
     >
-      
-      <Box sx={{ background: "white", maxw: "1280px", padding: "10px" }}>
+      <Box sx={{
+      background: "white",
+      width: "100%",
+      maxWidth: "1240px",
+      padding: "10px",
+    }}>
         <Typography
-          sx={{
-            color: "#F96C23",
-            fontSize: "24px",
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "20px",
-          }}
+         sx={{
+          color: "#F96C23",
+          fontSize: { xs: "18px", sm: "22px", md: "24px" }, // Responsive font size
+          fontWeight: "bold",
+          textAlign: "center",
+          marginBottom:{xs:"40px",md:"20px"},
+        }}
         >
           {title}
         </Typography>
 
         <Box
           sx={{
-            width: "100%",
-            maxWidth: "1280px",
             display: "flex",
             flexDirection: "column",
+            gap: "10px", // Kartlar arası boşluk
           }}
         >
           {cardData.map((item, index) => (
@@ -77,12 +82,12 @@ CardData) {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <CardContent
-                sx={{
-                  padding: "2px !important",
-                  "&:last-child": {
-                    paddingBottom: "5px !important",
-                  },
-                }}
+               sx={{
+                padding: "0",
+                "&:last-child": {
+                  paddingBottom: "0",
+                },
+              }}
               >
                 <Box
                   sx={{
@@ -90,19 +95,15 @@ CardData) {
                     justifyContent: "space-between",
                     alignItems: "center",
                     flexWrap: "wrap",
-                    padding: "0",
-                    margin: "0",
+                    gap: "10px", // Hover düymələr arası boşluq
                   }}
                 >
                   <Typography
                     sx={{
-                      padding: "2px",
-                      margin: "0",
                       fontWeight: "400",
                       color: "#333",
-                      fontSize: "18px",
+                      fontSize: { xs: "16px", sm: "18px" },
                       flex: "1",
-                      alignItems: "center",
                     }}
                   >
                     <PointText /> {item.ChallengeName}
@@ -110,7 +111,7 @@ CardData) {
                       style={{
                         color: "gray",
                         textTransform: "capitalize",
-                        fontSize: "18px",
+                        fontSize: "16px"
                       }}
                     >
                       {" "}

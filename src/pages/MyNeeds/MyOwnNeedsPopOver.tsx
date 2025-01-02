@@ -35,7 +35,6 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
       ),
     }));
 
-    console.log(updatedData, "updatedData");
 
     setData(updatedData);
   };
@@ -48,7 +47,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
         type="primary"
         onClick={handleOpen}
         style={{
-            marginTop: "20px",
+          marginTop: "20px",
           backgroundColor: "white",
           borderColor: "#2A73B1",
           padding: "15px 25px",
@@ -62,9 +61,10 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
         onClose={handleClose}
         sx={{
           width: "100%",
-          maxWidth: "1240px", // Maksimum eni məhdudlaşdırır
+          maxWidth: "1340px", // Maksimum eni məhdudlaşdırır
           margin: "0 auto",
           overflow: "hidden",
+         background: "white",
           // position:'relative'
         }}
       >
@@ -76,13 +76,13 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
           <Box
             sx={{
               maxHeight: "92vh",
-              overflowY: "scroll",
+              overflowX: "hidden",
               position: "relative",
             }}
           >
             <Box
               sx={{
-                  width: { xs: "100%", md: "1200px" },
+                width: { xs: "82vw", sm: "88vw", md: "85vw", lg: "1280px",xl:"1280px" }, 
                 height: "50px",
                 background: "#f9f9f9",
                 display: "flex",
@@ -90,7 +90,7 @@ export default function MyOwnNeedsModalPopOver({ requestData }: CardDataProps) {
                 alignItems: "center",
                 position: "fixed",
                 zIndex: 1000,
-                margin: { xs: "0", md: "0 20px" },
+                margin: { xs: "0px 35px",sm:"0px 40px", md: "0 130px", lg: "0 10px",xl:"0 20px" },
               }}
             >
               <Button
