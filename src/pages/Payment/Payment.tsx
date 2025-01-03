@@ -241,7 +241,8 @@ export default function Payment() {
               display: "flex",
               flexDirection: "column",
               gap: "10px",
-              alignItems: { xs: "center", sm: "stretch" },
+              alignItems: { xs: "center", sm: "center" },
+
             }}
           >
             <Button
@@ -251,6 +252,8 @@ export default function Payment() {
                 color: "#fff",
                 textTransform: "uppercase",
                 fontSize: "12px",
+                 maxWidth:'120px',
+                //  padding:'5px 20px'
               }}
               onClick={() => handleEnroll(item)}
             >
@@ -263,6 +266,10 @@ export default function Payment() {
                 color: "#fff",
                 textTransform: "uppercase",
                 fontSize: "12px",
+                 maxWidth:'120px',
+                 padding:'5px 20px',
+                 minWidth:'110px',
+                 minHeight:'33px'
               }}
               onClick={() => handleMoreInfo(item.FkCourseId)}
             >
