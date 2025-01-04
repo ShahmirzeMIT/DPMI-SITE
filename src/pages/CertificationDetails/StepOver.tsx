@@ -8,6 +8,7 @@ const StepOver = () => {
     { title: "Growth Strategy", description: "Plan and execute growth initiatives.", icon: "📈", color: "#2196F3" },
     { title: "Profit Maximization", description: "Optimize resources for maximum profit.", icon: "💰", color: "#9C27B0" },
     { title: "Achieve Success", description: "Celebrate milestones and achievements.", icon: "🏆", color: "#F44336" },
+    { title: "Achieve Success", description: "Celebrate milestones and achievements.", icon: "🏆", color: "#F44336" },
   ];
 
   return (
