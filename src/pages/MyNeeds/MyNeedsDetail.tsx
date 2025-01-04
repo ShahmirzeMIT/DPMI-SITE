@@ -63,7 +63,7 @@ export default function MyNeedsDetail() {
 
   
   return (
-    <div style={{ marginTop: '120px' }}>
+    <Box sx={{ marginTop:{xs:"20px" ,md:'120px'} }}>
       {/* Axtarış komponenti */}
       <MyNeedsIntroduce/>
       <MyNeedsSearch onSearchData={onSearchData} placheolder="Search Challenges" />
@@ -74,6 +74,6 @@ export default function MyNeedsDetail() {
           <MyNeeds data={item} />
         </Box>
       ))}
-    </div>
+    </Box>
   );
 }

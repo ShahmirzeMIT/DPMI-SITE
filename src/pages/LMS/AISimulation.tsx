@@ -11,7 +11,7 @@ export default function AISimulation() {
  
 
   return (
-    <Box sx={{ color: 'black', marginTop: '130px' }}>
+    <Box sx={{ color: 'black',   marginTop: { xs: "40px", md: "120px"}, }}>
       <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
         <HeroSectionAi />
         <SkillGapComponent />

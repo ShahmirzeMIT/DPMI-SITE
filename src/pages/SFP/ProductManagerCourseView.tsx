@@ -18,7 +18,7 @@ export default function ProductManagerCourseView({ data }: ProductCardProps) {
       sx={{
         backgroundColor: "#F9FAFC",
         padding: "40px 10%",
-        marginTop: "120px",
+        marginTop: { xs: "40px", md: "120px"},
       }}
 
     >

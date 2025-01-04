@@ -25,7 +25,7 @@ export default function CertificationDetails() {
 
   if (!selectedData) {
     return (
-      <Box sx={{ marginTop: "120px", color: "gray" }}>
+      <Box sx={{  marginTop: { xs: "20px", md: "120px"}, color: "gray" }}>
         <h2>Certification not found</h2>
       </Box>
     );
@@ -35,10 +35,10 @@ export default function CertificationDetails() {
     <Box sx={{}}>
       <Box
         sx={{
-          marginTop: "120px",
+          marginTop: { xs: "20px", md: "120px"},
           color: "gray",
           maxWidth: "1280px",
-          margin: "0 auto",
+          margin:  "0 auto",
         }}
       >
         <ProductManagerCourseView

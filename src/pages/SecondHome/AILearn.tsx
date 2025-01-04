@@ -17,7 +17,7 @@ export default function AILearn() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        marginTop: "120px",
+        marginTop: { xs: "20px", md: "120px"},
         padding: "60px 0",
       }}
     >

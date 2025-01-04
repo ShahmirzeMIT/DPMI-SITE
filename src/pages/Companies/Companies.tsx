@@ -11,7 +11,7 @@ import CompainesDigitalTransformation from "./CompainesDigitalTransformation";
 
 export default function Companies() {
   return (
-    <Box sx={{marginTop:'120px',minHeight:'80vh',}}>
+    <Box sx={{  marginTop: { xs: "40px", md: "120px"},minHeight:'80vh',}}>
         <FosteringDigital/>
       <Box sx={{maxWidth:'1200px',margin:'0 auto'}}>
      

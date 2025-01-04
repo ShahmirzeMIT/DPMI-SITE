@@ -7,7 +7,7 @@ import Logo from '../../assets/images/completedCourse.jpg'
 export default function CertificationList() {
   return (
     <Box sx={{ backgroundColor: "white", }}>
- <Box sx={{ padding: "40px", height: { xs: "auto" }, marginTop:'120px',maxWidth:'1200px',margin:'80px auto'}}>
+ <Box sx={{ padding: "40px", height: { xs: "auto" },  marginTop: { xs: "20px", md: "120px"},maxWidth:'1200px',margin:'80px auto'}}>
     <Grid container spacing={4} alignItems="center">
       {/* Left Side */}
       <Grid item xs={12} md={6}>
