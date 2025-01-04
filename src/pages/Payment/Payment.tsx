@@ -45,9 +45,9 @@ export default function Payment() {
             marginBottom: "20px",
             overflow: "hidden",
             boxShadow: "none",
-            background:"#F8F8F8",
+            background: "#F8F8F8",
             maxWidth: "1340px",
-            margin:'40px auto'
+            margin: "40px auto",
           }}
         >
           {/* Section 1: Course Image */}
@@ -75,8 +75,11 @@ export default function Payment() {
             >
               {item.CourseName}
             </Typography>
-          
-            <PaymentCourseDescription title={item.ClassTitle} desc={item.ShortDesc}/>
+
+            <PaymentCourseDescription
+              title={item.ClassTitle}
+              desc={item.ShortDesc}
+            />
           </Box>
 
           {/* Section 3: Mentor Info */}
@@ -119,7 +122,7 @@ export default function Payment() {
                 />
               </Typography>
             </Box>
-          
+
             <Typography
               variant="body2"
               sx={{
@@ -127,18 +130,17 @@ export default function Payment() {
                 fontWeight: "600",
                 color: "#F27D82",
                 margin: "0px 0 10px 0",
-                marginTop:'10px'
+                marginTop: "10px",
               }}
             >
               {item.ClassType}
             </Typography>
             <Typography
               variant="body2"
-              sx={{ fontSize: "15px", color: "black",marginTop:'10px' }}
+              sx={{ fontSize: "15px", color: "black", marginTop: "10px" }}
             >
               Language: Engish
             </Typography>
-           
           </Box>
 
           {/* Section 4: Schedule Info */}
@@ -208,10 +210,16 @@ export default function Payment() {
               height: "100%",
             }}
           >
-            <Box sx={{ display: "flex", justifyContent: "center",alignItems:'center' }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: "#2A73B1", fontWeight: "bold",fontSize:'30px' }}
+                sx={{ color: "#2A73B1", fontWeight: "bold", fontSize: "30px" }}
               >
                 {item.Currency}
                 {item.DiscountedPrice}
@@ -220,10 +228,22 @@ export default function Payment() {
                 variant="body2"
                 sx={{
                   color: "red",
-                  textDecoration: "line-through",
+                  position: "relative",
                   marginTop: "5px",
-                  marginLeft: "10px"
-                  ,fontSize:'20px'
+                  marginLeft: "10px",
+                  fontSize: "20px",
+                  display: "inline-block",
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    top: "50%",
+                    left: 0,
+                    width: "100%",
+                    height: "2px",
+                    backgroundColor: "red",
+                    transform: "rotate(-10deg)", // Burada xətti əyirik
+                    transformOrigin: "center",
+                  },
                 }}
               >
                 {item.Currency}
@@ -242,7 +262,6 @@ export default function Payment() {
               flexDirection: "column",
               gap: "10px",
               alignItems: { xs: "center", sm: "center" },
-
             }}
           >
             <Button
@@ -252,7 +271,7 @@ export default function Payment() {
                 color: "#fff",
                 textTransform: "uppercase",
                 fontSize: "12px",
-                 maxWidth:'120px',
+                maxWidth: "120px",
                 //  padding:'5px 20px'
               }}
               onClick={() => handleEnroll(item)}
@@ -266,10 +285,10 @@ export default function Payment() {
                 color: "#fff",
                 textTransform: "uppercase",
                 fontSize: "12px",
-                 maxWidth:'120px',
-                 padding:'5px 20px',
-                 minWidth:'110px',
-                 minHeight:'33px'
+                maxWidth: "120px",
+                padding: "5px 20px",
+                minWidth: "110px",
+                minHeight: "33px",
               }}
               onClick={() => handleMoreInfo(item.FkCourseId)}
             >
