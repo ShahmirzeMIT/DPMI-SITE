@@ -25,6 +25,7 @@ import ClassesDeatil from "../pages/ClassesDetail/ClassesDeatil";
 import ScrollToTop from "./ScrollTop";
 import MyNeedsDetail from "../pages/MyNeeds/MyNeedsDetail";
 import MySkillsDetail from "../pages/MySkills/MySkillsDetail";
+import AnaimationPage from "../pages/Animations/AnaimationPage";
 
 export const routes = [
   {
@@ -64,6 +65,7 @@ export const routes = [
       { path: "/privacy", element: <PrivacyStatement /> },
       {path:'/mychallanges',element:<MyNeedsDetail/>},
       { path: "/myskills", element: <MySkillsDetail /> },
+      {path:'/animation',element:<AnaimationPage/>},
       { path: "*", element: <NotFound /> },
     ],
   },

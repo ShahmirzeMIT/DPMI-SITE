@@ -1,0 +1,103 @@
+.step-over-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 99%;
+  height: 60vh;
+  background-color: #f8f9fa;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1350px;
+}
+
+.step {
+  width: 290px;
+  height: 240px;
+  margin: 10px;
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  transform-origin: center;
+  transition: all 0.3s;
+}
+
+.step:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.step .icon {
+  font-size: 70px;
+}
+
+.step .title {
+  font-size: 24px;
+  font-family: "Delius", serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.step .description {
+  font-size: 14px;
+  font-family: "Delius", serif;
+}
+
+.divider {
+  width: 40px;
+  height: 4px;
+  background-color: #2563eb;
+  position: relative;
+  z-index: 0;
+  margin: 0 -20px;
+}
+
+/* Responsivlik üçün dəyişikliklər */
+@media (max-width: 650px) {
+  .step-over-container {
+    height: 160vh;
+  }
+
+  .steps {
+    flex-direction: column; /* Kartlar şaquli düzülür */
+    align-items: center;
+  }
+
+  .step {
+    width: 100%; /* Kartlar ekranın tam eninə uyğunlaşır */
+    max-width: 500px; /* Mobil üçün maksimum eni */
+    margin-top: 20px; /* Kartlar arasında məsafə artır */
+  }
+
+  .step:first-child {
+    margin-top: 0; /* Birinci kartın yuxarı marginini sil */
+  }
+
+  .divider {
+    width: 4px; /* Şaquli xətt */
+    height: 40px;
+    margin: -20px 0;
+  }
+}
+
+@media (min-width: 651px) {
+  .step {
+    width: calc((100% - 20px) / 2); /* Kartların eni ekran genişliyinə uyğun hesablanır */
+    max-width: 700px; /* Maksimum eni 650px ilə məhdudlaşdırılır */
+  }
+
+  .steps {
+    justify-content: space-between; /* Kartlar arasında sabit məsafə */
+  }
+}
