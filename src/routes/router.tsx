@@ -26,6 +26,7 @@ import ScrollToTop from "./ScrollTop";
 import MyNeedsDetail from "../pages/MyNeeds/MyNeedsDetail";
 import MySkillsDetail from "../pages/MySkills/MySkillsDetail";
 import AnaimationPage from "../pages/Animations/AnaimationPage";
+import LegalNotice from "../pages/Legalnotice/Legalnotice";
 
 export const routes = [
   {
@@ -66,6 +67,7 @@ export const routes = [
       {path:'/mychallanges',element:<MyNeedsDetail/>},
       { path: "/myskills", element: <MySkillsDetail /> },
       {path:'/animation',element:<AnaimationPage/>},
+      {path:'/legalnotice',element:<LegalNotice/>},
       { path: "*", element: <NotFound /> },
     ],
   },

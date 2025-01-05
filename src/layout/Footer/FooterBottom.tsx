@@ -57,6 +57,10 @@ export default function FooterBottom() {
       id:'/privacy',
       title:'Privacy Statement',
     },
+    {
+      id:'/legalnotice',
+      title:'Legal Notice',
+     },
    
   ]
   return (
@@ -183,7 +187,7 @@ export default function FooterBottom() {
          marginTop: "10px",
        }}
        onClick={() => {
-        if(item.id=="/termofuse" || item.id=="/privacy"){
+        if(item.id=="/termofuse" || item.id=="/privacy" || item.id=='/legalnotice'){
           navigate(item.id);
         }
         else{
