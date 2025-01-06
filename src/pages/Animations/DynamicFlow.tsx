@@ -1,9 +1,5 @@
-import  { useMemo } from "react";
-import ReactFlow, {
-  Background,
-  Controls,
-  MarkerType,
-} from "reactflow";
+import { useMemo } from "react";
+import ReactFlow, { Background, Controls, MarkerType } from "reactflow";
 import "reactflow/dist/style.css";
 
 type Module = {
@@ -34,7 +30,8 @@ export const DynamicFlow = ({ modules }: Props) => {
   const totalWidth = containerWidth * 0.8; // Modullar üçün nəzərdə tutulan genişlik (80%)
   const totalHeight = containerHeight * 0.8; // Modullar üçün nəzərdə tutulan hündürlük (80%)
 
-  const moduleWidth = totalWidth / completeModules.length; // Hər modul üçün genişlik
+  const minimumWidth = 200; // Modul üçün minimum genişlik
+  const moduleWidth = Math.max(totalWidth / completeModules.length, minimumWidth); // Minimum genişlik tətbiqi
   const moduleHeight = totalHeight / completeModules.length; // Hər modul üçün hündürlük
 
   // Dinamik olaraq `nodes` yaratmaq
@@ -50,7 +47,7 @@ export const DynamicFlow = ({ modules }: Props) => {
         ),
       },
       position: {
-        x: index * moduleWidth-20, // Sol alt küncdən sağa doğru
+        x: index * moduleWidth, // Sol alt küncdən sağa doğru
         y: containerHeight - (index + 1) * moduleHeight, // Aşağıdan yuxarıya doğru
       },
       style: {
@@ -65,29 +62,31 @@ export const DynamicFlow = ({ modules }: Props) => {
 
   // Dinamik olaraq `edges` yaratmaq
   const edges = useMemo(() => {
-    return completeModules.map((_, index) => {
-      if (index < completeModules.length - 1) {
-        return {
-          id: `e${index + 1}-${index + 2}`,
-          source: `${index + 1}`,
-          target: `${index + 2}`,
-          type: "smoothstep",
-          markerEnd: {
-            type: MarkerType.Arrow,
-          },
-        };
-      }
-      return null;
-    }).filter(Boolean);
+    return completeModules
+      .map((_, index) => {
+        if (index < completeModules.length - 1) {
+          return {
+            id: `e${index + 1}-${index + 2}`,
+            source: `${index + 1}`,
+            target: `${index + 2}`,
+            type: "smoothstep",
+            markerEnd: {
+              type: MarkerType.Arrow,
+            },
+          };
+        }
+        return null;
+      })
+      .filter(Boolean);
   }, [completeModules]);
 
   return (
-    <div style={{ width: "85vw", height: "100vh",margin:'0 auto' }}>
+    <div style={{ width: "85vw", height: "100vh", margin: "0 auto" }}>
       <ReactFlow
         nodes={nodes}
         edges={edges as any}
         style={{ backgroundColor: "white" }}
-        minZoom={0.5}
+        minZoom={0.25}
         maxZoom={2}
       >
         <Background />

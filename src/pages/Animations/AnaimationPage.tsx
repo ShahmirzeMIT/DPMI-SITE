@@ -3,7 +3,7 @@ import StepOver from "./StepOver";
 import StepOverMobile from "./StepOverMobile";
 import { certificationsListData } from "../../defaultDatas/certificationsListData";
 // import RoadmapACPF from "../ACFP/RoadMapACPF";
-import { DynamicFlow } from "./NewAnimation";
+import { DynamicFlow } from "./DynamicFlow";
 
 import Timeline from "./StepComponent";
 
@@ -12,7 +12,7 @@ export default function AnaimationPage() {
   const isMobile = useMediaQuery("(max-width:1100px)");
 
   const selectedData = certificationsListData.find(
-    (item: any) => item.id === '1006'
+    (item: any) => item.id === '1003'
   );
   
   
