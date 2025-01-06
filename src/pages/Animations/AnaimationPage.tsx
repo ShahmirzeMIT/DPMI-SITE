@@ -5,11 +5,14 @@ import { certificationsListData } from "../../defaultDatas/certificationsListDat
 // import RoadmapACPF from "../ACFP/RoadMapACPF";
 import { DynamicFlow } from "./NewAnimation";
 
+import Timeline from "./StepComponent";
+
 
 export default function AnaimationPage() {
   const isMobile = useMediaQuery("(max-width:1100px)");
+
   const selectedData = certificationsListData.find(
-    (item: any) => item.id === '1003'
+    (item: any) => item.id === '1006'
   );
   
   
@@ -21,6 +24,13 @@ export default function AnaimationPage() {
     {/* <RoadmapACPF/> */}
     {/* <EdgesFlow/> */}
     <DynamicFlow modules={selectedData?.courseModules || []}/>
+    <Box>
+
+    </Box>
+    <Box >
+      <Timeline modules={selectedData?.courseModules || []}/>
+
+    </Box>
   </Box>
   
   )

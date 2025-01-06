@@ -50,7 +50,7 @@ export const DynamicFlow = ({ modules }: Props) => {
         ),
       },
       position: {
-        x: index * moduleWidth-50, // Sol alt küncdən sağa doğru
+        x: index * moduleWidth-20, // Sol alt küncdən sağa doğru
         y: containerHeight - (index + 1) * moduleHeight, // Aşağıdan yuxarıya doğru
       },
       style: {
@@ -82,7 +82,7 @@ export const DynamicFlow = ({ modules }: Props) => {
   }, [completeModules]);
 
   return (
-    <div style={{ width: "80vw", height: "100vh",margin:'0 auto' }}>
+    <div style={{ width: "85vw", height: "100vh",margin:'0 auto' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges as any}
