@@ -1,16 +1,18 @@
-import  { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography } from "@mui/material";
 import { Props } from "./StepComponent";
 
 const MobileTimeline = ({ modules }: Props) => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const timelineRef = useRef<any>(null);
-  const cardRefs = useRef<any>([]);
+  const [lineHeight, setLineHeight] = useState(0); // Dinamik xətt hündürlüyü
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Aktiv element
+  const timelineRef = useRef(null);
+  const cardRefs = useRef<any>([]); // Hər bir kartın ref-lərini saxlayır
 
   const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
+
   useEffect(() => {
     const handleScroll = () => {
-      cardRefs.current.forEach((card: any, index: any) => {
+      cardRefs.current.forEach((card:any, index:any) => {
         const cardTop = card.getBoundingClientRect().top + window.scrollY;
         const cardBottom = cardTop + card.offsetHeight;
         const windowScroll = window.scrollY + window.innerHeight / 2;
@@ -21,9 +23,31 @@ const MobileTimeline = ({ modules }: Props) => {
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const calculateLineHeight = () => {
+      if (cardRefs.current.length > 0) {
+        const firstCircle = cardRefs.current[0]; // İlk nöqtənin ref-i
+        const lastCircle = cardRefs.current[cardRefs.current.length - 1]; // Sonuncu nöqtənin ref-i
+
+        if (firstCircle && lastCircle) {
+          // Hər iki element mövcuddursa, mərkəzlər arasındakı məsafəni hesablayırıq
+          const firstCircleCenter =
+            firstCircle.offsetTop + firstCircle.offsetHeight / 2;
+          const lastCircleCenter =
+            lastCircle.offsetTop + lastCircle.offsetHeight / 2;
+
+          // Hündürlüyü hesabla
+          const height = lastCircleCenter - firstCircleCenter;
+          setLineHeight(height);
+        }
+      }
+    };
+
+    calculateLineHeight(); // Xəttin ilkin hündürlüyünü hesablayırıq
+    window.addEventListener("resize", calculateLineHeight); // Yenidən ölçüldükdə hündürlüyü yenilə
+    window.addEventListener("scroll", handleScroll); // Aktiv elementi yeniləmək üçün scroll dinləyicisi
 
     return () => {
+      window.removeEventListener("resize", calculateLineHeight);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -33,10 +57,8 @@ const MobileTimeline = ({ modules }: Props) => {
     {
       title: "Achieve Success",
       shortDesc: "Celebrate milestones and achievements.",
-    //   icon: "🏆",
     },
   ];
-
 
   return (
     <Box
@@ -47,20 +69,20 @@ const MobileTimeline = ({ modules }: Props) => {
         alignItems: "flex-start",
         padding: "20px",
         position: "relative",
-        margin:'0 auto',
-       maxWidth:'400px'
+        margin: "0 auto",
+        maxWidth: "400px",
       }}
     >
       {/* Vertical Line */}
       <Box
         sx={{
           position: "absolute",
+          height: `${lineHeight + 70}px`, // Dinamik xətt hündürlüyü
           width: "4px",
-          height: "90%",
-          backgroundColor: "#1976d2",
-          left: "12px", // Position the line to match the dots
-          top: 0,
+          backgroundColor: "#2971B0",
+          left: "0px",
           marginTop: "40px",
+          transform: "translateX(-50%)",
         }}
       ></Box>
 
@@ -68,12 +90,12 @@ const MobileTimeline = ({ modules }: Props) => {
       {filteredData.map((item, index) => (
         <Box
           key={index}
+          ref={(el) => (cardRefs.current[index as any] = el!)} // Hər kartın ref-i
           sx={{
             display: "flex",
             alignItems: "flex-start",
             position: "relative",
             marginBottom: "40px",
-
             width: "100%",
           }}
         >
@@ -81,61 +103,57 @@ const MobileTimeline = ({ modules }: Props) => {
           <Box
             sx={{
               position: "absolute",
-              left: "-13px",
-              top: "16px",
-              width: "20px",
-              height: "20px",
-              backgroundColor: activeIndex === index ? "green" : "#1976d2",
+              width: "60px",
+              height: "60px",
+              backgroundColor:
+                activeIndex === index
+                  ? colors[index % colors.length]
+                  : "#1976d2",
               borderRadius: "50%",
-              color:'white',
               zIndex: 1,
-              "@media (max-width: 600px)": {
-                top: "12px",
-                left: "-17px",
-                width: "25px",
-                height: "25px",
-              },
+              left: -50,
+              color: "white",
+              fontSize: "36px",
+              textAlign: "center",
+              lineHeight: "60px", // Mərkəzləşdirmək üçün
             }}
           >
-            {index+1}
+            {index + 1}
           </Box>
 
           {/* Card */}
           <Card
-            ref={(el) => (cardRefs.current[index as any] = el)}
             sx={{
-              marginLeft: "40px",
+              marginLeft: "80px",
               padding: "16px",
               width: "90%",
-              boxShadow:
+              borderRadius: "15px",
+              backgroundColor:
                 activeIndex === index
-                  ? "0px 4px 20px rgba(0, 0, 0, 0.3)"
-                  : "none",
-              transform: activeIndex === index ? "scale(1.05)" : "scale(1)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              "@media (max-width: 600px)": {
-                width: "100%",
-                marginLeft: "20px",
-              },
-              borderRadius:'15px',
-              maxWidth:'400px',
-              backgroundColor: item.title === "Achieve Success" ? "#1876D1" : colors[index % colors.length]
+                  ? colors[index % colors.length]
+                  : "#1976d2",
+              transform: activeIndex === index ? "scale(1.1)" : "scale(1)",
+              transition: "transform 0.3s ease",
             }}
           >
-            <Typography variant="h6" gutterBottom sx={{
-                 fontSize: '24px',
-                 color:'white'
-            }}>
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{ fontSize: "24px", color: "white" }}
+            >
               {item.title}
             </Typography>
-          
-            <Typography variant="body2"
+
+            <Typography
+              variant="body2"
               sx={{
-                fontSize: '18px',
-                lineHeight:'28px',
-                 color:'white'
+                fontSize: "18px",
+                lineHeight: "28px",
+                color: "white",
               }}
-            >{item.shortDesc}</Typography>
+            >
+              {item.shortDesc}
+            </Typography>
           </Card>
         </Box>
       ))}

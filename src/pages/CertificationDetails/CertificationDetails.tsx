@@ -12,11 +12,9 @@ import WhatLearnSpf from "../SFP/WhatLearnSpf";
 import DetailCard from "../../componets/DetailCard";
 import { Avatar, Typography } from "antd";
 import Logo from "../../assets/images/detailIcon.png";
-import CertificationsProgress from "./CertificationsProgress";
-import CourseCardStatic from "../../componets/CourseCardStatic";
 // import StepOver from "./StepOver";
 // import StepOver from "./StepOver";
-
+import  Timeline  from '../Animations/StepComponent'
 
 export default function CertificationDetails() {
   const { certificateId } = useParams<{ certificateId: string }>();
@@ -66,29 +64,8 @@ export default function CertificationDetails() {
           >
             Learning Journey
           </Typography>
-          {selectedData.courseModules.map((item, index) => (
-            // <Box key={index} sx={{ width: '30%', margin: '20px' }}>
-            <CertificationsProgress
-              data={[
-                {
-                  id: (index + 1).toString(), // Unikal `id` verilir
-                  title: item.title,
-                  shortDesc: item.shortDesc,
-                },
-              ]}
-            />
-            // </Box>
-          ))}
-          ;
-          <Box sx={{ width: "80%", margin: "0px auto" }}>
-            <CourseCardStatic
-              data={{
-                id: "Success",
-                title: "Certified" + ` ` + `"` + selectedData.title + `"`,
-                shortDesc: "You have completed all courses",
-              }}
-            />
-          </Box>
+          <Timeline modules={selectedData?.courseModules || []}/>
+          
         </Box>
         <Typography
           style={{
