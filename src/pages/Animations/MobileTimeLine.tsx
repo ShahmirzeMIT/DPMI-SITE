@@ -7,6 +7,7 @@ const MobileTimeline = ({ modules }: Props) => {
   const timelineRef = useRef<any>(null);
   const cardRefs = useRef<any>([]);
 
+  const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
   useEffect(() => {
     const handleScroll = () => {
       cardRefs.current.forEach((card: any, index: any) => {
@@ -55,7 +56,7 @@ const MobileTimeline = ({ modules }: Props) => {
         sx={{
           position: "absolute",
           width: "4px",
-          height: "85%",
+          height: "90%",
           backgroundColor: "#1976d2",
           left: "12px", // Position the line to match the dots
           top: 0,
@@ -82,19 +83,22 @@ const MobileTimeline = ({ modules }: Props) => {
               position: "absolute",
               left: "-13px",
               top: "16px",
-              width: "12px",
-              height: "12px",
+              width: "20px",
+              height: "20px",
               backgroundColor: activeIndex === index ? "green" : "#1976d2",
               borderRadius: "50%",
-              
+              color:'white',
               zIndex: 1,
               "@media (max-width: 600px)": {
                 top: "12px",
-                width: "15px",
-                height: "15px",
+                left: "-17px",
+                width: "25px",
+                height: "25px",
               },
             }}
-          ></Box>
+          >
+            {index+1}
+          </Box>
 
           {/* Card */}
           <Card
@@ -114,11 +118,13 @@ const MobileTimeline = ({ modules }: Props) => {
                 marginLeft: "20px",
               },
               borderRadius:'15px',
-              maxWidth:'400px'
+              maxWidth:'400px',
+              backgroundColor: item.title === "Achieve Success" ? "#1876D1" : colors[index % colors.length]
             }}
           >
             <Typography variant="h6" gutterBottom sx={{
                  fontSize: '24px',
+                 color:'white'
             }}>
               {item.title}
             </Typography>
@@ -126,7 +132,8 @@ const MobileTimeline = ({ modules }: Props) => {
             <Typography variant="body2"
               sx={{
                 fontSize: '18px',
-                lineHeight:'28px'
+                lineHeight:'28px',
+                 color:'white'
               }}
             >{item.shortDesc}</Typography>
           </Card>

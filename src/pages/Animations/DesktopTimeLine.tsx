@@ -8,6 +8,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
   const cardRefs = useRef<any>([]);
   const theme = useTheme();
 
+  const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
   useEffect(() => {
     const handleScroll = () => {
       const timelinePosition = timelineRef.current.getBoundingClientRect().top + window.scrollY;
@@ -61,7 +62,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
           width: "4px",
           backgroundColor: "#1976d2",
           left: "50%",
-          marginTop:'110px',
+          marginTop:'180px',
 
           transform: "translateX(-50%)",
           [theme.breakpoints.down("sm")]: {
@@ -81,6 +82,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
             margin: "40px 0",
             width: "100%",
             maxWidth: "800px",
+          
           }}
         >
           {/* Connecting Line to Card */}
@@ -92,9 +94,11 @@ const DesktopTimeLine = ({ modules }: Props) => {
               backgroundColor: activeIndex === index ? "green" : "#1976d2",
               borderRadius: "50%",
               zIndex: 1,
-              left: { xs: "6px", sm: "49.1%" }, // Adjust circle position for mobile
+              left: { xs: "6px", sm: "49.1%" },
+              color:'white'
+              // Adjust circle position for mobile
             }}
-          ></Box>
+          >{index+1}</Box>
           <Card
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
@@ -107,7 +111,8 @@ const DesktopTimeLine = ({ modules }: Props) => {
               transform: activeIndex === index ? "scale(1.25)" : "scale(1)",
               transition: "transform 0.3s ease",
               boxShadow: activeIndex === index ? "0px 4px 20px rgba(0, 0, 0, 0.3)" : "none",
-              borderRadius:'15px'
+              borderRadius:'15px',
+              backgroundColor: item.title === "Achieve Success" ? "#1876D1" : colors[index % colors.length]
             }}
           >
             <Typography
@@ -115,6 +120,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
               gutterBottom
               sx={{
                 fontSize: '24px', // Smaller font size for mobile
+                color:'white'
               }}
             >
               {item.title}
@@ -124,6 +130,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
               gutterBottom
               sx={{
                 fontSize: '18px',
+                color:'white'
               }}
             >
               {item.shortDesc}
