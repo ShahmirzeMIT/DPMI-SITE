@@ -9,6 +9,7 @@ import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 // import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
 export default function FooterBottom() {
+  const deployTime = "23:51";
  const navigate = useNavigate();
  const startYear = 2024; // Starting year
   const currentYear = new Date().getFullYear();
@@ -248,6 +249,7 @@ export default function FooterBottom() {
     <Typography color="text.secondary" style={{textAlign:'center'}}>
       {`  ${startYear} - ${currentYear} `} {`©`} ACF System GmbH. DPM Institute
       is managed by ACF System GmbH. All rights reserved.
+      Deploy Time: {deployTime}
     </Typography>
   </Box>
 </Box>
