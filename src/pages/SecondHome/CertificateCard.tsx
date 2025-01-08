@@ -47,7 +47,7 @@ export default function CertificateCard({ data }: ProductCardProps) {
         variant="h4"
         sx={{
           color: "#1976d2",
-          textDecoration: "underline",
+          // textDecoration: "underline",
           fontSize: "20px",
           fontWeight: "600",
           textAlign: "start"
