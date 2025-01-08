@@ -4,7 +4,7 @@ import { callApi } from "../../utils/callApi";
 import { useNavigate } from "react-router-dom";
 import PaymentModal from "./PaymentModal";
 import PaymentCourseDescription from "./PaymentCourseDescription";
-
+import { PiSealWarningFill } from "react-icons/pi";
 export default function Payment() {
   const [cardValues, setCardValues] = useState([]);
   const navigate = useNavigate();
@@ -40,6 +40,11 @@ export default function Payment() {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             alignItems: "center",
+            "@media (max-width: 750px)": {
+              flexDirection: "column",
+              maxWidth: "500px", // Set maximum width
+              margin: "40px auto",  // Center the component
+            },
             border: "1px solid #E0E0E0",
             borderRadius: "8px",
             marginBottom: "20px",
@@ -88,9 +93,26 @@ export default function Payment() {
               flex: "1",
               padding: "35px 20px",
               borderLeft: { sm: "1px solid #E0E0E0" },
+              "@media (max-width: 750px)": {
+                borderLeft: "none",
+              },
               textAlign: { xs: "center", sm: "left" },
             }}
           >
+            <Box    sx={{
+                fontSize: "18px",
+                fontWeight: "600",
+                margin: "10px 0",
+                color: "black",
+                textAlign: "start",
+              }}>AI-Mento Support</Box>
+               <Box    sx={{
+                fontSize: "18px",
+                fontWeight: "400",
+                margin: "10px 0",
+                color: "black",
+                textAlign: "start",
+              }}>Training Coach</Box>
             <Box
               sx={{
                 display: "flex",
@@ -149,6 +171,9 @@ export default function Payment() {
               flex: "1",
               padding: "10px 20px",
               borderLeft: { sm: "1px solid #E0E0E0" },
+              "@media (max-width: 750px)": {
+                borderLeft: "none",
+              },
               textAlign: { xs: "center", sm: "left" },
             }}
           >
@@ -164,6 +189,9 @@ export default function Payment() {
             >
               {item.StartDate}
             </Typography>
+            <Button sx={{backgroundColor:'yellow',display:'flex',alignItems:'center',gap:'5px',padding:'4px 6px',textTransform:'capitalize',fontWeight:'bold',marginBottom:'10px'}}>
+               <PiSealWarningFill/> {item.SpotsLeft} {"Spots Left"}
+            </Button>
             <Typography
               variant="body2"
               sx={{
@@ -206,18 +234,23 @@ export default function Payment() {
               flex: "1",
               padding: "55px 0",
               borderLeft: { sm: "1px solid #E0E0E0" },
+              "@media (max-width: 750px)": {
+                borderLeft: "none",
+              },
               textAlign: "center",
-              height: "100%",
+              height: "150%",
             }}
           >
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
+                flexDirection: "column",
                 alignItems: "center",
               }}
             >
-              <Typography
+          <Box sx={{display:'flex',alignItems:'center'}}>
+          <Typography
                 variant="h6"
                 sx={{ color: "#2A73B1", fontWeight: "bold", fontSize: "30px" }}
               >
@@ -249,22 +282,9 @@ export default function Payment() {
                 {item.Currency}
                 {item.Price}
               </Typography>
-            </Box>
           </Box>
-
-          {/* Section 6: Actions */}
-          <Box
-            sx={{
-              flex: "1",
-              padding: "35px 20px",
-              borderLeft: { sm: "1px solid #E0E0E0" },
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              alignItems: { xs: "center", sm: "center" },
-            }}
-          >
-            <Button
+              <Box>
+              <Button
               variant="contained"
               sx={{
                 backgroundColor: "#5693F0",
@@ -272,12 +292,14 @@ export default function Payment() {
                 textTransform: "uppercase",
                 fontSize: "12px",
                 maxWidth: "120px",
+                margin:'10px auto',
                 //  padding:'5px 20px'
               }}
               onClick={() => handleEnroll(item)}
             >
               Enroll Now
             </Button>
+            <br />
             <Button
               variant="contained"
               sx={{
@@ -294,7 +316,12 @@ export default function Payment() {
             >
               More Info
             </Button>
+              </Box>
+            </Box>
           </Box>
+
+          {/* Section 6: Actions */}
+        
         </Box>
       ))}
     </Box>
