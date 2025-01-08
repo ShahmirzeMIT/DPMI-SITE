@@ -77,7 +77,9 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
   
 
       const session = await response.json();
-
+      if (session.error) {
+      toast.error(session.error);
+      }
       if (session.sessionId) {
         const result = await stripe.redirectToCheckout({
           sessionId: session.sessionId,
@@ -88,12 +90,13 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
         }
       }
     } catch (error: any) {
+      console.log(error,'error');
+      
         if (error.status === 417) {
           data.disabled=false
-          toast.error(error.message);
         }
      
-        toast.error(error.message);
+        toast.error(error);
      
     } finally {
       setLoading(false);

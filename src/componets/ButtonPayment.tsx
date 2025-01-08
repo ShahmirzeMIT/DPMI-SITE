@@ -56,13 +56,13 @@ export default function ButtonPayment({ data }: ButtonPaymentProps) {
           }),
         }
       );
-      console.log(response);
 
       const session = await response.json();
+   
+    
       if (session.error) {
-        toast.error(`${session.error}`);
-      }
-
+        toast.error(session.error);
+        }
       if (session.sessionId) {
         // Stripe Checkout-a yönləndir
         const result = await stripe.redirectToCheckout({
@@ -77,7 +77,6 @@ export default function ButtonPayment({ data }: ButtonPaymentProps) {
     } catch (error:any) {
       if (error.status === 417) {
         data.disabled=false
-        toast.error(error.message);
       }
       toast.error(error.message);
     } finally {
