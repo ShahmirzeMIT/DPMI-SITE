@@ -41,14 +41,17 @@ export default function PaymenCard({data}:PaymentCardProps) {
         "Promocode":promoCode
     })
     
-    setPriceList((prev)=>({
+    console.log(res.FinalPrice,'FinalPrice');
+    
+    setPriceList((prev) => ({
       ...prev,
-      PromocodeDiscount:res.PromocodeDiscount?res.PromocodeDiscount:prev.PromocodeDiscount,
-      FinalPrice:res.FinalPrice?res.FinalPrice:prev.FinalPrice,
-      Currency:res.Currency?res.Currency:prev.Currency,
-      DiscountPrice:res.DiscountPrice?res.DiscountPrice:prev.DiscountPrice,
-      Price:res.Price?res.Price:prev.Price
-    }))
+      PromocodeDiscount: res.PromocodeDiscount ? res.PromocodeDiscount : prev.PromocodeDiscount,
+      FinalPrice: res.FinalPrice !== null && res.FinalPrice !== undefined ? res.FinalPrice : prev.FinalPrice,
+      Currency: res.Currency ? res.Currency : prev.Currency,
+      DiscountPrice: res.DiscountPrice ? res.DiscountPrice : prev.DiscountPrice,
+      Price: res.Price ? res.Price : prev.Price,
+    }));
+    
   }
   useEffect(() => {
     const storedPaymentData = localStorage.getItem('paymentData');
@@ -59,6 +62,8 @@ export default function PaymenCard({data}:PaymentCardProps) {
       localStorage.setItem('paymentData', JSON.stringify(paymentData));
     }
   }, [promoCode]); 
+  
+  console.log(priceList,'priceList');
   
   return (
     <>
