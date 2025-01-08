@@ -78,11 +78,11 @@ const DesktopTimeLine = ({ modules }: Props) => {
       <Box
         sx={{
           position: "absolute",
-          height: `${lineHeight+20}px`, // Dinamik xətt hündürlüyü
+          height: `${lineHeight}px`, // Dinamik xətt hündürlüyü
           width: "4px",
           backgroundColor: "#1976d2",
           left: "50%",
-          marginTop:'180px',
+          marginTop:'80px',
           transform: "translateX(-50%)",
           backgroundImage:
             activeIndex === filteredData.length - 1
@@ -163,7 +163,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
             >
               {item.title}
             </Typography>
-            <Typography
+            {/* <Typography
               variant="body2"
               gutterBottom
               sx={{
@@ -172,7 +172,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
               }}
             >
               {item.shortDesc}
-            </Typography>
+            </Typography> */}
           </Card>
         </Box>
       ))}
