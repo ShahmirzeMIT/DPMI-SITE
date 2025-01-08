@@ -12,9 +12,14 @@ export default function CertificationMenu() {
         display: "flex",
         flexWrap: "wrap",
         gap: 2,
-        justifyContent: "space-between",
+        justifyContent: "space-around",
            marginLeft: "20px",
-           alignItems:'center'
+           alignItems:'center',
+          //  "@media (max-width: 115px)": {
+          //   alignItems:'center',
+          //   flexDirection: 'column',
+          //   justifyContent:'center'
+          //  }
       }}
     >
       <Box sx={{marginTop:'25px',textAlign:'start',marginRight:'40px'}}>

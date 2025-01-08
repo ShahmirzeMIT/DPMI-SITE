@@ -10,12 +10,7 @@ import ForIndividualsMob from "./ForIndividualsMob";
 // import TraningsMenu from "./TraningsMenu";
 
 const pages = [
-
-  
-  {
-    name:"My Challanges",
-    page:"/mychallanges"
-  },
+ 
   {
     name: "Certifications",
     children: [<CertificationMenuMob key="certifications-menu" />],
@@ -38,6 +33,10 @@ const pages = [
   {
     name: "My Skills",
     page:"/myskills"
+  },
+  {
+    name:"My Challanges",
+    page:"/mychallanges"
   }
 ];
 const openPage = ['Courses', "AI-Simulation","My Challanges","My Skills"];
@@ -120,6 +119,24 @@ export default function AppNavbarOpenMenuMob({
         </Box>
       ))}
       <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'230px'}}>
+      <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#2a74b1",
+                  color: "#fff",
+                  textTransform: "capitalize",
+                  fontSize: "15px",
+                  border:'1px solid #2a74b1',
+                  marginRight:'10px',
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color:'#2a74b1'
+                  },
+                }}
+                onClick={() => navigate("/classes")}
+              >
+                Find  Classes
+              </Button>
           <Button
                 variant="text"
                 sx={{
@@ -137,25 +154,9 @@ export default function AppNavbarOpenMenuMob({
                   window.location.href = "https://dpmi.netlify.app/login";
                 }}
               >
-              Sign In
+              Log  In
               </Button>
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#2a74b1",
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  fontSize: "15px",
-                  border:'1px solid #2a74b1',
-                  marginLeft:'10px',
-                  "&:hover": {
-                    backgroundColor: "white",
-                    color:'#2a74b1'
-                  },
-                }}
-              >
-                Find  Classes
-              </Button>
+              
       </Box>
     
     </Menu>

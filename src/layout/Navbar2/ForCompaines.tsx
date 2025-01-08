@@ -9,7 +9,7 @@ export default function ForCompanies() {
         display: "flex",
         flexWrap: "wrap",
         gap: 2,
-        justifyContent: "space-between",
+        justifyContent: "space-around",
         marginLeft: "20px",
         alignItems: "center",
       }}

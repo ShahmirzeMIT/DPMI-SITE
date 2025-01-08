@@ -44,21 +44,7 @@ export default function CertificationMenuMob() {
         }
        
       </Box>
-      {/* <Box sx={{marginTop:'5px',width:'100%',height:'250px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",alignItems:'center',borderRadius:'10px',background:'#f4f4f4'}}>
-        {
-          ProductManagerCardDataNavbar.map((item:{image:string})=>{
-            return(
-              <Box>
-                <Avatar src={item.image} style={{width: "7rem",height: "auto",
-                  // boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",borderRadius:'50%'
-                  }}  />
-               </Box> 
-            )
-          })
-        }
-          
-      </Box> */}
-      
+
     </Box>
   );
 }

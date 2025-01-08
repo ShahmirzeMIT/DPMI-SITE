@@ -74,9 +74,12 @@ export default function ButtonPayment({ data }: ButtonPaymentProps) {
           toast.error(`${result.error}`);
         }
       }
-    } catch (error) {
-      console.error("Error:", error);
-      message.error("Payment failed! Please try again.");
+    } catch (error:any) {
+      if (error.status === 417) {
+        data.disabled=false
+        toast.error(error.message);
+      }
+      toast.error(error.message);
     } finally {
       setLoading(false); // Spinneri gizlət
     }

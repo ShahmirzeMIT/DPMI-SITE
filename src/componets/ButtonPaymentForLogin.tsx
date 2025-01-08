@@ -24,22 +24,29 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
   const [loading, setLoading] = useState(false);
 
   const handlePayment = async () => {
-
-    setLoading(true); // Yüklənmə spinnerini göstər
+    setLoading(true);
     const stripe = await stripePromise;
-    const {disabled,...payload}=data
+
     if (!stripe) {
       message.error("Stripe.js could not be loaded. Please refresh the page.");
       setLoading(false);
       return;
     }
 
-      const res= await callApi('/user/main/login',{
-            "Email":data.Email,
-            "Password":data.Password
-          })
+    try {
+      const { disabled, ...payload } = data;
 
-        if(!res.token)  return
+      // Step 1: Authenticate user
+      const res = await callApi("/user/main/login", {
+        Email: data.Email,
+        Password: data.Password,
+      });
+
+      if (!res.token) {
+        throw new Error("Authentication failed. Please check your credentials.");
+      }
+
+      // Step 2: Initialize payment
       const response = await fetch(
         "https://dpminstitute.org/api/billing/main/payment/init",
         {
@@ -50,36 +57,46 @@ export default function ButtonPaymentForLogin({data}:ButtonPaymentProps) {
           },
           body: JSON.stringify({
             ...payload,
-            FkClassId:+data.FkClassId,
+            FkClassId: +data.FkClassId,
             createCheckoutSession: 1,
-            Price:4,
-            DiscountPrice:5,
-            FirstName:"dksakoif",
-            LastName:"kdsao",
-            Company:'fdsklfklds',
-            ZipCode:'samdlkasm',
-            AddressLine1:'213',
-            AddressLine2:"lwqplep",
-            Country:"koq",
-            City:'4',
-            Currency:'USD'
+            Price: 4,
+            DiscountPrice: 5,
+            FirstName: "dksakoif",
+            LastName: "kdsao",
+            Company: "fdsklfklds",
+            ZipCode: "samdlkasm",
+            AddressLine1: "213",
+            AddressLine2: "lwqplep",
+            Country: "koq",
+            City: "4",
+            Currency: "USD",
           }),
         }
       );
-      
+
+  
 
       const session = await response.json();
 
       if (session.sessionId) {
-        // Stripe Checkout-a yönləndir
         const result = await stripe.redirectToCheckout({
           sessionId: session.sessionId,
         });
+
         if (result.error) {
-          toast.error(`${result.error}`);
+          throw new Error(result.error.message || "Stripe Checkout error.");
         }
-       
-      
+      }
+    } catch (error: any) {
+        if (error.status === 417) {
+          data.disabled=false
+          toast.error(error.message);
+        }
+     
+        toast.error(error.message);
+     
+    } finally {
+      setLoading(false);
     }
   };
 
