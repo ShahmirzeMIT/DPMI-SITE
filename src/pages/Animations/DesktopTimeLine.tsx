@@ -78,7 +78,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
       <Box
         sx={{
           position: "absolute",
-          height: `${lineHeight}px`, // Dinamik xətt hündürlüyü
+          height: `${lineHeight+20}px`, // Dinamik xətt hündürlüyü
           width: "4px",
           backgroundColor: "#1976d2",
           left: "50%",
