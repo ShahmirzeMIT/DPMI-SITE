@@ -64,7 +64,7 @@ export default function CertificationDetails() {
           >
             Learning Journey
           </Typography>
-          <Timeline modules={selectedData?.courseModules || []}/>
+          <Timeline modules={selectedData?.courseModules || []} index={certificateId as any}/>
           
         </Box>
         <Typography

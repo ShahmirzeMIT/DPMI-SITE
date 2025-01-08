@@ -10,6 +10,8 @@ export const ProductManagerCardDataNavbar=[
     {
         id:3,
         title: "AIFP™️ | AI Foundation Practitioner ",
+        shorts:"AIFP",
+        openId:"1004",
         link:'/certificates/1004',
         image: Image3,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
@@ -19,6 +21,8 @@ export const ProductManagerCardDataNavbar=[
         id:4,
         title: "AIPP™️ | AI Profesional Practitioner",
         link:'/certificates/1005',
+        shorts:"AIPP",
+        openId:"1005",
         image: Image4,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
@@ -27,6 +31,8 @@ export const ProductManagerCardDataNavbar=[
         id:2,    
         title: "DPM™️ | Digital Product Manager",
         image: Image2,
+        shorts:"DPM ",
+        openId:"1006",
         link:'/certificates/1006',
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
@@ -35,6 +41,8 @@ export const ProductManagerCardDataNavbar=[
         id:1,
         title: "SFP™️ | Startup  Foundation Practitioner",
         image: Image1,
+        shorts:"SFP",
+        openId:"1003",
         link:'/certificates/1003',
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:"#FFFFFF"
@@ -45,6 +53,8 @@ export const ProductManagerCardDataNavbar=[
         title: "ACFP™️ | Agile Communication Foundation Practitioner",
         link:'/certificates/1001',
         image: Image5,
+        shorts:"ACFP",   
+        openId:"1001",
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
@@ -53,6 +63,8 @@ export const ProductManagerCardDataNavbar=[
         title: "ACPP™️ | Agile Communication Profesional Practitioner ",
         link:'/certificates/1002',
         image: Image6,
+        shorts:"ACPP",
+        openId:"1002",
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },

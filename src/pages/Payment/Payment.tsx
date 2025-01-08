@@ -192,7 +192,7 @@ export default function Payment() {
             <Button sx={{backgroundColor:'yellow',display:'flex',alignItems:'center',gap:'5px',padding:'4px 6px',textTransform:'capitalize',fontWeight:'bold',marginBottom:'10px'}}>
                <PiSealWarningFill/> {item.SpotsLeft} {"Spots Left"}
             </Button>
-            <Typography
+            {/* <Typography
               variant="body2"
               sx={{
                 display: "block",
@@ -203,7 +203,7 @@ export default function Payment() {
               }}
             >
               {item.TimeInterval}
-            </Typography>
+            </Typography> */}
             <Typography
               variant="body2"
               sx={{

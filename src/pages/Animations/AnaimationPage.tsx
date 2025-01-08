@@ -5,7 +5,7 @@ import { certificationsListData } from "../../defaultDatas/certificationsListDat
 // import RoadmapACPF from "../ACFP/RoadMapACPF";
 import { DynamicFlow } from "./DynamicFlow";
 
-import Timeline from "./StepComponent";
+// import Timeline from "./StepComponent";
 
 
 export default function AnaimationPage() {
@@ -28,7 +28,7 @@ export default function AnaimationPage() {
 
     </Box>
     <Box >
-      <Timeline modules={selectedData?.courseModules || []}/>
+      {/* <Timeline modules={selectedData?.courseModules || []} index={} /> */}
 
     </Box>
   </Box>

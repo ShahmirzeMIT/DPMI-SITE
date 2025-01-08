@@ -2,18 +2,19 @@ import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography, useTheme } from "@mui/material";
 import { Props } from "./StepComponent";
 
-const DesktopTimeLine = ({ modules }: Props) => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [lineHeight, setLineHeight] = useState(0); // Dinamik xətt hündürlüyü
+
+const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [lineHeight, setLineHeight] = useState(0); // Dynamic line height
   const timelineRef = useRef<any>(null);
-  const cardRefs = useRef<any>([]); // Hər bir kartın ref-lərini saxlayır
+  const cardRefs = useRef<any>([]); // Ref for each card
   const theme = useTheme();
 
   const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
 
   useEffect(() => {
     const handleScroll = () => {
-      cardRefs.current.forEach((card: any, index: any) => {
+      cardRefs.current.forEach((card: any, index: number) => {
         const cardTop = card.getBoundingClientRect().top + window.scrollY;
         const cardBottom = cardTop + card.offsetHeight;
         const windowScroll = window.scrollY + window.innerHeight / 2;
@@ -26,21 +27,15 @@ const DesktopTimeLine = ({ modules }: Props) => {
 
     const calculateLineHeight = () => {
       if (cardRefs.current.length > 0) {
-        const firstCircle = cardRefs.current[0]; // First circle (connected to the card)
-        const lastCircle = cardRefs.current[cardRefs.current.length - 1]; // Last circle (connected to the card)
+        const firstCircle = cardRefs.current[0];
+        const lastCircle = cardRefs.current[cardRefs.current.length - 1];
 
         if (firstCircle && lastCircle) {
           const firstCircleCenter =
-            firstCircle.offsetTop + firstCircle.offsetHeight / 2; // Center of the first circle
+            firstCircle.offsetTop + firstCircle.offsetHeight / 2;
           const lastCircleCenter =
-            lastCircle.offsetTop + lastCircle.offsetHeight / 2; // Center of the last circle
-          console.log(
-            "First Circle:",
-            firstCircleCenter,
-            "Last Circle:",
-            lastCircleCenter
-          );
-          // Calculate the height dynamically based on circles' positions
+            lastCircle.offsetTop + lastCircle.offsetHeight / 2;
+
           const height = lastCircleCenter - firstCircleCenter;
           setLineHeight(height);
         }
@@ -49,7 +44,7 @@ const DesktopTimeLine = ({ modules }: Props) => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", calculateLineHeight);
-    calculateLineHeight(); // İlk dəfə xəttin hündürlüyünü hesabla
+    calculateLineHeight();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -57,10 +52,15 @@ const DesktopTimeLine = ({ modules }: Props) => {
     };
   }, []);
 
+  console.log(finishTitle, "finishTitle");
+  
+
   const filteredData = [
     ...modules,
     {
-      title: "Certifaed ",
+      title: `${"Certificate"} ${
+        finishTitle 
+      }`,
       shortDesc: "Celebrate milestones and achievements.",
     },
   ];
@@ -78,11 +78,10 @@ const DesktopTimeLine = ({ modules }: Props) => {
         margin: "0 auto",
       }}
     >
-      {/* Vertical Line */}
       <Box
         sx={{
           position: "absolute",
-          height: `${lineHeight}px`, // Dinamik xətt hündürlüyü
+          height: `${lineHeight}px`,
           width: "4px",
           backgroundColor: "#1976d2",
           left: "50%",
@@ -91,14 +90,13 @@ const DesktopTimeLine = ({ modules }: Props) => {
           backgroundImage:
             activeIndex === filteredData.length - 1
               ? "none"
-              : "repeating-linear-gradient(#1976d2, #1976d2 10px, transparent 10px, transparent 20px)", // Dotted xətt
+              : "repeating-linear-gradient(#1976d2, #1976d2 10px, transparent 10px, transparent 20px)",
           [theme.breakpoints.down("sm")]: {
-            left: "10px", // Mobil uyğunluq üçün sola düzəliş
+            left: "10px",
           },
         }}
       ></Box>
 
-      {/* Timeline Cards */}
       {filteredData.map((item, index) => (
         <Box
           key={index}
@@ -109,12 +107,11 @@ const DesktopTimeLine = ({ modules }: Props) => {
               sm: index % 2 === 0 ? "row" : "row-reverse",
             },
             alignItems: "center",
-            margin: "20px 60px", // Adjusted margin to 20px top and bottom, resulting in a max of 40px spacing
+            margin: "20px 60px",
             width: "100%",
             maxWidth: "800px",
           }}
         >
-          {/* Connecting Circle to Card */}
           <Box
             sx={{
               position: "absolute",
@@ -133,46 +130,45 @@ const DesktopTimeLine = ({ modules }: Props) => {
             {index + 1}
           </Box>
           <Card
-  ref={(el) => (cardRefs.current[index] = el)}
-  data-index={index}
-  sx={{
-    padding: "12px",
-    margin: { xs: "10px 0", sm: "0 10px" },
-    flex: "none", // Prevent resizing in flex layout
-    width: "350px !important", // Force width
-    minWidth: "350px !important", // Force min width
-    maxWidth: "350px !important", // Force max width
-    textAlign: "center",
-    transition: "transform 0.3s ease",
-    boxShadow:
-      activeIndex === index
-        ? "0px 4px 20px rgba(0, 0, 0, 0.3)"
-        : "none",
-    borderRadius: "15px",
-    backgroundColor:
-      item.title === "Achieve Success"
-        ? "#1876D1"
-        : colors[index % colors.length],
-        transform: `scale(1.25) translateX(${index % 2 === 0 ? "-40px" : "40px"})`,
+            ref={(el) => (cardRefs.current[index] = el)}
+            data-index={index}
+            sx={{
+              padding: "12px",
+              margin: { xs: "10px 0", sm: "0 10px" },
+              flex: "none",
+              width: "350px !important",
+              minWidth: "350px !important",
+              maxWidth: "350px !important",
+              textAlign: "center",
+              transition: "transform 0.3s ease",
+              boxShadow:
+                activeIndex === index
+                  ? "0px 4px 20px rgba(0, 0, 0, 0.3)"
+                  : "none",
+              borderRadius: "15px",
+              backgroundColor: colors[index % colors.length],
+              transform: `scale(1.25) translateX(${
+                index % 2 === 0 ? "-40px" : "40px"
+              })`,
+              "&:hover": {
+                transform: `scale(1.45) translateX(${
+                  index % 2 === 0 ? "-50px" : "50px"
+                })`,
+              },
+            }}
+          >
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{
+                fontSize: "24px",
+                color: "white", // Change the text color to white
+              }}
+            >
+              {item.title}
+            </Typography>
 
-    "&:hover": {
-      transform: `scale(1.45) translateX(${index % 2 === 0 ? "-50px" : "50px"})`,
-    },
-  }}
->
-  <Typography
-    variant="h6"
-    gutterBottom
-    sx={{
-      fontSize: "24px",
-      color: "white",
-    }}
-  >
-    {item.title}
-  </Typography>
-</Card>
-
-
+          </Card>
         </Box>
       ))}
     </Box>
