@@ -51,8 +51,6 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
       window.removeEventListener("resize", calculateLineHeight);
     };
   }, []);
-
-  console.log(finishTitle, "finishTitle");
   
 
   const filteredData = [

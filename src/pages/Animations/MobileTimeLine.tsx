@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography } from "@mui/material";
 import { Props } from "./StepComponent";
 
-const MobileTimeline = ({ modules }: Props) => {
+const MobileTimeline = ({ modules, finishTitle }: Props) => {
   const [lineHeight, setLineHeight] = useState(0); // Dinamik xətt hündürlüyü
   const [activeIndex, setActiveIndex] = useState<number | null>(null); // Aktiv element
   const timelineRef = useRef(null);
@@ -55,7 +55,9 @@ const MobileTimeline = ({ modules }: Props) => {
   const filteredData = [
     ...modules,
     {
-      title: "Achieve Success",
+      title: `${"Certificate"} ${
+        finishTitle 
+      }`,
       shortDesc: "Celebrate milestones and achievements.",
     },
   ];
@@ -70,7 +72,10 @@ const MobileTimeline = ({ modules }: Props) => {
         padding: "20px",
         position: "relative",
         margin: "0 auto",
-        maxWidth: "400px",
+        maxWidth: "450px",
+       "@media (max-width: 450px)": {
+           maxWidth: "310px",  // Center the component
+            },
       }}
     >
       {/* Vertical Line */}
@@ -81,7 +86,7 @@ const MobileTimeline = ({ modules }: Props) => {
           width: "4px",
           backgroundColor: "#2971B0",
           left: "0px",
-          marginTop: "40px",
+          // marginTop: "40px",
           transform: "translateX(-50%)",
         }}
       ></Box>
@@ -105,10 +110,7 @@ const MobileTimeline = ({ modules }: Props) => {
               position: "absolute",
               width: "60px",
               height: "60px",
-              backgroundColor:
-                activeIndex === index
-                  ? colors[index % colors.length]
-                  : "#1976d2",
+              backgroundColor: colors[index % colors.length],
               borderRadius: "50%",
               zIndex: 1,
               left: -50,
@@ -144,16 +146,7 @@ const MobileTimeline = ({ modules }: Props) => {
               {item.title}
             </Typography>
 
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: "18px",
-                lineHeight: "28px",
-                color: "white",
-              }}
-            >
-              {item.shortDesc}
-            </Typography>
+         
           </Card>
         </Box>
       ))}

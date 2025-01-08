@@ -41,8 +41,6 @@ export default function PaymenCard({data}:PaymentCardProps) {
         "Promocode":promoCode
     })
     
-    console.log(res.FinalPrice,'FinalPrice');
-    
     setPriceList((prev) => ({
       ...prev,
       PromocodeDiscount: res.PromocodeDiscount ? res.PromocodeDiscount : prev.PromocodeDiscount,
