@@ -48,7 +48,7 @@ export default function CourseCardHome({ data }: ProductCardProps) {
         variant="h4"
         sx={{
           color: "rgb(251, 107, 34)",
-          textDecoration: "underline",
+          // textDecoration: "underline",
           fontSize: "20px",
           fontWeight: "600",
           textAlign: "center",
