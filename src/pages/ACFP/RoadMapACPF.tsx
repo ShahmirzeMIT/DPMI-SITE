@@ -134,7 +134,7 @@ const RoadmapACPF = () => {
             </h1>
             <div style={{width:'100%',borderBottom:'1px solid black',marginBottom:'5px'}}></div>
             <p style={{ fontSize: "16px" }}>
-              Page Foundation, Master Data Analysis, Product Requirement
+              MVP Development, Master Data Analysis, Product Requirement
               Analysis
             </p>
           </motion.div>

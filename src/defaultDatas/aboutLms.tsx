@@ -8,7 +8,7 @@ export const LmsData=[
     
     {
         id:1,
-        title: "Page Foundation",
+        title: "MVP Development",
         image: Image1,
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:"#FFFFFF"

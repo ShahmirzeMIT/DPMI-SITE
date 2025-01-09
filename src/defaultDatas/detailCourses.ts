@@ -1,7 +1,7 @@
 export const dataDetail=[
     {
         "id": 2001,
-        "title": "Page Foundation",
+        "title": "MVP Development",
         "shortDesc": "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
         "longDesc": "In digital/agile transformation and digital product management, agile communication often flows through pages and forms, which serve as the visual representation of digital products. Participants will gain a deep understanding of page and form visualization, their interrelations, and how to utilize components effectively based on business requirements.",
         "totalHours": 8,

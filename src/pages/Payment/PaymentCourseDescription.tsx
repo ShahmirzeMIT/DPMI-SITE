@@ -1,29 +1,35 @@
 import { useState } from "react";
 import { Modal, Box, Typography } from "@mui/material";
 import { Button } from "antd";
+
 interface PaymentModalProps {
-    title: string;
-    desc:string
+  title: string;
+  desc: string; // HTML content as a string
 }
-export default function PaymentCourseDescription({title,desc}:PaymentModalProps) {
+
+export default function PaymentCourseDescription({ title, desc }: PaymentModalProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  console.log(desc, "desc");
+
   return (
     <>
       {/* Button to open the modal */}
-      <Typography 
+      <Typography
         onClick={handleOpen}
         sx={{
-        fontWeight: "600", fontSize: "18px", color: "black",
-        cursor:'pointer', 
-        '&:hover':{
-            textDecoration:'underline'
-        }
+          fontWeight: "600",
+          fontSize: "18px",
+          color: "black",
+          cursor: "pointer",
+          "&:hover": {
+            textDecoration: "underline",
+          },
         }}
       >
-       { title}
+        {title}
       </Typography>
 
       {/* Modal Content */}
@@ -39,12 +45,11 @@ export default function PaymentCourseDescription({title,desc}:PaymentModalProps)
             boxShadow: 24,
           }}
         >
-
-          <Typography variant="body1" sx={{ marginBottom: "20px", lineHeight: "1.8" }}>
-            {desc}
-          </Typography>
-
-    
+          {/* Render desc as HTML */}
+          <Box
+            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+            dangerouslySetInnerHTML={{ __html: desc }}
+          />
 
           {/* Close Button */}
           <Box sx={{ textAlign: "right", marginTop: "20px" }}>

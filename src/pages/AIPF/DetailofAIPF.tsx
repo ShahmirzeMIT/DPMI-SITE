@@ -6,7 +6,7 @@ import  Logo from '../../assets/images/research.png'
 const coursesData = [
   {
     id: 1,
-    name: "Page Foundation",
+    name: "MVP Development",
     description:
       "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
     total: 8,

@@ -3,7 +3,7 @@ export const acppData=[
         title:'Digital Product Foundation  Module',
         shortDesc:"Master agile communication, product requirement analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:"24 hours (Interactive Practice 15 hours, real project 9 hours)",
-        courses:"Page Foundation, Product Requirement Analysis, Master Data Analysis"
+        courses:"MVP Development, Product Requirement Analysis, Master Data Analysis"
     },
     {
         title:'Digital Product Development Module',

@@ -21,7 +21,7 @@ export default function PaymentProceedd() {
         }
         else{
           setCheckStatus("completed");
-          window.location.href = "https://dpmi.netlify.app/login"; 
+          window.location.href = "https://my.dpminstitute.org"; 
         }
         
         if(res.error){

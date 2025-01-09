@@ -20,10 +20,10 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
         course: [
           {
-            title: "Page Foundation",
+            title: "MVP Development",
             id: "1",
             shortDesc:
               "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
@@ -211,10 +211,10 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
         course: [
           {
-            title: "Page Foundation",
+            title: "MVP Development",
             id: "1",
             shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
           },
@@ -400,10 +400,10 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
         course: [
           {
-            title: "Page Foundation",
+            title: "MVP Development",
             id: "1",
             shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements",
           },
@@ -543,10 +543,10 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
           course: [
             {
-                title: "Page Foundation",
+                title: "MVP Development",
                 id: "1",
                 shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements",
               },
@@ -739,9 +739,9 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
         course: [{
-          title: "Page Foundation",
+          title: "MVP Development",
           id: "1",
           shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements."
         },
@@ -866,10 +866,10 @@ export const certificationsListData = [
         mdHours:
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
-          "Page Foundation, Technical Requirement Analysis, Master Data Analysis",
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
         course: [
           {
-            title: "Page Foundation",
+            title: "MVP Development",
             id: "1",
             shortDesc:"In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements."
           },

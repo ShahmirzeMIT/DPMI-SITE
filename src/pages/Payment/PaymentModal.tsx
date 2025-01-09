@@ -2,16 +2,26 @@ import { useState } from "react";
 import { Modal, Box, Typography, Avatar } from "@mui/material";
 import { Button } from "antd";
 import { FaLinkedin } from "react-icons/fa";
+
 interface PaymentModalProps {
-    title: string;
-    Img: string
-    name: string
-    desc: string
-    JobTitle: string
-    Linkedin: string
-    Company:string
+  title: string;
+  Img: string;
+  name: string;
+  desc: string;
+  JobTitle: string;
+  Linkedin: string;
+  Company: string;
 }
-export default function PaymentModal({title,Img,name,desc,JobTitle,Linkedin,Company}:PaymentModalProps) {
+
+export default function PaymentModal({
+  title,
+  Img,
+  name,
+  desc,
+  JobTitle,
+  Linkedin,
+  Company,
+}: PaymentModalProps) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -19,47 +29,62 @@ export default function PaymentModal({title,Img,name,desc,JobTitle,Linkedin,Comp
   return (
     <>
       {/* Button to open the modal */}
-      <Typography 
+      <Typography
         onClick={handleOpen}
         sx={{
-        fontWeight: "600", fontSize: "18px", color: "black",
-        cursor:'pointer', 
-        '&:hover':{
-            textDecoration:'underline'
-        }
+          fontWeight: "600",
+          fontSize: "18px",
+          color: "black",
+          cursor: "pointer",
+          "&:hover": {
+            textDecoration: "underline",
+          },
         }}
       >
-       { title}
+        {title}
       </Typography>
 
       {/* Modal Content */}
       <Modal open={open} onClose={handleClose}>
         <Box
           sx={{
-            width: { xs: "90%", md: "60%" },
-            margin: "auto",
-            marginTop: "10%",
+            width: { xs: "90%", md: "80%" },
+            maxWidth: "900px",
+            margin: "20px auto",
+            marginBottom: "10%",
             background: "#fff",
             padding: "20px",
             borderRadius: "8px",
             boxShadow: 24,
+            maxHeight: "90vh", // Set a maximum height
+            overflowY: "auto", // Make content scrollable if it exceeds maxHeight
           }}
         >
           {/* Header */}
-          <Box sx={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
+          <Box>
+            <Typography variant="h3" sx={{ fontWeight: "bold",textAlign:'center',color:'#951A2E' }}>Training Coach</Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "20px",
+            }}
+          >
             <Avatar
-              src={Img}// Şəkil yolunu daxil edin
+              src={Img}
               sx={{ width: 150, height: 150, marginRight: "20px" }}
             />
-            <Typography sx={{ fontWeight: "bold",fontSize:'36px' }}>
+            <Typography sx={{ fontWeight: "bold", fontSize: "36px" }}>
               {name}
             </Typography>
           </Box>
 
           {/* Content */}
-          <Typography variant="body1" sx={{ marginBottom: "20px", lineHeight: "1.8" }}>
-            {desc}
-          </Typography>
+          <Box
+            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+            dangerouslySetInnerHTML={{ __html: desc }}
+          />
 
           <Typography variant="body2" sx={{ marginBottom: "20px" }}>
             {JobTitle}
@@ -70,12 +95,26 @@ export default function PaymentModal({title,Img,name,desc,JobTitle,Linkedin,Comp
           </Typography>
 
           {/* LinkedIn */}
-          <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}>
-            <FaLinkedin
-            onClick={() => window.open(Linkedin, "_blank")}
-              style={{ width: "24px", height: "24px", marginRight: "8px" }}
-            />
-          </Typography>
+          {
+  Linkedin !== " " && Linkedin!="" && (
+    <Typography
+      variant="body2"
+      sx={{ display: "flex", alignItems: "center" }}
+    >
+      <FaLinkedin
+        onClick={() => window.open(Linkedin, "_blank")}
+        style={{
+          width: "24px",
+          height: "24px",
+          marginRight: "8px",
+          cursor: "pointer",
+        }}
+      />
+    </Typography>
+  )
+}
+
+          
 
           {/* Close Button */}
           <Box sx={{ textAlign: "right", marginTop: "20px" }}>
