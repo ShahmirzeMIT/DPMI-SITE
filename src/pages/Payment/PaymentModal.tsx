@@ -62,7 +62,12 @@ export default function PaymentModal({
         >
           {/* Header */}
           <Box>
-            <Typography variant="h3" sx={{ fontWeight: "bold",textAlign:'center',color:'#951A2E' }}>Training Coach</Typography>
+            <Typography
+              variant="h3"
+              sx={{ fontWeight: "bold", textAlign: "center", color: "#951A2E" }}
+            >
+              Training Coach
+            </Typography>
           </Box>
           <Box
             sx={{
@@ -95,26 +100,22 @@ export default function PaymentModal({
           </Typography>
 
           {/* LinkedIn */}
-          {
-  Linkedin !== " " && Linkedin!="" && (
-    <Typography
-      variant="body2"
-      sx={{ display: "flex", alignItems: "center" }}
-    >
-      <FaLinkedin
-        onClick={() => window.open(Linkedin, "_blank")}
-        style={{
-          width: "24px",
-          height: "24px",
-          marginRight: "8px",
-          cursor: "pointer",
-        }}
-      />
-    </Typography>
-  )
-}
-
-          
+          {Linkedin !== " " && Linkedin != "" && (
+            <Typography
+              variant="body2"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FaLinkedin
+                onClick={() => window.open(Linkedin, "_blank")}
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  marginRight: "8px",
+                  cursor: "pointer",
+                }}
+              />
+            </Typography>
+          )}
 
           {/* Close Button */}
           <Box sx={{ textAlign: "right", marginTop: "20px" }}>

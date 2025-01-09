@@ -34,15 +34,9 @@ export default function Payment() {
   return (
     <Box sx={{ marginTop: "100px", padding: "20px" }}>
       <Box sx={{
-         display: "flex",
          flexDirection: { xs: "column", sm: "row" },
          padding:'20px',
-         alignItems: "center",
-         "@media (max-width: 750px)": {
-           flexDirection: "column",
-           maxWidth: "500px", // Set maximum width
-           margin: "40px auto", // Center the component
-         },
+        
         //  border: "1px solid #E0E0E0",
          borderRadius: "8px",
          marginBottom: "20px",
@@ -55,7 +49,7 @@ export default function Payment() {
          fontSize:'18px'
        }}
       >
-        Use promocode FREE2025 to enroll in demo classes and explore the
+        Use promocode <span style={{fontSize:'20px',fontWeight:'bold'}}>FREE2025</span>  to enroll in demo classes and explore the
         AI-Simulation Learning Platform with real project simulations,
         comprehensive guidelines, video tutorials, gamified learning, an AI
         Mentor, and expert Coaches—everything you need to enhance your practical
@@ -333,7 +327,15 @@ export default function Payment() {
                   }}
                   onClick={() => item.IsOpen == 1 && handleEnroll(item)}
                 >
-                  {item.IsOpen == 1 ? "Enroll Now" : "Coming Soon: Enroll Now"}
+                  {item.IsOpen == 1 ? (
+                      "Enroll Now"
+                    ) : (
+                      <>
+                        Coming Soon:<br />
+                        Enroll Now
+                      </>
+                    )}
+
                 </Button>
 
                 <br />

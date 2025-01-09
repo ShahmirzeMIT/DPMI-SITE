@@ -12,7 +12,7 @@ const LegalNotice = () => {
       <div className="section">
         <h2>Digital Product Management Institute (DPMI)</h2>
         <p>
-          <strong>Owner:</strong> Anar Rustamov <br />
+          <strong>Owner:</strong> ACF System GmbH <br />
           Dorfstraße 4, <br />
           07768 Altenberga, Germany <br />
           Germany
