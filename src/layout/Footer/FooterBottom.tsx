@@ -188,14 +188,14 @@ export default function FooterBottom() {
          marginTop: "10px",
        }}
        onClick={() => {
-        if(item.id=="/termofuse" || item.id=="/privacy" || item.id=='/legalnotice'){
+        if (item.id === "/termofuse" || item.id === "/privacy" || item.id === "/legalnotice") {
           navigate(item.id);
-        }
-        else{
-          navigate(`/${item.id}`);
-
-        }
-       }}
+        } else if (item.title == "Login") {
+          window.location.href = "https://dpminstitute.org/my/login";
+        } 
+        
+      }}
+      
      >
        {item.title}
      </Typography>

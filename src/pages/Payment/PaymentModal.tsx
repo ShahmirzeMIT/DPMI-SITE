@@ -61,14 +61,14 @@ export default function PaymentModal({
           }}
         >
           {/* Header */}
-          <Box>
+          {/* <Box>
             <Typography
               variant="h3"
               sx={{ fontWeight: "bold", textAlign: "center", color: "#951A2E" }}
             >
               Training Coach
             </Typography>
-          </Box>
+          </Box> */}
           <Box
             sx={{
               display: "flex",

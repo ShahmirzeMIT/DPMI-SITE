@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 // Stripe açarınızı burada saxlayın
 const stripePromise = loadStripe(
-  "pk_test_51NldrbB1rL2qIZ841q0gdzCwpKlrIIM7SUp3tdlTvw76AfMT741lI6hQlDl7F7adSPQ2IVlyyC9ZVFyIMIWwmrox00PWBIpouM"
+  "pk_live_51NldrbB1rL2qIZ84WXSSo2NNjfXvZMVA4dUEOQqDetTwVA1MPnCERN9D1twyzb8PchGZSN2X0A65TFEV2IBWx8Ux00RkmfaOZM"
 );
 
 export interface ButtonPaymentProps {
