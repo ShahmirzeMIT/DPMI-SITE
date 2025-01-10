@@ -167,10 +167,10 @@ export default function Payment() {
             </Typography>
             <Typography
               variant="body2"
-              sx={{ fontSize: "15px", color: "black", marginTop: "10px" }}
+              sx={{ fontSize: "18px", color: "black", marginTop: "10px" }}
             >
               Language:{" "}
-              <span style={{ color: "#FA6B23", fontWeight: "700" }}>
+              <span style={{ color: "#FA6B23", fontWeight: "700",fontSize:'18px' }}>
                 {item.Language}
               </span>
             </Typography>
@@ -233,7 +233,7 @@ export default function Payment() {
               variant="body2"
               sx={{
                 display: "block",
-                fontSize: "14px",
+                fontSize: "16px",
                 color: "black",
                 marginBottom: "5px",
               }}
@@ -244,7 +244,7 @@ export default function Payment() {
               variant="body2"
               sx={{
                 display: "block",
-                fontSize: "14px",
+                fontSize: "16px",
                 color: "black",
                 marginBottom: "5px",
               }}

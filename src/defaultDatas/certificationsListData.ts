@@ -14,7 +14,7 @@ export const certificationsListData = [
     image: Image1,
     courseModules: [
       {
-        title: "Digital Product Foundation Module",
+        title: "Digital Product Foundation ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -41,7 +41,7 @@ export const certificationsListData = [
         ],
       },
       {
-        title: "Digital Product Development Module",
+        title: "Digital Product Development ",
         shortDesc:
           "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
         mdHours:
@@ -66,7 +66,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Business Requirement Analysis Module",
+        title: "Business Requirement Analysis ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:
@@ -86,7 +86,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Specialized  Startup Foundation Practitioner Module",
+        title: "  Startup Foundation Practitioner ",
         shortDesc:
           "Empower your startup journey with the skills to build scalable digital products and grow organically. Master agile communication and strategic innovation for sustainable success.",
         mdHours:
@@ -205,7 +205,7 @@ export const certificationsListData = [
     image: Image2,
     courseModules: [
       {
-        title: "Digital Product Foundation Module",
+        title: "Digital Product Foundation ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -231,7 +231,7 @@ export const certificationsListData = [
         ],
       },
       {
-        title: "Digital Product Development Module",
+        title: "Digital Product Development ",
         shortDesc:
           "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
         mdHours:
@@ -256,7 +256,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Business Requirement Analysis Module",
+        title: "Business Requirement Analysis ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:
@@ -276,7 +276,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Specialized Digital Product Management Module",
+        title: " Digital Product Management ",
         shortDesc:
           "Empower your startup journey with the skills to build scalable digital products and grow organically. Master agile communication and strategic innovation for sustainable success.",
         mdHours:
@@ -394,7 +394,7 @@ export const certificationsListData = [
     image: Image3,
     courseModules: [
       {
-        title: "Digital Product Foundation  Module",
+        title: "Digital Product Foundation  ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -420,7 +420,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Specialized AI Foundation Practitioner Module",
+        title: " AI Foundation Practitioner ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:
@@ -537,7 +537,7 @@ export const certificationsListData = [
     image: Image4,
     courseModules: [
       {
-        title: "Digital Product Foundation  Module",
+        title: "Digital Product Foundation  ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -564,7 +564,7 @@ export const certificationsListData = [
           ]
       },
       {
-        title: "Digital Product Development Module",
+        title: "Digital Product Development ",
         shortDesc:
           "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
         mdHours:
@@ -588,7 +588,7 @@ export const certificationsListData = [
           ]
       },
       {
-        title: "Business Requirement Analysis Module",
+        title: "Business Requirement Analysis ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:
@@ -610,7 +610,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Specialized AI Professional Practitioner Module",
+        title: " AI Professional Practitioner ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:
@@ -733,7 +733,7 @@ export const certificationsListData = [
     image: Image5,
     courseModules: [
       {
-        title: "Digital Product Foundation  Module",
+        title: "Digital Product Foundation  ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -860,7 +860,7 @@ export const certificationsListData = [
     image: Image6,
     courseModules: [
       {
-        title: "Digital Product Foundation  Module",
+        title: "Digital Product Foundation  ",
         shortDesc:
           "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
         mdHours:
@@ -886,7 +886,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Digital Product Development Module",
+        title: "Digital Product Development ",
         shortDesc:
           "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
         mdHours:
@@ -911,7 +911,7 @@ export const certificationsListData = [
         ]
       },
       {
-        title: "Business Requirement Analysis Module",
+        title: "Business Requirement Analysis ",
         shortDesc:
           "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
         mdHours:

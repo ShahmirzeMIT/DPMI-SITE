@@ -55,7 +55,7 @@ const MobileTimeline = ({ modules, finishTitle }: Props) => {
   const filteredData = [
     ...modules,
     {
-      title: `${"Certificate"} ${
+      title: `${"Certified"} ${
         finishTitle 
       }`,
       shortDesc: "Celebrate milestones and achievements.",

@@ -1,7 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography, useTheme } from "@mui/material";
-import { Props } from "./StepComponent";
+import { Button, Popover } from "antd";
+import { useNavigate } from "react-router-dom";
+import PointTextAnimation from "../../componets/PointTextAnimation";
 
+export interface Module {
+  title: string;
+  shortDesc: string;
+  course?: Array<{
+    title: string;
+    id: string;
+    shortDesc: string;
+  }>;
+}
+
+export interface Props {
+  modules: Module[];
+  finishTitle: string;
+}
 
 const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -9,6 +25,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
   const timelineRef = useRef<any>(null);
   const cardRefs = useRef<any>([]); // Ref for each card
   const theme = useTheme();
+  const navigate = useNavigate();
 
   const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
 
@@ -51,14 +68,11 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
       window.removeEventListener("resize", calculateLineHeight);
     };
   }, []);
-  
 
   const filteredData = [
     ...modules,
     {
-      title: `${"Certificate"} ${
-        finishTitle 
-      }`,
+      title: `Certified ${finishTitle}`,
       shortDesc: "Celebrate milestones and achievements.",
     },
   ];
@@ -76,6 +90,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
         margin: "0 auto",
       }}
     >
+      {/* Line connecting the timeline */}
       <Box
         sx={{
           position: "absolute",
@@ -83,7 +98,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
           width: "4px",
           backgroundColor: "#1976d2",
           left: "50%",
-          marginTop: "80px",
+          marginTop: "60px",
           transform: "translateX(-50%)",
           backgroundImage:
             activeIndex === filteredData.length - 1
@@ -95,6 +110,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
         }}
       ></Box>
 
+      {/* Timeline Items */}
       {filteredData.map((item, index) => (
         <Box
           key={index}
@@ -110,6 +126,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
             maxWidth: "800px",
           }}
         >
+          {/* Circle */}
           <Box
             sx={{
               position: "absolute",
@@ -118,15 +135,18 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
               backgroundColor: colors[index % colors.length],
               borderRadius: "50%",
               zIndex: 1,
-              left: { xs: "6px", sm: "47.7%" },
+              left: { xs: "6px", sm: "47.5%" },
               color: "white",
               fontSize: "36px",
-              textAlign: "center",
-              verticalAlign: "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             {index + 1}
           </Box>
+
+          {/* Card */}
           <Card
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
@@ -134,9 +154,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
               padding: "12px",
               margin: { xs: "10px 0", sm: "0 10px" },
               flex: "none",
-              width: "350px !important",
-              minWidth: "350px !important",
-              maxWidth: "350px !important",
+              width: "350px",
               textAlign: "center",
               transition: "transform 0.3s ease",
               boxShadow:
@@ -160,12 +178,60 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
               gutterBottom
               sx={{
                 fontSize: "24px",
-                color: "white", // Change the text color to white
+                color: "white",
               }}
             >
               {item.title}
             </Typography>
-
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+                // gap: "10px",
+                marginTop: "10px",
+              }}
+            >
+              {item.course?.map((courseItem) => (
+                <Popover
+                  key={courseItem.id}
+                  content={
+                    <Box sx={{ width: "300px" }}>
+                      <Typography>{courseItem.shortDesc}</Typography>
+                      <Button
+                        onClick={() => navigate(`/courses/${courseItem.id}`)}
+                        style={{
+                          backgroundColor: "#2a74b1",
+                          color: "white",
+                          marginTop: "10px",
+                        }}
+                      >
+                        Read More
+                      </Button>
+                    </Box>
+                  }
+                >
+                  <Box
+                    sx={{ display: "flex", alignItems: "center", gap: "8px",marginLeft:'30px' }}
+                  >
+                    <PointTextAnimation />
+                    <Typography
+                      sx={{
+                        margin: "0px 0px 0.35em",
+                        fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                        fontWeight: 500,
+                        lineHeight: 1.1,
+                        letterSpacing: "0.0075em",
+                        color:'white',
+                        fontSize:'12px'
+                      }}
+                    >
+                      {courseItem.title}
+                    </Typography>
+                  </Box>
+                </Popover>
+              ))}
+            </Box>
           </Card>
         </Box>
       ))}

@@ -7,6 +7,11 @@ import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerN
 export interface Module {
     title: string;
     shortDesc: string;
+    course?: Array<{
+      title: string;
+      id: string;
+      shortDesc: string;
+    }>;
   };
   
 export   interface Props  {
@@ -24,7 +29,7 @@ const Timeline = ({ modules, index }: Props) => {
     return (
         <Box sx={{}}>
             {
-                isMobile ? <MobileTimeline modules={modules} finishTitle={data?.shorts}/> : <DesktopTimeLine modules={modules} finishTitle={data?.shorts}/>
+                isMobile ? <MobileTimeline modules={modules} finishTitle={data?.shorts}/> : <DesktopTimeLine modules={modules} finishTitle={data?.shorts || ""}/>
             }
         </Box>
     );
