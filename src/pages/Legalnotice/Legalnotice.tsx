@@ -26,13 +26,13 @@ const LegalNotice = () => {
           <strong>Website:</strong> www.dpminstitute.org
         </p>
       </div>
-      <div className="section">
+      {/* <div className="section">
         <h3>VAT Identification Number</h3>
         <p>
           VAT ID according to §27 a of the German Value Added Tax Act: [VAT ID,
           if applicable]
         </p>
-      </div>
+      </div> */}
       <div className="section">
         <h3>Responsible for the Content under § 55 Para. 2 RStV</h3>
         <p>
