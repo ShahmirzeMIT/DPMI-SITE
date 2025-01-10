@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography, useTheme } from "@mui/material";
-import { Button, Popover } from "antd";
+import { Avatar, Button, Popover } from "antd";
 import { useNavigate } from "react-router-dom";
 import PointTextAnimation from "../../componets/PointTextAnimation";
 
@@ -10,6 +10,7 @@ export interface Module {
   course?: Array<{
     title: string;
     id: string;
+    icon?: string;
     shortDesc: string;
   }>;
 }
@@ -17,9 +18,10 @@ export interface Module {
 export interface Props {
   modules: Module[];
   finishTitle: string;
+  icon: string;
 }
 
-const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
+const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [lineHeight, setLineHeight] = useState(0); // Dynamic line height
   const timelineRef = useRef<any>(null);
@@ -74,6 +76,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
     {
       title: `Certified ${finishTitle}`,
       shortDesc: "Celebrate milestones and achievements.",
+      icon: icon,
     },
   ];
 
@@ -111,7 +114,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
       ></Box>
 
       {/* Timeline Items */}
-      {filteredData.map((item, index) => (
+      {filteredData.map((item: any, index) => (
         <Box
           key={index}
           sx={{
@@ -181,7 +184,15 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
                 color: "white",
               }}
             >
-              {item.title}
+           {
+            index === filteredData.length - 1 ? <>
+            <Avatar src={icon} shape="square" style={{
+              height:'60px',
+              width:'60px'
+            }} /> <span>{item.title}</span>
+            </>: item.title
+           }
+           
             </Typography>
             <Box
               sx={{
@@ -192,7 +203,7 @@ const DesktopTimeLine = ({ modules, finishTitle }: Props) => {
                 marginTop: "10px",
               }}
             >
-              {item.course?.map((courseItem) => (
+              {item.course?.map((courseItem: any) => (
                 <Popover
                   key={courseItem.id}
                   content={

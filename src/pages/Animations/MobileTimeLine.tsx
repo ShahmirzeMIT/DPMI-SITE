@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography } from "@mui/material";
 import { Props } from "./StepComponent";
+import { Avatar, Button, Popover } from "antd";
+import PointTextAnimation from "../../componets/PointTextAnimation";
+import { useNavigate } from "react-router-dom";
 
-const MobileTimeline = ({ modules, finishTitle }: Props) => {
+const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
   const [lineHeight, setLineHeight] = useState(0); // Dinamik xətt hündürlüyü
   const [activeIndex, setActiveIndex] = useState<number | null>(null); // Aktiv element
   const timelineRef = useRef(null);
   const cardRefs = useRef<any>([]); // Hər bir kartın ref-lərini saxlayır
-
+  const navigate = useNavigate();
   const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
 
   useEffect(() => {
@@ -143,10 +146,65 @@ const MobileTimeline = ({ modules, finishTitle }: Props) => {
               gutterBottom
               sx={{ fontSize: "24px", color: "white" }}
             >
-              {item.title}
+            {
+            index === filteredData.length - 1 ? <>
+            <Avatar src={icon} shape="square" style={{
+              height:'60px',
+              width:'60px'
+            }} /> <span>{item.title}</span>
+            </>: item.title
+           }
             </Typography>
 
-         
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+                // gap: "10px",
+                marginTop: "10px",
+              }}
+            >
+              {item.course?.map((courseItem: any) => (
+                <Popover
+                  key={courseItem.id}
+                  content={
+                    <Box sx={{ width: "300px" }}>
+                      <Typography>{courseItem.shortDesc}</Typography>
+                      <Button
+                        onClick={() => navigate(`/courses/${courseItem.id}`)}
+                        style={{
+                          backgroundColor: "#2a74b1",
+                          color: "white",
+                          marginTop: "10px",
+                        }}
+                      >
+                        Read More
+                      </Button>
+                    </Box>
+                  }
+                >
+                  <Box
+                    sx={{ display: "flex", alignItems: "center", gap: "8px",marginLeft:'30px' }}
+                  >
+                    <PointTextAnimation />
+                    <Typography
+                      sx={{
+                        margin: "0px 0px 0.35em",
+                        fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                        fontWeight: 500,
+                        lineHeight: 1.1,
+                        letterSpacing: "0.0075em",
+                        color:'white',
+                        fontSize:'12px'
+                      }}
+                    >
+                      {courseItem.title}
+                    </Typography>
+                  </Box>
+                </Popover>
+              ))}
+            </Box>
           </Card>
         </Box>
       ))}

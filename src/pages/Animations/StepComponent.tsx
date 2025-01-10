@@ -18,6 +18,7 @@ export   interface Props  {
     modules: Module[]; 
     index?: number
     finishTitle?: string
+    icon?: string
   };
   
 const Timeline = ({ modules, index }: Props) => {
@@ -29,7 +30,7 @@ const Timeline = ({ modules, index }: Props) => {
     return (
         <Box sx={{}}>
             {
-                isMobile ? <MobileTimeline modules={modules} finishTitle={data?.shorts}/> : <DesktopTimeLine modules={modules} finishTitle={data?.shorts || ""}/>
+                isMobile ? <MobileTimeline modules={modules} finishTitle={data?.shorts}  icon={data?.image}/> : <DesktopTimeLine modules={modules} finishTitle={data?.shorts || ""} icon={data?.image || ""}/>
             }
         </Box>
     );
