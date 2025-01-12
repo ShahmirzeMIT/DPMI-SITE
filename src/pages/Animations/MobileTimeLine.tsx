@@ -130,7 +130,7 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
           {/* Card */}
           <Card
             sx={{
-              marginLeft: "80px",
+              marginLeft: "60px",
               padding: "16px",
               width: "90%",
               borderRadius: "10px",
