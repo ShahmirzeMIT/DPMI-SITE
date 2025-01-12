@@ -4,8 +4,8 @@ export default function PointTextAnimation() {
       <span
         style={{
         //   marginRight: "10px",
-          width: "8px",
-          height: "8px",
+          width: "12px",
+          height: "12px",
           borderRadius: "50%",
           display: "inline-block",
           textAlign: "center",

@@ -29,7 +29,9 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
+  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#f4f4f4"];
+  const finishColor='#f4f4f4';
+  const finishtextColor="#333"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -135,11 +137,11 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
               position: "absolute",
               width: "60px",
               height: "60px",
-              backgroundColor: colors[index % colors.length],
+              backgroundColor: index === filteredData.length - 1 ? finishColor : colors[index % colors.length],
               borderRadius: "50%",
               zIndex: 1,
               left: { xs: "6px", sm: "47.5%" },
-              color: "white",
+              color: index === filteredData.length - 1 ? finishtextColor : "white",
               fontSize: "36px",
               display: "flex",
               alignItems: "center",
@@ -163,9 +165,10 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
               boxShadow:
                 activeIndex === index
                   ? "0px 4px 20px rgba(0, 0, 0, 0.3)"
-                  : "none",
-              borderRadius: "15px",
-              backgroundColor: colors[index % colors.length],
+                  : "0px 0px 10px gray",
+              borderRadius: " 10px",
+              backgroundColor: index === filteredData.length - 1 ? finishColor : colors[index % colors.length],
+
               transform: `scale(1.25) translateX(${
                 index % 2 === 0 ? "-40px" : "40px"
               })`,
@@ -181,16 +184,17 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
               gutterBottom
               sx={{
                 fontSize: "24px",
-                color: "white",
+                color: index === filteredData.length - 1 ? finishtextColor : "white",
+
               }}
             >
            {
-            index === filteredData.length - 1 ? <>
+            index === filteredData.length - 1 ? <Box sx={{marginTop:'8px',marginRight:'30px'}}>
             <Avatar src={icon} shape="square" style={{
               height:'60px',
-              width:'60px'
+              width:'110px'
             }} /> <span>{item.title}</span>
-            </>: item.title
+            </Box>: item.title
            }
            
             </Typography>
@@ -230,11 +234,11 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
                       sx={{
                         margin: "0px 0px 0.35em",
                         fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                        fontWeight: 500,
-                        lineHeight: 1.1,
+                        fontWeight: 400,
+                        lineHeight: 1,
                         letterSpacing: "0.0075em",
                         color:'white',
-                        fontSize:'12px'
+                        fontSize:'14px'
                       }}
                     >
                       {courseItem.title}

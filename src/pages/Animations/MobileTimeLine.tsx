@@ -11,8 +11,9 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
   const timelineRef = useRef(null);
   const cardRefs = useRef<any>([]); // Hər bir kartın ref-lərini saxlayır
   const navigate = useNavigate();
-  const colors = ["#2a74b1", "#D8531D", "#333333", "#4DB6AC", "#66BB6A"];
-
+  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#66BB6A"];
+ const finishColor='#f4f4f4';
+  const finishtextColor="#333"
   useEffect(() => {
     const handleScroll = () => {
       cardRefs.current.forEach((card:any, index:any) => {
@@ -113,11 +114,11 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
               position: "absolute",
               width: "60px",
               height: "60px",
-              backgroundColor: colors[index % colors.length],
+              backgroundColor: index === filteredData.length - 1 ? finishColor : colors[index % colors.length],
               borderRadius: "50%",
               zIndex: 1,
               left: -50,
-              color: "white",
+              color: index === filteredData.length - 1 ? finishtextColor : "white",
               fontSize: "36px",
               textAlign: "center",
               lineHeight: "60px", // Mərkəzləşdirmək üçün
@@ -132,11 +133,8 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
               marginLeft: "80px",
               padding: "16px",
               width: "90%",
-              borderRadius: "15px",
-              backgroundColor:
-                activeIndex === index
-                  ? colors[index % colors.length]
-                  : "#1976d2",
+              borderRadius: "10px",
+              backgroundColor: index === filteredData.length - 1 ? finishColor : colors[index % colors.length],
               transform: activeIndex === index ? "scale(1.1)" : "scale(1)",
               transition: "transform 0.3s ease",
             }}
@@ -144,15 +142,17 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
             <Typography
               variant="h6"
               gutterBottom
-              sx={{ fontSize: "24px", color: "white" }}
+              sx={{ fontSize: "24px",
+                color: index === filteredData.length - 1 ? finishtextColor : "white",
+                }}
             >
             {
-            index === filteredData.length - 1 ? <>
+            index === filteredData.length - 1 ? <Box sx={{marginTop:'8px',marginRight:'30px'}}>
             <Avatar src={icon} shape="square" style={{
               height:'60px',
-              width:'60px'
+              width:'80px'
             }} /> <span>{item.title}</span>
-            </>: item.title
+            </Box>: item.title
            }
             </Typography>
 
@@ -193,10 +193,10 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
                         margin: "0px 0px 0.35em",
                         fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                         fontWeight: 500,
-                        lineHeight: 1.1,
+                        lineHeight: 1,
                         letterSpacing: "0.0075em",
                         color:'white',
-                        fontSize:'12px'
+                        fontSize:'14px',
                       }}
                     >
                       {courseItem.title}
