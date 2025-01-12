@@ -62,7 +62,7 @@ export default function CertificationDetails() {
           <Typography
             style={{ color: "black", fontWeight: "400", fontSize: "48px",marginBottom:'40px' }}
           >
-            Learning Journey
+            Certification RoadMap
           </Typography>
           <Timeline modules={selectedData?.courseModules || []} index={certificateId as any} />
           

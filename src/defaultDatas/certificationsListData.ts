@@ -4,6 +4,72 @@ import Image3 from "../assets/images/aipf.png";
 import Image4 from "../assets/images/aipp.png";
 import Image5 from "../assets/images/acpf.png";
 import Image6 from "../assets/images/acpp.png";
+const firstCourses=[
+  {
+    title: "MVP Development",
+    id: "1",
+    shortDesc:
+      "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
+  },
+  {
+    title: "Fundamental SQL",
+    id: "2",
+    shortDesc: "In agile communication, aligning business needs with technical implementation requires a strong understanding of data. This course teaches participants essential SQL skills to query, analyze, and manage data, enabling seamless communication and turning data-driven requirements into actionable insights.",
+  },
+  {
+    title: "Fundamental API",
+    id: "3",
+    shortDesc: "APIs are central to agile communication, linking business needs with technical solutions. This course introduces participants to API fundamentals, teaching how to design and interpret APIs for clear, structured communication between systems and teams, boosting collaboration and efficiency in digital product management.",
+  },
+]
+
+const tecnicalRequierMent=[
+  {
+    title: "Technical Requirement Analysis",
+    id: "1",
+    shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
+  },
+  {
+    title: "Design Thinking for Digital Products",
+    id: "2",
+    shortDesc: "Efficient data flow, database structure, and API design are essential for seamless digital product development and agile communication. This course empowers business representatives, researchers, and developers to align technical systems with business goals, ensuring optimized performance, scalability, and cross-functional collaboration.",
+  }
+]
+
+const digitalProduct= {
+  title: "Digital Product Design ",
+  shortDesc:
+    "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
+  mdHours:
+    "24 hours (Interactive Practice 15 hours, real project 9  hours)",
+  courses: "Fundamental SQL, Fundamental API, Digital Product Design",
+  course: tecnicalRequierMent
+}
+
+const  businessRequirment=   
+{
+  title: "Business Analysis Foundation ",
+  shortDesc:
+    "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
+  mdHours:
+    " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
+  courses: "Business Analysis Foundation, Business Model Analysis",
+  course: [
+      {
+          title: "Business Analysis Foundation",
+          id: "7",
+          shortDesc: "Understanding business needs is crucial for successful digital products and agile communication. This course equips participants with the skills to analyze target audiences, segmentation, and data-driven challenges, helping them craft actionable requirements that bridge business goals with technical solutions for impactful digital products."
+      },
+      {
+          title: "Business Model Analysis",
+          id: "8",
+          shortDesc: "In this course, participants will learn to build and assess financial hypotheses critical to digital product success. The course covers evaluating business models, estimating expenses and revenues, conducting risk analysis, and strategies for market entry, ensuring informed decision-making that maximizes value and minimizes risk in Digital Product Design."
+
+      }
+      
+  ]
+}
+
 export const certificationsListData = [
   {
     id: "1003",
@@ -21,70 +87,11 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-        course: [
-          {
-            title: "MVP Development",
-            id: "1",
-            shortDesc:
-              "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
-          },
-          {
-            title: "Technical Requirement Analysis",
-            id: "2",
-            shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
-          },
-          {
-            title: "Master Data Analysis",
-            id: "3",
-            shortDesc: "Digital products rely on data, and understanding how data flows between systems is crucial for effective agile communication. Participants will gain the skills to articulate master data flow requirements, improving clarity and precision in short timeframes.",
-          },
-        ],
+        course: firstCourses,
       },
-      {
-        title: "Digital Product Development ",
-        shortDesc:
-          "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
-        mdHours:
-          "24 hours (Interactive Practice 15 hours, real project 9  hours)",
-        courses: "Fundamental SQL, Fundamental API, Digital Product Design",
-        course: [
-          {
-            title: "Fundamental SQL",
-            id: "4",
-            shortDesc: "In agile communication, aligning business needs with technical implementation requires a strong understanding of data. This course teaches participants essential SQL skills to query, analyze, and manage data, enabling seamless communication and turning data-driven requirements into actionable insights.",
-          },
-          {
-            title: "Fundamental API",
-            id: "5",
-            shortDesc: "APIs are essential tools for building digital products and connecting with other systems. Participants will learn essential API design, implementation, and testing, enabling seamless collaboration and data-driven solutions.",
-          },
-          {
-            title: "Digital Product Design",
-            id: "6",
-            shortDesc: "Efficient data flow, database structure, and API design are essential for seamless digital product development and agile communication. This course empowers business representatives, researchers, and developers to align technical systems with business goals, ensuring optimized performance, scalability, and cross-functional collaboration.",
-          }
-        ]
-      },
-      {
-        title: "Business Requirement Analysis ",
-        shortDesc:
-          "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
-        mdHours:
-          " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
-        courses: "Business Requirement Analysis, Financial Hypothesis Analysis",
-        course: [
-          {
-            title: "Business Requirement Analysis",
-            id: "7",
-            shortDesc: "Understanding business needs is crucial for successful digital products and agile communication. This course equips participants with the skills to analyze target audiences, segmentation, and data-driven challenges, helping them craft actionable requirements that bridge business goals with technical solutions for impactful digital products.",
-          },
-          {
-            title: "Financial Hypothesis Analysis",
-            id: "8",
-            shortDesc: "In this course, participants will learn to build and assess financial hypotheses critical to digital product success. The course covers evaluating business models, estimating expenses and revenues, conducting risk analysis, and strategies for market entry, ensuring informed decision-making that maximizes value and minimizes risk in digital product development",
-            }
-        ]
-      },
+      businessRequirment,
+      digitalProduct,
+      
       {
         title: "  Startup Foundation Practitioner ",
         shortDesc:
@@ -212,69 +219,10 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-        course: [
-          {
-            title: "MVP Development",
-            id: "1",
-            shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements.",
-          },
-          {
-            title: "Technical Requirement Analysis",
-            id: "2",
-            shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
-          },
-          {
-            title: "Master Data Analysis",
-            id: "3",
-            shortDesc: "Digital products rely on data, and understanding how data flows between systems is crucial for effective agile communication. Participants will gain the skills to articulate master data flow requirements, improving clarity and precision in short timeframes.",
-          }
-        ],
+        course: firstCourses,
       },
-      {
-        title: "Digital Product Development ",
-        shortDesc:
-          "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
-        mdHours:
-          "24 hours (Interactive Practice 15 hours, real project 9  hours)",
-        courses: "Fundamental SQL, Fundamental API, Digital Product Design",
-        course: [
-          {
-            title: "Fundamental SQL",
-            id: "4",
-            shortDesc: "In agile communication, aligning business needs with technical implementation requires a strong understanding of data. This course teaches participants essential SQL skills to query, analyze, and manage data, enabling seamless communication and turning data-driven requirements into actionable insights.",
-          },
-          {
-            title: "Fundamental API",
-            id: "5",
-            shortDesc: "APIs are central to agile communication, linking business needs with technical solutions. This course introduces participants to API fundamentals, teaching how to design and interpret APIs for clear, structured communication between systems and teams, boosting collaboration and efficiency in digital product management.",
-          },
-          {
-            title: "Digital Product Design",
-            id: "6",
-            shortDesc: "Efficient data flow, database structure, and API design are essential for seamless digital product development and agile communication. This course empowers business representatives, researchers, and developers to align technical systems with business goals, ensuring optimized performance, scalability, and cross-functional collaboration.",
-          }
-        ]
-      },
-      {
-        title: "Business Requirement Analysis ",
-        shortDesc:
-          "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
-        mdHours:
-          " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
-        courses: "Business Requirement Analysis, Financial Hypothesis Analysis",
-        course: [
-          {
-            title: "Business Requirement Analysis",
-            id: "7",
-            shortDesc: "Understanding business needs is crucial for successful digital products and agile communication. This course equips participants with the skills to analyze target audiences, segmentation, and data-driven challenges, helping them craft actionable requirements that bridge business goals with technical solutions for impactful digital products.",
-          },
-          {
-            title: "Financial Hypothesis Analysis",
-            id: "8",
-            shortDesc: "In this course, participants will learn to build and assess financial hypotheses critical to digital product success. The course covers evaluating business models, estimating expenses and revenues, conducting risk analysis, and strategies for market entry, ensuring informed decision-making that maximizes value and minimizes risk in digital product development.",
-          }
-        ]
-      },
+      businessRequirment,
+      digitalProduct,
       {
         title: " Digital Product Management ",
         shortDesc:
@@ -401,23 +349,7 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-        course: [
-          {
-            title: "MVP Development",
-            id: "1",
-            shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements",
-          },
-          {
-            title: "Technical Requirement Analysis",
-            id: "2",
-            shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
-          },
-          {
-            title: "Master Data Analysis",
-            id: "3",
-            shortDesc: "Digital products rely on data, and understanding how data flows between systems is crucial for effective agile communication. Participants will gain the skills to articulate master data flow requirements, improving clarity and precision in short timeframes.",
-          }
-        ]
+        course: firstCourses
       },
       {
         title: " AI Foundation Practitioner ",
@@ -446,11 +378,11 @@ export const certificationsListData = [
       },
       {
         title:
-          "Apply Agile Principles to Master Data and Financial Hypothesis Analysis",
+          "Apply Agile Principles to Master Data and Business Model Analysis",
       },
       {
         title:
-          "Enhance Collaboration Across Teams with Business Requirement Analysis",
+          "Enhance Collaboration Across Teams with Business Analysis Foundation",
       },
       {
         title: "Foster Effective Communication in SQL and API Design",
@@ -531,7 +463,7 @@ export const certificationsListData = [
   {
     id: "1005",
     title: "AI  Profesional Practitioner ",
-    shortDesc: " Delve into advanced AI applications to craft real-world solutions and drive innovation in digital services. This certification explores niche segmentation, AI-driven service models, and financial hypothesis analysis to prepare participants for strategic roles in AI transformation. Ideal for professionals aiming to lead AI initiatives and unlock new opportunities in global markets.",
+    shortDesc: " Delve into advanced AI applications to craft real-world solutions and drive innovation in digital services. This certification explores niche segmentation, AI-driven service models, and Business Model Analysis to prepare participants for strategic roles in AI transformation. Ideal for professionals aiming to lead AI initiatives and unlock new opportunities in global markets.",
     links: "/certificates",
     enroll: "/classes",
     image: Image4,
@@ -544,71 +476,10 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-          course: [
-            {
-                title: "MVP Development",
-                id: "1",
-                shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements",
-              },
-              {
-                title: "Technical Requirement Analysis",
-                id: "2",
-                shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
-              },
-              {
-                title: "Master Data Analysis",
-                id: "3",
-                shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams.",
-              }
-            
-          ]
+          course: firstCourses
       },
-      {
-        title: "Digital Product Development ",
-        shortDesc:
-          "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
-        mdHours:
-          "24 hours (Interactive Practice 15 hours, real project 9  hours)",
-        courses: "Fundamental SQL, Fundamental API, Digital Product Design",
-        course: [
-          {
-            title: "Fundamental SQL",
-            id: "4",
-            shortDesc: "In agile communication, aligning business needs with technical implementation requires a strong understanding of data. This course teaches participants essential SQL skills to query, analyze, and manage data, enabling seamless communication and turning data-driven requirements into actionable insights."},
-            {
-              title: "Fundamental API",
-              id: "5",
-              shortDesc: "APIs are central to agile communication, linking business needs with technical solutions. This course introduces participants to API fundamentals, teaching how to design and interpret APIs for clear, structured communication between systems and teams, boosting collaboration and efficiency in digital product management."},
-              {
-                title: "Digital Product Design",
-                id: "6",
-                shortDesc: "Efficient data flow, database structure, and API design are essential for seamless digital product development and agile communication. This course empowers business representatives, researchers, and developers to align technical systems with business goals, ensuring optimized performance, scalability, and cross-functional collaboration."
-              }
-            
-          ]
-      },
-      {
-        title: "Business Requirement Analysis ",
-        shortDesc:
-          "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
-        mdHours:
-          " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
-        courses: "Business Requirement Analysis, Financial Hypothesis Analysis",
-        course: [
-            {
-                title: "Business Requirement Analysis",
-                id: "7",
-                shortDesc: "Understanding business needs is crucial for successful digital products and agile communication. This course equips participants with the skills to analyze target audiences, segmentation, and data-driven challenges, helping them craft actionable requirements that bridge business goals with technical solutions for impactful digital products."
-            },
-            {
-                title: "Financial Hypothesis Analysis",
-                id: "8",
-                shortDesc: "In this course, participants will learn to build and assess financial hypotheses critical to digital product success. The course covers evaluating business models, estimating expenses and revenues, conducting risk analysis, and strategies for market entry, ensuring informed decision-making that maximizes value and minimizes risk in digital product development."
-  
-            }
-            
-        ]
-      },
+      businessRequirment,
+      digitalProduct,
       {
         title: " AI Professional Practitioner ",
         shortDesc:
@@ -642,11 +513,11 @@ export const certificationsListData = [
       },
       {
         title:
-          "Apply Agile Principles to Master Data and Financial Hypothesis Analysis",
+          "Apply Agile Principles to Master Data and Business Model Analysis",
       },
       {
         title:
-          "Enhance Collaboration Across Teams with Business Requirement Analysis",
+          "Enhance Collaboration Across Teams with Business Analysis Foundation",
       },
       {
         title: "Foster Effective Communication in SQL and API Design",
@@ -740,22 +611,7 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-        course: [{
-          title: "MVP Development",
-          id: "1",
-          shortDesc: "In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements."
-        },
-        {
-          title: "Technical Requirement Analysis",
-          id: "2",
-          shortDesc:"User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams."
-        },
-        {
-          title: "Master Data Analysis",
-          id: "3",
-          shortDesc: "Digital products rely on data, and understanding how data flows between systems is crucial for effective agile communication. Participants will gain the skills to articulate master data flow requirements, improving clarity and precision in short timeframes."
-        }
-]
+        course: firstCourses
       },
 
     ],
@@ -767,7 +623,7 @@ export const certificationsListData = [
         title: "Hands-On Experience with Real-World AI Projects",
       },
       {
-        title: "Practical Application in Digital Product Development",
+        title: "Practical Application in Digital Product Design",
       },
       {
         title: "AI Integration Across Various Industries",
@@ -854,7 +710,7 @@ export const certificationsListData = [
   {
     id: "1002",
     title: "Agile Communication Professional Practitioner ",
-    shortDesc: "Elevate your Agile Communication capabilities to lead high-performing teams and drive successful project execution. This program dives deeper into advanced concepts such as digital product design, SQL, and API fundamentals, alongside mastering business requirement and financial hypothesis analysis. Tailored for professionals managing Agile teams in dynamic, transformation-focused environments.",
+    shortDesc: "Elevate your Agile Communication capabilities to lead high-performing teams and drive successful project execution. This program dives deeper into advanced concepts such as digital product design, SQL, and API fundamentals, alongside mastering business requirement and Business Model Analysis. Tailored for professionals managing Agile teams in dynamic, transformation-focused environments.",
     links: "/certificates",
     enroll: "/classes",
     image: Image6,
@@ -867,69 +723,10 @@ export const certificationsListData = [
           "24 hours (Interactive Practice 15 hours, real project 9 hours)",
         courses:
           "MVP Development, Technical Requirement Analysis, Master Data Analysis",
-        course: [
-          {
-            title: "MVP Development",
-            id: "1",
-            shortDesc:"In digital/agile transformation and product management, pages and forms are essential visual tools that represent digital products. Participants will learn how to effectively visualize, understand the interrelations of pages and forms, and use components to align with business requirements."
-          },
-          {
-            title: "Technical Requirement Analysis",
-            id: "2",
-            shortDesc: "User acceptance criteria are vital in agile communication, providing a clear guide for what needs to be delivered, tested, and coded. Participants will learn to analyze product requirements and define precise acceptance criteria, ensuring clarity across business, research, and development teams."
-          },
-          {
-            title: "Master Data Analysis",
-            id: "3",
-            shortDesc: "Digital products rely on data, and understanding how data flows between systems is crucial for effective agile communication. Participants will gain the skills to articulate master data flow requirements, improving clarity and precision in short timeframes."
-          }
-        ]
+        course: firstCourses
       },
-      {
-        title: "Digital Product Development ",
-        shortDesc:
-          "Master the bridge between business and technology with essential SQL and API skills. Drive seamless collaboration and data-driven solutions in digital product management.",
-        mdHours:
-          "24 hours (Interactive Practice 15 hours, real project 9  hours)",
-        courses: "Fundamental SQL, Fundamental API, Digital Product Design",
-        course: [
-          {
-            title: "Fundamental SQL",
-            id: "4",
-            shortDesc:"In agile communication, aligning business needs with technical implementation requires a strong understanding of data. This course teaches participants essential SQL skills to query, analyze, and manage data, enabling seamless communication and turning data-driven requirements into actionable insights."
-          },
-          {
-            title: "Fundamental API",
-            id: "5",
-            shortDesc:"APIs are central to agile communication, linking business needs with technical solutions. This course introduces participants to API fundamentals, teaching how to design and interpret APIs for clear, structured communication between systems and teams, boosting collaboration and efficiency in digital product management."
-          },
-          {
-            title: "Digital Product Design",
-            id: "6",
-            shortDesc:"Efficient data flow, database structure, and API design are essential for seamless digital product development and agile communication. This course empowers business representatives, researchers, and developers to align technical systems with business goals, ensuring optimized performance, scalability, and cross-functional collaboration."
-          }
-        ]
-      },
-      {
-        title: "Business Requirement Analysis ",
-        shortDesc:
-          "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
-        mdHours:
-          " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
-        courses: "Business Requirement Analysis, Financial Hypothesis Analysis",
-        course: [
-          {
-            title: "Business Requirement Analysis",
-            id: "7",
-            shortDesc: "Understanding business needs is crucial for successful digital products and agile communication. This course equips participants with the skills to analyze target audiences, segmentation, and data-driven challenges, helping them craft actionable requirements that bridge business goals with technical solutions for impactful digital products.",
-          },
-          {
-            title: "Financial Hypothesis Analysis",
-            id: "8",
-            shortDesc: "In this course, participants will learn to build and assess financial hypotheses critical to digital product success. The course covers evaluating business models, estimating expenses and revenues, conducting risk analysis, and strategies for market entry, ensuring informed decision-making that maximizes value and minimizes risk in digital product development.",
-          }
-        ]
-      },
+      businessRequirment,
+      digitalProduct,
     ],
     whyUs: [
       {
@@ -939,7 +736,7 @@ export const certificationsListData = [
         title: "Hands-On Experience with Real-World AI Projects",
       },
       {
-        title: "Practical Application in Digital Product Development",
+        title: "Practical Application in Digital Product Design",
       },
       {
         title: "AI Integration Across Various Industries",

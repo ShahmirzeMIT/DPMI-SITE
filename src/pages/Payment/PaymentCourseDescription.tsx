@@ -12,8 +12,6 @@ export default function PaymentCourseDescription({ title, desc }: PaymentModalPr
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  console.log(desc, "desc");
-
   return (
     <>
       {/* Button to open the modal */}
