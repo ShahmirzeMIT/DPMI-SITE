@@ -86,7 +86,7 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
       <Box
         sx={{
           position: "absolute",
-          height: `${lineHeight + 70}px`, // Dinamik xətt hündürlüyü
+          height: `${lineHeight + 50}px`, // Dinamik xətt hündürlüyü
           width: "4px",
           backgroundColor: "#2971B0",
           left: "0px",
