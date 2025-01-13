@@ -64,10 +64,9 @@ const AppNavbarMenuPart2 = () => {
   };
 
 useEffect(() => {
-  console.log(location.pathname.includes('/certificates'),'location.pathname.includ')
   if(location.pathname.includes('/certificates'))
     {
-  const slicePath=location.pathname.slice(0, location.pathname.lastIndexOf('/'));
+     const slicePath=location.pathname.slice(0, location.pathname.lastIndexOf('/'));
 
       setMenuId(slicePath)
     }else{
