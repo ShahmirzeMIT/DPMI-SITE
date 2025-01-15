@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { callApi } from "../../utils/callApi";
-import { Box, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import CourseDetailHeader from "../CourseDetails/CourseDetailHeader";
 import CourseCardHome from "../SecondHome/CourseCardHome";
 import CertificateCard from "../SecondHome/CertificateCard";
@@ -15,7 +15,7 @@ import WhatGetACPP from "../ACPP/WhatGetACPP";
 import CourseTopics from "../CourseDetails/CourseTopics";
 // import PaymentCard from "../Payment/PaymentCard";
 import PaymentCardClasses from "./PaymentCardClasses";
-
+import { FaLinkedin } from "react-icons/fa";
 
 export default function ClassesDeatil() {
   const { courseId } = useParams();
@@ -91,7 +91,7 @@ export default function ClassesDeatil() {
   useEffect(() => {
     fetchData();
   }, []);
-//   console.log(outComeData,'courseWhatyouGet');
+  console.log(courseCardData,'courseCardData');
   
   return (
     <Box sx={{ marginTop: "180px", minHeight: "80vh" }}>
@@ -115,6 +115,85 @@ export default function ClassesDeatil() {
             <PaymentCardClasses item={courseCardData} />
           </Box>
           {outCome && <OutCome data={{ title: outCome }} />}
+          <Box sx={{textAlign:'center',margin:'0 20px' }}>
+          <Box
+            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+            dangerouslySetInnerHTML={{ __html: courseCardData?.ShortDesc || "" }}
+          />
+            {/* <PaymentCourseDescription
+              title={courseCardData.ClassTitle}
+              desc={courseCardData.ShortDesc}
+            /> */}
+            </Box>
+            <Box>
+            <Box
+          sx={{
+            width: { xs: "90%", md: "100%" },
+            // maxWidth: "900px",
+            margin: "20px auto",
+            marginBottom: "10%",
+            background: "#fff",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: 24,
+            // maxHeight: "90vh", // Set a maximum height
+            // overflowY: "auto", // Make content scrollable if it exceeds maxHeight
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "20px",
+            }}
+          >
+            <Avatar
+              src={courseCardData?.MentorImgUrl}
+              sx={{ width: 150, height: 150, marginRight: "20px" }}
+            />
+            <Typography sx={{ fontWeight: "bold", fontSize: "36px" }}>
+              {courseCardData?.MentorName}
+            </Typography>
+          </Box>
+
+          {/* Content */}
+          <Box
+            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+            dangerouslySetInnerHTML={{ __html: courseCardData?.ShortBio }}
+          />
+
+          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
+            {courseCardData?.JobTitle}
+          </Typography>
+
+          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
+            {courseCardData?.Company}
+          </Typography>
+
+          {/* LinkedIn */}
+          {courseCardData?.Linkedin !== " " && courseCardData?.Linkedin != "" && (
+            <Typography
+              variant="body2"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FaLinkedin
+                onClick={() => window.open(courseCardData?.Linkedin, "_blank")}
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  marginRight: "8px",
+                  cursor: "pointer",
+                }}
+              />
+            </Typography>
+          )}
+
+          {/* Close Button */}
+         
+        </Box>
+            </Box>
+            
+          
           <Box>
             {aboutCourses && <ByCoursesDetail data={aboutCourses} />}
           </Box>

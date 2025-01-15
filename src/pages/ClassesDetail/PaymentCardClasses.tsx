@@ -2,7 +2,7 @@ import { Avatar, Box, Button, Typography } from '@mui/material'
 import { FaExclamationCircle } from 'react-icons/fa'; 
 
 import { useNavigate } from 'react-router-dom';
-import PaymentCourseDescription from '../Payment/PaymentCourseDescription';
+// import PaymentCourseDescription from '../Payment/PaymentCourseDescription';
 import PaymentModal from '../Payment/PaymentModal';
 
 interface Props{
@@ -70,7 +70,22 @@ export default function PaymentCardClasses({item}:Props) {
     {/* Section 1: Course Image */}
    
     {/* Section 2: Course Info */}
-   
+    {/* <Box sx={{ flex: "1.5", padding: "25px 20px" }}>
+      <Typography
+        variant="h6"
+        sx={{
+          fontSize: "28px",
+          fontWeight: "600",
+          margin: "10px 0",
+          color: "black",
+          textAlign: "start",
+        }}
+      >
+        {item.CourseName}
+      </Typography>
+
+     
+    </Box> */}
 
     {/* Section 3: Mentor Info */}
     <Box
