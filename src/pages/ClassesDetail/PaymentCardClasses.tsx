@@ -68,36 +68,9 @@ export default function PaymentCardClasses({item}:Props) {
     }}
   >
     {/* Section 1: Course Image */}
-    <Box sx={{ flex: "0 0 auto", padding: "20px", textAlign: "center" }}>
-      <Avatar
-        src={item.CourseImgUrl}
-        sx={{
-          height: { xs: "80px", sm: "100px" },
-          width: { xs: "80px", sm: "100px" },
-        }}
-      />
-    </Box>
-
+   
     {/* Section 2: Course Info */}
-    <Box sx={{ flex: "1.5", padding: "25px 20px" }}>
-      <Typography
-        variant="h6"
-        sx={{
-          fontSize: "28px",
-          fontWeight: "600",
-          margin: "10px 0",
-          color: "black",
-          textAlign: "start",
-        }}
-      >
-        {item.CourseName}
-      </Typography>
-
-      <PaymentCourseDescription
-        title={item.ClassTitle}
-        desc={item.ShortDesc}
-      />
-    </Box>
+   
 
     {/* Section 3: Mentor Info */}
     <Box
