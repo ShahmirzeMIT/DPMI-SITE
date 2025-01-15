@@ -13,7 +13,8 @@ import ByChallange from "../CourseDetails/ByChallange";
 import WhatLearnDPM from "../DPM/WhatLearnDPM";
 import WhatGetACPP from "../ACPP/WhatGetACPP";
 import CourseTopics from "../CourseDetails/CourseTopics";
-import PaymentCard from "../Payment/PaymentCard";
+// import PaymentCard from "../Payment/PaymentCard";
+import PaymentCardClasses from "./PaymentCardClasses";
 
 
 export default function ClassesDeatil() {
@@ -84,7 +85,6 @@ export default function ClassesDeatil() {
     const getCourseCardData=await callApi('/lms/main/class/info',{
       Id:courseId
     })
-    console.log(getCourseCardData,'getCourseCardData');
     setCourseCardData(getCourseCardData[0])
 
   }
@@ -112,7 +112,7 @@ export default function ClassesDeatil() {
          
           <ShortDesc data={{ shortDesc: data.CourseLongDesc }} />
           <Box sx={{margin:'0 auto' }}>
-            <PaymentCard item={courseCardData} />
+            <PaymentCardClasses item={courseCardData} />
           </Box>
           {outCome && <OutCome data={{ title: outCome }} />}
           <Box>
