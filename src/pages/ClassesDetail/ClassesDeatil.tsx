@@ -20,14 +20,14 @@ import { FaLinkedin } from "react-icons/fa";
 export default function ClassesDeatil() {
   const { courseId } = useParams();
   const [data, setData] = useState<{
-    Id:string;
+    Id: string;
     CourseId: string;
     CourseName: string;
     IconUrl: string;
     CourseShortDesc: string;
     CourseLongDesc: string;
   }>({
-    Id:"",
+    Id: "",
     CourseId: "",
     CourseName: "",
     IconUrl: "",
@@ -64,35 +64,35 @@ export default function ClassesDeatil() {
     setOutCome(data2[0].Outcome);
 
     if (res) {
-      console.log(res,courseId,"data")
-      const data = res.find(
-        (item: { Id: string }) => item.Id == courseId
-      );
+      console.log(res, courseId, "data");
+      const data = res.find((item: { Id: string }) => item.Id == courseId);
       setData(data || []);
     }
 
     const getCourses = await callApi("/lms/main/myneeds/skills/by/course", {
       FkCourseId: [courseId],
     });
-    if(!getCourses) return
+    if (!getCourses) return;
     setAboutCourses(getCourses);
-    
-    const challangesData = await callApi("/lms/main/myneeds/challenges/by/course",{
-      FkCourseId: courseId
-    })
-    if(!challangesData) return
-    setChallenges(challangesData)
-    const getCourseCardData=await callApi('/lms/main/class/info',{
-      Id:courseId
-    })
-    setCourseCardData(getCourseCardData[0])
 
-  }
+    const challangesData = await callApi(
+      "/lms/main/myneeds/challenges/by/course",
+      {
+        FkCourseId: courseId,
+      }
+    );
+    if (!challangesData) return;
+    setChallenges(challangesData);
+    const getCourseCardData = await callApi("/lms/main/class/info", {
+      Id: courseId,
+    });
+    setCourseCardData(getCourseCardData[0]);
+  };
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(courseCardData,'courseCardData');
-  
+  console.log(courseCardData, "courseCardData");
+
   return (
     <Box sx={{ marginTop: "180px", minHeight: "80vh" }}>
       <Box sx={{ width: "100%", backgroundColor: "#f5f5f5" }}>
@@ -108,98 +108,111 @@ export default function ClassesDeatil() {
       </Box>
 
       <Box sx={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <Box sx={{ width: "95%",margin: "0 auto"  }}>
-         
+        <Box sx={{ width: "95%", margin: "0 auto" }}>
           <ShortDesc data={{ shortDesc: data.CourseLongDesc }} />
-          <Box sx={{margin:'0 auto' }}>
+          <Box sx={{ margin: "0 auto" }}>
             <PaymentCardClasses item={courseCardData} />
           </Box>
           {outCome && <OutCome data={{ title: outCome }} />}
-          <Box sx={{textAlign:'center',margin:'0 20px' }}>
-          <Box
-            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
-            dangerouslySetInnerHTML={{ __html: courseCardData?.ShortDesc || "" }}
-          />
+          <Box sx={{ textAlign: "center", margin: "0 20px" }}>
+            <Box
+              sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+              dangerouslySetInnerHTML={{
+                __html: courseCardData?.ShortDesc || "",
+              }}
+            />
             {/* <PaymentCourseDescription
               title={courseCardData.ClassTitle}
               desc={courseCardData.ShortDesc}
             /> */}
-            </Box>
-            <Box>
+          </Box>
+          <Box>{aboutCourses && <ByCoursesDetail data={aboutCourses} />}</Box>
+
+          <Box>
             <Box
-          sx={{
-            width: { xs: "90%", md: "100%" },
-            // maxWidth: "900px",
-            margin: "20px auto",
-            marginBottom: "10%",
-            background: "#fff",
-            padding: "20px",
-            borderRadius: "8px",
-            boxShadow: 24,
-            // maxHeight: "90vh", // Set a maximum height
-            // overflowY: "auto", // Make content scrollable if it exceeds maxHeight
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              marginBottom: "20px",
-            }}
-          >
-            <Avatar
-              src={courseCardData?.MentorImgUrl}
-              sx={{ width: 150, height: 150, marginRight: "20px" }}
-            />
-            <Typography sx={{ fontWeight: "bold", fontSize: "36px" }}>
-              {courseCardData?.MentorName}
-            </Typography>
-          </Box>
-
-          {/* Content */}
-          <Box
-            sx={{ marginBottom: "20px", lineHeight: "1.8" }}
-            dangerouslySetInnerHTML={{ __html: courseCardData?.ShortBio }}
-          />
-
-          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
-            {courseCardData?.JobTitle}
-          </Typography>
-
-          <Typography variant="body2" sx={{ marginBottom: "20px" }}>
-            {courseCardData?.Company}
-          </Typography>
-
-          {/* LinkedIn */}
-          {courseCardData?.Linkedin !== " " && courseCardData?.Linkedin != "" && (
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center" }}
+              sx={{
+                width: { xs: "90%", md: "100%" },
+                // maxWidth: "900px",
+                margin: "20px auto",
+                marginBottom: "10%",
+                background: "#fff",
+                padding: "20px",
+                borderRadius: "8px",
+                // boxShadow: 24,
+                // maxHeight: "90vh", // Set a maximum height
+                // overflowY: "auto", // Make content scrollable if it exceeds maxHeight
+              }}
             >
-              <FaLinkedin
-                onClick={() => window.open(courseCardData?.Linkedin, "_blank")}
-                style={{
-                  width: "24px",
-                  height: "24px",
-                  marginRight: "8px",
-                  cursor: "pointer",
-                }}
-              />
-            </Typography>
-          )}
-
-          {/* Close Button */}
-         
-        </Box>
-            </Box>
+              <Typography
+                  style={{
+                    color: "black",
+                    fontSize: "36px",
+                    fontWeight: "400",
+                    textAlign: "start",
+                    marginLeft: "10px",
+                    textTransform: "uppercase",
+                    marginBottom: "50px",
+                  }}
+                >
             
-          
-          <Box>
-            {aboutCourses && <ByCoursesDetail data={aboutCourses} />}
+            MEET YOUR TRAINING COACH
+               </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <Avatar
+                  src={courseCardData?.MentorImgUrl}
+                  sx={{ width: 150, height: 150, marginRight: "20px" }}
+                />
+                <Typography sx={{ fontWeight: "bold", fontSize: "36px" }}>
+                  {courseCardData?.MentorName}
+                </Typography>
+              </Box>
+
+              {/* Content */}
+              <Box
+                sx={{ marginBottom: "20px", lineHeight: "1.8" }}
+                dangerouslySetInnerHTML={{ __html: courseCardData?.ShortBio }}
+              />
+
+              <Typography variant="body2" sx={{ marginBottom: "20px" }}>
+                {courseCardData?.JobTitle}
+              </Typography>
+
+              <Typography variant="body2" sx={{ marginBottom: "20px" }}>
+                {courseCardData?.Company}
+              </Typography>
+
+              {/* LinkedIn */}
+              {courseCardData?.Linkedin !== " " &&
+                courseCardData?.Linkedin != "" && (
+                  <Typography
+                    variant="body2"
+                    sx={{ display: "flex", alignItems: "center" }}
+                  >
+                    <FaLinkedin
+                      onClick={() =>
+                        window.open(courseCardData?.Linkedin, "_blank")
+                      }
+                      style={{
+                        width: "24px",
+                        height: "24px",
+                        marginRight: "8px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </Typography>
+                )}
+
+              {/* Close Button */}
+            </Box>
           </Box>
-          <Box>
-            {challenges && <ByChallange data={challenges} />}
-          </Box>
+
+          <Box>{challenges && <ByChallange data={challenges} />}</Box>
           <Box>
             {selectedWhatLearn && <WhatLearnDPM data={selectedWhatLearn} />}
           </Box>
@@ -307,5 +320,5 @@ export default function ClassesDeatil() {
         </Box>
       </Box>
     </Box>
-  )
+  );
 }
