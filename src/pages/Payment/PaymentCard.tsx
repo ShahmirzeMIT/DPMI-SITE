@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface Props{
     item:{
+        Id: string;
         id: number;
         CourseName: string;
         ClassTitle: string;
@@ -340,7 +341,7 @@ export default function PaymentCard({item}:Props) {
               minWidth: "110px",
               minHeight: "33px",
             }}
-            onClick={() => handleMoreInfo(item.FkCourseId)}
+            onClick={() => handleMoreInfo(item.Id)}
           >
             More Info
           </Button>
