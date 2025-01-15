@@ -9,7 +9,7 @@ import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 // import { ProductManagerCardDataNavbar } from "../../defaultDatas/ProductManagerNavbar";
 export default function FooterBottom() {
-  const deployTime = "23:51";
+  // const deployTime = "23:51";
  const navigate = useNavigate();
  const startYear = 2024; // Starting year
   const currentYear = new Date().getFullYear();
@@ -85,7 +85,7 @@ export default function FooterBottom() {
         md: "1.5fr 1fr 1fr 1fr", // Desktop
       },
       gap: { xs: "20px", md: "30px" },
-      justifyContent: { xs: "center", sm: "space-between" }, // Mobilde ortalama
+      justifyContent: { xs: "space-between", sm: "space-around" }, // Mobilde ortalama
     }}
   >
     {/* Logo and Contact Info */}
@@ -159,6 +159,7 @@ export default function FooterBottom() {
             color: "#555",
             "&:hover": { textDecoration: "underline" },
             marginTop: "10px",
+            textAlign: { xs: "center", sm: "inherit" },
           }}
           onClick={() => {
             console.log(item.id,'item.id');
@@ -186,6 +187,7 @@ export default function FooterBottom() {
          color: "#555",
          "&:hover": { textDecoration: "underline" },
          marginTop: "10px",
+         textAlign: { xs: "center", sm: "inherit" },
        }}
        onClick={() => {
         if (item.id === "/termofuse" || item.id === "/privacy" || item.id === "/legalnotice") {
@@ -227,9 +229,9 @@ export default function FooterBottom() {
       >
         <Link
           href="https://www.linkedin.com/company/dpm-institute/"
-          sx={{ color: "#333", fontSize: "20px" }}
+          sx={{ color: "#2A73B3", fontSize: "20px" }}
         >
-          <FaLinkedin style={{ color: "#333", fontSize: "25px" }} />
+          <FaLinkedin style={{ color: "#2A73B3", fontSize: "25px" }} />
         </Link>
       </Box>
     </Box>
@@ -249,7 +251,7 @@ export default function FooterBottom() {
     <Typography color="text.secondary" style={{textAlign:'center'}}>
       {`  ${startYear} - ${currentYear} `} {`©`} ACF System GmbH. DPM Institute
       is managed by ACF System GmbH. All rights reserved.
-      Deploy Time: {deployTime}
+      {/* Deploy Time: {deployTime} */}
     </Typography>
   </Box>
 </Box>
