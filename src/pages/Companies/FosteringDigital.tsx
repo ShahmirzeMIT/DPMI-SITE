@@ -40,7 +40,7 @@ const FosteringDigital = () => {
         {/* Problem Statement */}
         <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
            Facing Challenges in Driving{" "}
-          <span style={{color:'#fb6b22',fontWeight:'bold',marginRight:'5px'}}>Al Transformation</span>
+          <span style={{color:'#fb6b22',fontWeight:'bold',marginRight:'5px'}}>AI Transformation</span>
          and
            Digital/Agile Transformation?
         </Typography>
