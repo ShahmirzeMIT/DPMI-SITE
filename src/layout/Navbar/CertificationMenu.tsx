@@ -53,7 +53,7 @@ export default function CertificationMenu() {
                 {" "}
                 <Box
                   // href={item.link}
-                  onClick={() => navigate(item.link)}
+                  onClick={() => window.location.href=item.link}
                   sx={{
                     fontSize: "1rem",
                     lineHeight: "1.5rem",
@@ -76,7 +76,7 @@ export default function CertificationMenu() {
         sx={{
           marginTop: "5px",
           width: "480px",
-          height: "250px",
+          height: "380px",
           display: "flex",
           justifyContent: "space-between",
           flexWrap: "wrap",
@@ -96,6 +96,7 @@ export default function CertificationMenu() {
                   height: "auto",
                   // boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",borderRadius:'50%'
                 }}
+                shape="square"
               />
             </Box>
           );

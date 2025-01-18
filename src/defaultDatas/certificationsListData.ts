@@ -4,6 +4,7 @@ import Image3 from "../assets/images/aipf.png";
 import Image4 from "../assets/images/aipp.png";
 import Image5 from "../assets/images/acpf.png";
 import Image6 from "../assets/images/acpp.png";
+import Image7 from "../assets/images/AIPM.jpeg";
 const firstCourses=[
   {
     title: "MVP Development",
@@ -816,6 +817,158 @@ export const certificationsListData = [
       {
         title: "How to Automate Processes with AI/GenAI Tools",
         desc: "Master the implementation of AI-driven solutions to streamline business operations and improve efficiency.",
+      },
+    ],
+  },
+  {
+    id: "1007",
+    title: "AI Product Manager",
+    shortDesc: "Acquire comprehensive skills to manage digital products effectively, from initial concept to final launch. This program covers key areas such as backlog assessment, project management, and digital product design while emphasizing essential soft skills for leadership. Geared toward Product Managers, Startups, and Program Managers, it ensures a practical and impactful learning experience.",
+    links: "/certificates",
+    enroll: "/classes",
+    image: Image7,
+    courseModules: [
+      {
+        title: "Digital Product Foundation ",
+        shortDesc:
+          "Master agile communication, Technical Requirement Analysis, and data flow design to drive digital product success. Gain the foundational skills needed to navigate and lead digital product transformations effectively.",
+        mdHours:
+          "24 hours (Interactive Practice 15 hours, real project 9 hours)",
+        courses:
+          "MVP Development, Technical Requirement Analysis, Master Data Analysis",
+        course: firstCourses,
+      },
+      businessRequirment,
+      digitalProduct,
+      {
+        title: " Digital Product Management ",
+        shortDesc:
+          "Empower your startup journey with the skills to build scalable digital products and grow organically. Master agile communication and strategic innovation for sustainable success.",
+        mdHours:
+          " 12 hours (Interactive Practice 9 hours, real project 3 hours)",
+        courses: "Backlog Assessment,Project Management",
+        course: [
+          {
+            title: "Backlog Assessment",
+            id: "9",
+            shortDesc: "Participants will learn how to assess and manage a product backlog using Agile Communication principles. The course focuses on prioritizing issues, managing sprints, estimating and tracking hours, calculating project duration, and managing budgets, ensuring alignment and effective resource allocation for successful project delivery.",
+          },
+          {
+            title: "Project Management",
+            id: "10",
+            shortDesc: "This course explores project management through Agile Communication, teaching techniques for issue management, sprint planning, and tracking spent hours. Participants will learn how to calculate project duration and budget, monitor team performance, and manage a comprehensive work breakdown, ensuring precise, collaborative, and successful project delivery.",
+          }
+        ]
+      },
+      {
+        title: " AI Professional Practitioner ",
+        shortDesc:
+          "Master the art of translating business needs into actionable requirements that drive successful digital products. Gain the skills to assess market opportunities, financial viability, and create solutions that align with strategic goals.",
+        mdHours:
+          " 20 hours (Interactive Practice 14 hours, real project 6 hours)",
+        courses: "Fundamental of AI/GenAI",
+        course: [
+            {
+                title: "Fundamentals of AI/GenAI",
+                id: "14",
+                shortDesc: "This course introduces the fundamentals of Artificial Intelligence (AI) and Generative AI (GenAI), exploring their impact on industries like business, manufacturing, fintech, and more. Participants will learn how these technologies are transforming sectors through automation, optimization, and innovation, providing foundational knowledge of AI/GenAI and their real-world applications."
+            },
+            {
+                title: "Advanced Application of AI/GenAI",
+                id: "20",
+                shortDesc: "In this course, participants will learn how AI and Generative AI are revolutionizing digital services through automation and service enhancement. They will gain practical experience in implementing AI-driven solutions to improve operational efficiency, customer experience, and decision-making, using real-world examples and applications in sectors like finance, healthcare, and e-commerce"
+  
+            }
+            
+        ]
+      }
+    ],
+    whyUs: [
+      {
+        title: "Comprehensive Startup Ecosystem Knowledge",
+      },
+      {
+        title: "End-to-End Product Lifecycle Expertise",
+      },
+      {
+        title: "Practical Tools and Techniques",
+      },
+      {
+        title: "Data-Driven Decision-Making",
+      },
+      {
+        title: "Real-World Simulations",
+      },
+      {
+        title: "Focus on Cost and Time Efficiency",
+      },
+      {
+        title: "Global Market Perspective",
+      },
+      {
+        title: "Certified Industry Recognition",
+      },
+    ],
+    whatyouGet: [
+      {
+        boldTitle: "Completion Certification",
+        title: " Official recognition of course completion.",
+      },
+      {
+        boldTitle: "Access to Training Simulation System",
+        title: "Real-world practice with digital tools.",
+      },
+      {
+        boldTitle: "1-Year Full Access to Course Materials",
+        title: " Continuous learning with unlimited resources.",
+      },
+      {
+        boldTitle: "Unlimited Real Projects in Training Simulation",
+        title: "Hands-on project creation and sharing.",
+      },
+      {
+        boldTitle: "Hands-On Projects",
+        title: "Practical application through real-world scenarios.",
+      },
+      {
+        boldTitle: "Quizzes & Assessments",
+        title: "Test knowledge and track progress.",
+      },
+      {
+        boldTitle: "Mentor Support",
+        title: " Guidance from experienced professionals.",
+      },
+      {
+        boldTitle: "Certification Exam Voucher",
+        title: " Free voucher for certification exam.",
+      },
+      {
+        boldTitle: "Interactive Learning Tools",
+        title: " Engaging and immersive learning experience.",
+      },
+    ],
+    whatLearn: [
+      {
+        title: "How to Create and Manage a Project Backlog Master ",
+        desc: "the use of UI Cards and Data Flow Cards to structure and organize all project tasks and features.",
+      },
+      {
+        title: "How to Plan and Adjust Sprints Effectively Learn ",
+        desc: "to prioritize tasks, manage scope changes, and align sprint goals with business objectives.",
+      },
+      {
+        title:
+          "How to Apply Estimation Techniques for Accurate Planning Explore ",
+        desc: "methods like Parametric and Expert Judgment to calculate precise task completion times",
+      },
+      {
+        title: "How to Handle Change Requests During Sprints Discover ",
+        desc: "strategies to manage change and new requests while maintaining project quality and timelines",
+      },
+      {
+        title:
+          "How to Foster Collaboration Through Agile Communication Develop ",
+        desc: "skills to enhance team alignment, resolve conflicts, and integrate user feedback for continuous improvement",
       },
     ],
   },

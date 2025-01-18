@@ -5,7 +5,15 @@ import Image3 from "../assets/images/aipf.png";
 import Image4 from "../assets/images/aipp.png";
 import Image5 from "../assets/images/acpf.png";
 import Image6 from "../assets/images/acpp.png";
+import Image7 from "../assets/images/AIPMCard.png";
 export const ProductManagerCardData=[
+    {
+        id:1007,
+        title: "AI Project Managment",
+        image: Image7,
+        text:"Develop advanced AI Project Managment skills to lead teams and manage projects effectively",
+        bgColor:'#FFFFFF'
+    },
     {
         id:1004,
         title: "AI Foundation Practitioner",
@@ -13,6 +21,7 @@ export const ProductManagerCardData=[
         text:"Build a strong foundation in AI concepts and their practical applications in business.",
         bgColor:'#FFFFFF'
     },
+   
        
     {
         id:1005,
@@ -51,5 +60,6 @@ export const ProductManagerCardData=[
         bgColor:'#FFFFFF'
     },
    
-  
+   
+   
 ]

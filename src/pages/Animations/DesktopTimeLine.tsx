@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Box, Card, Typography, useTheme } from "@mui/material";
 import { Avatar, Button, Popover } from "antd";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import PointTextAnimation from "../../componets/PointTextAnimation";
 
 export interface Module {
@@ -22,6 +22,7 @@ export interface Props {
 }
 
 const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [lineHeight, setLineHeight] = useState(0); // Dynamic line height
   const timelineRef = useRef<any>(null);
@@ -29,7 +30,7 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#f4f4f4"];
+  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#333"];
   const finishColor='#f4f4f4';
   const finishtextColor="#333"
 
@@ -72,6 +73,7 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
       window.removeEventListener("resize", calculateLineHeight);
     };
   }, []);
+  
 
   const filteredData = [
     ...modules,

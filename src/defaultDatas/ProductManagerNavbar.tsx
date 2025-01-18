@@ -5,8 +5,18 @@ import Image3 from "../assets/images/aifpNav.png";
 import Image4 from "../assets/images/aippNav.png";
 import Image5 from "../assets/images/acfpNav.png";
 import Image6 from "../assets/images/accpNav.png";
-
+import Image7 from "../assets/images/AIPM.png";
 export const ProductManagerCardDataNavbar=[
+    {
+        id:7,
+        title: "AIPM™️ | AI Project Managment ",
+        link:'/certificates/1007',
+        image: Image7,
+        shorts:"AIPM™️",
+        openId:"1007",
+        text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
+        bgColor:'#FFFFFF'
+    },
     {
         id:3,
         title: "AIFP™️ | AI Foundation Practitioner ",
@@ -68,5 +78,6 @@ export const ProductManagerCardDataNavbar=[
         text:" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, quibusdam?",
         bgColor:'#FFFFFF'
     },
+    
 ]
 

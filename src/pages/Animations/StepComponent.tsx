@@ -26,7 +26,6 @@ const Timeline = ({ modules, index }: Props) => {
     const data = ProductManagerCardDataNavbar.find(
         (item: { openId: string }) => item.openId === index?.toString()
       );
-      console.log(data, "data", index);
     return (
         <Box sx={{}}>
             {
