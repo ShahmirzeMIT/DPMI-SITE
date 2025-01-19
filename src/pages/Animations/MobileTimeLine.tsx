@@ -11,8 +11,8 @@ const MobileTimeline = ({ modules, finishTitle,icon }: Props) => {
   const timelineRef = useRef(null);
   const cardRefs = useRef<any>([]); // Hər bir kartın ref-lərini saxlayır
   const navigate = useNavigate();
-  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#333"];
- const finishColor='#f4f4f4';
+  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "slateblue"];
+  const finishColor='#f4f4f4';
   const finishtextColor="#333"
   useEffect(() => {
     const handleScroll = () => {

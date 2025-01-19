@@ -30,7 +30,7 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "#333"];
+  const colors = ["#2a74b1", "#D8531D", "dodgerblue", "#4DB6AC", "slateblue"];
   const finishColor='#f4f4f4';
   const finishtextColor="#333"
 

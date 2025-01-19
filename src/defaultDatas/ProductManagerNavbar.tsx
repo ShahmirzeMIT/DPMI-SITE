@@ -9,7 +9,7 @@ import Image7 from "../assets/images/AIPM.png";
 export const ProductManagerCardDataNavbar=[
     {
         id:7,
-        title: "AIPM™️ | AI Project Managment ",
+        title: "AI-PM™️ | AI Project Managemet",
         link:'/certificates/1007',
         image: Image7,
         shorts:"AIPM™️",

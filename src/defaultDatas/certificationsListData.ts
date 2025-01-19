@@ -878,10 +878,16 @@ export const certificationsListData = [
                 id: "20",
                 shortDesc: "In this course, participants will learn how AI and Generative AI are revolutionizing digital services through automation and service enhancement. They will gain practical experience in implementing AI-driven solutions to improve operational efficiency, customer experience, and decision-making, using real-world examples and applications in sectors like finance, healthcare, and e-commerce"
   
+            },
+            {
+              title: "The Art and Skill of Sensing and Responding to Market Needs",
+              id: "11",
+              shortDesc: "This course highlights agile communication as a key skill in responding to market demands. Participants will learn to analyze market dynamics, craft business models, and use data-driven insights to innovate for future opportunities while aligning with evolving market needs.",
             }
             
         ]
       }
+     
     ],
     whyUs: [
       {
