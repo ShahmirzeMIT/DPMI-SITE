@@ -185,7 +185,7 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
               variant="h6"
               gutterBottom
               sx={{
-                fontSize: "24px",
+                fontSize: "20px",
                 color: index === filteredData.length - 1 ? finishtextColor : "white",
 
               }}
@@ -195,7 +195,7 @@ const DesktopTimeLine = ({ modules, finishTitle, icon }: Props) => {
             <Avatar src={icon} shape="square" style={{
               height:'60px',
               width:'110px'
-            }} /> <span>{item.title}</span>
+            }} /> <span style={{fontSize:'20px'}}>{item.title}</span>
             </Box>: item.title
            }
            

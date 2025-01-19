@@ -99,10 +99,10 @@ export const certificationsListData = [
           "Empower your startup journey with the skills to build scalable digital products and grow organically. Master agile communication and strategic innovation for sustainable success.",
         mdHours:
           " 12 hours (Interactive Practice 9 hours, real project 3 hours)",
-        courses: "The Art and Skill of Sensing and Responding to Market Needs",
+        courses: "Market Analysis and Niche Segmentation",
         course: [
           {
-            title: "The Art and Skill of Sensing and Responding to Market Needs",
+            title: "Market Analysis and Niche Segmentation",
             id: "11",
             shortDesc: "This course highlights agile communication as a key skill in responding to market demands. Participants will learn to analyze market dynamics, craft business models, and use data-driven insights to innovate for future opportunities while aligning with evolving market needs.",
           }
@@ -880,7 +880,7 @@ export const certificationsListData = [
   
             },
             {
-              title: "The Art and Skill of Sensing and Responding to Market Needs",
+              title: "Market Analysis and Niche Segmentation",
               id: "11",
               shortDesc: "This course highlights agile communication as a key skill in responding to market demands. Participants will learn to analyze market dynamics, craft business models, and use data-driven insights to innovate for future opportunities while aligning with evolving market needs.",
             }

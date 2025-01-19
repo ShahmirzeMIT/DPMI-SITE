@@ -9,7 +9,7 @@ import Image7 from "../assets/images/AIPMCard.png";
 export const ProductManagerCardData=[
     {
         id:1007,
-        title: "AI Project Managemet",
+        title: "AI Project Manager",
         image: Image7,
         text:"Develop advanced AI Project Managment skills to lead teams and manage projects effectively",
         bgColor:'#FFFFFF'
