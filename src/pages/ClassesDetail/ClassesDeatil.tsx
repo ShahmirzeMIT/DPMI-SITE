@@ -19,6 +19,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function ClassesDeatil() {
   const { courseId } = useParams();
+  const classId=localStorage.getItem("classId")
   const [data, setData] = useState<{
     Id: string;
     CourseId: string;
@@ -54,6 +55,7 @@ export default function ClassesDeatil() {
   }, []);
 
   const fetchData = async () => {
+    
     const res = await callApi("/lms/main/course/read");
     const data2 = await callApi("/lms/main/course/info", {
       FkCourseId: courseId,
@@ -83,9 +85,11 @@ export default function ClassesDeatil() {
     );
     if (!challangesData) return;
     setChallenges(challangesData);
+    console.log("classId",classId)
     const getCourseCardData = await callApi("/lms/main/class/info", {
-      Id: courseId,
+      Id: classId,
     });
+    // console.log(getCourseCardData[0],"getCourseCardData[0]")
     setCourseCardData(getCourseCardData[0]);
   };
   useEffect(() => {

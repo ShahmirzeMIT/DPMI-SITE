@@ -42,8 +42,9 @@ export default function PaymentCard({item}:Props) {
         localStorage.setItem("paymentData", JSON.stringify(item));
       };
     
-      const handleMoreInfo = (courseId: string) => {
+      const handleMoreInfo = (courseId: string, classId:string) => {
         navigate(`/classes/${courseId}`);
+        localStorage.setItem("classId",classId)
       };
   return (
     <Box
@@ -341,7 +342,7 @@ export default function PaymentCard({item}:Props) {
               minWidth: "110px",
               minHeight: "33px",
             }}
-            onClick={() => handleMoreInfo(item.FkCourseId)}
+            onClick={() => handleMoreInfo(item.FkCourseId,item.Id)}
           >
             More Info
           </Button>

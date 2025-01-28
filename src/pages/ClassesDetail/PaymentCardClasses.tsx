@@ -45,6 +45,8 @@ export default function PaymentCardClasses({item}:Props) {
     //   const handleMoreInfo = (courseId: string) => {
     //     navigate(`/classes/${courseId}`);
     //   };
+
+  console.log(item?.Language,'Language')
   return (
     <Box
     key={item?.id}
