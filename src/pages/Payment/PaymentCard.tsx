@@ -341,7 +341,7 @@ export default function PaymentCard({item}:Props) {
               minWidth: "110px",
               minHeight: "33px",
             }}
-            onClick={() => handleMoreInfo(item.Id)}
+            onClick={() => handleMoreInfo(item.FkCourseId)}
           >
             More Info
           </Button>
