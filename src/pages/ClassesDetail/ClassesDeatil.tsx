@@ -91,7 +91,6 @@ export default function ClassesDeatil() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(courseCardData, "courseCardData");
 
   return (
     <Box sx={{ marginTop: "180px", minHeight: "80vh" }}>

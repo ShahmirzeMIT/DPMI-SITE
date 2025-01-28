@@ -47,7 +47,7 @@ export default function PaymentCardClasses({item}:Props) {
     //   };
   return (
     <Box
-    key={item.id}
+    key={item?.id}
     sx={{
       display: "flex",
       flexDirection: { xs: "column", sm: "row" },
@@ -107,7 +107,7 @@ export default function PaymentCardClasses({item}:Props) {
         }}
       >
         <Avatar
-          src={item.MentorImgUrl}
+          src={item?.MentorImgUrl}
           sx={{
             height: "40px",
             width: "40px",
@@ -120,13 +120,13 @@ export default function PaymentCardClasses({item}:Props) {
           sx={{ fontWeight: "600", fontSize: "18px", color: "black" }}
         >
           <PaymentModal
-            title={item.MentorName}
-            Img={item.MentorImgUrl}
-            name={item.MentorName}
-            desc={item.ShortBio}
-            JobTitle={item.JobTitle}
-            Linkedin={item.Linkedin}
-            Company={item.Company}
+            title={item?.MentorName || ""}
+            Img={item?.MentorImgUrl || ""}
+            name={item?.MentorName || ""}
+            desc={item?.ShortBio || ""}
+            JobTitle={item?.JobTitle || ""}
+            Linkedin={item?.Linkedin || ""}
+            Company={item?.Company || ""}
           />
         </Typography>
       </Box>
@@ -141,7 +141,7 @@ export default function PaymentCardClasses({item}:Props) {
           marginTop: "10px",
         }}
       >
-        {item.ClassType}
+        {item?.ClassType}
       </Typography>
       <Typography
         variant="body2"
@@ -149,7 +149,7 @@ export default function PaymentCardClasses({item}:Props) {
       >
         Language:{" "}
         <span style={{ color: "#FA6B23", fontWeight: "700",fontSize:'18px' }}>
-          {item.Language}
+          {item?.Language}
         </span>
       </Typography>
     </Box>
@@ -176,9 +176,9 @@ export default function PaymentCardClasses({item}:Props) {
           marginBottom: "15px",
         }}
       >
-        {item.StartDate}
+        {item?.StartDate}
       </Typography>
-      {item.SpotsLeft > 0 && (
+      {item?.SpotsLeft > 0 && (
         <Button
           sx={{
             backgroundColor: "yellow",
@@ -216,7 +216,7 @@ export default function PaymentCardClasses({item}:Props) {
           marginBottom: "5px",
         }}
       >
-        {item.ClassDays}
+        {item?.ClassDays}
       </Typography>
       <Typography
         variant="body2"
@@ -227,7 +227,7 @@ export default function PaymentCardClasses({item}:Props) {
           marginBottom: "5px",
         }}
       >
-        Time Zone: {item.TimeZone}
+        Time Zone: {item?.TimeZone}
       </Typography>
     </Box>
 
@@ -261,8 +261,8 @@ export default function PaymentCardClasses({item}:Props) {
               fontSize: "30px",
             }}
           >
-            {item.Currency}
-            {item.DiscountedPrice}
+            {item?.Currency}
+            {item?.DiscountedPrice}
           </Typography>
           <Typography
             variant="body2"
@@ -286,26 +286,26 @@ export default function PaymentCardClasses({item}:Props) {
               },
             }}
           >
-            {item.Currency}
-            {item.Price}
+            {item?.Currency}
+            {item?.Price}
           </Typography>
         </Box>
         <Box>
           <Button
             variant="contained"
             sx={{
-              backgroundColor: item.IsOpen == 1 ? "#5693F0" : "#C4C4C4",
-              color: item.IsOpen == 1 ? "#fff" : "#8E8E8E",
+              backgroundColor: item?.IsOpen == 1 ? "#5693F0" : "#C4C4C4",
+              color: item?.IsOpen == 1 ? "#fff" : "#8E8E8E",
               textTransform: "uppercase",
               fontSize: "12px",
               maxWidth: "120px",
               margin: "10px auto",
-              cursor: item.IsOpen == 1 ? "pointer" : "not-allowed",
-              pointerEvents: item.IsOpen == 1 ? "auto" : "none", // Disable button interaction
+              cursor: item?.IsOpen == 1 ? "pointer" : "not-allowed",
+              pointerEvents: item?.IsOpen == 1 ? "auto" : "none", // Disable button interaction
             }}
-            onClick={() => item.IsOpen == 1 && handleEnroll(item)}
+            onClick={() => item?.IsOpen == 1 && handleEnroll(item)}
           >
-            {item.IsOpen == 1 ? (
+            {item?.IsOpen == 1 ? (
                 "Enroll Now"
               ) : (
                 <>
