@@ -13,7 +13,7 @@ export default function WhatLearnSpf({ data }: WhatLearnSpfProps) {
       <Typography
         style={{
           color: 'black',
-          fontSize: '36px',
+          fontSize: '28px',
           fontWeight: '400',
           textAlign: 'start',
           marginLeft: '10px',
@@ -62,7 +62,7 @@ export default function WhatLearnSpf({ data }: WhatLearnSpfProps) {
 
               <span
                 style={{
-                  fontSize: '24px',
+                  fontSize: '18px',
                   whiteSpace: 'normal',
                   maxWidth: '100%',
                   display: 'block',
@@ -76,6 +76,7 @@ export default function WhatLearnSpf({ data }: WhatLearnSpfProps) {
                   marginLeft: '30px',
                   whiteSpace: 'normal',
                   maxWidth: '100%',
+                  fontSize: '16px',
                 }}
               >
                 {item.desc}

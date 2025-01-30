@@ -23,7 +23,7 @@ export default function OutCome({ data }: OutComeProps) {
           textAlign: { xs: 'center', md: 'left' }, // Mobilde merkez, genişte sola hizalı
         }}
       >
-    <Typography sx={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',textTransform:'uppercase',marginBottom:'15px'}}>OutCome</Typography>
+    <Typography sx={{color:'black',fontSize:'28px',fontWeight:'400',textAlign:'start',textTransform:'uppercase',marginBottom:'15px'}}>OutCome</Typography>
 
         <Typography
           sx={{

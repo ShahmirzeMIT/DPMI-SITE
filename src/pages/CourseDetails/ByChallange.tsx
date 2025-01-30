@@ -46,7 +46,7 @@ export default function ByChallange({ data }: WhatLearnSpfProps) {
       <Typography
         style={{
           color: 'black',
-          fontSize: '36px',
+          fontSize: '28px',
           fontWeight: '400',
           textAlign: 'start',
           marginLeft: '10px',
@@ -77,8 +77,8 @@ export default function ByChallange({ data }: WhatLearnSpfProps) {
             }}
           >
             <PointText />
-            <span style={{ fontSize: '24px' }}>{item.ChallengeName}</span>
-            <span style={{fontSize:'18px',color:'black', opacity: '0.7'}}>{` [${item.GroupName}]`}</span>
+            <span style={{ fontSize: '18px' }}>{item.ChallengeName}</span>
+            <span style={{fontSize:'16px',color:'black', opacity: '0.7'}}>{` [${item.GroupName}]`}</span>
           </li>
         )): <Typography style={{textAlign:'center',color:'red'}}>{"Records Not Founded"}</Typography>}
       </ul>

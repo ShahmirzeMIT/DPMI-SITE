@@ -85,7 +85,6 @@ export default function ClassesDeatil() {
     );
     if (!challangesData) return;
     setChallenges(challangesData);
-    console.log("classId",classId)
     const getCourseCardData = await callApi("/lms/main/class/info", {
       Id: classId,
     });
@@ -131,7 +130,19 @@ export default function ClassesDeatil() {
           </Box>
           <Box>{aboutCourses && <ByCoursesDetail data={aboutCourses} />}</Box>
 
+          
+
+          <Box>{challenges && <ByChallange data={challenges} />}</Box>
           <Box>
+            {selectedWhatLearn && <WhatLearnDPM data={selectedWhatLearn} />}
+          </Box>
+
+          {selectedWhatYouGet && <WhatGetACPP data={selectedWhatYouGet} />}
+          {slectedCourseTopics && <CourseTopics data={slectedCourseTopics} />}
+        </Box>
+
+        {/* Top Certifications Section */}
+        <Box>
             <Box
               sx={{
                 width: { xs: "90%", md: "100%" },
@@ -214,17 +225,6 @@ export default function ClassesDeatil() {
               {/* Close Button */}
             </Box>
           </Box>
-
-          <Box>{challenges && <ByChallange data={challenges} />}</Box>
-          <Box>
-            {selectedWhatLearn && <WhatLearnDPM data={selectedWhatLearn} />}
-          </Box>
-
-          {selectedWhatYouGet && <WhatGetACPP data={selectedWhatYouGet} />}
-          {slectedCourseTopics && <CourseTopics data={slectedCourseTopics} />}
-        </Box>
-
-        {/* Top Certifications Section */}
         <Box>
           <h1
             style={{

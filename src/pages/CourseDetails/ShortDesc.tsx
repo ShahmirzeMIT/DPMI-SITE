@@ -44,7 +44,7 @@ export default function ShortDesc({ data }: ShortDescProps) {
           marginLeft:'20px' // Mobilde merkez, genişte sola hizalı
         }}
       >
-    <Typography sx={{color:'black',fontSize:'36px',fontWeight:'400',textAlign:'start',textTransform:'uppercase',marginBottom:'15px'}}>Purpose</Typography>
+    <Typography sx={{color:'black',fontSize:'28px',fontWeight:'400',textAlign:'start',textTransform:'uppercase',marginBottom:'15px'}}>Purpose</Typography>
 
         <Typography
           sx={{
