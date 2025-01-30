@@ -160,7 +160,7 @@ export default function ClassesDeatil() {
               <Typography
                   style={{
                     color: "black",
-                    fontSize: "36px",
+                    fontSize: "28px",
                     fontWeight: "400",
                     textAlign: "start",
                     marginLeft: "10px",
@@ -182,7 +182,7 @@ export default function ClassesDeatil() {
                   src={courseCardData?.MentorImgUrl}
                   sx={{ width: 150, height: 150, marginRight: "20px" }}
                 />
-                <Typography sx={{ fontWeight: "bold", fontSize: "36px" }}>
+                <Typography sx={{ fontWeight: "bold", fontSize: "22px" }}>
                   {courseCardData?.MentorName}
                 </Typography>
               </Box>

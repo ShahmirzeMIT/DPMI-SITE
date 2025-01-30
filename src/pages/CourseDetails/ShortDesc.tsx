@@ -55,9 +55,8 @@ export default function ShortDesc({ data }: ShortDescProps) {
             lineHeight: '1.8',
             padding: { xs: '0 10px', md: '0' }, // Mobilde iç boşluk
           }}
-        >
-          {data.shortDesc}
-        </Typography>
+          dangerouslySetInnerHTML={{ __html: data.shortDesc }}
+        />
       </Box>
     </Box>
     </>
